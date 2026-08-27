@@ -1,0 +1,140 @@
+{
+  "doctype": "DocType",
+  "name": "NKT Trucking Customer SOA Line",
+  "module": "NKT Store Operations",
+  "custom": 0,
+  "istable": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "source_trip",
+    "source_charge",
+    "charge_type",
+    "charge_description",
+    "txn_date",
+    "van_no",
+    "dr_no",
+    "eir_no",
+    "driver_name",
+    "plate_no",
+    "destination",
+    "qty",
+    "rate",
+    "manual_amount_override",
+    "amount",
+    "override_reason"
+  ],
+  "fields": [
+    {
+      "fieldname": "source_trip",
+      "fieldtype": "Link",
+      "label": "Source Trip",
+      "options": "NKT Trucking Trip"
+    },
+    {
+      "fieldname": "source_charge",
+      "fieldtype": "Link",
+      "label": "Source Backload / Additional Charge",
+      "options": "NKT Trucking Customer Charge",
+      "in_list_view": 1,
+      "description": "Optional source for a separately billable backload or additional charge. This allows more than one legitimate SOA line to originate from the same Trip without double-billing the same charge."
+    },
+    {
+      "fieldname": "charge_type",
+      "fieldtype": "Select",
+      "label": "Billing Line Type",
+      "options": "Primary Haul\nBackload\nAdditional Charge",
+      "default": "Primary Haul",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "charge_description",
+      "fieldtype": "Data",
+      "label": "Charge Description"
+    },
+    {
+      "fieldname": "txn_date",
+      "fieldtype": "Date",
+      "label": "Date",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "van_no",
+      "fieldtype": "Data",
+      "label": "Van No.",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "dr_no",
+      "fieldtype": "Data",
+      "label": "DR No.",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "eir_no",
+      "fieldtype": "Data",
+      "label": "EIR No.",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "driver_name",
+      "fieldtype": "Data",
+      "label": "Driver",
+      "reqd": 1,
+      "in_list_view": 1,
+      "description": "Required on every SOA line/trip. Driver attribution is retained for trip incentive and profitability analysis regardless of SOA print layout."
+    },
+    {
+      "fieldname": "plate_no",
+      "fieldtype": "Data",
+      "label": "Plate No.",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "destination",
+      "fieldtype": "Data",
+      "label": "Destination",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "qty",
+      "fieldtype": "Float",
+      "label": "Qty",
+      "in_list_view": 1,
+      "description": "For a flat/per-trip charge, use Qty = 1."
+    },
+    {
+      "fieldname": "rate",
+      "fieldtype": "Currency",
+      "label": "Rate",
+      "in_list_view": 1,
+      "description": "Editable billing rate. C14B intentionally has no universal rate master."
+    },
+    {
+      "fieldname": "manual_amount_override",
+      "fieldtype": "Check",
+      "label": "Manual Amount Override",
+      "default": "0"
+    },
+    {
+      "fieldname": "amount",
+      "fieldtype": "Currency",
+      "label": "Amount",
+      "in_list_view": 1,
+      "read_only_depends_on": "eval:!doc.manual_amount_override"
+    },
+    {
+      "fieldname": "override_reason",
+      "fieldtype": "Data",
+      "label": "Override Reason",
+      "mandatory_depends_on": "eval:doc.manual_amount_override",
+      "depends_on": "eval:doc.manual_amount_override"
+    }
+  ],
+  "permissions": [],
+  "owner": "Administrator",
+  "creation": "2026-08-14 12:46:00.000000",
+  "modified": "2026-08-14 15:20:00.000000",
+  "modified_by": "Administrator"
+}

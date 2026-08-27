@@ -1,0 +1,148 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-08-04 13:48:29.507863",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_6lw5",
+  "payment_method",
+  "amount",
+  "card_surcharge",
+  "collected_amount",
+  "cash_tendered",
+  "change_amount",
+  "reference_number",
+  "reference_datetime",
+  "bank_or_provider",
+  "check_number",
+  "check_date",
+  "proof_of_payment",
+  "verification_status",
+  "affects_cash_drawer",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_6lw5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Cash",
+   "fieldname": "payment_method",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Payment Method",
+   "options": "Cash\nCheck\nGCash\nMaya\nCard\nBank Transfer\nOnline\nAccount\nReturn Credit",
+   "reqd": 1,
+   "sort_options": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount",
+   "reqd": 1
+  },
+  {
+   "fieldname": "card_surcharge",
+   "label": "Card Surcharge (2%)",
+   "fieldtype": "Currency",
+   "read_only": 1,
+   "precision": "2"
+  },
+  {
+   "fieldname": "collected_amount",
+   "label": "Actual Collected",
+   "fieldtype": "Currency",
+   "read_only": 1,
+   "precision": "2"
+  },
+  {
+   "default": "0",
+   "fieldname": "cash_tendered",
+   "fieldtype": "Currency",
+   "label": "Cash Tendered",
+   "in_list_view": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "change_amount",
+   "fieldtype": "Currency",
+   "label": "Change Amount",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "reference_number",
+   "fieldtype": "Data",
+   "label": "Reference Number"
+  },
+  {
+   "fieldname": "reference_datetime",
+   "fieldtype": "Datetime",
+   "label": "Reference Date and Time"
+  },
+  {
+   "fieldname": "bank_or_provider",
+   "fieldtype": "Data",
+   "label": "Bank or Provider"
+  },
+  {
+   "fieldname": "check_number",
+   "fieldtype": "Data",
+   "label": "Check Number"
+  },
+  {
+   "fieldname": "check_date",
+   "fieldtype": "Date",
+   "label": "Check Date"
+  },
+  {
+   "fieldname": "proof_of_payment",
+   "fieldtype": "Attach",
+   "label": "Proof of Payment"
+  },
+  {
+   "default": "Not Required",
+   "fieldname": "verification_status",
+   "fieldtype": "Select",
+   "in_list_view": 0,
+   "label": "Verification Status",
+   "options": "Not Required\nPending\nVerified\nRejected",
+   "reqd": 1,
+   "hidden": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "affects_cash_drawer",
+   "fieldtype": "Check",
+   "label": "Affects Cash Drawer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-08-04 14:16:33.423419",
+ "modified_by": "Administrator",
+ "module": "NKT Store Operations",
+ "name": "NKT Payment Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

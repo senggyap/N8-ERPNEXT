@@ -1,0 +1,67 @@
+{
+  "doctype": "DocType",
+  "name": "NKT Trucking Customer Collection Allocation",
+  "module": "NKT Store Operations",
+  "custom": 0,
+  "istable": 1,
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "customer_soa",
+    "statement_date",
+    "soa_total",
+    "outstanding_before",
+    "allocated_amount",
+    "outstanding_after"
+  ],
+  "fields": [
+    {
+      "fieldname": "customer_soa",
+      "fieldtype": "Link",
+      "label": "Customer SOA",
+      "options": "NKT Trucking Customer SOA",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "statement_date",
+      "fieldtype": "Date",
+      "label": "Statement Date",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "soa_total",
+      "fieldtype": "Currency",
+      "label": "SOA Total",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "outstanding_before",
+      "fieldtype": "Currency",
+      "label": "Outstanding Before",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "allocated_amount",
+      "fieldtype": "Currency",
+      "label": "Allocated Amount",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "outstanding_after",
+      "fieldtype": "Currency",
+      "label": "Outstanding After",
+      "read_only": 1,
+      "in_list_view": 1
+    }
+  ],
+  "permissions": [],
+  "owner": "Administrator",
+  "creation": "2026-08-14 15:46:00.000000",
+  "modified": "2026-08-14 15:46:00.000000",
+  "modified_by": "Administrator"
+}

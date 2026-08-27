@@ -1,0 +1,1 @@
+"""NKT current cashier backend."""

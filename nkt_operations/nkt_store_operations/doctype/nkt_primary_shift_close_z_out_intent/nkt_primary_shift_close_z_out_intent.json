@@ -1,0 +1,250 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:event_uuid",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "identity_section",
+  "event_uuid",
+  "event_family",
+  "event_action",
+  "edge_identity",
+  "origin_device",
+  "origin_user",
+  "company",
+  "actor",
+  "event_business_date",
+  "settled_at",
+  "primary_shift_name",
+  "integrity_section",
+  "envelope_sha256",
+  "payload_sha256",
+  "canonical_envelope_json",
+  "canonical_payload_json",
+  "state_section",
+  "preservation_state",
+  "materialization_state",
+  "canonical_doctype",
+  "canonical_name",
+  "primary_ack_uuid",
+  "primary_preserved_at",
+  "reconciliation_status",
+  "reconciliation_notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Primary Shift Close / Z-Out Preserved Intent"
+  },
+  {
+   "fieldname": "event_uuid",
+   "fieldtype": "Data",
+   "label": "Event UUID",
+   "reqd": 1,
+   "unique": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "event_family",
+   "fieldtype": "Data",
+   "label": "Event Family",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "event_action",
+   "fieldtype": "Data",
+   "label": "Event Action",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "edge_identity",
+   "fieldtype": "Data",
+   "label": "Edge Shift / Z-Out Identity",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "origin_device",
+   "fieldtype": "Link",
+   "label": "Origin Device",
+   "options": "NKT Device Registry",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "origin_user",
+   "fieldtype": "Link",
+   "label": "Origin User",
+   "options": "User",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "actor",
+   "fieldtype": "Link",
+   "label": "Cashier / Encoder",
+   "options": "User",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "event_business_date",
+   "fieldtype": "Date",
+   "label": "Event Business Date",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "settled_at",
+   "fieldtype": "Datetime",
+   "label": "True Event Date / Time",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "primary_shift_name",
+   "fieldtype": "Data",
+   "label": "Known Primary Cashier Shift",
+   "read_only": 1
+  },
+  {
+   "fieldname": "integrity_section",
+   "fieldtype": "Section Break",
+   "label": "Immutable Payload Evidence"
+  },
+  {
+   "fieldname": "envelope_sha256",
+   "fieldtype": "Data",
+   "label": "Envelope SHA-256",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "payload_sha256",
+   "fieldtype": "Data",
+   "label": "Payload SHA-256",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "canonical_envelope_json",
+   "fieldtype": "Code",
+   "label": "Canonical Envelope JSON",
+   "options": "JSON",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "canonical_payload_json",
+   "fieldtype": "Code",
+   "label": "Canonical Intent Payload JSON",
+   "options": "JSON",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "state_section",
+   "fieldtype": "Section Break",
+   "label": "Primary State"
+  },
+  {
+   "fieldname": "preservation_state",
+   "fieldtype": "Select",
+   "label": "Preservation State",
+   "options": "Preserved",
+   "default": "Preserved",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialization_state",
+   "fieldtype": "Select",
+   "label": "Materialization State",
+   "options": "Pending Canonical Materialization\nCanonical Materialized\nReconciliation Review Required",
+   "default": "Pending Canonical Materialization",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "canonical_doctype",
+   "fieldtype": "Data",
+   "label": "Canonical DocType",
+   "read_only": 1
+  },
+  {
+   "fieldname": "canonical_name",
+   "fieldtype": "Data",
+   "label": "Canonical Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "primary_ack_uuid",
+   "fieldtype": "Data",
+   "label": "Primary ACK UUID",
+   "reqd": 1,
+   "unique": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "primary_preserved_at",
+   "fieldtype": "Datetime",
+   "label": "Primary Preserved At",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "reconciliation_status",
+   "fieldtype": "Select",
+   "label": "Later Reconciliation Status",
+   "options": "Not Reconciled\nMatched\nDifference Found\nReview Required",
+   "default": "Not Reconciled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reconciliation_notes",
+   "fieldtype": "Long Text",
+   "label": "Later Reconciliation Notes",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "module": "NKT Store Operations",
+ "name": "NKT Primary Shift Close Z-Out Intent",
+ "permissions": [
+  {
+   "role": "NKT OWNER",
+   "read": 1,
+   "report": 1
+  },
+  {
+   "role": "NKT ADMINISTRATOR",
+   "read": 1,
+   "report": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "report": 1
+  }
+ ],
+ "sort_field": "primary_preserved_at",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,76 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "editable_grid": 0,
+  "field_order": [
+    "warehouse_transfer_item",
+    "item_code",
+    "uom",
+    "released_quantity",
+    "cumulative_arrived_before",
+    "remaining_before",
+    "arrival_quantity"
+  ],
+  "fields": [
+    {
+      "fieldname": "warehouse_transfer_item",
+      "fieldtype": "Data",
+      "label": "Warehouse Transfer Item",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "item_code",
+      "fieldtype": "Link",
+      "label": "Item",
+      "options": "Item",
+      "reqd": 1,
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "uom",
+      "fieldtype": "Link",
+      "label": "UOM",
+      "options": "UOM",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "released_quantity",
+      "fieldtype": "Float",
+      "label": "Released Quantity",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "cumulative_arrived_before",
+      "fieldtype": "Float",
+      "label": "Cumulative Arrived Before",
+      "read_only": 1
+    },
+    {
+      "fieldname": "remaining_before",
+      "fieldtype": "Float",
+      "label": "Remaining Before",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "arrival_quantity",
+      "fieldtype": "Float",
+      "label": "Arrival Quantity",
+      "reqd": 1,
+      "read_only": 1
+    }
+  ],
+  "index_web_pages_for_search": 0,
+  "istable": 1,
+  "links": [],
+  "module": "NKT Store Operations",
+  "name": "NKT Primary Warehouse Transfer Arrival Intent Item",
+  "permissions": [],
+  "states": []
+}

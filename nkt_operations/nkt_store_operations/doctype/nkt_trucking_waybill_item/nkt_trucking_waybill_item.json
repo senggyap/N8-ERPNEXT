@@ -1,0 +1,48 @@
+{
+  "doctype": "DocType",
+  "name": "NKT Trucking Waybill Item",
+  "module": "NKT Store Operations",
+  "custom": 0,
+  "istable": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "qty",
+    "particulars",
+    "unit_price",
+    "line_total"
+  ],
+  "fields": [
+    {
+      "fieldname": "qty",
+      "fieldtype": "Float",
+      "label": "Qty",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "particulars",
+      "fieldtype": "Data",
+      "label": "Description / Van No. / Particulars",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "unit_price",
+      "fieldtype": "Currency",
+      "label": "Unit Price",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "line_total",
+      "fieldtype": "Currency",
+      "label": "Total",
+      "read_only": 1,
+      "in_list_view": 1
+    }
+  ],
+  "permissions": [],
+  "owner": "Administrator",
+  "creation": "2026-08-14 12:46:00.000000",
+  "modified": "2026-08-14 12:46:00.000000",
+  "modified_by": "Administrator"
+}

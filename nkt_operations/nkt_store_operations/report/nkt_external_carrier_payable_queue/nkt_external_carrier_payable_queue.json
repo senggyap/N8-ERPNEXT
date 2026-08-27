@@ -1,0 +1,17 @@
+{
+ "doctype": "Report",
+ "name": "NKT External Carrier Payable Queue",
+ "module": "NKT Store Operations",
+ "ref_doctype": "NKT Trucking Trip",
+ "report_type": "Script Report",
+ "is_standard": "Yes",
+ "disabled": 0,
+ "roles": [
+  {
+   "role": "NKT OWNER"
+  },
+  {
+   "role": "NKT ADMINISTRATOR"
+  }
+ ]
+}

@@ -1,0 +1,222 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "NKT-OIL-RPK-.#####",
+  "creation": "2026-08-17 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "identity_section",
+    "company",
+    "repacking_date",
+    "paper_reference",
+    "paper_attachment",
+    "encoded_by",
+    "quantity_section",
+    "finished_containers",
+    "nominal_kg_per_container",
+    "nominal_finished_kg",
+    "reported_spillage_kg",
+    "bulk_consumption_kg",
+    "empty_containers_consumed",
+    "stock_section",
+    "combined_bulk_warehouse",
+    "palm_olein_item",
+    "empty_container_item",
+    "finished_palm_oil_item",
+    "pre_encoding_finished_actual_qty",
+    "pre_encoding_release_shortfall_qty",
+    "stock_entry",
+    "post_repack_finished_actual_qty",
+    "status",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "identity_section",
+      "fieldtype": "Section Break",
+      "label": "Daily Palm Oil Repacking Report"
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "repacking_date",
+      "fieldtype": "Date",
+      "label": "Physical Repacking Date",
+      "reqd": 1,
+      "description": "True date on the physical daily repacking paperwork. ERP creation time remains the true encoding time."
+    },
+    {
+      "fieldname": "paper_reference",
+      "fieldtype": "Data",
+      "label": "Paper / Report Reference"
+    },
+    {
+      "fieldname": "paper_attachment",
+      "fieldtype": "Attach",
+      "label": "Repacking Paper Attachment"
+    },
+    {
+      "fieldname": "encoded_by",
+      "fieldtype": "Link",
+      "label": "Encoded By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "quantity_section",
+      "fieldtype": "Section Break",
+      "label": "Reported Output / Loss"
+    },
+    {
+      "fieldname": "finished_containers",
+      "fieldtype": "Int",
+      "label": "Finished 17 Kg Containers",
+      "reqd": 1
+    },
+    {
+      "fieldname": "nominal_kg_per_container",
+      "fieldtype": "Float",
+      "label": "Nominal Kg per Container",
+      "default": "17",
+      "read_only": 1
+    },
+    {
+      "fieldname": "nominal_finished_kg",
+      "fieldtype": "Float",
+      "label": "Nominal Finished Oil Kg",
+      "read_only": 1
+    },
+    {
+      "fieldname": "reported_spillage_kg",
+      "fieldtype": "Float",
+      "label": "Reported Spillage / Loss (Kg)",
+      "default": "0",
+      "reqd": 1
+    },
+    {
+      "fieldname": "bulk_consumption_kg",
+      "fieldtype": "Float",
+      "label": "Palm Olein Consumed (Kg)",
+      "read_only": 1
+    },
+    {
+      "fieldname": "empty_containers_consumed",
+      "fieldtype": "Int",
+      "label": "Empty Containers Consumed",
+      "read_only": 1
+    },
+    {
+      "fieldname": "stock_section",
+      "fieldtype": "Section Break",
+      "label": "Stock Posting / Audit"
+    },
+    {
+      "fieldname": "combined_bulk_warehouse",
+      "fieldtype": "Link",
+      "label": "Combined Bulk Warehouse",
+      "options": "Warehouse",
+      "read_only": 1
+    },
+    {
+      "fieldname": "palm_olein_item",
+      "fieldtype": "Link",
+      "label": "Palm Olein Bulk Item",
+      "options": "Item",
+      "read_only": 1
+    },
+    {
+      "fieldname": "empty_container_item",
+      "fieldtype": "Link",
+      "label": "Empty Container Item",
+      "options": "Item",
+      "read_only": 1
+    },
+    {
+      "fieldname": "finished_palm_oil_item",
+      "fieldtype": "Link",
+      "label": "Finished Palm Oil Item",
+      "options": "Item",
+      "read_only": 1
+    },
+    {
+      "fieldname": "pre_encoding_finished_actual_qty",
+      "fieldtype": "Float",
+      "label": "Finished Stock Before Encoding",
+      "read_only": 1
+    },
+    {
+      "fieldname": "pre_encoding_release_shortfall_qty",
+      "fieldtype": "Float",
+      "label": "Pre-Encoding Release Shortfall Covered",
+      "read_only": 1,
+      "description": "Audit indicator. If finished stock was negative before this delayed paper was encoded, this records the magnitude of that shortfall."
+    },
+    {
+      "fieldname": "stock_entry",
+      "fieldtype": "Link",
+      "label": "Repack Stock Entry",
+      "options": "Stock Entry",
+      "read_only": 1
+    },
+    {
+      "fieldname": "post_repack_finished_actual_qty",
+      "fieldtype": "Float",
+      "label": "Finished Stock After Repack Posting",
+      "read_only": 1
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Draft\nPosted",
+      "default": "Draft",
+      "read_only": 1
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "index_web_pages_for_search": 0,
+  "is_submittable": 1,
+  "links": [],
+  "modified": "2026-08-17 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "NKT Store Operations",
+  "name": "NKT Oil Daily Repack",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "role": "NKT OWNER",
+      "read": 1,
+      "report": 1,
+      "create": 1,
+      "write": 1,
+      "submit": 1,
+      "cancel": 0,
+      "delete": 0
+    },
+    {
+      "role": "NKT ADMINISTRATOR",
+      "read": 1,
+      "report": 1,
+      "create": 1,
+      "write": 1,
+      "submit": 1,
+      "cancel": 0,
+      "delete": 0
+    }
+  ],
+  "sort_field": "repacking_date",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 1
+}

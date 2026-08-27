@@ -1,0 +1,217 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "NKT-RXR-.#####",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "identity_section",
+    "company",
+    "reversal_datetime",
+    "business_date",
+    "requested_by",
+    "custom_nkt_reversal_request_id",
+    "identity_column",
+    "unit_type",
+    "reversal_status",
+    "source_section",
+    "original_cashier_declaration",
+    "original_encoder_declaration",
+    "original_new_cashier_sale",
+    "original_new_customer_order",
+    "reason_section",
+    "reversal_reason",
+    "reversal_cashier",
+    "confirmation_column",
+    "money_correction_confirmed",
+    "inventory_correction_confirmed",
+    "effects_section",
+    "effects",
+    "result_section",
+    "execution_notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "identity_section",
+      "fieldtype": "Section Break",
+      "label": "Controlled Return / Exchange Reversal"
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "reversal_datetime",
+      "fieldtype": "Datetime",
+      "label": "Reversal Time",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "business_date",
+      "fieldtype": "Date",
+      "label": "Business Date",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "requested_by",
+      "fieldtype": "Link",
+      "label": "Requested / Executed By",
+      "options": "User",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "custom_nkt_reversal_request_id",
+      "fieldtype": "Data",
+      "label": "Reversal Request ID",
+      "read_only": 1,
+      "unique": 1,
+      "no_copy": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "identity_column",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "unit_type",
+      "fieldtype": "Select",
+      "label": "Operational Unit",
+      "options": "Matched Pair\nCashier Only\nEncoder Only",
+      "read_only": 1
+    },
+    {
+      "fieldname": "reversal_status",
+      "fieldtype": "Select",
+      "label": "Reversal Status",
+      "options": "Draft\nBlocked\nReady\nReversed\nFailed",
+      "default": "Draft",
+      "read_only": 1
+    },
+    {
+      "fieldname": "source_section",
+      "fieldtype": "Section Break",
+      "label": "Original Posted Return / Exchange"
+    },
+    {
+      "fieldname": "original_cashier_declaration",
+      "fieldtype": "Link",
+      "label": "Original Cashier Declaration",
+      "options": "NKT Return Exchange Declaration",
+      "read_only": 1
+    },
+    {
+      "fieldname": "original_encoder_declaration",
+      "fieldtype": "Link",
+      "label": "Original Encoder Declaration",
+      "options": "NKT Return Exchange Declaration",
+      "read_only": 1
+    },
+    {
+      "fieldname": "original_new_cashier_sale",
+      "fieldtype": "Link",
+      "label": "Generated Cashier Sale",
+      "options": "NKT Cashier Sale",
+      "read_only": 1
+    },
+    {
+      "fieldname": "original_new_customer_order",
+      "fieldtype": "Link",
+      "label": "Generated Customer Order",
+      "options": "NKT Customer Order",
+      "read_only": 1
+    },
+    {
+      "fieldname": "reason_section",
+      "fieldtype": "Section Break",
+      "label": "Control / Physical Confirmation"
+    },
+    {
+      "fieldname": "reversal_reason",
+      "fieldtype": "Small Text",
+      "label": "Reversal Reason",
+      "reqd": 0
+    },
+    {
+      "fieldname": "reversal_cashier",
+      "fieldtype": "Link",
+      "label": "Cashier Handling Money Reversal (when applicable)",
+      "options": "User"
+    },
+    {
+      "fieldname": "confirmation_column",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "money_correction_confirmed",
+      "fieldtype": "Check",
+      "label": "Money Correction Reflects Physical Reality",
+      "default": 0
+    },
+    {
+      "fieldname": "inventory_correction_confirmed",
+      "fieldtype": "Check",
+      "label": "Inventory Correction Reflects Physical Reality",
+      "default": 0
+    },
+    {
+      "fieldname": "effects_section",
+      "fieldtype": "Section Break",
+      "label": "Reversal Effects"
+    },
+    {
+      "fieldname": "effects",
+      "fieldtype": "Table",
+      "label": "Effects",
+      "options": "NKT Return Exchange Reversal Effect"
+    },
+    {
+      "fieldname": "result_section",
+      "fieldtype": "Section Break",
+      "label": "Execution Result"
+    },
+    {
+      "fieldname": "execution_notes",
+      "fieldtype": "Long Text",
+      "label": "Execution Notes",
+      "read_only": 1
+    }
+  ],
+  "is_submittable": 1,
+  "module": "NKT Store Operations",
+  "name": "NKT Return Exchange Reversal",
+  "naming_rule": "Expression",
+  "permissions": [
+    {
+      "role": "NKT OWNER",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "submit": 1,
+      "cancel": 1,
+      "report": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "NKT ADMINISTRATOR",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "submit": 1,
+      "cancel": 1,
+      "report": 1,
+      "export": 1,
+      "print": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1
+}

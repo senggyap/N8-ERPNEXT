@@ -1,0 +1,325 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "field:event_uuid",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "identity_section",
+    "event_uuid",
+    "event_family",
+    "event_action",
+    "origin_device",
+    "origin_user",
+    "operational_context",
+    "business_section",
+    "business_date",
+    "settled_at",
+    "client_created_at",
+    "transfer_section",
+    "warehouse_transfer",
+    "company",
+    "transfer_date",
+    "source_warehouse",
+    "destination_warehouse",
+    "outgoing_stock_entry",
+    "transit_warehouse",
+    "total_arrival_quantity",
+    "items",
+    "integrity_section",
+    "envelope_sha256",
+    "payload_sha256",
+    "canonical_envelope_json",
+    "canonical_payload_json",
+    "state_section",
+    "preservation_state",
+    "downstream_state",
+    "primary_preserved_at",
+    "materialization_section",
+    "materialized_stock_entry",
+    "materialized_at",
+    "materialization_ack_uuid",
+    "materialization_ack_sha256",
+    "materialization_ack_json"
+  ],
+  "fields": [
+    {
+      "fieldname": "identity_section",
+      "fieldtype": "Section Break",
+      "label": "Primary Preserved Transfer Arrival Intent"
+    },
+    {
+      "fieldname": "event_uuid",
+      "fieldtype": "Data",
+      "label": "Event UUID",
+      "reqd": 1,
+      "unique": 1,
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "event_family",
+      "fieldtype": "Data",
+      "label": "Event Family",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "event_action",
+      "fieldtype": "Data",
+      "label": "Event Action",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "origin_device",
+      "fieldtype": "Link",
+      "label": "Origin Device",
+      "options": "NKT Device Registry",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "origin_user",
+      "fieldtype": "Link",
+      "label": "Origin User",
+      "options": "User",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "operational_context",
+      "fieldtype": "Data",
+      "label": "Operational Context",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "business_section",
+      "fieldtype": "Section Break",
+      "label": "Physical Arrival Time"
+    },
+    {
+      "fieldname": "business_date",
+      "fieldtype": "Date",
+      "label": "Arrival Business Date",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "settled_at",
+      "fieldtype": "Datetime",
+      "label": "Physical Arrival Time",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "client_created_at",
+      "fieldtype": "Datetime",
+      "label": "Client Created At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "transfer_section",
+      "fieldtype": "Section Break",
+      "label": "Transfer / Transit Identity"
+    },
+    {
+      "fieldname": "warehouse_transfer",
+      "fieldtype": "Link",
+      "label": "Internal Warehouse Transfer",
+      "options": "NKT Warehouse Transfer",
+      "reqd": 1,
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "transfer_date",
+      "fieldtype": "Date",
+      "label": "Transfer / Business Date",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "source_warehouse",
+      "fieldtype": "Link",
+      "label": "Source Warehouse",
+      "options": "Warehouse",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "destination_warehouse",
+      "fieldtype": "Link",
+      "label": "Destination Warehouse",
+      "options": "Warehouse",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "outgoing_stock_entry",
+      "fieldtype": "Link",
+      "label": "Outgoing Stock Entry",
+      "options": "Stock Entry",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "transit_warehouse",
+      "fieldtype": "Link",
+      "label": "Goods In Transit Warehouse",
+      "options": "Warehouse",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "total_arrival_quantity",
+      "fieldtype": "Float",
+      "label": "Total Arrival Quantity",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "items",
+      "fieldtype": "Table",
+      "label": "Preserved Arrival Quantities",
+      "options": "NKT Primary Warehouse Transfer Arrival Intent Item",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "integrity_section",
+      "fieldtype": "Section Break",
+      "label": "Immutable Transport Binding"
+    },
+    {
+      "fieldname": "envelope_sha256",
+      "fieldtype": "Data",
+      "label": "Envelope SHA-256",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "payload_sha256",
+      "fieldtype": "Data",
+      "label": "Payload SHA-256",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "canonical_envelope_json",
+      "fieldtype": "Code",
+      "label": "Canonical Envelope JSON",
+      "options": "JSON",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "canonical_payload_json",
+      "fieldtype": "Code",
+      "label": "Canonical Payload JSON",
+      "options": "JSON",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "state_section",
+      "fieldtype": "Section Break",
+      "label": "Primary Preservation State"
+    },
+    {
+      "fieldname": "preservation_state",
+      "fieldtype": "Select",
+      "label": "Preservation State",
+      "options": "Preserved",
+      "default": "Preserved",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "downstream_state",
+      "fieldtype": "Select",
+      "label": "Downstream State",
+      "options": "Awaiting Destination Arrival Materialization\nDestination Arrival Materialized",
+      "default": "Awaiting Destination Arrival Materialization",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "primary_preserved_at",
+      "fieldtype": "Datetime",
+      "label": "Primary Preserved At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "materialization_section",
+      "fieldtype": "Section Break",
+      "label": "Canonical Destination Arrival Materialization"
+    },
+    {
+      "fieldname": "materialized_stock_entry",
+      "fieldtype": "Link",
+      "label": "Materialized Incoming Stock Entry",
+      "options": "Stock Entry",
+      "read_only": 1
+    },
+    {
+      "fieldname": "materialized_at",
+      "fieldtype": "Datetime",
+      "label": "Materialized At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "materialization_ack_uuid",
+      "fieldtype": "Data",
+      "label": "Materialization ACK UUID",
+      "read_only": 1
+    },
+    {
+      "fieldname": "materialization_ack_sha256",
+      "fieldtype": "Data",
+      "label": "Materialization ACK SHA-256",
+      "read_only": 1
+    },
+    {
+      "fieldname": "materialization_ack_json",
+      "fieldtype": "Code",
+      "label": "Canonical Materialization ACK JSON",
+      "options": "JSON",
+      "read_only": 1
+    }
+  ],
+  "index_web_pages_for_search": 0,
+  "links": [],
+  "module": "NKT Store Operations",
+  "name": "NKT Primary Warehouse Transfer Arrival Intent",
+  "permissions": [
+    {
+      "role": "NKT OWNER",
+      "read": 1,
+      "report": 1
+    },
+    {
+      "role": "NKT ADMINISTRATOR",
+      "read": 1,
+      "report": 1
+    },
+    {
+      "role": "System Manager",
+      "read": 1,
+      "report": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 1
+}

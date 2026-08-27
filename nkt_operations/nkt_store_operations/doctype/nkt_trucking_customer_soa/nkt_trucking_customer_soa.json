@@ -1,0 +1,300 @@
+{
+  "doctype": "DocType",
+  "name": "NKT Trucking Customer SOA",
+  "module": "NKT Store Operations",
+  "custom": 0,
+  "autoname": "naming_series:",
+  "naming_rule": "By \"Naming Series\" field",
+  "engine": "InnoDB",
+  "track_changes": 1,
+  "field_order": [
+    "naming_series",
+    "header_section",
+    "business_name",
+    "customer",
+    "statement_date",
+    "column_break_header",
+    "status",
+    "company",
+    "print_layout",
+    "resolved_layout",
+    "period_section",
+    "period_start",
+    "period_end",
+    "prepared_by",
+    "prepared_by_user",
+    "column_break_period",
+    "received_by",
+    "received_date",
+    "prepared_at",
+    "finalized_at",
+    "defaults_section",
+    "default_qty",
+    "default_rate",
+    "calculation_note",
+    "lines_section",
+    "lines",
+    "totals_section",
+    "grand_total",
+    "collections_section",
+    "collection_status",
+    "amount_collected",
+    "outstanding_amount",
+    "last_collection_datetime",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "options": "SOA-.YYYY.-.######",
+      "default": "SOA-.YYYY.-.######",
+      "hidden": 1
+    },
+    {
+      "fieldname": "header_section",
+      "fieldtype": "Section Break",
+      "label": "ENT Trucking Customer Statement of Account"
+    },
+    {
+      "fieldname": "business_name",
+      "fieldtype": "Data",
+      "label": "Print Business Name",
+      "default": "ENT Trucking Services",
+      "reqd": 1
+    },
+    {
+      "fieldname": "customer",
+      "fieldtype": "Link",
+      "label": "Customer",
+      "options": "Customer",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "statement_date",
+      "fieldtype": "Date",
+      "label": "Statement Date",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "column_break_header",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Draft\nPrepared\nFinalized\nSuperseded",
+      "default": "Draft",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "ERP Company (when configured)",
+      "options": "Company",
+      "description": "Company-aware, but C14B does not create or assume an ENT legal Company."
+    },
+    {
+      "fieldname": "print_layout",
+      "fieldtype": "Select",
+      "label": "SOA Print Layout",
+      "options": "Auto\nA - Van / EIR\nB - Driver",
+      "default": "Auto",
+      "reqd": 1,
+      "read_only": 1,
+      "description": "C15E automatic. Format A = container/van/EIR; Format B = ordinary truck-load/driver. Mixed trip types are split into separate SOAs."
+    },
+    {
+      "fieldname": "resolved_layout",
+      "fieldtype": "Data",
+      "label": "Resolved Layout",
+      "read_only": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "period_section",
+      "fieldtype": "Section Break",
+      "label": "Statement Period / Sign-Off"
+    },
+    {
+      "fieldname": "period_start",
+      "fieldtype": "Date",
+      "label": "Period Start"
+    },
+    {
+      "fieldname": "period_end",
+      "fieldtype": "Date",
+      "label": "Period End / Cutoff Date"
+    },
+    {
+      "fieldname": "prepared_by",
+      "fieldtype": "Data",
+      "label": "Prepared By",
+      "reqd": 1
+    },
+    {
+      "fieldname": "prepared_by_user",
+      "fieldtype": "Link",
+      "label": "Prepared By User",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "column_break_period",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "received_by",
+      "fieldtype": "Data",
+      "label": "Received By"
+    },
+    {
+      "fieldname": "received_date",
+      "fieldtype": "Date",
+      "label": "Received Date"
+    },
+    {
+      "fieldname": "prepared_at",
+      "fieldtype": "Datetime",
+      "label": "Prepared At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "finalized_at",
+      "fieldtype": "Datetime",
+      "label": "Finalized At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "defaults_section",
+      "fieldtype": "Section Break",
+      "label": "Optional Entry Defaults"
+    },
+    {
+      "fieldname": "default_qty",
+      "fieldtype": "Float",
+      "label": "Default Qty",
+      "description": "Optional convenience only. Applied only to blank lines; never silently overwrites an edited line."
+    },
+    {
+      "fieldname": "default_rate",
+      "fieldtype": "Currency",
+      "label": "Default Rate",
+      "description": "Optional convenience only. No universal rate master is created."
+    },
+    {
+      "fieldname": "calculation_note",
+      "fieldtype": "Small Text",
+      "label": "Calculation Rule",
+      "read_only": 1,
+      "default": "Normal line: Qty \u00d7 editable Rate = Amount. Backload/additional charges use separate source-charge records and never assume a fixed percentage. Manual Amount Override requires a reason."
+    },
+    {
+      "fieldname": "lines_section",
+      "fieldtype": "Section Break",
+      "label": "SOA Lines"
+    },
+    {
+      "fieldname": "lines",
+      "fieldtype": "Table",
+      "label": "Statement Lines",
+      "options": "NKT Trucking Customer SOA Line",
+      "reqd": 1
+    },
+    {
+      "fieldname": "totals_section",
+      "fieldtype": "Section Break",
+      "label": "Total"
+    },
+    {
+      "fieldname": "grand_total",
+      "fieldtype": "Currency",
+      "label": "Grand Total",
+      "read_only": 1
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    },
+    {
+      "fieldname": "collections_section",
+      "fieldtype": "Section Break",
+      "label": "Collection Status"
+    },
+    {
+      "fieldname": "collection_status",
+      "fieldtype": "Select",
+      "label": "Collection Status",
+      "options": "Unpaid\nPartially Paid\nPaid",
+      "default": "Unpaid",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "amount_collected",
+      "fieldtype": "Currency",
+      "label": "Amount Collected",
+      "read_only": 1
+    },
+    {
+      "fieldname": "outstanding_amount",
+      "fieldtype": "Currency",
+      "label": "Outstanding Amount",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "last_collection_datetime",
+      "fieldtype": "Datetime",
+      "label": "Last Collection",
+      "read_only": 1
+    }
+  ],
+  "permissions": [
+    {
+      "role": "NKT Trucking Operations",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "print": 1,
+      "report": 1,
+      "export": 0
+    },
+    {
+      "role": "NKT OWNER",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "print": 1,
+      "report": 1,
+      "export": 1
+    },
+    {
+      "role": "NKT ADMINISTRATOR",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "print": 1,
+      "report": 1,
+      "export": 1
+    }
+  ],
+  "links": [],
+  "actions": [],
+  "states": [],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "owner": "Administrator",
+  "creation": "2026-08-14 12:46:00.000000",
+  "modified": "2026-08-14 15:46:00.000000",
+  "modified_by": "Administrator"
+}

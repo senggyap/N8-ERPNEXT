@@ -1,0 +1,264 @@
+{
+  "doctype": "DocType",
+  "name": "NKT Trucking Waybill",
+  "module": "NKT Store Operations",
+  "custom": 0,
+  "autoname": "naming_series:",
+  "naming_rule": "By \"Naming Series\" field",
+  "engine": "InnoDB",
+  "track_changes": 1,
+  "field_order": [
+    "naming_series",
+    "header_section",
+    "business_name",
+    "waybill_date",
+    "trip",
+    "company",
+    "party_section",
+    "shipper_name",
+    "shipper_contact",
+    "column_break_party",
+    "consignee_name",
+    "consignee_contact",
+    "route_section",
+    "origin",
+    "destination",
+    "reference_dr",
+    "column_break_route",
+    "driver_name",
+    "driver_contact",
+    "plate_no",
+    "timing_section",
+    "departure_datetime",
+    "arrival_datetime",
+    "remarks",
+    "items_section",
+    "items",
+    "grand_total",
+    "signoff_section",
+    "prepared_by",
+    "shipper_representative",
+    "column_break_signoff",
+    "released_by_driver",
+    "received_by_consignee"
+  ],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "options": "WB-.YYYY.-.#####",
+      "default": "WB-.YYYY.-.#####",
+      "hidden": 1
+    },
+    {
+      "fieldname": "header_section",
+      "fieldtype": "Section Break",
+      "label": "ENT Trucking Services Waybill"
+    },
+    {
+      "fieldname": "business_name",
+      "fieldtype": "Data",
+      "label": "Print Business Name",
+      "default": "ENT Trucking Services",
+      "reqd": 1
+    },
+    {
+      "fieldname": "waybill_date",
+      "fieldtype": "Date",
+      "label": "Date",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "trip",
+      "fieldtype": "Link",
+      "label": "Related Trip",
+      "options": "NKT Trucking Trip",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "ERP Company (when configured)",
+      "options": "Company"
+    },
+    {
+      "fieldname": "party_section",
+      "fieldtype": "Section Break",
+      "label": "Shipper / Consignee"
+    },
+    {
+      "fieldname": "shipper_name",
+      "fieldtype": "Data",
+      "label": "Shipper Name"
+    },
+    {
+      "fieldname": "shipper_contact",
+      "fieldtype": "Data",
+      "label": "Shipper Contact No."
+    },
+    {
+      "fieldname": "column_break_party",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "consignee_name",
+      "fieldtype": "Data",
+      "label": "Consignee Name"
+    },
+    {
+      "fieldname": "consignee_contact",
+      "fieldtype": "Data",
+      "label": "Consignee Contact No."
+    },
+    {
+      "fieldname": "route_section",
+      "fieldtype": "Section Break",
+      "label": "Route / Driver"
+    },
+    {
+      "fieldname": "origin",
+      "fieldtype": "Data",
+      "label": "Origin"
+    },
+    {
+      "fieldname": "destination",
+      "fieldtype": "Data",
+      "label": "Destination"
+    },
+    {
+      "fieldname": "reference_dr",
+      "fieldtype": "Data",
+      "label": "Reference DR"
+    },
+    {
+      "fieldname": "column_break_route",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "driver_name",
+      "fieldtype": "Data",
+      "label": "Driver Name",
+      "reqd": 1,
+      "description": "Required. Normally inherited from the related trucking trip; retained explicitly on the Waybill for operational evidence and driver incentive attribution."
+    },
+    {
+      "fieldname": "driver_contact",
+      "fieldtype": "Data",
+      "label": "Driver Contact No."
+    },
+    {
+      "fieldname": "plate_no",
+      "fieldtype": "Data",
+      "label": "Plate No."
+    },
+    {
+      "fieldname": "timing_section",
+      "fieldtype": "Section Break",
+      "label": "Departure / Arrival"
+    },
+    {
+      "fieldname": "departure_datetime",
+      "fieldtype": "Datetime",
+      "label": "Departure Date and Time"
+    },
+    {
+      "fieldname": "arrival_datetime",
+      "fieldtype": "Datetime",
+      "label": "Arrival Date and Time"
+    },
+    {
+      "fieldname": "remarks",
+      "fieldtype": "Small Text",
+      "label": "Remarks"
+    },
+    {
+      "fieldname": "items_section",
+      "fieldtype": "Section Break",
+      "label": "Waybill Items"
+    },
+    {
+      "fieldname": "items",
+      "fieldtype": "Table",
+      "label": "Items",
+      "options": "NKT Trucking Waybill Item"
+    },
+    {
+      "fieldname": "grand_total",
+      "fieldtype": "Currency",
+      "label": "Grand Total",
+      "read_only": 1
+    },
+    {
+      "fieldname": "signoff_section",
+      "fieldtype": "Section Break",
+      "label": "Sign-Off"
+    },
+    {
+      "fieldname": "prepared_by",
+      "fieldtype": "Data",
+      "label": "Prepared By (ENT)"
+    },
+    {
+      "fieldname": "shipper_representative",
+      "fieldtype": "Data",
+      "label": "Shipper's Representative"
+    },
+    {
+      "fieldname": "column_break_signoff",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "released_by_driver",
+      "fieldtype": "Data",
+      "label": "Released by (Driver)"
+    },
+    {
+      "fieldname": "received_by_consignee",
+      "fieldtype": "Data",
+      "label": "Received by (Consignee)"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "NKT Trucking Operations",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "print": 1,
+      "report": 1,
+      "export": 0
+    },
+    {
+      "role": "NKT OWNER",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "print": 1,
+      "report": 1,
+      "export": 1
+    },
+    {
+      "role": "NKT ADMINISTRATOR",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "print": 1,
+      "report": 1,
+      "export": 1
+    }
+  ],
+  "links": [],
+  "actions": [],
+  "states": [],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "owner": "Administrator",
+  "creation": "2026-08-14 12:46:00.000000",
+  "modified": "2026-08-14 12:46:00.000000",
+  "modified_by": "Administrator"
+}

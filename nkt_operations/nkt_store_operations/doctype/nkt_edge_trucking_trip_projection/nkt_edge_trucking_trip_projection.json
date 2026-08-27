@@ -1,0 +1,200 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:edge_trip_uuid",
+ "creation": "2026-08-16 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "edge_trip_uuid",
+  "latest_event_uuid",
+  "company",
+  "trip_date",
+  "job_type",
+  "customer",
+  "source_c9_trucking_job",
+  "origin",
+  "destination",
+  "vehicle",
+  "driver_name",
+  "local_status",
+  "last_event_datetime",
+  "container_return_required",
+  "container_returned",
+  "container_no",
+  "eir_required",
+  "eir_no",
+  "paperwork_complete",
+  "pod_attachment",
+  "print_snapshot_json",
+  "print_snapshot_sha256",
+  "last_payload_sha256",
+  "sync_state"
+ ],
+ "fields": [
+  {
+   "fieldname": "edge_trip_uuid",
+   "fieldtype": "Data",
+   "label": "Edge Trip UUID",
+   "reqd": 1,
+   "unique": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "latest_event_uuid",
+   "fieldtype": "Data",
+   "label": "Latest Event UUID",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Data",
+   "label": "Company",
+   "read_only": 1
+  },
+  {
+   "fieldname": "trip_date",
+   "fieldtype": "Date",
+   "label": "Trip Date",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "job_type",
+   "fieldtype": "Data",
+   "label": "Job Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Data",
+   "label": "Customer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "source_c9_trucking_job",
+   "fieldtype": "Data",
+   "label": "Source C9 Trucking Job",
+   "read_only": 1
+  },
+  {
+   "fieldname": "origin",
+   "fieldtype": "Data",
+   "label": "Origin",
+   "read_only": 1
+  },
+  {
+   "fieldname": "destination",
+   "fieldtype": "Data",
+   "label": "Destination",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Data",
+   "label": "Vehicle",
+   "read_only": 1
+  },
+  {
+   "fieldname": "driver_name",
+   "fieldtype": "Data",
+   "label": "Driver",
+   "read_only": 1
+  },
+  {
+   "fieldname": "local_status",
+   "fieldtype": "Data",
+   "label": "Local Status",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_event_datetime",
+   "fieldtype": "Datetime",
+   "label": "Last Physical Event",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "container_return_required",
+   "fieldtype": "Check",
+   "label": "Container Return Required",
+   "read_only": 1
+  },
+  {
+   "fieldname": "container_returned",
+   "fieldtype": "Check",
+   "label": "Container Returned",
+   "read_only": 1
+  },
+  {
+   "fieldname": "container_no",
+   "fieldtype": "Data",
+   "label": "Container No.",
+   "read_only": 1
+  },
+  {
+   "fieldname": "eir_required",
+   "fieldtype": "Check",
+   "label": "EIR Required",
+   "read_only": 1
+  },
+  {
+   "fieldname": "eir_no",
+   "fieldtype": "Data",
+   "label": "EIR No.",
+   "read_only": 1
+  },
+  {
+   "fieldname": "paperwork_complete",
+   "fieldtype": "Check",
+   "label": "Paperwork Complete",
+   "read_only": 1
+  },
+  {
+   "fieldname": "pod_attachment",
+   "fieldtype": "Data",
+   "label": "POD Attachment",
+   "read_only": 1
+  },
+  {
+   "fieldname": "print_snapshot_json",
+   "fieldtype": "Long Text",
+   "label": "Offline Print Snapshot JSON",
+   "read_only": 1
+  },
+  {
+   "fieldname": "print_snapshot_sha256",
+   "fieldtype": "Data",
+   "label": "Offline Print Snapshot SHA-256",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_payload_sha256",
+   "fieldtype": "Data",
+   "label": "Last Payload SHA-256",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "sync_state",
+   "fieldtype": "Select",
+   "label": "Sync State",
+   "options": "Pending Edge\nPrimary Preserved",
+   "default": "Pending Edge",
+   "reqd": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "is_submittable": 0,
+ "links": [],
+ "modified": "2026-08-16 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "NKT Store Operations",
+ "name": "NKT Edge Trucking Trip Projection",
+ "owner": "Administrator",
+ "permissions": [],
+ "track_changes": 0
+}

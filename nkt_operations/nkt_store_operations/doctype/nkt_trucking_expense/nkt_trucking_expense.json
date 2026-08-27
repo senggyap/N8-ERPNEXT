@@ -1,0 +1,188 @@
+{
+  "doctype": "DocType",
+  "name": "NKT Trucking Expense",
+  "module": "NKT Store Operations",
+  "custom": 0,
+  "autoname": "naming_series:",
+  "naming_rule": "By \"Naming Series\" field",
+  "engine": "InnoDB",
+  "track_changes": 1,
+  "allow_rename": 0,
+  "field_order": [
+    "naming_series",
+    "header_section",
+    "expense_date",
+    "payee",
+    "column_break_header",
+    "status",
+    "company",
+    "source_section",
+    "source_system",
+    "source_reference",
+    "memo",
+    "supporting_attachment",
+    "lines_section",
+    "lines",
+    "totals_section",
+    "grand_total",
+    "verification_section",
+    "verified_by_user",
+    "verified_at"
+  ],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "options": "TRK-EXP-.YYYY.-.#####",
+      "default": "TRK-EXP-.YYYY.-.#####",
+      "hidden": 1
+    },
+    {
+      "fieldname": "header_section",
+      "fieldtype": "Section Break",
+      "label": "Trucking Expense / Cost Voucher"
+    },
+    {
+      "fieldname": "expense_date",
+      "fieldtype": "Date",
+      "label": "Expense Date",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "payee",
+      "fieldtype": "Data",
+      "label": "Payee / Source",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "column_break_header",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Draft\nVerified\nCancelled",
+      "default": "Draft",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "ERP Company (when configured)",
+      "options": "Company",
+      "description": "Company-aware but does not create/assume an ENT legal Company."
+    },
+    {
+      "fieldname": "source_section",
+      "fieldtype": "Section Break",
+      "label": "Source / Evidence"
+    },
+    {
+      "fieldname": "source_system",
+      "fieldtype": "Select",
+      "label": "Source System",
+      "options": "Manual\nQuickBooks Historical Reference\nFuture Import\nOther",
+      "default": "Manual",
+      "reqd": 1
+    },
+    {
+      "fieldname": "source_reference",
+      "fieldtype": "Data",
+      "label": "Source Reference / QB Ref No."
+    },
+    {
+      "fieldname": "memo",
+      "fieldtype": "Small Text",
+      "label": "Voucher Memo"
+    },
+    {
+      "fieldname": "supporting_attachment",
+      "fieldtype": "Attach",
+      "label": "Supporting Document"
+    },
+    {
+      "fieldname": "lines_section",
+      "fieldtype": "Section Break",
+      "label": "Expense Allocations"
+    },
+    {
+      "fieldname": "lines",
+      "fieldtype": "Table",
+      "label": "Expense Lines",
+      "options": "NKT Trucking Expense Line",
+      "reqd": 1
+    },
+    {
+      "fieldname": "totals_section",
+      "fieldtype": "Section Break",
+      "label": "Total"
+    },
+    {
+      "fieldname": "grand_total",
+      "fieldtype": "Currency",
+      "label": "Grand Total",
+      "read_only": 1
+    },
+    {
+      "fieldname": "verification_section",
+      "fieldtype": "Section Break",
+      "label": "Verification"
+    },
+    {
+      "fieldname": "verified_by_user",
+      "fieldtype": "Link",
+      "label": "Verified By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "verified_at",
+      "fieldtype": "Datetime",
+      "label": "Verified At",
+      "read_only": 1
+    }
+  ],
+  "permissions": [
+    {
+      "role": "NKT Trucking Operations",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "print": 1,
+      "report": 1,
+      "export": 0
+    },
+    {
+      "role": "NKT OWNER",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "print": 1,
+      "report": 1,
+      "export": 1
+    },
+    {
+      "role": "NKT ADMINISTRATOR",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "print": 1,
+      "report": 1,
+      "export": 1
+    }
+  ],
+  "links": [],
+  "actions": [],
+  "states": [],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "owner": "Administrator",
+  "modified_by": "Administrator"
+}

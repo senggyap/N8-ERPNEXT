@@ -1,0 +1,218 @@
+{
+ "app": "nkt_operations",
+ "charts": [],
+ "content": "[{\"id\":\"nkt-owner-header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h3\\\"><b>NKT Owner / Admin Control Center</b></span>\",\"col\":12}},{\"id\":\"nkt-owner-command-card\",\"type\":\"card\",\"data\":{\"card_name\":\"Command Center\",\"col\":12}},{\"id\":\"nkt-owner-spacer\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"nkt-owner-drilldown-header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Operational Drill-downs</b></span>\",\"col\":12}},{\"id\":\"nkt-owner-daily-card\",\"type\":\"card\",\"data\":{\"card_name\":\"Daily Control\",\"col\":4}},{\"id\":\"nkt-owner-account-card\",\"type\":\"card\",\"data\":{\"card_name\":\"Accounts & Exceptions\",\"col\":4}},{\"id\":\"nkt-owner-warehouse-card\",\"type\":\"card\",\"data\":{\"card_name\":\"Warehouse & Purchasing\",\"col\":4}}]",
+ "custom_blocks": [],
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 1,
+ "icon": "",
+ "indicator_color": "blue",
+ "is_hidden": 0,
+ "label": "NKT Owner Control Center",
+ "name": "NKT Owner Control Center",
+ "links": [
+  {
+   "type": "Card Break",
+   "label": "Command Center",
+   "hidden": 0,
+   "link_count": 1,
+   "onboard": 0,
+   "description": "Start here. One read-only Owner/Admin view of live control totals and items needing attention."
+  },
+  {
+   "type": "Link",
+   "label": "Open Owner Control Center",
+   "link_type": "Report",
+   "link_to": "NKT Owner Control Center",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 1,
+   "dependencies": "",
+   "report_ref_doctype": "NKT EOD Reconciliation"
+  },
+  {
+   "type": "Card Break",
+   "label": "Daily Control",
+   "hidden": 0,
+   "link_count": 4,
+   "onboard": 0,
+   "description": "Formal daily reconciliation, Cashier/Encoder control, shifts, and finalized Z-Out review."
+  },
+  {
+   "type": "Link",
+   "label": "EOD Reconciliation",
+   "link_type": "DocType",
+   "link_to": "NKT EOD Reconciliation",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "dependencies": ""
+  },
+  {
+   "type": "Link",
+   "label": "Encoder \u2194 Cashier Reconciliation",
+   "link_type": "Report",
+   "link_to": "NKT Encoder Cashier Reconciliation",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 1,
+   "dependencies": "",
+   "report_ref_doctype": "NKT Customer Order"
+  },
+  {
+   "type": "Link",
+   "label": "Cashier Shifts",
+   "link_type": "DocType",
+   "link_to": "NKT Cashier Shift",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "dependencies": ""
+  },
+  {
+   "type": "Link",
+   "label": "Encoder Z-Out",
+   "link_type": "DocType",
+   "link_to": "NKT Encoder Z-Out",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "dependencies": ""
+  },
+  {
+   "type": "Card Break",
+   "label": "Accounts & Exceptions",
+   "hidden": 0,
+   "link_count": 4,
+   "onboard": 0,
+   "description": "Receivables, customer advances, Return/Exchange exceptions, and physical-inventory review."
+  },
+  {
+   "type": "Link",
+   "label": "Customer Receivables",
+   "link_type": "DocType",
+   "link_to": "NKT Customer Receivable",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "dependencies": ""
+  },
+  {
+   "type": "Link",
+   "label": "Customer Advances",
+   "link_type": "DocType",
+   "link_to": "NKT Customer Advance",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "dependencies": ""
+  },
+  {
+   "type": "Link",
+   "label": "Return / Exchange Declarations",
+   "link_type": "DocType",
+   "link_to": "NKT Return Exchange Declaration",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "dependencies": ""
+  },
+  {
+   "type": "Link",
+   "label": "Physical Inventory Adjustments",
+   "link_type": "DocType",
+   "link_to": "NKT Physical Inventory Adjustment",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "dependencies": ""
+  },
+  {
+   "type": "Card Break",
+   "label": "Warehouse & Purchasing",
+   "hidden": 0,
+   "link_count": 6,
+   "onboard": 0,
+   "description": "Supplier receiving/exception review, customer warehouse releases, and internal transfer control."
+  },
+  {
+   "type": "Link",
+   "label": "Supplier Receiving",
+   "link_type": "DocType",
+   "link_to": "NKT Supplier Receiving",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "dependencies": ""
+  },
+  {
+   "type": "Link",
+   "label": "Supplier Delivery Exceptions",
+   "link_type": "DocType",
+   "link_to": "NKT Supplier Delivery Exception",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "dependencies": ""
+  },
+  {
+   "type": "Link",
+   "label": "Warehouse Customer Releases",
+   "link_type": "DocType",
+   "link_to": "NKT Warehouse Release",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "dependencies": ""
+  },
+  {
+   "type": "Link",
+   "label": "Warehouse Changes / Recalls",
+   "link_type": "DocType",
+   "link_to": "NKT Warehouse Change",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "dependencies": ""
+  },
+  {
+   "type": "Link",
+   "label": "Internal Transfer Reconciliation",
+   "link_type": "Report",
+   "link_to": "NKT Warehouse Transfer Reconciliation",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 1,
+   "dependencies": "",
+   "report_ref_doctype": "NKT Warehouse Transfer"
+  },
+  {
+   "type": "Link",
+   "label": "Internal Transfer Discrepancies",
+   "link_type": "DocType",
+   "link_to": "NKT Warehouse Transfer Discrepancy",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "dependencies": ""
+  }
+ ],
+ "module": "NKT Store Operations",
+ "number_cards": [],
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "NKT ADMINISTRATOR"
+  },
+  {
+   "role": "NKT OWNER"
+  }
+ ],
+ "sequence_id": 0.5,
+ "shortcuts": [],
+ "title": "NKT Owner Control Center",
+ "type": "Workspace"
+}

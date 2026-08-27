@@ -1,0 +1,301 @@
+{
+  "doctype": "DocType",
+  "name": "NKT Trucking Vehicle Maintenance",
+  "module": "NKT Store Operations",
+  "custom": 0,
+  "autoname": "naming_series:",
+  "naming_rule": "By \"Naming Series\" field",
+  "engine": "InnoDB",
+  "track_changes": 1,
+  "allow_rename": 0,
+  "field_order": [
+    "naming_series",
+    "header_section",
+    "maintenance_date",
+    "status",
+    "maintenance_type",
+    "column_break_header",
+    "vehicle",
+    "plate_no",
+    "fleet_ownership_snapshot",
+    "lineage_section",
+    "source_trip",
+    "source_incident",
+    "driver_name_snapshot",
+    "column_break_lineage",
+    "odometer",
+    "next_due_date",
+    "next_due_odometer",
+    "work_section",
+    "work_description",
+    "findings",
+    "parts_notes",
+    "column_break_work",
+    "vendor",
+    "reference_no",
+    "supporting_attachment",
+    "cost_section",
+    "actual_cost",
+    "profit_treatment",
+    "linked_trucking_expense",
+    "accounting_posting_status",
+    "completion_section",
+    "completed_at",
+    "completed_by_user",
+    "completion_notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "options": "MNT-.YYYY.-.#####",
+      "default": "MNT-.YYYY.-.#####",
+      "hidden": 1
+    },
+    {
+      "fieldname": "header_section",
+      "fieldtype": "Section Break",
+      "label": "Vehicle Maintenance / Repair"
+    },
+    {
+      "fieldname": "maintenance_date",
+      "fieldtype": "Date",
+      "label": "Maintenance Date",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Draft\nScheduled\nIn Progress\nCompleted\nCancelled",
+      "default": "Draft",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "maintenance_type",
+      "fieldtype": "Select",
+      "label": "Maintenance Type",
+      "options": "Preventive Maintenance\nRepair\nOil / Fluids\nTires\nBattery / Electrical\nMechanical\nInspection / Diagnosis\nBody / Damage Repair\nOther",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "column_break_header",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "vehicle",
+      "fieldtype": "Link",
+      "label": "Truck / Vehicle",
+      "options": "NKT Vehicle",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "plate_no",
+      "fieldtype": "Data",
+      "label": "Plate No.",
+      "read_only": 1,
+      "fetch_from": "vehicle.plate_number",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "fleet_ownership_snapshot",
+      "fieldtype": "Select",
+      "label": "Fleet Ownership Snapshot",
+      "options": "Unclassified\nENT-Owned\nExternal Carrier",
+      "read_only": 1,
+      "description": "Snapshot from the vehicle master for historical reporting. C14F does not infer ownership from plate, operator, supplier, or expense history."
+    },
+    {
+      "fieldname": "lineage_section",
+      "fieldtype": "Section Break",
+      "label": "Trip / Incident Lineage"
+    },
+    {
+      "fieldname": "source_trip",
+      "fieldtype": "Link",
+      "label": "Related Trip",
+      "options": "NKT Trucking Trip",
+      "description": "Optional. Use when the maintenance/repair is attributable to a specific trip or breakdown."
+    },
+    {
+      "fieldname": "source_incident",
+      "fieldtype": "Link",
+      "label": "Related Incident",
+      "options": "NKT Trucking Incident"
+    },
+    {
+      "fieldname": "driver_name_snapshot",
+      "fieldtype": "Data",
+      "label": "Trip Driver Snapshot",
+      "read_only": 1,
+      "description": "When a Related Trip is selected, stores the actual driver recorded on that trip. Driver remains trip-specific."
+    },
+    {
+      "fieldname": "column_break_lineage",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "odometer",
+      "fieldtype": "Float",
+      "label": "Odometer / Mileage at Service",
+      "description": "Optional manual reading. No unit or interval is guessed by C14F."
+    },
+    {
+      "fieldname": "next_due_date",
+      "fieldtype": "Date",
+      "label": "Next Due Date (Manual)",
+      "description": "Optional planning field only; C14F does not guess a maintenance interval."
+    },
+    {
+      "fieldname": "next_due_odometer",
+      "fieldtype": "Float",
+      "label": "Next Due Odometer (Manual)",
+      "description": "Optional planning field only; no automatic service interval is assumed."
+    },
+    {
+      "fieldname": "work_section",
+      "fieldtype": "Section Break",
+      "label": "Work / Supporting Information"
+    },
+    {
+      "fieldname": "work_description",
+      "fieldtype": "Small Text",
+      "label": "Work Requested / Performed",
+      "reqd": 1
+    },
+    {
+      "fieldname": "findings",
+      "fieldtype": "Small Text",
+      "label": "Findings / Diagnosis"
+    },
+    {
+      "fieldname": "parts_notes",
+      "fieldtype": "Small Text",
+      "label": "Parts / Materials Notes"
+    },
+    {
+      "fieldname": "column_break_work",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "vendor",
+      "fieldtype": "Link",
+      "label": "Vendor / Repair Supplier",
+      "options": "Supplier"
+    },
+    {
+      "fieldname": "reference_no",
+      "fieldtype": "Data",
+      "label": "Invoice / OR / Reference No."
+    },
+    {
+      "fieldname": "supporting_attachment",
+      "fieldtype": "Attach",
+      "label": "Supporting Document / Receipt"
+    },
+    {
+      "fieldname": "cost_section",
+      "fieldtype": "Section Break",
+      "label": "Operational Cost Classification"
+    },
+    {
+      "fieldname": "actual_cost",
+      "fieldtype": "Currency",
+      "label": "Actual Cost",
+      "default": "0",
+      "description": "Operational history amount only. C14F does not post this to GL or auto-create an expense voucher."
+    },
+    {
+      "fieldname": "profit_treatment",
+      "fieldtype": "Select",
+      "label": "Profit Treatment",
+      "options": "Vehicle Operating Cost\nDirect Trip Cost\nCapital / Excluded from Operating Profit",
+      "default": "Vehicle Operating Cost",
+      "reqd": 1,
+      "description": "Editable operational classification. Use Capital / Excluded only when the business determines the item is capital in nature."
+    },
+    {
+      "fieldname": "linked_trucking_expense",
+      "fieldtype": "Link",
+      "label": "Linked Trucking Expense (Optional)",
+      "options": "NKT Trucking Expense",
+      "description": "Optional future/controlled lineage. C14F never auto-creates NKT Trucking Expense."
+    },
+    {
+      "fieldname": "accounting_posting_status",
+      "fieldtype": "Data",
+      "label": "Accounting Posting",
+      "default": "Operational Only — No GL Posting",
+      "read_only": 1
+    },
+    {
+      "fieldname": "completion_section",
+      "fieldtype": "Section Break",
+      "label": "Completion / Audit"
+    },
+    {
+      "fieldname": "completed_at",
+      "fieldtype": "Datetime",
+      "label": "Completed At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "completed_by_user",
+      "fieldtype": "Link",
+      "label": "Completed By User",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "completion_notes",
+      "fieldtype": "Small Text",
+      "label": "Completion Notes"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "NKT Trucking Operations",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "print": 1,
+      "report": 1,
+      "export": 0
+    },
+    {
+      "role": "NKT OWNER",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "print": 1,
+      "report": 1,
+      "export": 1
+    },
+    {
+      "role": "NKT ADMINISTRATOR",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "print": 1,
+      "report": 1,
+      "export": 1
+    }
+  ],
+  "links": [],
+  "actions": [],
+  "states": [],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "owner": "Administrator",
+  "creation": "2026-08-14 15:10:00.000000",
+  "modified": "2026-08-14 15:10:00.000000",
+  "modified_by": "Administrator"
+}

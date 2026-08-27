@@ -1,0 +1,378 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:event_uuid",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "identity_section",
+  "event_uuid",
+  "event_family",
+  "event_action",
+  "side",
+  "submit_request_id",
+  "origin_section",
+  "origin_device",
+  "origin_user",
+  "operational_context",
+  "business_date",
+  "settled_at",
+  "client_created_at",
+  "company",
+  "customer",
+  "old_cashier_sale",
+  "old_customer_order",
+  "source_generation",
+  "cashier_shift",
+  "transaction_type",
+  "return_warehouse",
+  "hash_section",
+  "envelope_sha256",
+  "payload_sha256",
+  "canonical_envelope_json",
+  "canonical_payload_json",
+  "state_section",
+  "preservation_state",
+  "downstream_state",
+  "primary_ack_uuid",
+  "primary_preserved_at",
+  "materialization_section",
+  "canonical_declaration",
+  "new_cashier_sale",
+  "new_customer_order",
+  "return_stock_entry",
+  "account_adjustment_record",
+  "customer_credit_record",
+  "refund_movement",
+  "materialization_ack_uuid",
+  "materialization_ack_sha256",
+  "materialization_ack_json",
+  "materialized_at"
+ ],
+ "fields": [
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Primary Return / Exchange Intent"
+  },
+  {
+   "fieldname": "event_uuid",
+   "fieldtype": "Data",
+   "label": "Event UUID",
+   "reqd": 1,
+   "unique": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "event_family",
+   "fieldtype": "Data",
+   "label": "Event Family",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "event_action",
+   "fieldtype": "Data",
+   "label": "Event Action",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "side",
+   "fieldtype": "Select",
+   "label": "Side",
+   "options": "Cashier\nEncoder",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "submit_request_id",
+   "fieldtype": "Data",
+   "label": "Submit Request ID",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "origin_section",
+   "fieldtype": "Section Break",
+   "label": "Immutable Origin"
+  },
+  {
+   "fieldname": "origin_device",
+   "fieldtype": "Data",
+   "label": "Origin Device",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "origin_user",
+   "fieldtype": "Link",
+   "label": "Origin User",
+   "options": "User",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "operational_context",
+   "fieldtype": "Data",
+   "label": "Operational Context",
+   "read_only": 1
+  },
+  {
+   "fieldname": "business_date",
+   "fieldtype": "Date",
+   "label": "Physical Business Date",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "settled_at",
+   "fieldtype": "Datetime",
+   "label": "Physical Settled At",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "client_created_at",
+   "fieldtype": "Datetime",
+   "label": "Client Created At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "old_cashier_sale",
+   "fieldtype": "Link",
+   "label": "OLD Cashier Sale",
+   "options": "NKT Cashier Sale",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "old_customer_order",
+   "fieldtype": "Link",
+   "label": "OLD Customer Order",
+   "options": "NKT Customer Order",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "source_generation",
+   "fieldtype": "Int",
+   "label": "Source Generation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cashier_shift",
+   "fieldtype": "Link",
+   "label": "Original Cashier Shift",
+   "options": "NKT Cashier Shift",
+   "read_only": 1
+  },
+  {
+   "fieldname": "transaction_type",
+   "fieldtype": "Select",
+   "label": "Transaction Type",
+   "options": "Return\nExchange",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "return_warehouse",
+   "fieldtype": "Link",
+   "label": "Return Warehouse",
+   "options": "Warehouse",
+   "read_only": 1
+  },
+  {
+   "fieldname": "hash_section",
+   "fieldtype": "Section Break",
+   "label": "Immutable Hashes"
+  },
+  {
+   "fieldname": "envelope_sha256",
+   "fieldtype": "Data",
+   "label": "Envelope SHA-256",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "payload_sha256",
+   "fieldtype": "Data",
+   "label": "Payload SHA-256",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "canonical_envelope_json",
+   "fieldtype": "Long Text",
+   "label": "Canonical Envelope JSON",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "canonical_payload_json",
+   "fieldtype": "Long Text",
+   "label": "Canonical Payload JSON",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "state_section",
+   "fieldtype": "Section Break",
+   "label": "Primary Preservation"
+  },
+  {
+   "fieldname": "preservation_state",
+   "fieldtype": "Select",
+   "label": "Preservation State",
+   "options": "Preserved",
+   "default": "Preserved",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "downstream_state",
+   "fieldtype": "Select",
+   "label": "Downstream State",
+   "options": "Awaiting Return Exchange Materialization\nReturn Exchange Materialized",
+   "default": "Awaiting Return Exchange Materialization",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "primary_ack_uuid",
+   "fieldtype": "Data",
+   "label": "Primary Preservation ACK UUID",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "primary_preserved_at",
+   "fieldtype": "Datetime",
+   "label": "Primary Preserved At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialization_section",
+   "fieldtype": "Section Break",
+   "label": "Canonical Materialization"
+  },
+  {
+   "fieldname": "canonical_declaration",
+   "fieldtype": "Link",
+   "label": "Canonical Return / Exchange Declaration",
+   "options": "NKT Return Exchange Declaration",
+   "read_only": 1
+  },
+  {
+   "fieldname": "new_cashier_sale",
+   "fieldtype": "Link",
+   "label": "NEW Cashier Sale",
+   "options": "NKT Cashier Sale",
+   "read_only": 1
+  },
+  {
+   "fieldname": "new_customer_order",
+   "fieldtype": "Link",
+   "label": "NEW Customer Order",
+   "options": "NKT Customer Order",
+   "read_only": 1
+  },
+  {
+   "fieldname": "return_stock_entry",
+   "fieldtype": "Link",
+   "label": "Return Stock Entry",
+   "options": "Stock Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "account_adjustment_record",
+   "fieldtype": "Link",
+   "label": "Account Adjustment",
+   "options": "NKT Return Account Adjustment",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer_credit_record",
+   "fieldtype": "Link",
+   "label": "Customer Credit",
+   "options": "NKT Customer Advance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "refund_movement",
+   "fieldtype": "Link",
+   "label": "Refund Cashier Movement",
+   "options": "NKT Cashier Movement",
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialization_ack_uuid",
+   "fieldtype": "Data",
+   "label": "Materialization ACK UUID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialization_ack_sha256",
+   "fieldtype": "Data",
+   "label": "Materialization ACK SHA-256",
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialization_ack_json",
+   "fieldtype": "Long Text",
+   "label": "Materialization ACK JSON",
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialized_at",
+   "fieldtype": "Datetime",
+   "label": "Materialized At",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "module": "NKT Store Operations",
+ "name": "NKT Primary Return Exchange Intent",
+ "permissions": [
+  {
+   "role": "NKT OWNER",
+   "read": 1,
+   "report": 1
+  },
+  {
+   "role": "NKT ADMINISTRATOR",
+   "read": 1,
+   "report": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "report": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

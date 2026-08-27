@@ -1,0 +1,178 @@
+{
+ "app": "nkt_operations",
+ "charts": [],
+ "content": "[{\"id\": \"trk_header\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">ENT / Trucking Operations</span>\", \"col\": 12}}, {\"id\": \"trk_trip\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Trucking Trips / Dispatch\", \"col\": 3}}, {\"id\": \"trk_soa\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Customer SOA / Billing\", \"col\": 3}}, {\"id\": \"trk_wb\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Waybills\", \"col\": 3}}, {\"id\": \"trk_vehicle\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Vehicles\", \"col\": 3}}, {\"id\": \"trk_expense\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Expenses / Costs\", \"col\": 3}}, {\"id\": \"trk_incent_batch\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Weekly Incentive Batches\", \"col\": 3}}, {\"id\": \"trk_incent_queue\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"ENT Incentive Queue\", \"col\": 3}}, {\"id\": \"trk_carrier_queue\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"External Carrier Queue\", \"col\": 3}}, {\"id\": \"trk_carrier_soa\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Carrier / Trucker SOA\", \"col\": 3}}, {\"id\": \"trk_driver_adv\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Driver Cash Advances\", \"col\": 3}}, {\"id\": \"trk_driver_liq\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Driver Liquidations\", \"col\": 3}}, {\"id\": \"trk_driver_cash_queue\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Driver Cash Accountability\", \"col\": 3}}, {\"id\": \"trk_vehicle_maint\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Vehicle Maintenance\", \"col\": 3}}, {\"id\": \"trk_incidents\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Trucking Incidents\", \"col\": 3}}, {\"id\": \"trk_vehicle_history\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Vehicle History\", \"col\": 3}}, {\"id\": \"nkt-trk-customer-charges\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Customer Charges\", \"col\": 3}}, {\"id\": \"nkt-trk-customer-billing\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Customer Billing Queue\", \"col\": 3}}, {\"id\": \"nkt-trk-customer-collections\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Customer Collections\", \"col\": 3}}, {\"id\": \"nkt-trk-customer-receivables\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Trucking Receivables\", \"col\": 3}}]",
+ "creation": "2026-08-14 14:18:19.203701",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "truck",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "NKT Trucking Operations",
+ "links": [],
+ "modified": "2026-08-14 16:09:01.278036",
+ "modified_by": "Administrator",
+ "module": "NKT Store Operations",
+ "name": "NKT Trucking Operations",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "NKT Trucking Operations"
+  },
+  {
+   "role": "NKT OWNER"
+  },
+  {
+   "role": "NKT ADMINISTRATOR"
+  }
+ ],
+ "sequence_id": 0.0,
+ "shortcuts": [
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "label": "Trucking Trips / Dispatch",
+   "link_to": "NKT Trucking Trip",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Customer SOA / Billing",
+   "link_to": "NKT Trucking Customer SOA",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Waybills",
+   "link_to": "NKT Trucking Waybill",
+   "type": "DocType"
+  },
+  {
+   "color": "Orange",
+   "doc_view": "List",
+   "label": "Vehicles",
+   "link_to": "NKT Vehicle",
+   "type": "DocType"
+  },
+  {
+   "color": "Yellow",
+   "doc_view": "List",
+   "label": "Expenses / Costs",
+   "link_to": "NKT Trucking Expense",
+   "type": "DocType"
+  },
+  {
+   "color": "Purple",
+   "doc_view": "List",
+   "label": "Weekly Incentive Batches",
+   "link_to": "NKT Driver Incentive Batch",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "label": "ENT Incentive Queue",
+   "link_to": "NKT Driver Incentive Queue",
+   "report_ref_doctype": "NKT Trucking Trip",
+   "type": "Report"
+  },
+  {
+   "color": "Orange",
+   "label": "External Carrier Queue",
+   "link_to": "NKT External Carrier Payable Queue",
+   "report_ref_doctype": "NKT Trucking Trip",
+   "type": "Report"
+  },
+  {
+   "color": "Red",
+   "doc_view": "List",
+   "label": "Carrier / Trucker SOA",
+   "link_to": "NKT Trucker SOA",
+   "type": "DocType"
+  },
+  {
+   "color": "Yellow",
+   "doc_view": "List",
+   "label": "Driver Cash Advances",
+   "link_to": "NKT Trucking Driver Cash Advance",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Driver Liquidations",
+   "link_to": "NKT Trucking Driver Liquidation",
+   "type": "DocType"
+  },
+  {
+   "color": "Orange",
+   "doc_view": "",
+   "label": "Driver Cash Accountability",
+   "link_to": "NKT Driver Cash Accountability",
+   "report_ref_doctype": "NKT Trucking Driver Cash Advance",
+   "type": "Report"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "label": "Vehicle Maintenance",
+   "link_to": "NKT Trucking Vehicle Maintenance",
+   "type": "DocType"
+  },
+  {
+   "color": "Red",
+   "doc_view": "List",
+   "label": "Trucking Incidents",
+   "link_to": "NKT Trucking Incident",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "",
+   "label": "Vehicle History",
+   "link_to": "NKT Trucking Vehicle History",
+   "report_ref_doctype": "NKT Vehicle",
+   "type": "Report"
+  },
+  {
+   "color": "Orange",
+   "doc_view": "List",
+   "label": "Customer Charges",
+   "link_to": "NKT Trucking Customer Charge",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "",
+   "label": "Customer Billing Queue",
+   "link_to": "NKT Trucking Customer Billing Queue",
+   "report_ref_doctype": "NKT Trucking Customer SOA",
+   "type": "Report"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Customer Collections",
+   "link_to": "NKT Trucking Customer Collection",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "",
+   "label": "Trucking Receivables",
+   "link_to": "NKT Trucking Customer Receivables",
+   "report_ref_doctype": "NKT Trucking Customer SOA",
+   "type": "Report"
+  }
+ ],
+ "title": "NKT Trucking Operations",
+ "type": "Workspace"
+}

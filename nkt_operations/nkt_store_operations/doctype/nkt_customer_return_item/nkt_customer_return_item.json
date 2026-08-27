@@ -1,0 +1,241 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-08-05 05:20:53.408269",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "warehouse_release_item",
+  "delivery_note_item",
+  "item",
+  "item_name",
+  "released_quantity",
+  "previously_returned_quantity",
+  "available_return_quantity",
+  "return_quantity",
+  "saleable_sacks",
+  "repairable_sacks",
+  "opened_sacks",
+  "accepted_fraction_kg",
+  "rejected_sacks",
+  "accepted_sacks",
+  "uom",
+  "original_source_warehouse",
+  "original_rate",
+  "whole_sacks_accepted",
+  "full_sack_return_value",
+  "fraction_return_value",
+  "gross_return_value",
+  "standard_sack_weight_kg",
+  "damaged_item",
+  "fraction_item",
+  "repair_stock_entry",
+  "fraction_stock_entry"
+ ],
+ "fields": [
+  {
+   "fieldname": "warehouse_release_item",
+   "fieldtype": "Data",
+   "label": "Warehouse Release Item",
+   "read_only": 1,
+   "hidden": 1
+  },
+  {
+   "fieldname": "delivery_note_item",
+   "fieldtype": "Data",
+   "label": "Delivery Note Item",
+   "read_only": 1,
+   "hidden": 1
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "label": "Item",
+   "options": "Item",
+   "read_only": 1,
+   "in_list_view": 1,
+   "columns": 2
+  },
+  {
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "released_quantity",
+   "fieldtype": "Float",
+   "label": "Released Qty",
+   "read_only": 1,
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "previously_returned_quantity",
+   "fieldtype": "Float",
+   "label": "Previously Accepted Returns",
+   "read_only": 1,
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "available_return_quantity",
+   "fieldtype": "Float",
+   "label": "Available to Accept",
+   "read_only": 1,
+   "in_list_view": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "return_quantity",
+   "fieldtype": "Float",
+   "label": "Physical Sacks Presented",
+   "in_list_view": 1,
+   "columns": 1,
+   "non_negative": 1
+  },
+  {
+   "fieldname": "saleable_sacks",
+   "fieldtype": "Float",
+   "label": "Saleable Sacks",
+   "non_negative": 1,
+   "in_list_view": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "repairable_sacks",
+   "fieldtype": "Float",
+   "label": "Repairable / Rebag Sacks",
+   "non_negative": 1,
+   "in_list_view": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "opened_sacks",
+   "fieldtype": "Float",
+   "label": "Opened Sacks",
+   "non_negative": 1,
+   "in_list_view": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "accepted_fraction_kg",
+   "fieldtype": "Float",
+   "label": "Accepted Fraction Weight (kg)",
+   "non_negative": 1,
+   "precision": "3",
+   "in_list_view": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "rejected_sacks",
+   "fieldtype": "Float",
+   "label": "Rejected Sacks",
+   "non_negative": 1,
+   "in_list_view": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "accepted_sacks",
+   "fieldtype": "Float",
+   "label": "Accepted Sacks",
+   "read_only": 1,
+   "in_list_view": 0,
+   "columns": 1
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "UOM",
+   "read_only": 1,
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "original_source_warehouse",
+   "fieldtype": "Link",
+   "label": "Original Source Warehouse",
+   "options": "Warehouse",
+   "read_only": 1
+  },
+  {
+   "fieldname": "original_rate",
+   "fieldtype": "Currency",
+   "label": "Original Rate",
+   "read_only": 1
+  },
+  {
+   "fieldname": "whole_sacks_accepted",
+   "fieldtype": "Float",
+   "label": "Accepted Whole Sacks",
+   "read_only": 1
+  },
+  {
+   "fieldname": "full_sack_return_value",
+   "fieldtype": "Currency",
+   "label": "Full-Sack Return Value",
+   "read_only": 1
+  },
+  {
+   "fieldname": "fraction_return_value",
+   "fieldtype": "Currency",
+   "label": "Prorated Fraction Return Value",
+   "read_only": 1
+  },
+  {
+   "fieldname": "gross_return_value",
+   "fieldtype": "Currency",
+   "label": "Gross Return Value",
+   "read_only": 1
+  },
+  {
+   "fieldname": "standard_sack_weight_kg",
+   "fieldtype": "Float",
+   "label": "Standard Sack Weight (kg)",
+   "read_only": 1,
+   "precision": "3"
+  },
+  {
+   "fieldname": "damaged_item",
+   "fieldtype": "Link",
+   "label": "Linked Damaged Item",
+   "options": "Item",
+   "read_only": 1
+  },
+  {
+   "fieldname": "fraction_item",
+   "fieldtype": "Link",
+   "label": "Linked Fraction Item",
+   "options": "Item",
+   "read_only": 1
+  },
+  {
+   "fieldname": "repair_stock_entry",
+   "fieldtype": "Link",
+   "label": "Repair / Rebag Stock Entry",
+   "options": "Stock Entry",
+   "read_only": 1,
+   "print_hide": 1
+  },
+  {
+   "fieldname": "fraction_stock_entry",
+   "fieldtype": "Link",
+   "label": "Fraction Recovery Stock Entry",
+   "options": "Stock Entry",
+   "read_only": 1,
+   "print_hide": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-08-05 16:13:00.000000",
+ "modified_by": "Administrator",
+ "module": "NKT Store Operations",
+ "name": "NKT Customer Return Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

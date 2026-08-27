@@ -1,0 +1,342 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "naming_series:",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "status",
+  "company",
+  "recovery_datetime",
+  "prepared_by",
+  "recovery_type",
+  "warehouse_section",
+  "source_warehouse",
+  "target_warehouse",
+  "item_section",
+  "base_saleable_item",
+  "damaged_item",
+  "fraction_item",
+  "standard_sack_weight_kg",
+  "quantity_section",
+  "damaged_sacks_consumed",
+  "measured_damaged_contents_kg",
+  "fraction_kg_consumed",
+  "saleable_sacks_produced",
+  "fraction_kg_produced",
+  "expected_weight_kg",
+  "recorded_loss_kg",
+  "reason_section",
+  "disposal_expense_account",
+  "reason",
+  "remarks",
+  "approval_section",
+  "approval_status",
+  "approved_by",
+  "approved_on",
+  "approval_reason",
+  "approval_signature",
+  "stock_section",
+  "stock_entry"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "NKT-REC-.#####",
+   "default": "NKT-REC-.#####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nPending Approval\nApproved\nCompleted\nCancelled",
+   "default": "Draft",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "recovery_datetime",
+   "fieldtype": "Datetime",
+   "label": "Recovery Date and Time",
+   "default": "Now",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "prepared_by",
+   "fieldtype": "Data",
+   "label": "Prepared By",
+   "read_only": 1
+  },
+  {
+   "fieldname": "recovery_type",
+   "fieldtype": "Select",
+   "label": "Recovery Action",
+   "reqd": 1,
+   "in_list_view": 1,
+   "options": "\nRepair / Rebag Damaged Sack\nRecover Damaged Contents to Fraction\nPack Fraction into Saleable Sacks\nComplete Underweight Damaged Sack\nDispose Damaged Stock\nDispose Fraction Stock"
+  },
+  {
+   "fieldname": "warehouse_section",
+   "fieldtype": "Section Break",
+   "label": "Warehouses"
+  },
+  {
+   "fieldname": "source_warehouse",
+   "fieldtype": "Link",
+   "label": "Source Warehouse",
+   "options": "Warehouse",
+   "reqd": 1
+  },
+  {
+   "fieldname": "target_warehouse",
+   "fieldtype": "Link",
+   "label": "Target Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "item_section",
+   "fieldtype": "Section Break",
+   "label": "Mapped Stock Items"
+  },
+  {
+   "fieldname": "base_saleable_item",
+   "fieldtype": "Link",
+   "label": "Saleable Item",
+   "options": "Item",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "damaged_item",
+   "fieldtype": "Link",
+   "label": "Damaged Item",
+   "options": "Item",
+   "read_only": 1
+  },
+  {
+   "fieldname": "fraction_item",
+   "fieldtype": "Link",
+   "label": "Fraction Item",
+   "options": "Item",
+   "read_only": 1
+  },
+  {
+   "fieldname": "standard_sack_weight_kg",
+   "fieldtype": "Float",
+   "label": "Standard Sack Weight (kg)",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "quantity_section",
+   "fieldtype": "Section Break",
+   "label": "Recovery Quantities"
+  },
+  {
+   "fieldname": "damaged_sacks_consumed",
+   "fieldtype": "Float",
+   "label": "Damaged Sacks Consumed",
+   "precision": "3",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "measured_damaged_contents_kg",
+   "fieldtype": "Float",
+   "label": "Measured Contents of Damaged Sack(s) (kg)",
+   "precision": "3",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "fraction_kg_consumed",
+   "fieldtype": "Float",
+   "label": "Fraction Consumed (kg)",
+   "precision": "3",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "available_fraction_kg",
+   "fieldtype": "Float",
+   "label": "Available Fraction (kg)",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "max_saleable_sacks",
+   "fieldtype": "Int",
+   "label": "Maximum Full Sacks",
+   "read_only": 1
+  },
+  {
+   "fieldname": "saleable_sacks_produced",
+   "fieldtype": "Float",
+   "label": "Saleable Sacks Produced",
+   "precision": "3",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "fraction_kg_produced",
+   "fieldtype": "Float",
+   "label": "Fraction Produced (kg)",
+   "precision": "3",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "expected_weight_kg",
+   "fieldtype": "Float",
+   "label": "Expected Weight (kg)",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "recorded_loss_kg",
+   "fieldtype": "Float",
+   "label": "Recorded Loss / Shortage (kg)",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reason_section",
+   "fieldtype": "Section Break",
+   "label": "Reason and Disposal"
+  },
+  {
+   "fieldname": "disposal_expense_account",
+   "fieldtype": "Link",
+   "label": "Disposal Expense Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Small Text",
+   "label": "Reason / Work Performed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "approval_section",
+   "fieldtype": "Section Break",
+   "label": "Owner / Administrator Approval"
+  },
+  {
+   "fieldname": "approval_status",
+   "fieldtype": "Select",
+   "label": "Approval Status",
+   "options": "Not Required\nPending Approval\nApproved",
+   "default": "Not Required",
+   "read_only": 1
+  },
+  {
+   "fieldname": "approved_by",
+   "fieldtype": "Data",
+   "label": "Approved By",
+   "read_only": 1
+  },
+  {
+   "fieldname": "approved_on",
+   "fieldtype": "Datetime",
+   "label": "Approved On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "approval_reason",
+   "fieldtype": "Small Text",
+   "label": "Approval Reason",
+   "read_only": 1
+  },
+  {
+   "fieldname": "approval_signature",
+   "fieldtype": "Data",
+   "label": "Approval Signature",
+   "read_only": 1,
+   "hidden": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "stock_section",
+   "fieldtype": "Section Break",
+   "label": "Stock Posting"
+  },
+  {
+   "fieldname": "stock_entry",
+   "fieldtype": "Link",
+   "label": "Stock Entry",
+   "options": "Stock Entry",
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "module": "NKT Store Operations",
+ "name": "NKT Stock Recovery",
+ "naming_rule": "By \"Naming Series\" field",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "base_saleable_item",
+ "track_changes": 1,
+ "permissions": [
+  {
+   "role": "NKT OWNER",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1,
+   "print": 1,
+   "email": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1
+  },
+  {
+   "role": "NKT ADMINISTRATOR",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1,
+   "print": 1,
+   "email": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1
+  },
+  {
+   "role": "NKT Warehouse",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "submit": 1,
+   "print": 1,
+   "report": 1
+  },
+  {
+   "role": "NKT Encoder",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "submit": 1,
+   "print": 1,
+   "report": 1
+  }
+ ]
+}

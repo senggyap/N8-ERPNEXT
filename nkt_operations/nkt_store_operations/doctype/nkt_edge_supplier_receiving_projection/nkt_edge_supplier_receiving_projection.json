@@ -1,0 +1,271 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:projection_key",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "identity_section",
+  "projection_key",
+  "event_uuid",
+  "line_no",
+  "receiving_section",
+  "purchase_order",
+  "purchase_order_item",
+  "company",
+  "supplier",
+  "item_code",
+  "uom",
+  "warehouse",
+  "expected_qty",
+  "delivered_qty",
+  "accepted_qty",
+  "rejected_qty",
+  "rejected_warehouse",
+  "business_date",
+  "physical_received_at",
+  "state_section",
+  "projection_state",
+  "primary_ack_uuid",
+  "materialization_ack_uuid",
+  "materialization_ack_sha256",
+  "primary_supplier_receiving",
+  "primary_purchase_receipt",
+  "primary_post_actual_qty",
+  "primary_materialized_at",
+  "finalized_at"
+ ],
+ "fields": [
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Edge Supplier Receiving Projection"
+  },
+  {
+   "fieldname": "projection_key",
+   "fieldtype": "Data",
+   "label": "Projection Key",
+   "reqd": 1,
+   "unique": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "event_uuid",
+   "fieldtype": "Data",
+   "label": "Event UUID",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "line_no",
+   "fieldtype": "Int",
+   "label": "Line No.",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "receiving_section",
+   "fieldtype": "Section Break",
+   "label": "Physical Supplier Receiving"
+  },
+  {
+   "fieldname": "purchase_order",
+   "fieldtype": "Link",
+   "label": "Purchase Order",
+   "options": "Purchase Order",
+   "reqd": 0,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "purchase_order_item",
+   "fieldtype": "Data",
+   "label": "Purchase Order Item",
+   "reqd": 0,
+   "read_only": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "label": "Item",
+   "options": "Item",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "UOM",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Accepted / Receiving Warehouse",
+   "options": "Warehouse",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "expected_qty",
+   "fieldtype": "Float",
+   "label": "Effective Expected Qty",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "delivered_qty",
+   "fieldtype": "Float",
+   "label": "Bags Physically Received",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "accepted_qty",
+   "fieldtype": "Float",
+   "label": "Accepted Qty Locally Available",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "rejected_qty",
+   "fieldtype": "Float",
+   "label": "Damaged / Problem Qty Unavailable",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "rejected_warehouse",
+   "fieldtype": "Link",
+   "label": "Problem-Bag Holding Warehouse",
+   "options": "Warehouse",
+   "read_only": 1
+  },
+  {
+   "fieldname": "business_date",
+   "fieldtype": "Date",
+   "label": "Physical Receiving Date",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "physical_received_at",
+   "fieldtype": "Datetime",
+   "label": "Physical Received At",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "state_section",
+   "fieldtype": "Section Break",
+   "label": "Projection State"
+  },
+  {
+   "fieldname": "projection_state",
+   "fieldtype": "Select",
+   "label": "Projection State",
+   "options": "Pending Edge\nAwaiting Primary\nPrimary Preserved\nPrimary Stock Materialized\nFinalized\nConflict",
+   "default": "Pending Edge",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "primary_ack_uuid",
+   "fieldtype": "Data",
+   "label": "Primary ACK UUID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialization_ack_uuid",
+   "fieldtype": "Data",
+   "label": "Materialization ACK UUID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialization_ack_sha256",
+   "fieldtype": "Data",
+   "label": "Materialization ACK SHA-256",
+   "read_only": 1
+  },
+  {
+   "fieldname": "primary_supplier_receiving",
+   "fieldtype": "Link",
+   "label": "Primary Supplier Arrival",
+   "options": "NKT Supplier Receiving",
+   "read_only": 1
+  },
+  {
+   "fieldname": "primary_purchase_receipt",
+   "fieldtype": "Link",
+   "label": "Primary Purchase Receipt",
+   "options": "Purchase Receipt",
+   "read_only": 1
+  },
+  {
+   "fieldname": "primary_post_actual_qty",
+   "fieldtype": "Float",
+   "label": "Primary Post Actual Qty",
+   "read_only": 1
+  },
+  {
+   "fieldname": "primary_materialized_at",
+   "fieldtype": "Datetime",
+   "label": "Primary Materialized At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "finalized_at",
+   "fieldtype": "Datetime",
+   "label": "Edge Projection Finalized At",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "module": "NKT Store Operations",
+ "name": "NKT Edge Supplier Receiving Projection",
+ "permissions": [
+  {
+   "role": "NKT OWNER",
+   "read": 1,
+   "report": 1
+  },
+  {
+   "role": "NKT ADMINISTRATOR",
+   "read": 1,
+   "report": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "report": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

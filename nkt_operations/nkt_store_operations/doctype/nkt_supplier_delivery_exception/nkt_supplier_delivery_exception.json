@@ -1,0 +1,289 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "format:NKT-SDEX-{#####}",
+  "creation": "2026-08-13 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "identity_section",
+    "supplier_receiving",
+    "company",
+    "supplier",
+    "purchase_order",
+    "column_break_identity",
+    "bill_of_lading_no",
+    "supplier_dr_no",
+    "other_supplier_reference",
+    "vehicle_section",
+    "delivery_vehicle",
+    "plate_number",
+    "internal_vehicle_no",
+    "vehicle_operator",
+    "review_section",
+    "review_status",
+    "claim_status",
+    "column_break_review",
+    "resolution_summary",
+    "items_section",
+    "items",
+    "financial_section",
+    "gross_claim_amount",
+    "agreed_supplier_deduction_amount",
+    "column_break_financial",
+    "supplier_credit_reference",
+    "supplier_replacement_reference",
+    "audit_section",
+    "created_from_receiving_by",
+    "receiving_posting_reference"
+  ],
+  "fields": [
+    {
+      "fieldname": "identity_section",
+      "fieldtype": "Section Break",
+      "label": "External Supplier Arrival / Exception"
+    },
+    {
+      "fieldname": "supplier_receiving",
+      "fieldtype": "Link",
+      "label": "NKT Supplier Receiving",
+      "options": "NKT Supplier Receiving",
+      "reqd": 1,
+      "read_only": 1,
+      "unique": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "supplier",
+      "fieldtype": "Link",
+      "label": "Supplier",
+      "options": "Supplier",
+      "reqd": 1,
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "purchase_order",
+      "fieldtype": "Link",
+      "label": "Purchase Order",
+      "options": "Purchase Order",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "column_break_identity",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "bill_of_lading_no",
+      "fieldtype": "Data",
+      "label": "BL No.",
+      "read_only": 1
+    },
+    {
+      "fieldname": "supplier_dr_no",
+      "fieldtype": "Data",
+      "label": "Supplier DR No.",
+      "read_only": 1
+    },
+    {
+      "fieldname": "other_supplier_reference",
+      "fieldtype": "Data",
+      "label": "Other Supplier Delivery Reference",
+      "read_only": 1
+    },
+    {
+      "fieldname": "vehicle_section",
+      "fieldtype": "Section Break",
+      "label": "Vehicle / Delivery Identity",
+      "collapsible": 1
+    },
+    {
+      "fieldname": "delivery_vehicle",
+      "fieldtype": "Link",
+      "label": "Known Vehicle",
+      "options": "NKT Vehicle",
+      "read_only": 1
+    },
+    {
+      "fieldname": "plate_number",
+      "fieldtype": "Data",
+      "label": "Plate Number",
+      "read_only": 1
+    },
+    {
+      "fieldname": "internal_vehicle_no",
+      "fieldtype": "Data",
+      "label": "Internal Van / Truck No.",
+      "read_only": 1
+    },
+    {
+      "fieldname": "vehicle_operator",
+      "fieldtype": "Data",
+      "label": "Vehicle Operator / Carrier",
+      "read_only": 1
+    },
+    {
+      "fieldname": "review_section",
+      "fieldtype": "Section Break",
+      "label": "Responsibility / Supplier Claim Review"
+    },
+    {
+      "fieldname": "review_status",
+      "fieldtype": "Select",
+      "label": "Review Status",
+      "options": "Pending Review\nUnder Investigation\nResolved",
+      "default": "Pending Review",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "claim_status",
+      "fieldtype": "Select",
+      "label": "Supplier Claim / Deduction Status",
+      "options": "Not Yet Determined\nNo Supplier Claim\nClaim Pending\nClaimed\nAgreed Deduction\nReplacement Pending\nCredit Memo Pending\nRejected by Supplier\nResolved",
+      "default": "Not Yet Determined",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "column_break_review",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "resolution_summary",
+      "fieldtype": "Small Text",
+      "label": "Resolution / Review Notes"
+    },
+    {
+      "fieldname": "items_section",
+      "fieldtype": "Section Break",
+      "label": "Physical Exceptions"
+    },
+    {
+      "fieldname": "items",
+      "fieldtype": "Table",
+      "label": "Exception Items",
+      "options": "NKT Supplier Delivery Exception Item",
+      "reqd": 1
+    },
+    {
+      "fieldname": "financial_section",
+      "fieldtype": "Section Break",
+      "label": "Restricted Supplier Deduction",
+      "collapsible": 1
+    },
+    {
+      "fieldname": "gross_claim_amount",
+      "fieldtype": "Currency",
+      "label": "Gross Supplier Claim Amount",
+      "read_only": 0,
+      "description": "Restricted management-side field. Never exposed on Encoder/Warehouse receiving."
+    },
+    {
+      "fieldname": "agreed_supplier_deduction_amount",
+      "fieldtype": "Currency",
+      "label": "Agreed Supplier Deduction Amount",
+      "description": "Final agreed amount to feed the later Supplier SOA/payable ledger."
+    },
+    {
+      "fieldname": "column_break_financial",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "supplier_credit_reference",
+      "fieldtype": "Data",
+      "label": "Supplier Credit Memo / Credit Reference"
+    },
+    {
+      "fieldname": "supplier_replacement_reference",
+      "fieldtype": "Data",
+      "label": "Supplier Replacement Reference"
+    },
+    {
+      "fieldname": "audit_section",
+      "fieldtype": "Section Break",
+      "label": "System Linkage",
+      "collapsible": 1
+    },
+    {
+      "fieldname": "created_from_receiving_by",
+      "fieldtype": "Link",
+      "label": "Created From Receiving By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "receiving_posting_reference",
+      "fieldtype": "Link",
+      "label": "Underlying Purchase Receipt",
+      "options": "Purchase Receipt",
+      "read_only": 1
+    }
+  ],
+  "index_web_pages_for_search": 0,
+  "links": [],
+  "modified": "2026-08-13 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "NKT Store Operations",
+  "name": "NKT Supplier Delivery Exception",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "role": "NKT Purchasing",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "submit": 0,
+      "cancel": 0,
+      "amend": 0,
+      "report": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "NKT ADMINISTRATOR",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 0,
+      "cancel": 0,
+      "amend": 0,
+      "report": 1,
+      "export": 1,
+      "print": 1,
+      "email": 1,
+      "share": 1
+    },
+    {
+      "role": "NKT OWNER",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 0,
+      "cancel": 0,
+      "amend": 0,
+      "report": 1,
+      "export": 1,
+      "print": 1,
+      "email": 1,
+      "share": 1
+    }
+  ],
+  "row_format": "Dynamic",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 1
+}

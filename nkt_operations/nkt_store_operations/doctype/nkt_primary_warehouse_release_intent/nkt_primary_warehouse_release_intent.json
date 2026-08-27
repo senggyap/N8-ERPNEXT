@@ -1,0 +1,325 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:event_uuid",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "identity_section",
+  "event_uuid",
+  "event_family",
+  "event_action",
+  "origin_device",
+  "origin_user",
+  "operational_context",
+  "time_section",
+  "business_date",
+  "settled_at",
+  "client_created_at",
+  "release_section",
+  "warehouse_release",
+  "customer_order",
+  "company",
+  "customer",
+  "source_warehouse",
+  "release_reference",
+  "driver_name",
+  "plate_number",
+  "total_release_quantity",
+  "integrity_section",
+  "envelope_sha256",
+  "payload_sha256",
+  "canonical_envelope_json",
+  "canonical_payload_json",
+  "state_section",
+  "preservation_state",
+  "downstream_state",
+  "primary_preserved_at",
+  "materialized_warehouse_release",
+  "materialized_stock_entry",
+  "materialized_at",
+  "materialization_ack_uuid",
+  "materialization_ack_json",
+  "materialization_ack_sha256"
+ ],
+ "fields": [
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Immutable Physical Release Identity"
+  },
+  {
+   "fieldname": "event_uuid",
+   "fieldtype": "Data",
+   "label": "Event UUID",
+   "reqd": 1,
+   "unique": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "event_family",
+   "fieldtype": "Data",
+   "label": "Event Family",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "event_action",
+   "fieldtype": "Data",
+   "label": "Event Action",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "origin_device",
+   "fieldtype": "Link",
+   "label": "Origin Device",
+   "options": "NKT Device Registry",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "origin_user",
+   "fieldtype": "Link",
+   "label": "Warehouse Operator",
+   "options": "User",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "operational_context",
+   "fieldtype": "Data",
+   "label": "Operational Context",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "time_section",
+   "fieldtype": "Section Break",
+   "label": "Business Time"
+  },
+  {
+   "fieldname": "business_date",
+   "fieldtype": "Date",
+   "label": "Business Date",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "settled_at",
+   "fieldtype": "Datetime",
+   "label": "Physical Release Time",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "client_created_at",
+   "fieldtype": "Datetime",
+   "label": "Client Observed At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "release_section",
+   "fieldtype": "Section Break",
+   "label": "Physical Release Declaration"
+  },
+  {
+   "fieldname": "warehouse_release",
+   "fieldtype": "Link",
+   "label": "Warehouse Release",
+   "options": "NKT Warehouse Release",
+   "reqd": 1,
+   "unique": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "customer_order",
+   "fieldtype": "Link",
+   "label": "Customer Order",
+   "options": "NKT Customer Order",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "source_warehouse",
+   "fieldtype": "Link",
+   "label": "Source Warehouse",
+   "options": "Warehouse",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "release_reference",
+   "fieldtype": "Data",
+   "label": "Release Authorization Reference",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "driver_name",
+   "fieldtype": "Data",
+   "label": "Driver",
+   "read_only": 1
+  },
+  {
+   "fieldname": "plate_number",
+   "fieldtype": "Data",
+   "label": "Plate Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_release_quantity",
+   "fieldtype": "Float",
+   "label": "Total Released Quantity",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "integrity_section",
+   "fieldtype": "Section Break",
+   "label": "Immutable Integrity"
+  },
+  {
+   "fieldname": "envelope_sha256",
+   "fieldtype": "Data",
+   "label": "Envelope SHA-256",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "payload_sha256",
+   "fieldtype": "Data",
+   "label": "Payload SHA-256",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "canonical_envelope_json",
+   "fieldtype": "Long Text",
+   "label": "Canonical Envelope JSON",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "canonical_payload_json",
+   "fieldtype": "Long Text",
+   "label": "Canonical Payload JSON",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "state_section",
+   "fieldtype": "Section Break",
+   "label": "Primary Preservation / Materialization"
+  },
+  {
+   "fieldname": "preservation_state",
+   "fieldtype": "Select",
+   "label": "Preservation State",
+   "options": "Preserved",
+   "default": "Preserved",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "downstream_state",
+   "fieldtype": "Select",
+   "label": "Downstream State",
+   "options": "Awaiting Physical Stock Materialization\nPhysical Stock Materialized\nMaterialization Conflict",
+   "default": "Awaiting Physical Stock Materialization",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "primary_preserved_at",
+   "fieldtype": "Datetime",
+   "label": "Primary Preserved At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialized_warehouse_release",
+   "fieldtype": "Link",
+   "label": "Materialized Warehouse Release",
+   "options": "NKT Warehouse Release",
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialized_stock_entry",
+   "fieldtype": "Link",
+   "label": "Materialized Stock Entry",
+   "options": "Stock Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialized_at",
+   "fieldtype": "Datetime",
+   "label": "Materialized At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialization_ack_uuid",
+   "fieldtype": "Data",
+   "label": "Physical Stock Materialization ACK UUID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialization_ack_sha256",
+   "fieldtype": "Data",
+   "label": "Materialization ACK SHA-256",
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialization_ack_json",
+   "fieldtype": "Long Text",
+   "label": "Materialization ACK JSON",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "module": "NKT Store Operations",
+ "name": "NKT Primary Warehouse Release Intent",
+ "permissions": [
+  {
+   "role": "NKT OWNER",
+   "read": 1,
+   "report": 1
+  },
+  {
+   "role": "NKT ADMINISTRATOR",
+   "read": 1,
+   "report": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "report": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,85 @@
+{
+  "doctype": "DocType",
+  "name": "NKT Trucking Driver Liquidation Line",
+  "module": "NKT Store Operations",
+  "custom": 0,
+  "istable": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "expense_category",
+    "profit_treatment",
+    "source_trip",
+    "vehicle",
+    "plate_no",
+    "amount",
+    "reference_no",
+    "memo",
+    "receipt_attachment"
+  ],
+  "fields": [
+    {
+      "fieldname": "expense_category",
+      "fieldtype": "Select",
+      "label": "Expense Category",
+      "reqd": 1,
+      "in_list_view": 1,
+      "options": "Fuel\nToll / Parking\nTrip Incidental\nPort / Container / EIR\nMaintenance / Repair\nOther"
+    },
+    {
+      "fieldname": "profit_treatment",
+      "fieldtype": "Select",
+      "label": "Profit Treatment",
+      "reqd": 1,
+      "in_list_view": 1,
+      "options": "Direct Trip Cost\nVehicle Operating Cost\nOverhead",
+      "description": "Operational profitability classification only; no GL account is posted by C14E."
+    },
+    {
+      "fieldname": "source_trip",
+      "fieldtype": "Link",
+      "label": "Source Trip",
+      "options": "NKT Trucking Trip",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "vehicle",
+      "fieldtype": "Link",
+      "label": "Truck / Vehicle",
+      "options": "NKT Vehicle",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "plate_no",
+      "fieldtype": "Data",
+      "label": "Plate No.",
+      "read_only": 1,
+      "fetch_from": "vehicle.plate_number",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "amount",
+      "fieldtype": "Currency",
+      "label": "Amount",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "reference_no",
+      "fieldtype": "Data",
+      "label": "Receipt / Reference No."
+    },
+    {
+      "fieldname": "memo",
+      "fieldtype": "Small Text",
+      "label": "Details / Explanation"
+    },
+    {
+      "fieldname": "receipt_attachment",
+      "fieldtype": "Attach",
+      "label": "Receipt / Supporting File"
+    }
+  ],
+  "permissions": [],
+  "owner": "Administrator",
+  "modified_by": "Administrator"
+}

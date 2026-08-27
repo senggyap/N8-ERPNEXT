@@ -1,0 +1,249 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:shift_reference",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "identity_section",
+  "shift_reference",
+  "edge_shift_uuid",
+  "primary_shift_name",
+  "source_kind",
+  "company",
+  "settlement_location",
+  "cashier",
+  "shift_business_date",
+  "shift_start",
+  "opening_cash",
+  "state_section",
+  "local_status",
+  "open_event_uuid",
+  "open_sync_state",
+  "close_event_uuid",
+  "close_sync_state",
+  "close_section",
+  "physical_close_datetime",
+  "actual_cash",
+  "provisional_expected_cash",
+  "provisional_over_short",
+  "provisional_movement_count",
+  "denominations_json",
+  "provisional_summary_json",
+  "provisional_summary_sha256",
+  "count_notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Store Edge Cashier Shift"
+  },
+  {
+   "fieldname": "shift_reference",
+   "fieldtype": "Data",
+   "label": "Store Edge Shift Reference",
+   "reqd": 1,
+   "unique": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "edge_shift_uuid",
+   "fieldtype": "Data",
+   "label": "Edge Shift UUID",
+   "reqd": 1,
+   "unique": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "primary_shift_name",
+   "fieldtype": "Data",
+   "label": "Primary Cashier Shift",
+   "read_only": 1
+  },
+  {
+   "fieldname": "source_kind",
+   "fieldtype": "Select",
+   "label": "Source Kind",
+   "options": "Opened Offline at Edge\nPrimary Shift Adopted at Edge",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "settlement_location",
+   "fieldtype": "Link",
+   "label": "Cashier / Settlement Location",
+   "options": "Warehouse",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "cashier",
+   "fieldtype": "Link",
+   "label": "Cashier",
+   "options": "User",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "shift_business_date",
+   "fieldtype": "Date",
+   "label": "Original Shift Business Date",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "shift_start",
+   "fieldtype": "Datetime",
+   "label": "True Shift Start",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "opening_cash",
+   "fieldtype": "Currency",
+   "label": "Opening Cash",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "state_section",
+   "fieldtype": "Section Break",
+   "label": "Local Lifecycle State"
+  },
+  {
+   "fieldname": "local_status",
+   "fieldtype": "Select",
+   "label": "Local Status",
+   "options": "Open\nClosed",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "open_event_uuid",
+   "fieldtype": "Data",
+   "label": "Open Event UUID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "open_sync_state",
+   "fieldtype": "Select",
+   "label": "Open Sync State",
+   "options": "Pending Edge\nPrimary Preserved",
+   "read_only": 1
+  },
+  {
+   "fieldname": "close_event_uuid",
+   "fieldtype": "Data",
+   "label": "Close Event UUID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "close_sync_state",
+   "fieldtype": "Select",
+   "label": "Close Sync State",
+   "options": "Not Closed\nPending Edge\nPrimary Preserved",
+   "read_only": 1
+  },
+  {
+   "fieldname": "close_section",
+   "fieldtype": "Section Break",
+   "label": "Immutable Physical Close"
+  },
+  {
+   "fieldname": "physical_close_datetime",
+   "fieldtype": "Datetime",
+   "label": "True Physical Close Date / Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "actual_cash",
+   "fieldtype": "Currency",
+   "label": "Actual Cash from Denominations",
+   "read_only": 1
+  },
+  {
+   "fieldname": "provisional_expected_cash",
+   "fieldtype": "Currency",
+   "label": "Store Edge Expected Cash (Provisional)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "provisional_over_short",
+   "fieldtype": "Currency",
+   "label": "Store Edge Over / (Short) (Provisional)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "provisional_movement_count",
+   "fieldtype": "Int",
+   "label": "Store Edge Movement Count (Provisional)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "denominations_json",
+   "fieldtype": "Code",
+   "label": "Immutable Denomination Count JSON",
+   "options": "JSON",
+   "read_only": 1
+  },
+  {
+   "fieldname": "provisional_summary_json",
+   "fieldtype": "Code",
+   "label": "Store Edge Closing Summary JSON",
+   "options": "JSON",
+   "read_only": 1
+  },
+  {
+   "fieldname": "provisional_summary_sha256",
+   "fieldtype": "Data",
+   "label": "Provisional Summary SHA-256",
+   "read_only": 1
+  },
+  {
+   "fieldname": "count_notes",
+   "fieldtype": "Small Text",
+   "label": "Cashier Closing Notes",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "module": "NKT Store Operations",
+ "name": "NKT Edge Cashier Shift Projection",
+ "permissions": [
+  {
+   "role": "NKT Cashier",
+   "read": 1
+  },
+  {
+   "role": "NKT OWNER",
+   "read": 1,
+   "report": 1
+  },
+  {
+   "role": "NKT ADMINISTRATOR",
+   "read": 1,
+   "report": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "report": 1
+  }
+ ],
+ "sort_field": "shift_start",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

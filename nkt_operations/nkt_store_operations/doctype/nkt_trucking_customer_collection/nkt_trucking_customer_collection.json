@@ -1,0 +1,240 @@
+{
+  "doctype": "DocType",
+  "name": "NKT Trucking Customer Collection",
+  "module": "NKT Store Operations",
+  "custom": 0,
+  "autoname": "naming_series:",
+  "naming_rule": "By \"Naming Series\" field",
+  "engine": "InnoDB",
+  "track_changes": 1,
+  "field_order": [
+    "naming_series",
+    "header_section",
+    "customer",
+    "collection_datetime",
+    "column_break_header",
+    "status",
+    "received_by",
+    "company",
+    "payments_section",
+    "payments",
+    "allocation_section",
+    "allocations",
+    "totals_section",
+    "total_payment_base",
+    "total_card_surcharge",
+    "column_break_totals",
+    "total_received",
+    "total_allocated",
+    "unallocated_amount",
+    "audit_section",
+    "posted_at",
+    "reversed_at",
+    "reversed_by",
+    "reversal_reason",
+    "supporting_attachment",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "options": "TRK-COL-.YYYY.-.######",
+      "default": "TRK-COL-.YYYY.-.######",
+      "hidden": 1
+    },
+    {
+      "fieldname": "header_section",
+      "fieldtype": "Section Break",
+      "label": "ENT Trucking Customer Collection"
+    },
+    {
+      "fieldname": "customer",
+      "fieldtype": "Link",
+      "label": "Customer",
+      "options": "Customer",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "collection_datetime",
+      "fieldtype": "Datetime",
+      "label": "Collection Date / Time",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "column_break_header",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Draft\nPosted\nReversed",
+      "default": "Draft",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "received_by",
+      "fieldtype": "Link",
+      "label": "Received By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "ERP Company (when configured)",
+      "options": "Company",
+      "description": "Company-aware; C14H does not create or assume an ENT legal Company."
+    },
+    {
+      "fieldname": "payments_section",
+      "fieldtype": "Section Break",
+      "label": "Payment Received"
+    },
+    {
+      "fieldname": "payments",
+      "fieldtype": "Table",
+      "label": "Payment Rows",
+      "options": "NKT Trucking Customer Collection Payment",
+      "reqd": 1
+    },
+    {
+      "fieldname": "allocation_section",
+      "fieldtype": "Section Break",
+      "label": "SOA Allocation"
+    },
+    {
+      "fieldname": "allocations",
+      "fieldtype": "Table",
+      "label": "SOA Allocations",
+      "options": "NKT Trucking Customer Collection Allocation",
+      "reqd": 1
+    },
+    {
+      "fieldname": "totals_section",
+      "fieldtype": "Section Break",
+      "label": "Totals"
+    },
+    {
+      "fieldname": "total_payment_base",
+      "fieldtype": "Currency",
+      "label": "Payment Applied to SOAs",
+      "read_only": 1
+    },
+    {
+      "fieldname": "total_card_surcharge",
+      "fieldtype": "Currency",
+      "label": "Card Surcharge (Separate)",
+      "read_only": 1,
+      "description": "Exact 2% only for Card. Never allocated to receivable/aging."
+    },
+    {
+      "fieldname": "column_break_totals",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "total_received",
+      "fieldtype": "Currency",
+      "label": "Total Cash / Funds Received",
+      "read_only": 1
+    },
+    {
+      "fieldname": "total_allocated",
+      "fieldtype": "Currency",
+      "label": "Total Allocated to SOAs",
+      "read_only": 1
+    },
+    {
+      "fieldname": "unallocated_amount",
+      "fieldtype": "Currency",
+      "label": "Unallocated Base Payment",
+      "read_only": 1
+    },
+    {
+      "fieldname": "audit_section",
+      "fieldtype": "Section Break",
+      "label": "Audit / Supporting Document"
+    },
+    {
+      "fieldname": "posted_at",
+      "fieldtype": "Datetime",
+      "label": "Posted At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "reversed_at",
+      "fieldtype": "Datetime",
+      "label": "Reversed At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "reversed_by",
+      "fieldtype": "Link",
+      "label": "Reversed By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "reversal_reason",
+      "fieldtype": "Small Text",
+      "label": "Reversal Reason",
+      "read_only": 1
+    },
+    {
+      "fieldname": "supporting_attachment",
+      "fieldtype": "Attach",
+      "label": "Supporting Attachment / Deposit Proof"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "NKT Trucking Operations",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "print": 1,
+      "report": 1,
+      "export": 0
+    },
+    {
+      "role": "NKT OWNER",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "print": 1,
+      "report": 1,
+      "export": 1
+    },
+    {
+      "role": "NKT ADMINISTRATOR",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "print": 1,
+      "report": 1,
+      "export": 1
+    }
+  ],
+  "links": [],
+  "actions": [],
+  "states": [],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "owner": "Administrator",
+  "creation": "2026-08-14 15:46:00.000000",
+  "modified": "2026-08-14 15:46:00.000000",
+  "modified_by": "Administrator"
+}

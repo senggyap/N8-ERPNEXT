@@ -1,0 +1,209 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "autoname": "NKT-REL-.#####",
+ "creation": "2026-08-04 20:03:21.688048",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "release_details_section",
+  "amended_from",
+  "company",
+  "release_datetime",
+  "customer",
+  "customer_order",
+  "customer_name",
+  "released_by",
+  "release_status",
+  "release_items_section",
+  "items",
+  "release_summary_section",
+  "total_release_quantity",
+  "is_partial_release",
+  "delivery_note",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "NKT Warehouse Release",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "release_details_section",
+   "fieldtype": "Section Break",
+   "label": "Release Details"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "Now",
+   "fieldname": "release_datetime",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Release Date and Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer_order",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer Order",
+   "options": "NKT Customer Order",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "released_by",
+   "fieldtype": "Link",
+   "label": "Released By",
+   "options": "User",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "Draft",
+   "fieldname": "release_status",
+   "fieldtype": "Select",
+   "label": "Release Status",
+   "options": "Draft\nReleased\nCancelled"
+  },
+  {
+   "fieldname": "release_items_section",
+   "fieldtype": "Section Break",
+   "label": "Release Items"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "NKT Warehouse Release Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "release_summary_section",
+   "fieldtype": "Section Break",
+   "label": "Release Summary"
+  },
+  {
+   "fieldname": "total_release_quantity",
+   "fieldtype": "Float",
+   "label": "Total Release Quantity",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_partial_release",
+   "fieldtype": "Check",
+   "label": "Is Partial Release",
+   "read_only": 1
+  },
+  {
+   "fieldname": "delivery_note",
+   "fieldtype": "Link",
+   "label": "Legacy Delivery Note",
+   "options": "Delivery Note",
+   "read_only": 1,
+   "hidden": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-08-04 21:01:52.576363",
+ "modified_by": "Administrator",
+ "module": "NKT Store Operations",
+ "name": "NKT Warehouse Release",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "print": 1,
+   "read": 1,
+   "role": "NKT Warehouse",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "NKT ADMINISTRATOR",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "print": 1,
+   "read": 1,
+   "role": "NKT Encoder",
+   "share": 1
+  },
+  {
+   "print": 1,
+   "read": 1,
+   "role": "NKT Cashier",
+   "share": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

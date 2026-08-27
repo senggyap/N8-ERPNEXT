@@ -1,0 +1,259 @@
+{
+  "doctype": "DocType",
+  "name": "NKT Trucking Customer Charge",
+  "module": "NKT Store Operations",
+  "custom": 0,
+  "autoname": "format:NKT-TCHG-{#####}",
+  "engine": "InnoDB",
+  "track_changes": 1,
+  "allow_rename": 0,
+  "field_order": [
+    "header_section",
+    "charge_date",
+    "source_trip",
+    "charge_type",
+    "customer",
+    "column_break_header",
+    "status",
+    "company",
+    "route_section",
+    "origin",
+    "destination",
+    "reference_no",
+    "column_break_route",
+    "driver_name",
+    "vehicle",
+    "plate_no",
+    "dr_no",
+    "eir_no",
+    "amount_section",
+    "qty",
+    "rate",
+    "manual_amount_override",
+    "amount",
+    "override_reason",
+    "billing_section",
+    "linked_customer_soa",
+    "billed_amount",
+    "billed_at",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "header_section",
+      "fieldtype": "Section Break",
+      "label": "Customer-Billable Backload / Additional Charge"
+    },
+    {
+      "fieldname": "charge_date",
+      "fieldtype": "Date",
+      "label": "Charge / Service Date",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "source_trip",
+      "fieldtype": "Link",
+      "label": "Source Trip",
+      "options": "NKT Trucking Trip",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "charge_type",
+      "fieldtype": "Select",
+      "label": "Charge Type",
+      "options": "Backload\nAdditional Charge",
+      "reqd": 1,
+      "in_list_view": 1,
+      "description": "No percentage or fixed backload rule is assumed. The commercial value is entered explicitly below."
+    },
+    {
+      "fieldname": "customer",
+      "fieldtype": "Link",
+      "label": "Bill To Customer",
+      "options": "Customer",
+      "reqd": 1,
+      "in_list_view": 1,
+      "description": "Defaults from the trip customer when available but remains editable because a backload may belong to a different customer."
+    },
+    {
+      "fieldname": "column_break_header",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Draft\nReady to Bill\nBilled\nCancelled",
+      "default": "Draft",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "ERP Company (when configured)",
+      "options": "Company",
+      "description": "Do not force NKT (Dev) for ENT. Select the correct legal ERP Company when configured."
+    },
+    {
+      "fieldname": "route_section",
+      "fieldtype": "Section Break",
+      "label": "Backload / Additional-Charge Detail"
+    },
+    {
+      "fieldname": "origin",
+      "fieldtype": "Data",
+      "label": "Charge Origin"
+    },
+    {
+      "fieldname": "destination",
+      "fieldtype": "Data",
+      "label": "Charge Destination",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "reference_no",
+      "fieldtype": "Data",
+      "label": "Charge / Backload Reference"
+    },
+    {
+      "fieldname": "column_break_route",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "driver_name",
+      "fieldtype": "Data",
+      "label": "Actual Driver",
+      "read_only": 1
+    },
+    {
+      "fieldname": "vehicle",
+      "fieldtype": "Link",
+      "label": "Truck / Vehicle",
+      "options": "NKT Vehicle",
+      "read_only": 1
+    },
+    {
+      "fieldname": "plate_no",
+      "fieldtype": "Data",
+      "label": "Plate No.",
+      "read_only": 1
+    },
+    {
+      "fieldname": "dr_no",
+      "fieldtype": "Data",
+      "label": "Trip DR No.",
+      "read_only": 1
+    },
+    {
+      "fieldname": "eir_no",
+      "fieldtype": "Data",
+      "label": "Trip EIR No.",
+      "read_only": 1
+    },
+    {
+      "fieldname": "amount_section",
+      "fieldtype": "Section Break",
+      "label": "Editable Qty / Rate / Amount"
+    },
+    {
+      "fieldname": "qty",
+      "fieldtype": "Float",
+      "label": "Qty",
+      "in_list_view": 1,
+      "description": "Enter the actual basis. No historical 1,400 default is imposed."
+    },
+    {
+      "fieldname": "rate",
+      "fieldtype": "Currency",
+      "label": "Rate",
+      "in_list_view": 1,
+      "description": "Editable commercial rate. No 10% backload formula is guessed."
+    },
+    {
+      "fieldname": "manual_amount_override",
+      "fieldtype": "Check",
+      "label": "Manual Amount Override",
+      "default": "0"
+    },
+    {
+      "fieldname": "amount",
+      "fieldtype": "Currency",
+      "label": "Amount",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "override_reason",
+      "fieldtype": "Data",
+      "label": "Override Reason"
+    },
+    {
+      "fieldname": "billing_section",
+      "fieldtype": "Section Break",
+      "label": "Billing Lineage"
+    },
+    {
+      "fieldname": "linked_customer_soa",
+      "fieldtype": "Link",
+      "label": "Finalized Customer SOA",
+      "options": "NKT Trucking Customer SOA",
+      "read_only": 1
+    },
+    {
+      "fieldname": "billed_amount",
+      "fieldtype": "Currency",
+      "label": "Billed Amount Snapshot",
+      "read_only": 1
+    },
+    {
+      "fieldname": "billed_at",
+      "fieldtype": "Datetime",
+      "label": "Billed At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "NKT Trucking Operations",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "print": 1,
+      "report": 1,
+      "export": 0
+    },
+    {
+      "role": "NKT OWNER",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "print": 1,
+      "report": 1,
+      "export": 1
+    },
+    {
+      "role": "NKT ADMINISTRATOR",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "print": 1,
+      "report": 1,
+      "export": 1
+    }
+  ],
+  "owner": "Administrator",
+  "creation": "2026-08-14 15:20:00.000000",
+  "modified": "2026-08-14 15:20:00.000000",
+  "modified_by": "Administrator"
+}

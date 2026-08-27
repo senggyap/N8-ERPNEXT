@@ -1,0 +1,25 @@
+{
+  "doctype": "Report",
+  "name": "NKT Trucking Vehicle History",
+  "module": "NKT Store Operations",
+  "ref_doctype": "NKT Vehicle",
+  "report_name": "NKT Trucking Vehicle History",
+  "report_type": "Script Report",
+  "is_standard": "Yes",
+  "disabled": 0,
+  "roles": [
+    {
+      "role": "NKT Trucking Operations"
+    },
+    {
+      "role": "NKT OWNER"
+    },
+    {
+      "role": "NKT ADMINISTRATOR"
+    }
+  ],
+  "owner": "Administrator",
+  "creation": "2026-08-14 15:10:00.000000",
+  "modified": "2026-08-14 15:10:00.000000",
+  "modified_by": "Administrator"
+}

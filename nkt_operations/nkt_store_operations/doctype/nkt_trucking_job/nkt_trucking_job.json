@@ -1,0 +1,272 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "format:NKT-TJOB-{#####}",
+ "creation": "2026-08-13 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "source_section",
+  "company",
+  "job_date",
+  "job_type",
+  "source_supplier_receiving",
+  "column_break_source",
+  "source_supplier",
+  "receiving_warehouse",
+  "job_status",
+  "identity_section",
+  "bl_no",
+  "dr_no",
+  "other_supplier_reference",
+  "vehicle_section",
+  "delivery_vehicle",
+  "plate_number",
+  "internal_vehicle_no",
+  "vehicle_operator",
+  "carrier_account",
+  "driver_name",
+  "movement_section",
+  "items",
+  "control_section",
+  "physical_source_locked",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "source_section",
+   "fieldtype": "Section Break",
+   "label": "Trucking Job — Fast Screen"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "job_date",
+   "fieldtype": "Date",
+   "label": "Job Date",
+   "default": "Today",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "job_type",
+   "fieldtype": "Select",
+   "label": "Job Type",
+   "options": "Supplier Arrival Haul",
+   "default": "Supplier Arrival Haul",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "source_supplier_receiving",
+   "fieldtype": "Link",
+   "label": "Supplier Arrival",
+   "options": "NKT Supplier Receiving",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1,
+   "description": "One operational trucking job per posted Supplier Arrival."
+  },
+  {
+   "fieldname": "column_break_source",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "source_supplier",
+   "fieldtype": "Link",
+   "label": "Cargo Supplier",
+   "options": "Supplier",
+   "read_only": 1
+  },
+  {
+   "fieldname": "receiving_warehouse",
+   "fieldtype": "Link",
+   "label": "Destination Warehouse",
+   "options": "Warehouse",
+   "read_only": 1
+  },
+  {
+   "fieldname": "job_status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nRecorded",
+   "default": "Draft",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Delivery Identity"
+  },
+  {
+   "fieldname": "bl_no",
+   "fieldtype": "Data",
+   "label": "BL No.",
+   "read_only": 1
+  },
+  {
+   "fieldname": "dr_no",
+   "fieldtype": "Data",
+   "label": "DR No.",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "other_supplier_reference",
+   "fieldtype": "Data",
+   "label": "Other Supplier Reference",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle_section",
+   "fieldtype": "Section Break",
+   "label": "Vehicle / Carrier"
+  },
+  {
+   "fieldname": "delivery_vehicle",
+   "fieldtype": "Link",
+   "label": "Vehicle",
+   "options": "NKT Vehicle",
+   "read_only": 1
+  },
+  {
+   "fieldname": "plate_number",
+   "fieldtype": "Data",
+   "label": "Plate No.",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "internal_vehicle_no",
+   "fieldtype": "Data",
+   "label": "Van / Truck No.",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "vehicle_operator",
+   "fieldtype": "Data",
+   "label": "Vehicle Operator",
+   "read_only": 1
+  },
+  {
+   "fieldname": "carrier_account",
+   "fieldtype": "Link",
+   "label": "Carrier / Trucker Account",
+   "options": "Supplier",
+   "description": "Restricted trucking payable/SOA will use this payee. May differ from the cargo Supplier."
+  },
+  {
+   "fieldname": "driver_name",
+   "fieldtype": "Data",
+   "label": "Driver",
+   "read_only": 1
+  },
+  {
+   "fieldname": "movement_section",
+   "fieldtype": "Section Break",
+   "label": "Physical Haul"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Hauled Items",
+   "options": "NKT Trucking Job Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "control_section",
+   "fieldtype": "Section Break",
+   "label": "Control",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "physical_source_locked",
+   "fieldtype": "Check",
+   "label": "Physical Source Locked",
+   "default": "1",
+   "read_only": 1
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Operational Notes"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "is_submittable": 0,
+ "links": [],
+ "modified": "2026-08-13 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "NKT Store Operations",
+ "name": "NKT Trucking Job",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "NKT Encoder",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "report": 1,
+   "export": 0,
+   "print": 1
+  },
+  {
+   "role": "NKT Warehouse",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "report": 1,
+   "export": 0,
+   "print": 1
+  },
+  {
+   "role": "NKT Purchasing",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "report": 1,
+   "export": 1,
+   "print": 1
+  },
+  {
+   "role": "NKT ADMINISTRATOR",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "NKT OWNER",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "job_date",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

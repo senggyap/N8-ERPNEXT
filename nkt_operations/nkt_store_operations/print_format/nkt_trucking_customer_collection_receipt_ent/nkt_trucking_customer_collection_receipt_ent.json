@@ -1,0 +1,15 @@
+{
+  "doctype": "Print Format",
+  "name": "NKT Trucking Customer Collection Receipt - ENT",
+  "doc_type": "NKT Trucking Customer Collection",
+  "module": "NKT Store Operations",
+  "standard": "Yes",
+  "print_format_type": "Jinja",
+  "custom_format": 0,
+  "disabled": 0,
+  "html": "<style>.ent-col{font-size:10px;color:#111}.ent-col h2,.ent-col h3{text-align:center;margin:0}.ent-col table{width:100%;border-collapse:collapse;margin-top:8px}.ent-col th,.ent-col td{border:1px solid #111;padding:4px}.ent-col .num{text-align:right}.ent-col .note{font-size:9px;margin-top:8px}</style><div class=\"ent-col\"><h2>ENT Trucking Services</h2><h3>COLLECTION RECEIPT</h3><table><tr><td><b>Receipt No.</b> {{ doc.name }}</td><td><b>Customer</b> {{ doc.customer }}</td><td><b>Date</b> {{ frappe.utils.format_datetime(doc.collection_datetime) }}</td></tr></table><table><thead><tr><th>PAYMENT METHOD</th><th>REFERENCE</th><th>AMOUNT APPLIED</th><th>CARD SURCHARGE</th><th>TOTAL RECEIVED</th></tr></thead><tbody>{% for r in doc.payments %}<tr><td>{{ r.payment_method }}</td><td>{{ r.check_number or r.reference_number or '' }}</td><td class=\"num\">{{ frappe.utils.fmt_money(r.base_amount or 0) }}</td><td class=\"num\">{{ frappe.utils.fmt_money(r.surcharge_amount or 0) }}</td><td class=\"num\">{{ frappe.utils.fmt_money(r.total_received or 0) }}</td></tr>{% endfor %}<tr><td colspan=\"2\"><b>TOTAL</b></td><td class=\"num\"><b>{{ frappe.utils.fmt_money(doc.total_payment_base or 0) }}</b></td><td class=\"num\"><b>{{ frappe.utils.fmt_money(doc.total_card_surcharge or 0) }}</b></td><td class=\"num\"><b>{{ frappe.utils.fmt_money(doc.total_received or 0) }}</b></td></tr></tbody></table><table><thead><tr><th>SOA</th><th>STATEMENT DATE</th><th>OUTSTANDING BEFORE</th><th>ALLOCATED</th><th>OUTSTANDING AFTER</th></tr></thead><tbody>{% for r in doc.allocations %}<tr><td>{{ r.customer_soa }}</td><td>{{ frappe.utils.formatdate(r.statement_date) if r.statement_date else '' }}</td><td class=\"num\">{{ frappe.utils.fmt_money(r.outstanding_before or 0) }}</td><td class=\"num\">{{ frappe.utils.fmt_money(r.allocated_amount or 0) }}</td><td class=\"num\">{{ frappe.utils.fmt_money(r.outstanding_after or 0) }}</td></tr>{% endfor %}</tbody></table><div class=\"note\">Card surcharge is recorded separately from the SOA receivable. It is not merchandise, receivable, aging, advance, overpayment, or SOA allocation.</div></div>",
+  "owner": "Administrator",
+  "creation": "2026-08-14 15:46:00.000000",
+  "modified": "2026-08-14 15:46:00.000000",
+  "modified_by": "Administrator"
+}

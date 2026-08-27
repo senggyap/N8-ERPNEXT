@@ -1,0 +1,117 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "creation": "2026-08-17 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "operations_section",
+    "company",
+    "combined_bulk_warehouse",
+    "items_section",
+    "palm_olein_item",
+    "empty_container_item",
+    "finished_palm_oil_item",
+    "nominal_kg_per_container",
+    "control_section",
+    "operational_note"
+  ],
+  "fields": [
+    {
+      "fieldname": "operations_section",
+      "fieldtype": "Section Break",
+      "label": "Combined Bulk Palm Oil Operations"
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "combined_bulk_warehouse",
+      "fieldtype": "Link",
+      "label": "Combined Palm Olein Bulk Warehouse",
+      "options": "Warehouse",
+      "reqd": 1,
+      "description": "All physical Palm Olein tanks are treated as one combined ERP bulk pool."
+    },
+    {
+      "fieldname": "items_section",
+      "fieldtype": "Section Break",
+      "label": "Oil Items"
+    },
+    {
+      "fieldname": "palm_olein_item",
+      "fieldtype": "Link",
+      "label": "Palm Olein Bulk Item (Kg)",
+      "options": "Item",
+      "reqd": 1
+    },
+    {
+      "fieldname": "empty_container_item",
+      "fieldtype": "Link",
+      "label": "Empty 17 Kg Container Item",
+      "options": "Item",
+      "reqd": 1
+    },
+    {
+      "fieldname": "finished_palm_oil_item",
+      "fieldtype": "Link",
+      "label": "Finished Palm Oil 17 Kg Item",
+      "options": "Item",
+      "reqd": 1
+    },
+    {
+      "fieldname": "nominal_kg_per_container",
+      "fieldtype": "Float",
+      "label": "Nominal Kg per Finished Container",
+      "default": "17",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "control_section",
+      "fieldtype": "Section Break",
+      "label": "Control"
+    },
+    {
+      "fieldname": "operational_note",
+      "fieldtype": "Small Text",
+      "label": "Operating Rule",
+      "read_only": 1,
+      "default": "Truck-scale supplier quantity is the paid quantity. Physical tanks are one combined pool. Net bulk surplus/short is crystallized only at Owner/Admin Tank Empty close."
+    }
+  ],
+  "index_web_pages_for_search": 0,
+  "issingle": 1,
+  "links": [],
+  "modified": "2026-08-17 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "NKT Store Operations",
+  "name": "NKT Oil Operations Settings",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "role": "NKT OWNER",
+      "read": 1,
+      "report": 1,
+      "create": 1,
+      "write": 1,
+      "delete": 0
+    },
+    {
+      "role": "NKT ADMINISTRATOR",
+      "read": 1,
+      "report": 1,
+      "create": 1,
+      "write": 1,
+      "delete": 0
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 1
+}

@@ -1,0 +1,476 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "NKT-RX-.#####",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "identity_section",
+  "side",
+  "company",
+  "business_date",
+  "entry_datetime",
+  "entry_user",
+  "custom_nkt_offline_event_uuid",
+  "custom_nkt_offline_payload_sha256",
+  "custom_nkt_offline_cashier_shift",
+  "custom_nkt_offline_physical_settled_at",
+  "identity_column",
+  "customer",
+  "customer_name",
+  "old_cashier_sale",
+  "old_customer_order",
+  "source_generation",
+  "old_section",
+  "returned_items",
+  "new_section",
+  "new_items",
+  "settlement_section",
+  "transaction_type",
+  "settlement_destination",
+  "settlement_method",
+  "customer_pays_mode",
+  "settlement_reference",
+  "settlement_payments",
+  "settlement_column",
+  "return_credit",
+  "new_order_value",
+  "customer_pays",
+  "charge_to_account",
+  "account_adjustment_amount",
+  "customer_credit_amount",
+  "refund_money",
+  "credit_adjustment",
+  "basis_section",
+  "real_money_basis_remaining",
+  "account_credit_basis_remaining",
+  "return_money_basis",
+  "return_account_basis",
+  "encoder_section",
+  "return_warehouse",
+  "match_section",
+  "reconciliation_status",
+  "matched_declaration",
+  "posting_status",
+  "posted_on",
+  "return_stock_entry",
+  "new_cashier_sale",
+  "new_customer_order",
+  "account_adjustment_record",
+  "customer_credit_record",
+  "exact_candidate_count",
+  "match_key",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Return / Exchange Declaration"
+  },
+  {
+   "fieldname": "side",
+   "fieldtype": "Select",
+   "label": "Side",
+   "options": "Cashier\nEncoder",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "business_date",
+   "fieldtype": "Date",
+   "label": "Business Date",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "entry_datetime",
+   "fieldtype": "Datetime",
+   "label": "Entry Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "entry_user",
+   "fieldtype": "Link",
+   "label": "Entered By",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "identity_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "old_cashier_sale",
+   "fieldtype": "Link",
+   "label": "Old Cashier Sale",
+   "options": "NKT Cashier Sale",
+   "read_only": 1
+  },
+  {
+   "fieldname": "old_customer_order",
+   "fieldtype": "Link",
+   "label": "Old Customer Order",
+   "options": "NKT Customer Order",
+   "read_only": 1
+  },
+  {
+   "fieldname": "source_generation",
+   "fieldtype": "Int",
+   "label": "Exchange Generation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "old_section",
+   "fieldtype": "Section Break",
+   "label": "OLD ORDER"
+  },
+  {
+   "fieldname": "returned_items",
+   "fieldtype": "Table",
+   "label": "Returned Items",
+   "options": "NKT Return Exchange Returned Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "new_section",
+   "fieldtype": "Section Break",
+   "label": "NEW ORDER"
+  },
+  {
+   "fieldname": "new_items",
+   "fieldtype": "Table",
+   "label": "New / Replacement Items",
+   "options": "NKT Return Exchange New Item"
+  },
+  {
+   "fieldname": "settlement_section",
+   "fieldtype": "Section Break",
+   "label": "Settlement"
+  },
+  {
+   "fieldname": "transaction_type",
+   "fieldtype": "Select",
+   "label": "Transaction Type",
+   "options": "Return\nExchange",
+   "reqd": 1
+  },
+  {
+   "fieldname": "settlement_destination",
+   "fieldtype": "Select",
+   "label": "Refund / Credit Destination",
+   "options": "\nRefund Money\nCustomer Credit\nAccount Adjustment\nNone",
+   "reqd": 1
+  },
+  {
+   "fieldname": "settlement_method",
+   "fieldtype": "Select",
+   "label": "Refund Money Method",
+   "options": "\nCash\nCheck\nGCash\nMaya\nBank Transfer\nCard\nOnline",
+   "description": "Cashier actual-money method. Encoder records the same declaration only for reconciliation."
+  },
+  {
+   "fieldname": "customer_pays_mode",
+   "fieldtype": "Select",
+   "label": "Customer Pays Mode",
+   "options": "\nPay Now\nCharge Difference to Account\nSplit Settlement\nNone"
+  },
+  {
+   "fieldname": "settlement_reference",
+   "fieldtype": "Data",
+   "label": "Refund Reference"
+  },
+  {
+   "fieldname": "settlement_payments",
+   "fieldtype": "Table",
+   "label": "Customer Pays Settlement",
+   "options": "NKT Return Exchange Settlement Payment",
+   "description": "Fast-Screen-style settlement rows for the amount the customer owes after Return Credit."
+  },
+  {
+   "fieldname": "settlement_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "return_credit",
+   "fieldtype": "Currency",
+   "label": "Return Credit",
+   "read_only": 1
+  },
+  {
+   "fieldname": "new_order_value",
+   "fieldtype": "Currency",
+   "label": "New Order Value",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer_pays",
+   "fieldtype": "Currency",
+   "label": "Customer Pays",
+   "read_only": 1
+  },
+  {
+   "fieldname": "charge_to_account",
+   "fieldtype": "Currency",
+   "label": "Charge Difference to Account",
+   "read_only": 1
+  },
+  {
+   "fieldname": "account_adjustment_amount",
+   "fieldtype": "Currency",
+   "label": "Account Adjustment",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer_credit_amount",
+   "fieldtype": "Currency",
+   "label": "Customer Credit",
+   "read_only": 1
+  },
+  {
+   "fieldname": "refund_money",
+   "fieldtype": "Currency",
+   "label": "Actual Money Refund",
+   "read_only": 1
+  },
+  {
+   "fieldname": "credit_adjustment",
+   "fieldtype": "Currency",
+   "label": "Customer Credit / Account Adjustment",
+   "read_only": 1
+  },
+  {
+   "fieldname": "basis_section",
+   "fieldtype": "Section Break",
+   "label": "Refund Safety Basis"
+  },
+  {
+   "fieldname": "real_money_basis_remaining",
+   "fieldtype": "Currency",
+   "label": "Remaining Real-Money Basis",
+   "read_only": 1
+  },
+  {
+   "fieldname": "account_credit_basis_remaining",
+   "fieldtype": "Currency",
+   "label": "Remaining Account / Credit Basis",
+   "read_only": 1
+  },
+  {
+   "fieldname": "return_money_basis",
+   "fieldtype": "Currency",
+   "label": "Returned Value from Real Money",
+   "read_only": 1
+  },
+  {
+   "fieldname": "return_account_basis",
+   "fieldtype": "Currency",
+   "label": "Returned Value from Account/Credit",
+   "read_only": 1
+  },
+  {
+   "fieldname": "encoder_section",
+   "fieldtype": "Section Break",
+   "label": "Encoder Inventory Control"
+  },
+  {
+   "fieldname": "return_warehouse",
+   "fieldtype": "Link",
+   "label": "Return Receiving Warehouse",
+   "options": "Warehouse",
+   "description": "Used only by Encoder-side official inventory posting in the next stage."
+  },
+  {
+   "fieldname": "match_section",
+   "fieldtype": "Section Break",
+   "label": "Independent Reconciliation"
+  },
+  {
+   "fieldname": "reconciliation_status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Unmatched\nMatched\nAmbiguous\nCancelled",
+   "default": "Unmatched",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "matched_declaration",
+   "fieldtype": "Link",
+   "label": "Matched Declaration",
+   "options": "NKT Return Exchange Declaration",
+   "read_only": 1
+  },
+  {
+   "fieldname": "posting_status",
+   "fieldtype": "Select",
+   "label": "Posting Status",
+   "options": "Not Posted\nPosted\nCancelled",
+   "default": "Not Posted",
+   "read_only": 1
+  },
+  {
+   "fieldname": "posted_on",
+   "fieldtype": "Datetime",
+   "label": "Posted On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "return_stock_entry",
+   "fieldtype": "Link",
+   "label": "Return Stock Entry",
+   "options": "Stock Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "new_cashier_sale",
+   "fieldtype": "Link",
+   "label": "NEW Cashier Sale",
+   "options": "NKT Cashier Sale",
+   "read_only": 1
+  },
+  {
+   "fieldname": "new_customer_order",
+   "fieldtype": "Link",
+   "label": "NEW Customer Order",
+   "options": "NKT Customer Order",
+   "read_only": 1
+  },
+  {
+   "fieldname": "account_adjustment_record",
+   "fieldtype": "Link",
+   "label": "Account Adjustment Record",
+   "options": "NKT Return Account Adjustment",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer_credit_record",
+   "fieldtype": "Link",
+   "label": "Customer Credit",
+   "options": "NKT Customer Advance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "exact_candidate_count",
+   "fieldtype": "Int",
+   "label": "Exact Candidate Count",
+   "read_only": 1,
+   "hidden": 1
+  },
+  {
+   "fieldname": "match_key",
+   "fieldtype": "Data",
+   "label": "Match Key",
+   "read_only": 1,
+   "hidden": 1
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "custom_nkt_offline_event_uuid",
+   "fieldtype": "Data",
+   "label": "Offline Event UUID",
+   "read_only": 1,
+   "hidden": 1,
+   "unique": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "custom_nkt_offline_payload_sha256",
+   "fieldtype": "Data",
+   "label": "Offline Payload SHA-256",
+   "read_only": 1,
+   "hidden": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "custom_nkt_offline_cashier_shift",
+   "fieldtype": "Link",
+   "options": "NKT Cashier Shift",
+   "label": "Offline Original Cashier Shift",
+   "read_only": 1,
+   "hidden": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "custom_nkt_offline_physical_settled_at",
+   "fieldtype": "Datetime",
+   "label": "Offline Physical Settled At",
+   "read_only": 1,
+   "hidden": 1,
+   "no_copy": 1
+  }
+ ],
+ "is_submittable": 1,
+ "module": "NKT Store Operations",
+ "name": "NKT Return Exchange Declaration",
+ "naming_rule": "Expression",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1,
+   "report": 1,
+   "export": 1,
+   "print": 1
+  },
+  {
+   "role": "NKT OWNER",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1,
+   "report": 1,
+   "export": 1,
+   "print": 1
+  },
+  {
+   "role": "NKT ADMINISTRATOR",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1,
+   "report": 1,
+   "export": 1,
+   "print": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

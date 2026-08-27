@@ -1,0 +1,144 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-08-14 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "changed_on",
+  "changed_by",
+  "change_type",
+  "change_note",
+  "previous_document_number",
+  "new_document_number",
+  "previous_issue_date",
+  "new_issue_date",
+  "previous_expiry_date",
+  "new_expiry_date",
+  "previous_renewal_due_date",
+  "new_renewal_due_date",
+  "previous_document_file",
+  "new_document_file",
+  "previous_record_state",
+  "new_record_state"
+ ],
+ "fields": [
+  {
+   "fieldname": "changed_on",
+   "fieldtype": "Datetime",
+   "label": "Changed On",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "changed_by",
+   "fieldtype": "Link",
+   "label": "Changed By",
+   "options": "User",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "change_type",
+   "fieldtype": "Select",
+   "label": "Change Type",
+   "options": "Renewal\nLifecycle Change\nCorrection / Update",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "change_note",
+   "fieldtype": "Small Text",
+   "label": "Change Note",
+   "read_only": 1
+  },
+  {
+   "fieldname": "previous_document_number",
+   "fieldtype": "Data",
+   "label": "Previous Document Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "new_document_number",
+   "fieldtype": "Data",
+   "label": "New Document Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "previous_issue_date",
+   "fieldtype": "Date",
+   "label": "Previous Issue Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "new_issue_date",
+   "fieldtype": "Date",
+   "label": "New Issue Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "previous_expiry_date",
+   "fieldtype": "Date",
+   "label": "Previous Expiry Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "new_expiry_date",
+   "fieldtype": "Date",
+   "label": "New Expiry Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "previous_renewal_due_date",
+   "fieldtype": "Date",
+   "label": "Previous Renewal Due Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "new_renewal_due_date",
+   "fieldtype": "Date",
+   "label": "New Renewal Due Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "previous_document_file",
+   "fieldtype": "Attach",
+   "label": "Previous Document File",
+   "read_only": 1
+  },
+  {
+   "fieldname": "new_document_file",
+   "fieldtype": "Attach",
+   "label": "New Document File",
+   "read_only": 1
+  },
+  {
+   "fieldname": "previous_record_state",
+   "fieldtype": "Data",
+   "label": "Previous Record State",
+   "read_only": 1
+  },
+  {
+   "fieldname": "new_record_state",
+   "fieldtype": "Data",
+   "label": "New Record State",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 20,
+ "index_web_pages_for_search": 0,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-08-14 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "NKT Store Operations",
+ "name": "NKT Compliance Renewal History",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "idx",
+ "sort_order": "ASC",
+ "states": [],
+ "track_changes": 0
+}

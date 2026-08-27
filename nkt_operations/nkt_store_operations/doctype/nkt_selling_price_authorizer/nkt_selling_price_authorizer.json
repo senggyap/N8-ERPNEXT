@@ -1,0 +1,132 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:user",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "user",
+  "authorization_section",
+  "can_authorize_selling_price_adjustments",
+  "pin_configured",
+  "credential_section",
+  "pin_salt",
+  "pin_hash",
+  "pin_iterations",
+  "last_pin_change",
+  "last_changed_by"
+ ],
+ "fields": [
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User",
+   "options": "User",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "authorization_section",
+   "fieldtype": "Section Break",
+   "label": "Selling Price Authorization"
+  },
+  {
+   "default": "0",
+   "fieldname": "can_authorize_selling_price_adjustments",
+   "fieldtype": "Check",
+   "label": "Can Authorize Selling Price Adjustments",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "pin_configured",
+   "fieldtype": "Check",
+   "label": "5-Digit PIN Configured",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "credential_section",
+   "fieldtype": "Section Break",
+   "label": "Protected Credential",
+   "hidden": 1
+  },
+  {
+   "fieldname": "pin_salt",
+   "fieldtype": "Data",
+   "label": "PIN Salt",
+   "hidden": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "pin_hash",
+   "fieldtype": "Data",
+   "label": "PIN Hash",
+   "hidden": 1,
+   "read_only": 1
+  },
+  {
+   "default": "180000",
+   "fieldname": "pin_iterations",
+   "fieldtype": "Int",
+   "label": "PIN Hash Iterations",
+   "hidden": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_pin_change",
+   "fieldtype": "Datetime",
+   "label": "Last PIN Change",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_changed_by",
+   "fieldtype": "Link",
+   "label": "Last Changed By",
+   "options": "User",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "is_submittable": 0,
+ "links": [],
+ "modified": "2026-08-18 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "NKT Store Operations",
+ "name": "NKT Selling Price Authorizer",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "NKT OWNER",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "report": 1,
+   "export": 1
+  },
+  {
+   "role": "NKT ADMINISTRATOR",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "report": 1,
+   "export": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "report": 1,
+   "export": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

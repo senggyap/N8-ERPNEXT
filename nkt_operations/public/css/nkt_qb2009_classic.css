@@ -1,0 +1,456 @@
+/* NKT ERP — QuickBooks Desktop 2009-inspired visual foundation
+   Post-C15F VP2A. Presentation only: no business actions are hidden or disabled here.
+   Primary target: 1920x1080 desktop, compact-but-comfortable density.
+*/
+:root,
+html.nkt-qb2009-shell {
+  --nkt-qb-font: "Segoe UI", Tahoma, Arial, sans-serif;
+  --nkt-qb-blue-900: #173f67;
+  --nkt-qb-blue-800: #1e527f;
+  --nkt-qb-blue-700: #286694;
+  --nkt-qb-blue-600: #3479ad;
+  --nkt-qb-blue-100: #dbe8f3;
+  --nkt-qb-blue-050: #edf4f9;
+  --nkt-qb-gray-900: #30363b;
+  --nkt-qb-gray-800: #434a50;
+  --nkt-qb-gray-700: #596168;
+  --nkt-qb-gray-600: #717a82;
+  --nkt-qb-gray-500: #8b959d;
+  --nkt-qb-gray-400: #aeb7be;
+  --nkt-qb-gray-300: #c7cfd5;
+  --nkt-qb-gray-200: #dce2e6;
+  --nkt-qb-gray-150: #e7ebee;
+  --nkt-qb-gray-100: #f1f3f5;
+  --nkt-qb-gray-050: #f8f9fa;
+  --nkt-qb-surface: #ffffff;
+  --nkt-qb-panel: #edf1f4;
+  --nkt-qb-border: #9da8b1;
+  --nkt-qb-border-dark: #7e8992;
+  --nkt-qb-focus: #2d70aa;
+  --nkt-qb-control-h: 30px;
+  --nkt-qb-control-radius: 2px;
+}
+html.nkt-qb2009-shell,
+body.nkt-qb2009-shell,
+body.nkt-qb2009-shell .desk-page,
+body.nkt-qb2009-shell .page-container {
+  font-family: var(--nkt-qb-font);
+  font-size: 13px;
+  color: var(--nkt-qb-gray-900);
+}
+body.nkt-qb2009-shell {
+  background: linear-gradient(#e9eef2, #f7f8f9 130px) no-repeat, var(--nkt-qb-gray-100);
+}
+body.nkt-qb2009-shell .navbar,
+body.nkt-qb2009-shell header.navbar {
+  min-height: 42px;
+  height: 42px;
+  background: linear-gradient(to bottom, #397ead 0%, #276694 48%, #1f557f 52%, #18456d 100%);
+  border-bottom: 1px solid #0d3355;
+  box-shadow: inset 0 1px rgba(255,255,255,.22), 0 1px 2px rgba(0,0,0,.18);
+}
+body.nkt-qb2009-shell .navbar .navbar-brand,
+body.nkt-qb2009-shell .navbar .nav-link,
+body.nkt-qb2009-shell .navbar .dropdown-toggle,
+body.nkt-qb2009-shell .navbar a {
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 0 1px rgba(0,0,0,.25);
+}
+body.nkt-qb2009-shell .navbar .nav-link,
+body.nkt-qb2009-shell .navbar .dropdown-toggle {
+  min-height: 40px;
+  padding-top: 10px;
+  padding-bottom: 9px;
+}
+body.nkt-qb2009-shell .navbar .nav-link:hover,
+body.nkt-qb2009-shell .navbar .dropdown-toggle:hover {
+  background: rgba(255,255,255,.09);
+}
+body.nkt-qb2009-shell .page-head,
+body.nkt-qb2009-shell .page-head.drop-shadow {
+  min-height: 44px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background: linear-gradient(to bottom, #f9fafb 0%, #e9eef2 48%, #d9e1e7 100%);
+  border-bottom: 1px solid var(--nkt-qb-border-dark);
+  box-shadow: inset 0 1px #ffffff, 0 1px 1px rgba(0,0,0,.05);
+}
+body.nkt-qb2009-shell .page-title .title-text,
+body.nkt-qb2009-shell .page-head h3,
+body.nkt-qb2009-shell .page-head h4 {
+  color: #243643;
+  font-size: 16px;
+  font-weight: 700;
+}
+body.nkt-qb2009-shell .layout-main,
+body.nkt-qb2009-shell .layout-main-section,
+body.nkt-qb2009-shell .form-layout,
+body.nkt-qb2009-shell .form-page {
+  --padding-md: 10px;
+  --padding-lg: 12px;
+}
+body.nkt-qb2009-shell .layout-main-section {
+  background: var(--nkt-qb-surface);
+  border: 1px solid var(--nkt-qb-border);
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.06);
+}
+body.nkt-qb2009-shell .layout-side-section,
+body.nkt-qb2009-shell .desk-sidebar {
+  background: linear-gradient(to right, #eef2f5, #e2e8ed);
+  border-right: 1px solid var(--nkt-qb-border);
+}
+body.nkt-qb2009-shell .standard-sidebar-item,
+body.nkt-qb2009-shell .sidebar-item,
+body.nkt-qb2009-shell .desk-sidebar-item {
+  min-height: 29px;
+  border-radius: 1px;
+  margin: 1px 3px;
+  font-size: 12.5px;
+}
+body.nkt-qb2009-shell .standard-sidebar-item:hover,
+body.nkt-qb2009-shell .sidebar-item:hover,
+body.nkt-qb2009-shell .desk-sidebar-item:hover {
+  background: #d6e4ef;
+  border-color: #a5bac9;
+}
+body.nkt-qb2009-shell .section-head,
+body.nkt-qb2009-shell .form-section .section-head,
+body.nkt-qb2009-shell .form-section > .section-head {
+  min-height: 29px;
+  margin: 0;
+  padding: 6px 8px;
+  color: #243b4d;
+  font-size: 12.5px;
+  font-weight: 700;
+  background: linear-gradient(to bottom, #fafbfc, #e7edf2);
+  border-top: 1px solid #c2cbd2;
+  border-bottom: 1px solid #b3bec6;
+}
+body.nkt-qb2009-shell .form-section {
+  padding-top: 6px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #d9dfe4;
+}
+body.nkt-qb2009-shell .form-control,
+body.nkt-qb2009-shell input.form-control,
+body.nkt-qb2009-shell select.form-control,
+body.nkt-qb2009-shell .input-with-feedback,
+body.nkt-qb2009-shell .awesomplete > input,
+body.nkt-qb2009-shell .control-input input,
+body.nkt-qb2009-shell .control-input select {
+  min-height: var(--nkt-qb-control-h);
+  height: var(--nkt-qb-control-h);
+  padding: 4px 7px;
+  border: 1px solid var(--nkt-qb-border-dark);
+  border-radius: var(--nkt-qb-control-radius);
+  background: #ffffff;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.08);
+  font-size: 13px;
+}
+body.nkt-qb2009-shell textarea.form-control,
+body.nkt-qb2009-shell .control-input textarea {
+  min-height: 58px;
+  height: auto;
+  line-height: 1.3;
+}
+body.nkt-qb2009-shell .form-control:focus,
+body.nkt-qb2009-shell .input-with-feedback:focus,
+body.nkt-qb2009-shell .control-input input:focus,
+body.nkt-qb2009-shell .control-input select:focus,
+body.nkt-qb2009-shell .control-input textarea:focus {
+  border-color: var(--nkt-qb-focus);
+  box-shadow: 0 0 0 1px rgba(45,112,170,.28), inset 0 1px 2px rgba(0,0,0,.06);
+}
+body.nkt-qb2009-shell .control-label,
+body.nkt-qb2009-shell .frappe-control .control-label {
+  margin-bottom: 3px;
+  color: #39454e;
+  font-size: 12px;
+  font-weight: 600;
+}
+body.nkt-qb2009-shell .btn {
+  min-height: 29px;
+  padding: 4px 10px;
+  border-radius: 2px;
+  font-size: 12.5px;
+  font-weight: 600;
+  box-shadow: inset 0 1px rgba(255,255,255,.72), 0 1px 1px rgba(0,0,0,.08);
+}
+body.nkt-qb2009-shell .btn-default,
+body.nkt-qb2009-shell .btn-secondary {
+  color: #26333c;
+  background: linear-gradient(to bottom, #ffffff 0%, #f2f3f4 45%, #e0e3e5 100%);
+  border: 1px solid #8d989f;
+}
+body.nkt-qb2009-shell .btn-default:hover,
+body.nkt-qb2009-shell .btn-secondary:hover {
+  background: linear-gradient(to bottom, #ffffff 0%, #edf4f9 45%, #d4e4ef 100%);
+  border-color: #6f8799;
+}
+body.nkt-qb2009-shell .btn-primary {
+  color: #ffffff;
+  background: linear-gradient(to bottom, #4388bd 0%, #2f73aa 48%, #226397 52%, #195584 100%);
+  border: 1px solid #15466d;
+  text-shadow: 0 1px rgba(0,0,0,.25);
+}
+body.nkt-qb2009-shell .btn-primary:hover {
+  background: linear-gradient(to bottom, #5298cb 0%, #377fb7 48%, #286da3 52%, #1f5e91 100%);
+}
+body.nkt-qb2009-shell .btn-danger {
+  background: linear-gradient(to bottom, #c96a6a, #a84242);
+  border: 1px solid #893535;
+  color: #ffffff;
+}
+body.nkt-qb2009-shell .grid-heading-row,
+body.nkt-qb2009-shell .list-row-head,
+body.nkt-qb2009-shell .datatable .dt-header .dt-cell {
+  min-height: 31px;
+  background: linear-gradient(to bottom, #edf3f7, #d9e3ea);
+  border-top: 1px solid #b1bdc5;
+  border-bottom: 1px solid #8e9aa3;
+  color: #263b4a;
+  font-weight: 700;
+}
+body.nkt-qb2009-shell .grid-row,
+body.nkt-qb2009-shell .list-row,
+body.nkt-qb2009-shell .datatable .dt-row {
+  min-height: 30px;
+  border-bottom: 1px solid #d8dde1;
+}
+body.nkt-qb2009-shell .grid-row:nth-child(even),
+body.nkt-qb2009-shell .list-row-container:nth-child(even) .list-row {
+  background: #f8fafb;
+}
+body.nkt-qb2009-shell .grid-row:hover,
+body.nkt-qb2009-shell .list-row:hover {
+  background: #edf5fb;
+}
+body.nkt-qb2009-shell .grid-body .data-row .row-index,
+body.nkt-qb2009-shell .grid-body .data-row .data-row,
+body.nkt-qb2009-shell .list-row .level-left,
+body.nkt-qb2009-shell .list-row .level-right {
+  font-size: 12.5px;
+}
+body.nkt-qb2009-shell .nav-tabs {
+  border-bottom: 1px solid var(--nkt-qb-border-dark);
+  gap: 1px;
+}
+body.nkt-qb2009-shell .nav-tabs .nav-link {
+  min-height: 29px;
+  padding: 5px 10px;
+  border: 1px solid #b1bbc2;
+  border-bottom-color: var(--nkt-qb-border-dark);
+  border-radius: 2px 2px 0 0;
+  background: linear-gradient(to bottom, #f8f9fa, #e0e5e9);
+  color: #36434c;
+  font-size: 12.5px;
+}
+body.nkt-qb2009-shell .nav-tabs .nav-link.active {
+  background: #ffffff;
+  color: #1d4f78;
+  font-weight: 700;
+  border-bottom-color: #ffffff;
+}
+body.nkt-qb2009-shell .modal-content,
+body.nkt-qb2009-shell .dropdown-menu,
+body.nkt-qb2009-shell .popover {
+  border: 1px solid #7f8c95;
+  border-radius: 2px;
+  box-shadow: 0 5px 16px rgba(0,0,0,.20);
+}
+body.nkt-qb2009-shell .modal-header {
+  min-height: 39px;
+  padding: 7px 10px;
+  background: linear-gradient(to bottom, #f9fafb, #dfe7ed);
+  border-bottom: 1px solid #9eabb4;
+}
+body.nkt-qb2009-shell .modal-title {
+  color: #253c4e;
+  font-size: 14px;
+  font-weight: 700;
+}
+body.nkt-qb2009-shell .modal-body {
+  padding: 10px 12px;
+}
+body.nkt-qb2009-shell .widget,
+body.nkt-qb2009-shell .widget-group,
+body.nkt-qb2009-shell .shortcut-widget-box,
+body.nkt-qb2009-shell .number-widget-box,
+body.nkt-qb2009-shell .dashboard-graph {
+  border: 1px solid #aab5bd;
+  border-radius: 2px;
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(0,0,0,.06);
+}
+body.nkt-qb2009-shell .widget .widget-head,
+body.nkt-qb2009-shell .widget-group .widget-group-head {
+  min-height: 31px;
+  padding: 6px 8px;
+  background: linear-gradient(to bottom, #f9fafb, #e4eaee);
+  border-bottom: 1px solid #b6c0c7;
+  color: #2c4354;
+  font-weight: 700;
+}
+body.nkt-qb2009-shell .shortcut-widget-box,
+body.nkt-qb2009-shell .number-widget-box {
+  min-height: 52px;
+  padding: 8px 10px;
+}
+body.nkt-qb2009-shell .indicator-pill,
+body.nkt-qb2009-shell .badge {
+  border-radius: 2px;
+  font-size: 11.5px;
+  font-weight: 700;
+  border: 1px solid rgba(0,0,0,.15);
+}
+body.nkt-qb2009-shell .nkt-fast-screen,
+body.nkt-qb2009-shell .nkt-fast-ui,
+body.nkt-qb2009-shell [class*="nkt-fast-screen"],
+body.nkt-qb2009-shell [class*="nkt-fast-ui"] {
+  font-family: var(--nkt-qb-font);
+  font-size: 13px;
+}
+body.nkt-qb2009-shell .nkt-fast-screen table,
+body.nkt-qb2009-shell .nkt-fast-ui table,
+body.nkt-qb2009-shell [class*="nkt-fast-screen"] table,
+body.nkt-qb2009-shell [class*="nkt-fast-ui"] table {
+  border-collapse: collapse;
+  border: 1px solid #9ba7af;
+}
+body.nkt-qb2009-shell .nkt-fast-screen th,
+body.nkt-qb2009-shell .nkt-fast-ui th,
+body.nkt-qb2009-shell [class*="nkt-fast-screen"] th,
+body.nkt-qb2009-shell [class*="nkt-fast-ui"] th {
+  background: linear-gradient(to bottom, #edf3f7, #d9e3ea);
+  border: 1px solid #9ba7af;
+  font-weight: 700;
+}
+body.nkt-qb2009-shell [class*="history"] table,
+body.nkt-qb2009-shell [data-nkt-history] table {
+  font-size: 12.5px;
+  border: 1px solid #98a4ad;
+}
+body.nkt-qb2009-shell [class*="history"] th,
+body.nkt-qb2009-shell [data-nkt-history] th {
+  background: #dce7ef;
+  color: #263f50;
+  border-bottom: 1px solid #8796a0;
+}
+body.nkt-qb2009-shell .alert,
+body.nkt-qb2009-shell .form-message,
+body.nkt-qb2009-shell .msgprint {
+  border-radius: 2px;
+  border-width: 1px;
+  padding: 7px 9px;
+}
+[data-theme="dark"].nkt-qb2009-shell,
+html[data-theme="dark"] body.nkt-qb2009-shell {
+  --nkt-qb-surface: #252b30;
+  --nkt-qb-panel: #30373d;
+  --nkt-qb-border: #55616a;
+  --nkt-qb-border-dark: #69757e;
+  --nkt-qb-gray-900: #edf1f4;
+  --nkt-qb-gray-100: #1d2226;
+}
+html[data-theme="dark"] body.nkt-qb2009-shell .layout-main-section,
+html[data-theme="dark"] body.nkt-qb2009-shell .widget,
+html[data-theme="dark"] body.nkt-qb2009-shell .shortcut-widget-box,
+html[data-theme="dark"] body.nkt-qb2009-shell .number-widget-box {
+  background: #252b30;
+  color: #edf1f4;
+}
+html[data-theme="dark"] body.nkt-qb2009-shell .form-control,
+html[data-theme="dark"] body.nkt-qb2009-shell .control-input input,
+html[data-theme="dark"] body.nkt-qb2009-shell .control-input select,
+html[data-theme="dark"] body.nkt-qb2009-shell .control-input textarea {
+  background: #171b1e;
+  color: #f3f5f6;
+  border-color: #69757e;
+}
+html[data-theme="dark"] body.nkt-qb2009-shell .page-head,
+html[data-theme="dark"] body.nkt-qb2009-shell .section-head,
+html[data-theme="dark"] body.nkt-qb2009-shell .widget .widget-head {
+  background: linear-gradient(to bottom, #38434b, #2a3238);
+  color: #f0f4f6;
+}
+@media (min-width: 1600px) {
+  body.nkt-qb2009-shell .container,
+  body.nkt-qb2009-shell .container-fluid {
+    max-width: none;
+  }
+  body.nkt-qb2009-shell .layout-main-section {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media (max-width: 1366px) {
+  body.nkt-qb2009-shell,
+  body.nkt-qb2009-shell .desk-page {
+    font-size: 12.5px;
+  }
+  body.nkt-qb2009-shell .btn {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  body.nkt-qb2009-shell .form-control,
+  body.nkt-qb2009-shell .input-with-feedback {
+    min-height: 29px;
+    height: 29px;
+  }
+}
+@media print {
+  body.nkt-qb2009-shell {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10.5pt;
+    background: #ffffff;
+  }
+  body.nkt-qb2009-shell .print-format {
+    color: #000000;
+    background: #ffffff;
+  }
+}
+
+
+/* NKT POST-C15F VP2B2 — QuickBooks Desktop 2009 screen-family refinement.
+   Presentation only; no control is hidden, disabled, or behaviorally changed. */
+body.nkt-qb2009-shell.nkt-family-cashier .page-head,
+body.nkt-qb2009-shell.nkt-family-encoder .page-head{border-bottom:2px solid #6f8494}
+body.nkt-qb2009-shell.nkt-family-cashier .layout-main-section,
+body.nkt-qb2009-shell.nkt-family-encoder .layout-main-section{padding:8px 9px}
+body.nkt-qb2009-shell.nkt-family-cashier .form-section,
+body.nkt-qb2009-shell.nkt-family-encoder .form-section{padding-top:4px;padding-bottom:5px}
+body.nkt-qb2009-shell.nkt-family-cashier .grid-heading-row,
+body.nkt-qb2009-shell.nkt-family-encoder .grid-heading-row{min-height:28px;background:linear-gradient(to bottom,#eaf2f7,#d3e1eb)}
+body.nkt-qb2009-shell.nkt-family-cashier .grid-row,
+body.nkt-qb2009-shell.nkt-family-encoder .grid-row{min-height:28px}
+body.nkt-qb2009-shell.nkt-family-cashier .btn-primary,
+body.nkt-qb2009-shell.nkt-family-encoder .btn-primary{min-width:92px;font-weight:700}
+body.nkt-qb2009-shell.nkt-family-history .datatable,
+body.nkt-qb2009-shell.nkt-family-history .result,
+body.nkt-qb2009-shell.nkt-family-history table{font-size:12.5px;border:1px solid #99a7b0}
+body.nkt-qb2009-shell.nkt-family-history .dt-header,
+body.nkt-qb2009-shell.nkt-family-history thead{background:linear-gradient(to bottom,#edf4f8,#d7e4ec);font-weight:700}
+body.nkt-qb2009-shell.nkt-family-shift .form-section{margin-bottom:5px;border:1px solid #bac4cb;background:#fbfcfd}
+body.nkt-qb2009-shell.nkt-family-shift .section-head{background:linear-gradient(to bottom,#eff5f8,#dce6ec);color:#294456}
+body.nkt-qb2009-shell.nkt-family-return .form-section{border:1px solid #bbc5cc;margin-bottom:6px;background:#fff}
+body.nkt-qb2009-shell.nkt-family-return .section-head{border-left:4px solid #6f8ca1}
+body.nkt-qb2009-shell.nkt-family-supplier .layout-main-section,
+body.nkt-qb2009-shell.nkt-family-warehouse .layout-main-section,
+body.nkt-qb2009-shell.nkt-family-trucking .layout-main-section,
+body.nkt-qb2009-shell.nkt-family-oil .layout-main-section{padding:8px 10px}
+body.nkt-qb2009-shell.nkt-family-supplier .section-head,
+body.nkt-qb2009-shell.nkt-family-warehouse .section-head,
+body.nkt-qb2009-shell.nkt-family-trucking .section-head,
+body.nkt-qb2009-shell.nkt-family-oil .section-head{background:linear-gradient(to bottom,#f3f6f8,#dce5eb);color:#2a4353;border-bottom-color:#9eacb6}
+body.nkt-qb2009-shell.nkt-family-admin .report-wrapper,
+body.nkt-qb2009-shell.nkt-family-admin .datatable,
+body.nkt-qb2009-shell.nkt-family-admin .dashboard-graph{border:1px solid #a8b3bb;border-radius:2px;box-shadow:none}
+body.nkt-qb2009-shell .currency,
+body.nkt-qb2009-shell [data-fieldtype="Currency"] input{font-variant-numeric:tabular-nums}
+@media (min-width:1600px){
+ body.nkt-qb2009-shell.nkt-family-cashier .layout-main-section,
+ body.nkt-qb2009-shell.nkt-family-encoder .layout-main-section{max-width:none}
+}
+

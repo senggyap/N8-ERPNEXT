@@ -1,0 +1,123 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "field:reservation_key",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "identity_section",
+    "reservation_key",
+    "event_uuid",
+    "line_no",
+    "projection_state",
+    "reservation_section",
+    "item_code",
+    "warehouse",
+    "reserved_qty",
+    "business_date"
+  ],
+  "fields": [
+    {
+      "fieldname": "identity_section",
+      "fieldtype": "Section Break",
+      "label": "Edge Order Reservation Projection"
+    },
+    {
+      "fieldname": "reservation_key",
+      "fieldtype": "Data",
+      "label": "Reservation Key",
+      "reqd": 1,
+      "unique": 1,
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "event_uuid",
+      "fieldtype": "Data",
+      "label": "Event UUID",
+      "reqd": 1,
+      "read_only": 1,
+      "in_list_view": 1,
+      "search_index": 1
+    },
+    {
+      "fieldname": "line_no",
+      "fieldtype": "Int",
+      "label": "Line No.",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "projection_state",
+      "fieldtype": "Select",
+      "label": "Projection State",
+      "options": "Pending Edge\nAwaiting Primary",
+      "default": "Pending Edge",
+      "reqd": 1,
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "reservation_section",
+      "fieldtype": "Section Break",
+      "label": "Pending Quantity Only"
+    },
+    {
+      "fieldname": "item_code",
+      "fieldtype": "Data",
+      "label": "Item Code",
+      "reqd": 1,
+      "read_only": 1,
+      "in_list_view": 1,
+      "search_index": 1
+    },
+    {
+      "fieldname": "warehouse",
+      "fieldtype": "Data",
+      "label": "Warehouse",
+      "reqd": 1,
+      "read_only": 1,
+      "in_list_view": 1,
+      "search_index": 1
+    },
+    {
+      "fieldname": "reserved_qty",
+      "fieldtype": "Float",
+      "label": "Reserved Qty",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "business_date",
+      "fieldtype": "Date",
+      "label": "Business Date",
+      "reqd": 1,
+      "read_only": 1
+    }
+  ],
+  "index_web_pages_for_search": 0,
+  "links": [],
+  "module": "NKT Store Operations",
+  "name": "NKT Edge Order Reservation Projection",
+  "permissions": [
+    {
+      "role": "NKT OWNER",
+      "read": 1,
+      "report": 1
+    },
+    {
+      "role": "NKT ADMINISTRATOR",
+      "read": 1,
+      "report": 1
+    },
+    {
+      "role": "System Manager",
+      "read": 1,
+      "report": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 1
+}

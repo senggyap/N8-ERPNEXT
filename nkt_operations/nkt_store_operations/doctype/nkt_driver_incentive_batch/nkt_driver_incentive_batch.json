@@ -1,0 +1,186 @@
+{
+  "doctype": "DocType",
+  "name": "NKT Driver Incentive Batch",
+  "module": "NKT Store Operations",
+  "custom": 0,
+  "autoname": "format:NKT-DIB-{#####}",
+  "engine": "InnoDB",
+  "track_changes": 1,
+  "allow_rename": 0,
+  "field_order": [
+    "header_section",
+    "period_start",
+    "period_end",
+    "payout_date",
+    "column_break_header",
+    "status",
+    "company",
+    "lines_section",
+    "lines",
+    "totals_section",
+    "total_amount",
+    "payment_method",
+    "payment_reference",
+    "audit_section",
+    "prepared_by",
+    "prepared_at",
+    "paid_by",
+    "paid_at",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "header_section",
+      "fieldtype": "Section Break",
+      "label": "Weekly ENT Driver Incentive Batch"
+    },
+    {
+      "fieldname": "period_start",
+      "fieldtype": "Date",
+      "label": "Batch Period Start",
+      "reqd": 1,
+      "in_list_view": 1,
+      "description": "Administrative weekly batch window. Older pending trips may still be included after their papers are finally completed."
+    },
+    {
+      "fieldname": "period_end",
+      "fieldtype": "Date",
+      "label": "Batch Period End",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "payout_date",
+      "fieldtype": "Date",
+      "label": "Payout Date",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "column_break_header",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Draft\nPrepared\nPaid\nCancelled",
+      "default": "Draft",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "ERP Company (when configured)",
+      "options": "Company",
+      "description": "Do not force NKT (Dev) for ENT. Select the correct legal ERP Company when configured."
+    },
+    {
+      "fieldname": "lines_section",
+      "fieldtype": "Section Break",
+      "label": "Eligible ENT-owned Trips"
+    },
+    {
+      "fieldname": "lines",
+      "fieldtype": "Table",
+      "label": "Incentive Lines",
+      "options": "NKT Driver Incentive Batch Line",
+      "reqd": 1
+    },
+    {
+      "fieldname": "totals_section",
+      "fieldtype": "Section Break",
+      "label": "Payout Total / Method"
+    },
+    {
+      "fieldname": "total_amount",
+      "fieldtype": "Currency",
+      "label": "Total Incentive Amount",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "payment_method",
+      "fieldtype": "Select",
+      "label": "Payment Method",
+      "options": "\nCash\nBank Transfer\nPayroll / Salary Disbursement\nOther"
+    },
+    {
+      "fieldname": "payment_reference",
+      "fieldtype": "Data",
+      "label": "Payment / Payroll Reference"
+    },
+    {
+      "fieldname": "audit_section",
+      "fieldtype": "Section Break",
+      "label": "Audit"
+    },
+    {
+      "fieldname": "prepared_by",
+      "fieldtype": "Link",
+      "label": "Prepared By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "prepared_at",
+      "fieldtype": "Datetime",
+      "label": "Prepared At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "paid_by",
+      "fieldtype": "Link",
+      "label": "Paid / Recorded By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "paid_at",
+      "fieldtype": "Datetime",
+      "label": "Paid / Recorded At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "NKT Trucking Operations",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "print": 1,
+      "report": 1,
+      "export": 0
+    },
+    {
+      "role": "NKT OWNER",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "print": 1,
+      "report": 1,
+      "export": 1
+    },
+    {
+      "role": "NKT ADMINISTRATOR",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "print": 1,
+      "report": 1,
+      "export": 1
+    }
+  ],
+  "owner": "Administrator",
+  "creation": "2026-08-14 14:10:00.000000",
+  "modified": "2026-08-14 14:10:00.000000",
+  "modified_by": "Administrator"
+}

@@ -1,0 +1,171 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "creation": "2026-08-13 00:00:00.000000",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "item_code",
+    "item_name",
+    "purchase_order_item",
+    "uom",
+    "expected_qty",
+    "delivered_qty",
+    "accepted_qty",
+    "damaged_qty",
+    "other_rejected_qty",
+    "rejected_qty",
+    "shortage_qty",
+    "overdelivery_qty",
+    "rejected_warehouse",
+    "condition_classification",
+    "condition_reason"
+  ],
+  "fields": [
+    {
+      "fieldname": "item_code",
+      "fieldtype": "Link",
+      "label": "Item",
+      "options": "Item",
+      "read_only": 1,
+      "reqd": 1,
+      "in_list_view": 1,
+      "columns": 2
+    },
+    {
+      "fieldname": "item_name",
+      "fieldtype": "Data",
+      "label": "Item Name",
+      "read_only": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "purchase_order_item",
+      "fieldtype": "Data",
+      "label": "Purchase Order Item",
+      "read_only": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "uom",
+      "fieldtype": "Link",
+      "label": "UOM",
+      "options": "UOM",
+      "read_only": 1,
+      "reqd": 1,
+      "in_list_view": 1,
+      "columns": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "expected_qty",
+      "fieldtype": "Float",
+      "label": "Expected Qty",
+      "read_only": 1,
+      "reqd": 1,
+      "in_list_view": 0,
+      "columns": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "delivered_qty",
+      "fieldtype": "Float",
+      "label": "Quantity Received",
+      "reqd": 1,
+      "in_list_view": 1,
+      "columns": 1,
+      "description": "Actual physical quantity unloaded/received from this vehicle, using the Item UOM (for example Bags or Kg)."
+    },
+    {
+      "fieldname": "accepted_qty",
+      "fieldtype": "Float",
+      "label": "Accepted Quantity",
+      "reqd": 1,
+      "in_list_view": 0,
+      "columns": 1,
+      "read_only": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "damaged_qty",
+      "fieldtype": "Float",
+      "label": "Problem Quantity",
+      "default": "0",
+      "in_list_view": 1,
+      "columns": 1,
+      "description": "Physical quantity that arrived wet, damaged, with broken packaging, or otherwise not normal."
+    },
+    {
+      "fieldname": "other_rejected_qty",
+      "fieldtype": "Float",
+      "label": "Other Rejected Qty",
+      "default": "0",
+      "in_list_view": 0,
+      "columns": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "rejected_qty",
+      "fieldtype": "Float",
+      "label": "Rejected Qty",
+      "read_only": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "shortage_qty",
+      "fieldtype": "Float",
+      "label": "Shortage Qty",
+      "read_only": 1,
+      "in_list_view": 0,
+      "columns": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "overdelivery_qty",
+      "fieldtype": "Float",
+      "label": "Over-delivery Qty",
+      "read_only": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "rejected_warehouse",
+      "fieldtype": "Link",
+      "label": "Put Problem Quantity In",
+      "options": "Warehouse",
+      "description": "Only needed when Problem Quantity > 0. Choose the damage/inspection holding warehouse.",
+      "depends_on": "eval:doc.damaged_qty > 0 || doc.other_rejected_qty > 0"
+    },
+    {
+      "fieldname": "condition_classification",
+      "fieldtype": "Select",
+      "label": "Problem Type",
+      "options": "\nNormal\nDamaged\nWet\nBroken Packaging\nMixed Damage\nOther",
+      "default": "",
+      "description": "Physical condition only. This does not decide whether Supplier, Trucker, or NKT pays.",
+      "depends_on": "eval:doc.damaged_qty > 0 || doc.other_rejected_qty > 0",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "condition_reason",
+      "fieldtype": "Small Text",
+      "label": "Problem Note (optional)",
+      "description": "Optional physical note. Financial responsibility is decided later.",
+      "depends_on": "eval:doc.damaged_qty > 0 || doc.other_rejected_qty > 0"
+    }
+  ],
+  "index_web_pages_for_search": 0,
+  "istable": 1,
+  "links": [],
+  "modified": "2026-08-13 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "NKT Store Operations",
+  "name": "NKT Supplier Receiving Item",
+  "owner": "Administrator",
+  "permissions": [],
+  "row_format": "Dynamic",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 1
+}

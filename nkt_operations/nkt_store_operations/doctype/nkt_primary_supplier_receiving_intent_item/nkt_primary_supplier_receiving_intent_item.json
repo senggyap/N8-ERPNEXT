@@ -1,0 +1,134 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "editable_grid": 0,
+ "field_order": [
+  "line_no",
+  "purchase_order_item",
+  "item_code",
+  "item_name",
+  "uom",
+  "expected_qty",
+  "delivered_qty",
+  "accepted_qty",
+  "damaged_qty",
+  "other_rejected_qty",
+  "rejected_qty",
+  "shortage_qty",
+  "rejected_warehouse",
+  "condition_classification",
+  "condition_reason"
+ ],
+ "fields": [
+  {
+   "fieldname": "line_no",
+   "fieldtype": "Int",
+   "label": "Line No.",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "purchase_order_item",
+   "fieldtype": "Data",
+   "label": "Purchase Order Item",
+   "reqd": 0,
+   "read_only": 1
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "label": "Item",
+   "options": "Item",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "UOM",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "expected_qty",
+   "fieldtype": "Float",
+   "label": "Expected Remaining Before This Receipt",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "delivered_qty",
+   "fieldtype": "Float",
+   "label": "Physically Received",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "accepted_qty",
+   "fieldtype": "Float",
+   "label": "Accepted Qty",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "damaged_qty",
+   "fieldtype": "Float",
+   "label": "Damaged Qty",
+   "read_only": 1
+  },
+  {
+   "fieldname": "other_rejected_qty",
+   "fieldtype": "Float",
+   "label": "Other Rejected Qty",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rejected_qty",
+   "fieldtype": "Float",
+   "label": "Problem / Rejected Qty",
+   "read_only": 1
+  },
+  {
+   "fieldname": "shortage_qty",
+   "fieldtype": "Float",
+   "label": "Shortage Qty",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rejected_warehouse",
+   "fieldtype": "Link",
+   "label": "Problem-Bag Holding Warehouse",
+   "options": "Warehouse",
+   "read_only": 1
+  },
+  {
+   "fieldname": "condition_classification",
+   "fieldtype": "Data",
+   "label": "Problem Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "condition_reason",
+   "fieldtype": "Small Text",
+   "label": "Condition Reason",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "istable": 1,
+ "links": [],
+ "module": "NKT Store Operations",
+ "name": "NKT Primary Supplier Receiving Intent Item",
+ "permissions": [],
+ "states": []
+}

@@ -1,0 +1,435 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "format:NKT-SRCV-{#####}",
+  "creation": "2026-08-13 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "identity_section",
+    "movement_type",
+    "company",
+    "supplier",
+    "purchase_order",
+    "column_break_identity",
+    "receiving_date",
+    "receiving_time",
+    "receiving_warehouse",
+    "delivery_section",
+    "bill_of_lading_no",
+    "supplier_dr_no",
+    "supplier_delivery_reference",
+    "delivery_vehicle",
+    "internal_vehicle_no",
+    "plate_number",
+    "vehicle_operator",
+    "column_break_delivery",
+    "driver_name",
+    "supporting_document",
+    "receiving_notes",
+    "items_section",
+    "items",
+    "totals_section",
+    "total_expected_qty",
+    "total_delivered_qty",
+    "total_accepted_qty",
+    "column_break_totals",
+    "total_damaged_qty",
+    "total_other_rejected_qty",
+    "total_rejected_qty",
+    "total_shortage_qty",
+    "total_overdelivery_qty",
+    "control_section",
+    "physical_quantities_confirmed",
+    "posting_status",
+    "column_break_control",
+    "underlying_purchase_receipt",
+    "posted_by",
+    "posted_at"
+  ],
+  "fields": [
+    {
+      "fieldname": "identity_section",
+      "fieldtype": "Section Break",
+      "label": "Supplier / Purchase",
+      "hidden": 1
+    },
+    {
+      "fieldname": "movement_type",
+      "fieldtype": "Select",
+      "label": "Movement Type",
+      "options": "External Supplier Arrival",
+      "default": "External Supplier Arrival",
+      "read_only": 1,
+      "reqd": 1,
+      "bold": 1,
+      "in_list_view": 1,
+      "description": "Supplier inbound only. Internal NKT warehouse-to-warehouse movement must use the separate Warehouse Transfer / DR workflow.",
+      "hidden": 1
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "read_only": 1,
+      "reqd": 1,
+      "in_list_view": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "supplier",
+      "fieldtype": "Link",
+      "label": "Supplier",
+      "options": "Supplier",
+      "read_only": 1,
+      "reqd": 1,
+      "in_list_view": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "purchase_order",
+      "fieldtype": "Link",
+      "label": "Purchase Order",
+      "options": "Purchase Order",
+      "read_only": 1,
+      "reqd": 0,
+      "in_list_view": 1,
+      "description": "Required external Supplier Purchase Order reference. Internal NKT warehouse transfers are not valid on this document.",
+      "hidden": 1
+    },
+    {
+      "fieldname": "column_break_identity",
+      "fieldtype": "Column Break",
+      "hidden": 1
+    },
+    {
+      "fieldname": "receiving_date",
+      "fieldtype": "Date",
+      "label": "Receiving Date",
+      "default": "Today",
+      "reqd": 1,
+      "in_list_view": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "receiving_time",
+      "fieldtype": "Time",
+      "label": "Receiving Time",
+      "default": "Now",
+      "reqd": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "receiving_warehouse",
+      "fieldtype": "Link",
+      "label": "Stock Goes To",
+      "options": "Warehouse",
+      "reqd": 1,
+      "description": "Warehouse where the good/usable bags will enter inventory. This is usually prefilled from the expected delivery."
+    },
+    {
+      "fieldname": "delivery_section",
+      "fieldtype": "Section Break",
+      "label": "Receive Items"
+    },
+    {
+      "fieldname": "bill_of_lading_no",
+      "fieldtype": "Data",
+      "label": "BL No.",
+      "in_list_view": 1,
+      "description": "Bill of Lading number when used for this external supplier arrival.",
+      "depends_on": "eval:doc.__show_receiving_more"
+    },
+    {
+      "fieldname": "supplier_dr_no",
+      "fieldtype": "Data",
+      "label": "DR No.",
+      "in_list_view": 1,
+      "description": "Enter the supplier Delivery Receipt number when available. For shipments without a DR, use BL No. or Other Delivery Reference."
+    },
+    {
+      "fieldname": "supplier_delivery_reference",
+      "fieldtype": "Data",
+      "label": "Other Supplier Delivery Reference",
+      "reqd": 0,
+      "description": "Use only when the supplier reference is neither the BL No. nor the Supplier DR No.",
+      "depends_on": "eval:doc.__show_receiving_more"
+    },
+    {
+      "fieldname": "delivery_vehicle",
+      "fieldtype": "Link",
+      "label": "Known Van / Truck",
+      "options": "NKT Vehicle",
+      "in_list_view": 1,
+      "description": "Optional. Select a remembered vehicle to fill its plate/van identity automatically."
+    },
+    {
+      "fieldname": "vehicle_operator",
+      "fieldtype": "Data",
+      "label": "Vehicle Operator / Carrier",
+      "read_only": 1,
+      "description": "Snapshot from the selected NKT Vehicle master. No trucking rate/payable information is exposed here.",
+      "hidden": 1
+    },
+    {
+      "fieldname": "internal_vehicle_no",
+      "fieldtype": "Data",
+      "label": "Van / Truck No.",
+      "description": "Auto-filled from Known Vehicle when selected; otherwise may be entered manually."
+    },
+    {
+      "fieldname": "plate_number",
+      "fieldtype": "Data",
+      "label": "Plate No.",
+      "description": "Auto-filled from Known Vehicle when selected; otherwise may be entered manually."
+    },
+    {
+      "fieldname": "column_break_delivery",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "driver_name",
+      "fieldtype": "Data",
+      "label": "Driver Name",
+      "description": "Driver identity is separate from vehicle / plate identity.",
+      "depends_on": "eval:doc.__show_receiving_more"
+    },
+    {
+      "fieldname": "supporting_document",
+      "fieldtype": "Attach",
+      "label": "Receiving / Supplier Document",
+      "depends_on": "eval:doc.__show_receiving_more"
+    },
+    {
+      "fieldname": "receiving_notes",
+      "fieldtype": "Small Text",
+      "label": "Receiving Notes",
+      "depends_on": "eval:doc.__show_receiving_more"
+    },
+    {
+      "fieldname": "items_section",
+      "fieldtype": "Section Break",
+      "label": "Items Physically Received"
+    },
+    {
+      "fieldname": "items",
+      "fieldtype": "Table",
+      "label": "Received Items",
+      "options": "NKT Supplier Receiving Item",
+      "reqd": 1
+    },
+    {
+      "fieldname": "totals_section",
+      "fieldtype": "Section Break",
+      "label": "Quantity Totals",
+      "collapsible": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "total_expected_qty",
+      "fieldtype": "Float",
+      "label": "Total Expected Qty",
+      "read_only": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "total_delivered_qty",
+      "fieldtype": "Float",
+      "label": "Total Delivered Qty",
+      "read_only": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "total_accepted_qty",
+      "fieldtype": "Float",
+      "label": "Total Accepted Qty",
+      "read_only": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "column_break_totals",
+      "fieldtype": "Column Break",
+      "hidden": 1
+    },
+    {
+      "fieldname": "total_damaged_qty",
+      "fieldtype": "Float",
+      "label": "Total Damaged Qty",
+      "read_only": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "total_other_rejected_qty",
+      "fieldtype": "Float",
+      "label": "Total Other Rejected Qty",
+      "read_only": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "total_rejected_qty",
+      "fieldtype": "Float",
+      "label": "Total Rejected Qty",
+      "read_only": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "total_shortage_qty",
+      "fieldtype": "Float",
+      "label": "Total Shortage Qty",
+      "read_only": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "total_overdelivery_qty",
+      "fieldtype": "Float",
+      "label": "Total Over-delivery Qty",
+      "read_only": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "control_section",
+      "fieldtype": "Section Break",
+      "label": "Confirm & Post",
+      "hidden": 1
+    },
+    {
+      "fieldname": "physical_quantities_confirmed",
+      "fieldtype": "Check",
+      "label": "Confirm Actual Physical Quantities",
+      "default": "0",
+      "description": "Required before Submit. Submit posts the hidden Purchase Receipt and creates a restricted exception record automatically when needed.",
+      "hidden": 1
+    },
+    {
+      "fieldname": "posting_status",
+      "fieldtype": "Select",
+      "label": "Posting Status",
+      "options": "Foundation Draft\nPosting Locked\nPosted",
+      "default": "Posting Locked",
+      "read_only": 1,
+      "in_list_view": 1,
+      "description": "System posting status. No price/payable data is shown here.",
+      "hidden": 1
+    },
+    {
+      "fieldname": "column_break_control",
+      "fieldtype": "Column Break",
+      "hidden": 1
+    },
+    {
+      "fieldname": "underlying_purchase_receipt",
+      "fieldtype": "Link",
+      "label": "Underlying Purchase Receipt",
+      "options": "Purchase Receipt",
+      "read_only": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "posted_by",
+      "fieldtype": "Link",
+      "label": "Posted By",
+      "options": "User",
+      "read_only": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "posted_at",
+      "fieldtype": "Datetime",
+      "label": "Posted At",
+      "read_only": 1,
+      "hidden": 1
+    }
+  ],
+  "index_web_pages_for_search": 0,
+  "is_submittable": 1,
+  "links": [],
+  "modified": "2026-08-13 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "NKT Store Operations",
+  "name": "NKT Supplier Receiving",
+  "naming_rule": "Expression",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "role": "NKT Purchasing",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "submit": 1,
+      "cancel": 0,
+      "amend": 0,
+      "report": 1,
+      "export": 1,
+      "print": 1,
+      "email": 0,
+      "share": 0
+    },
+    {
+      "role": "NKT Encoder",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "submit": 1,
+      "cancel": 0,
+      "amend": 0,
+      "report": 1,
+      "export": 0,
+      "print": 1,
+      "email": 0,
+      "share": 0
+    },
+    {
+      "role": "NKT Warehouse",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "submit": 1,
+      "cancel": 0,
+      "amend": 0,
+      "report": 1,
+      "export": 0,
+      "print": 1,
+      "email": 0,
+      "share": 0
+    },
+    {
+      "role": "NKT ADMINISTRATOR",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 1,
+      "cancel": 0,
+      "amend": 0,
+      "report": 1,
+      "export": 1,
+      "print": 1,
+      "email": 1,
+      "share": 1
+    },
+    {
+      "role": "NKT OWNER",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 1,
+      "cancel": 0,
+      "amend": 0,
+      "report": 1,
+      "export": 1,
+      "print": 1,
+      "email": 1,
+      "share": 1
+    }
+  ],
+  "row_format": "Dynamic",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 1
+}

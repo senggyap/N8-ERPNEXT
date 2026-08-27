@@ -1,0 +1,98 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-08-14 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "transfer_item_row",
+  "item_code",
+  "item_name",
+  "uom",
+  "issue_type",
+  "discrepancy_qty",
+  "responsibility",
+  "operational_notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "transfer_item_row",
+   "fieldtype": "Data",
+   "label": "Transfer Item Row",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "label": "Item",
+   "options": "Item",
+   "reqd": 1,
+   "in_list_view": 1,
+   "columns": 3
+  },
+  {
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name",
+   "read_only": 1,
+   "no_copy": 1,
+   "in_list_view": 1,
+   "columns": 3
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "UOM",
+   "read_only": 1,
+   "no_copy": 1,
+   "in_list_view": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "issue_type",
+   "fieldtype": "Select",
+   "label": "Issue Type",
+   "options": "Short on Arrival\nDamaged in Transit\nWet in Transit\nBusted Packaging\nOther",
+   "reqd": 1,
+   "in_list_view": 1,
+   "columns": 2
+  },
+  {
+   "fieldname": "discrepancy_qty",
+   "fieldtype": "Float",
+   "label": "Discrepancy Qty",
+   "reqd": 1,
+   "in_list_view": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "responsibility",
+   "fieldtype": "Select",
+   "label": "Responsibility",
+   "options": "Pending Investigation\nWarehouse Source\nWarehouse Destination\nInternal Trucking\nNKT Internal\nOther",
+   "default": "Pending Investigation",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "operational_notes",
+   "fieldtype": "Small Text",
+   "label": "Operational / Condition Notes"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-08-14 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "NKT Store Operations",
+ "name": "NKT Warehouse Transfer Discrepancy Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

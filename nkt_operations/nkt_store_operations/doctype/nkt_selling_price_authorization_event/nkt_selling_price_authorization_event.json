@@ -1,0 +1,135 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "hash",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "event_datetime",
+  "event_type",
+  "cashier",
+  "device_id",
+  "request_id",
+  "authorization_runtime_role",
+  "authorized_by",
+  "reason",
+  "explanation",
+  "adjustment_signature",
+  "adjustment_summary",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "event_datetime",
+   "fieldtype": "Datetime",
+   "label": "Event Date and Time",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "event_type",
+   "fieldtype": "Select",
+   "label": "Event Type",
+   "options": "Authorized\nWrong PIN\nBlocked\nPIN Changed\nAuthorizer Disabled",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "cashier",
+   "fieldtype": "Link",
+   "label": "Cashier / Changed By",
+   "options": "User",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "device_id",
+   "fieldtype": "Data",
+   "label": "Device ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "request_id",
+   "fieldtype": "Data",
+   "label": "Transaction Request ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "authorization_runtime_role",
+   "fieldtype": "Data",
+   "label": "Runtime Role",
+   "read_only": 1
+  },
+  {
+   "fieldname": "authorized_by",
+   "fieldtype": "Data",
+   "label": "Authorized By",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Data",
+   "label": "Reason",
+   "read_only": 1
+  },
+  {
+   "fieldname": "explanation",
+   "fieldtype": "Small Text",
+   "label": "Explanation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "adjustment_signature",
+   "fieldtype": "Data",
+   "label": "Adjustment Signature",
+   "read_only": 1
+  },
+  {
+   "fieldname": "adjustment_summary",
+   "fieldtype": "Long Text",
+   "label": "Adjusted Rows Audit",
+   "read_only": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "is_submittable": 0,
+ "modified": "2026-08-18 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "NKT Store Operations",
+ "name": "NKT Selling Price Authorization Event",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "NKT OWNER",
+   "read": 1,
+   "report": 1,
+   "export": 1
+  },
+  {
+   "role": "NKT ADMINISTRATOR",
+   "read": 1,
+   "report": 1,
+   "export": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "report": 1,
+   "export": 1
+  }
+ ],
+ "sort_field": "event_datetime",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0
+}

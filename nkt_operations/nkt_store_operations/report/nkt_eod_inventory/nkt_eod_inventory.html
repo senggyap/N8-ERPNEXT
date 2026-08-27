@@ -1,0 +1,208 @@
+<style>
+@page {
+	size: 8.5in 5.5in;
+	margin: 0.20in 0.22in 0.22in 0.22in;
+}
+
+.nkt-eod-print {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 6.8pt;
+	color: #111;
+	line-height: 1.15;
+}
+
+.nkt-eod-title {
+	font-size: 12pt;
+	font-weight: 700;
+	text-align: center;
+	letter-spacing: 0.2px;
+	margin: 0 0 3px 0;
+}
+
+.nkt-eod-meta {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 4px;
+	font-size: 7pt;
+}
+
+.nkt-eod-meta td {
+	padding: 1px 3px;
+	border: 0;
+	vertical-align: top;
+}
+
+.nkt-eod-table {
+	width: 100%;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+
+.nkt-eod-table thead {
+	display: table-header-group;
+}
+
+.nkt-eod-table th,
+.nkt-eod-table td {
+	border: 0.6px solid #333;
+	padding: 1.5px 2px;
+	vertical-align: middle;
+	overflow-wrap: anywhere;
+}
+
+.nkt-eod-table th {
+	font-size: 6.6pt;
+	font-weight: 700;
+	text-align: center;
+	background: #efefef;
+}
+
+.nkt-eod-table .num {
+	text-align: right;
+	white-space: nowrap;
+}
+
+.nkt-eod-table .center {
+	text-align: center;
+}
+
+.nkt-eod-table .warehouse-band td {
+	font-weight: 700;
+	font-size: 7pt;
+	background: #e3e3e3;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.nkt-eod-table .subtotal td {
+	font-weight: 700;
+	border-top: 1.2px solid #111;
+	background: #f5f5f5;
+}
+
+.nkt-eod-table .negative {
+	font-weight: 700;
+}
+
+.nkt-eod-footnote {
+	margin-top: 3px;
+	font-size: 6.2pt;
+}
+
+.nkt-eod-signoff {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 7px;
+	font-size: 6.8pt;
+}
+
+.nkt-eod-signoff td {
+	width: 33.333%;
+	padding: 7px 6px 0 6px;
+	text-align: center;
+	border: 0;
+}
+
+.nkt-eod-sign-line {
+	border-top: 0.6px solid #222;
+	padding-top: 2px;
+}
+
+.col-category { width: 12%; }
+.col-item { width: 25%; }
+.col-uom { width: 6%; }
+.col-open { width: 7%; }
+.col-in { width: 6%; }
+.col-out { width: 6%; }
+.col-adj { width: 6%; }
+.col-system { width: 8%; }
+.col-physical { width: 8%; }
+.col-variance { width: 8%; }
+.col-remarks { width: 8%; }
+</style>
+
+<div class="nkt-eod-print">
+	<div class="nkt-eod-title">END-OF-DAY INVENTORY</div>
+
+	<table class="nkt-eod-meta">
+		<tr>
+			<td><b>Company:</b> <%= filters.company || "" %></td>
+			<td><b>Business Date:</b> <%= filters.business_date || "" %></td>
+			<td><b>Warehouse:</b> <%= filters.warehouse || "All operational warehouses" %></td>
+		</tr>
+	</table>
+
+	<table class="nkt-eod-table">
+		<thead>
+			<tr>
+				<th class="col-category">Category</th>
+				<th class="col-item">Item</th>
+				<th class="col-uom">UOM</th>
+				<th class="col-open">Opening</th>
+				<th class="col-in">In</th>
+				<th class="col-out">Out</th>
+				<th class="col-adj">Adj.</th>
+				<th class="col-system">System EOD</th>
+				<th class="col-physical">Physical Count</th>
+				<th class="col-variance">Variance</th>
+				<th class="col-remarks">Remarks</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% var last_warehouse = ""; %>
+			<% for (var i = 0; i < data.length; i++) { %>
+				<% var row = data[i]; %>
+				<% if (row.warehouse !== last_warehouse) { %>
+					<tr class="warehouse-band">
+						<td colspan="11"><%= row.warehouse || "" %></td>
+					</tr>
+					<% last_warehouse = row.warehouse; %>
+				<% } %>
+
+				<% if (row.row_type === "Subtotal" || row.category === "TOTAL") { %>
+					<tr class="subtotal">
+						<td>TOTAL</td>
+						<td><%= row.item_display || "Warehouse subtotal" %></td>
+						<td class="center"><%= row.uom || "" %></td>
+						<td class="num"><%= row.opening_inventory == null ? "" : row.opening_inventory %></td>
+						<td class="num"><%= row.inward_movement == null ? "" : row.inward_movement %></td>
+						<td class="num"><%= row.outward_movement == null ? "" : row.outward_movement %></td>
+						<td class="num"><%= row.ledger_adjustment == null ? "" : row.ledger_adjustment %></td>
+						<td class="num"><%= row.system_inventory == null ? "" : row.system_inventory %></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				<% } else { %>
+					<tr>
+						<td><%= row.category || "" %></td>
+						<td><%= row.item_display || "" %></td>
+						<td class="center"><%= row.uom || "" %></td>
+						<td class="num"><%= row.opening_inventory == null ? "" : row.opening_inventory %></td>
+						<td class="num"><%= row.inward_movement == null ? "" : row.inward_movement %></td>
+						<td class="num"><%= row.outward_movement == null ? "" : row.outward_movement %></td>
+						<td class="num"><%= row.ledger_adjustment == null ? "" : row.ledger_adjustment %></td>
+						<td class="num <%= row.negative_system_balance ? "negative" : "" %>"><%= row.system_inventory == null ? "" : row.system_inventory %></td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+				<% } %>
+			<% } %>
+		</tbody>
+	</table>
+
+	<div class="nkt-eod-footnote">
+		<b>Ledger equation:</b> Opening + In - Out + Adj. = System EOD.
+		Adj. keeps Stock Reconciliation and other authoritative ledger balance changes visible instead of hiding them.
+		Physical Count and Variance are intentionally blank worksheet fields for actual end-of-day reconciliation.
+	</div>
+
+	<table class="nkt-eod-signoff">
+		<tr>
+			<td><div class="nkt-eod-sign-line">Prepared / Counted By</div></td>
+			<td><div class="nkt-eod-sign-line">Checked By</div></td>
+			<td><div class="nkt-eod-sign-line">Date / Time</div></td>
+		</tr>
+	</table>
+</div>

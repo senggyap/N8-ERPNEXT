@@ -1,0 +1,118 @@
+{
+  "actions": [],
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "effect_type",
+    "action",
+    "effect_status",
+    "original_doctype",
+    "original_document",
+    "reversal_doctype",
+    "reversal_document",
+    "amount",
+    "payment_method",
+    "original_direction",
+    "reversal_direction",
+    "reversal_reference",
+    "physical_action_notes",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "effect_type",
+      "fieldtype": "Data",
+      "label": "Effect Type",
+      "read_only": 1
+    },
+    {
+      "fieldname": "action",
+      "fieldtype": "Data",
+      "label": "Reversal Action",
+      "read_only": 1
+    },
+    {
+      "fieldname": "effect_status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Planned\nBlocked\nReversed\nSkipped\nFailed",
+      "default": "Planned",
+      "read_only": 1
+    },
+    {
+      "fieldname": "original_doctype",
+      "fieldtype": "Link",
+      "label": "Original DocType",
+      "options": "DocType",
+      "read_only": 1
+    },
+    {
+      "fieldname": "original_document",
+      "fieldtype": "Dynamic Link",
+      "label": "Original Document",
+      "options": "original_doctype",
+      "read_only": 1
+    },
+    {
+      "fieldname": "reversal_doctype",
+      "fieldtype": "Link",
+      "label": "Reversal DocType",
+      "options": "DocType",
+      "read_only": 1
+    },
+    {
+      "fieldname": "reversal_document",
+      "fieldtype": "Dynamic Link",
+      "label": "Reversal Document",
+      "options": "reversal_doctype",
+      "read_only": 1
+    },
+    {
+      "fieldname": "amount",
+      "fieldtype": "Currency",
+      "label": "Amount",
+      "read_only": 1
+    },
+    {
+      "fieldname": "payment_method",
+      "fieldtype": "Data",
+      "label": "Payment Method",
+      "read_only": 1
+    },
+    {
+      "fieldname": "original_direction",
+      "fieldtype": "Data",
+      "label": "Original Direction",
+      "read_only": 1
+    },
+    {
+      "fieldname": "reversal_direction",
+      "fieldtype": "Data",
+      "label": "Reversal Direction",
+      "read_only": 1
+    },
+    {
+      "fieldname": "reversal_reference",
+      "fieldtype": "Data",
+      "label": "Reversal / Void Reference"
+    },
+    {
+      "fieldname": "physical_action_notes",
+      "fieldtype": "Small Text",
+      "label": "Physical / External Action Notes"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes",
+      "read_only": 1
+    }
+  ],
+  "istable": 1,
+  "module": "NKT Store Operations",
+  "name": "NKT Return Exchange Reversal Effect",
+  "permissions": [],
+  "sort_field": "modified",
+  "sort_order": "DESC"
+}

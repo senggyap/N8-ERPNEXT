@@ -1,0 +1,1717 @@
+{
+  "baseline_total_records": 107,
+  "baseline_enabled_records": 50,
+  "baseline_disabled_records": 57,
+  "canonical_records": [
+    {
+      "name": "NKT CURRENT — Customer — Form",
+      "dt": "Customer",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "source_file": "current_client_scripts/accounts/customer.js",
+      "source_names": [
+        "NKT Customer Account History V1.7",
+        "NKT Customer Account Controls V1.8",
+        "NKT C5.5 Customer Exposure Visibility",
+        "NKT Customer 360 Navigation C12D"
+      ],
+      "source_count": 4,
+      "source_script_sha256": [
+        "71c6c511943d579185995a80bdb293a04b2f8e7f5ed6d2ddb0927fb1462e01ef",
+        "797f4b8ff9bb74ad829b4f38f86aabd6c9eadf20018bafdbaae99148c2dece65",
+        "0bf8fbf322f1017bb234dd1e4e7030af6e3f7ba65379e4b3a543b3f23c129052",
+        "14e17ab8e7a491b26b1fcc5be6a4a35b9870ea3e5ea4b0eeb93a116bca324ebe"
+      ],
+      "canonical_sha256": "ebaf7ca3b0da2d4aac36028e41358000161c0c68c74546da895a20c328ad7229"
+    },
+    {
+      "name": "NKT CURRENT — NKT Account Payment Correction — Form",
+      "dt": "NKT Account Payment Correction",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "source_file": "current_client_scripts/accounts/account_payment_correction.js",
+      "source_names": [
+        "NKT Payment Correction V1.8"
+      ],
+      "source_count": 1,
+      "source_script_sha256": [
+        "ac25e0a9d50dd20b46788b77c9bdd10104256f21b3489220b6033ba1b38f88bf"
+      ],
+      "canonical_sha256": "d8dab4cc9a562d8f8fc2ba539d8c8f6d841b4ee8bf8aeedac505aabb7dda3eee"
+    },
+    {
+      "name": "NKT CURRENT — NKT Cash Drawer Adjustment — Form",
+      "dt": "NKT Cash Drawer Adjustment",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "source_file": "current_client_scripts/cashier/cash_drawer_adjustment.js",
+      "source_names": [
+        "NKT Cash Drawer Adjustment V1.9"
+      ],
+      "source_count": 1,
+      "source_script_sha256": [
+        "89c9d3de135005f936a6660d0467db9969e7f2457cdc015534fbd3084a9e54c7"
+      ],
+      "canonical_sha256": "ed8f156680986f7a930a15a3c8defd658ae42d15108e4e600e602be6df26df2e"
+    },
+    {
+      "name": "NKT CURRENT — NKT Cashier Account Collection — Form",
+      "dt": "NKT Cashier Account Collection",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "source_file": "current_client_scripts/accounts/cashier_account_collection.js",
+      "source_names": [
+        "NKT Cashier Account Collection V1.5",
+        "NKT Account Payment Receipt Button V1.7"
+      ],
+      "source_count": 2,
+      "source_script_sha256": [
+        "d1668e776feaf6e7b8e34a37c460405085c08ec373b5ebc8520da4cd57badfb2",
+        "5937dc520affc49945bf511ddcaa247e4cbae5484a5c245b918da60518aab224"
+      ],
+      "canonical_sha256": "9808502ea74c3838ccc4038c0d9a1818161eed38e970b6a16629fcd41c0a94e0"
+    },
+    {
+      "name": "NKT CURRENT — NKT Cashier Fast Screen — Form",
+      "dt": "NKT Cashier Fast Screen",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "source_file": "current_client_scripts/fast_screen/cashier.js",
+      "source_names": [
+        "NKT Cashier Fast Screen V2.0C.3",
+        "NKT R8A Cashier Frontline Presentation Guard",
+        "NKT R4 UI6 Cashier F8 Transaction History",
+        "NKT R4 UI6 Reserved F1 F7 - NKT Cashier Fast Screen",
+        "NKT R4 UI7B Cashier Payment on Account Bridge"
+      ],
+      "source_count": 5,
+      "source_script_sha256": [
+        "a26a0ec7105e0c24d0f3107871a7fc2bd199e3e2cebf2f99a376010eee507836",
+        "990b2fa70d68df1b7432e3b4c9da0857e4ccd04ba692711a08ec0a5541558592",
+        "efeaf9539b9f85874ce964e440ec3fa952e14bb778f53a03a0f0a1b288f7e70a",
+        "8a6138b6cbe64d6ea8e5a46854ded65fafa3f352de40a38a65234133be40aa9d",
+        "6547530bc99bc759ae4d44142abc3543a43c0d8f9ccfe07026d48ca7c8d47829"
+      ],
+      "canonical_sha256": "d74baadbab69d1cf75acc15608be5bc6643886f08a40bcb1f4e9153480a76795"
+    },
+    {
+      "name": "NKT CURRENT — NKT Cashier Return Exchange — Form",
+      "dt": "NKT Cashier Return Exchange",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "source_file": "current_client_scripts/returns/cashier_return_exchange.js",
+      "source_names": [
+        "NKT Cashier Return Exchange V2.0C.7.12A-C.1"
+      ],
+      "source_count": 1,
+      "source_script_sha256": [
+        "5acf1f29984b4fdf4d51026574f230155e849930d54375c0c458cb4b0c49fb40"
+      ],
+      "canonical_sha256": "327a7e7a875163d3a3a79aa0a330369cc706b215f4fb9fbe23c8ea0d5d4c504d"
+    },
+    {
+      "name": "NKT CURRENT — NKT Cashier Sale Item — Form",
+      "dt": "NKT Cashier Sale Item",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "source_file": "current_client_scripts/sales/cashier_sale_item.js",
+      "source_names": [
+        "NKT Saleable Item Warning V1.8 - NKT Cashier Sale Item"
+      ],
+      "source_count": 1,
+      "source_script_sha256": [
+        "70969e5b5978fe54f6b4a5c49a8180fd2d9cc4a044c5531495d18591ffc63200"
+      ],
+      "canonical_sha256": "14f2abbb731c4b9d2a6305fdb861552213b8ec0b181601368eab4db9aee866d5"
+    },
+    {
+      "name": "NKT CURRENT — NKT Cashier Shift — Form",
+      "dt": "NKT Cashier Shift",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "source_file": "current_client_scripts/cashier/cashier_shift.js",
+      "source_names": [
+        "NKT Cashier Shift Controls V1.9",
+        "NKT C15C8C Security Guard - NKT Cashier Shift",
+        "NKT Post-C15F Cashier Shift Frontline Presentation FR2"
+      ],
+      "source_count": 3,
+      "source_script_sha256": [
+        "39d003c37240a76fdd9ca776c295c749bbd294f7ac0eab72032b70a2b05b4ed3",
+        "af516e401ce036af0b066d4b2d479dc598fc0062b076ed9c98085246027b4006",
+        "b93bd3f35efc05516f40ed7fcdec9160f4d9392b87ed50672be48d93a2c9d158"
+      ],
+      "canonical_sha256": "d538dae7bdb994db28ad11a9704d781e6a982e06e4226c82c0ce896c25dd426d"
+    },
+    {
+      "name": "NKT CURRENT — NKT Customer Advance Application — Form",
+      "dt": "NKT Customer Advance Application",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "source_file": "current_client_scripts/accounts/customer_advance_application.js",
+      "source_names": [
+        "NKT C5.4 Advance Application Correction",
+        "NKT C15C8C Security Guard - NKT Customer Advance Application"
+      ],
+      "source_count": 2,
+      "source_script_sha256": [
+        "e29fb834b9db22e00a97cdf4cdf5c0a4b1c4f0190b3e46adeac0f41d6cda0c81",
+        "2f882d381256e3ddd66afa2414e221120b7007cac3168669d4cd8bd566baae5c"
+      ],
+      "canonical_sha256": "99519d361ecebe6079fa2dc02009ac70aa41e5bdf3c5e687231d1cca729d60e8"
+    },
+    {
+      "name": "NKT CURRENT — NKT Customer Order — Form",
+      "dt": "NKT Customer Order",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "source_file": "current_client_scripts/sales/customer_order.js",
+      "source_names": [
+        "NKT Customer Order Manual Match Resolution V1.3",
+        "NKT Account Credit Control V1.4",
+        "NKT Customer Order Warehouse Change Link V2.0C.4.2.1.3",
+        "NKT C5.4 Advance Correction Order Tools",
+        "NKT C5.5 Encoder Order Internal Visibility",
+        "NKT C15C8C Security Guard - NKT Customer Order"
+      ],
+      "source_count": 6,
+      "source_script_sha256": [
+        "0f4444c0247830ec07be7af03c95d0ba316c47a7d43c6bbc902769da600abe6b",
+        "cee258d3c2f048a30d92c9efd6f615d5c5312191dca019e08301f36281391029",
+        "0318721c1de1d11d4d680e72fe45656989f8d900aa21ccff79ba6a655f0bbc73",
+        "c4a6f072a0cbc90205ab3f424ca1da260c854eb3380da059beddcdecf8e0c3ea",
+        "7a4552123684bfe83c1f7679d6f2ed93d473063bade8151c7d6248f6b993a573",
+        "fedb7ad1cdf283f9a82cb230dd215de599e5787a0bfa9f4883100e07748a9e1f"
+      ],
+      "canonical_sha256": "6922af08b37fd24442e9b4026df56c271de769a7db69799d5b46e1f6fd26bc33"
+    },
+    {
+      "name": "NKT CURRENT — NKT Customer Order Item — Form",
+      "dt": "NKT Customer Order Item",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "source_file": "current_client_scripts/sales/customer_order_item.js",
+      "source_names": [
+        "NKT Saleable Item Warning V1.8 - NKT Customer Order Item"
+      ],
+      "source_count": 1,
+      "source_script_sha256": [
+        "2c2cc8d1b029ac8f1d7e22897605a410a6d5d761171acb44e803b7e9f868d98e"
+      ],
+      "canonical_sha256": "0852aff324794a7babc7664226e8b0151e9d8bd340b5661e9054e691f884b3ee"
+    },
+    {
+      "name": "NKT CURRENT — NKT Customer Receivable — Form",
+      "dt": "NKT Customer Receivable",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "source_file": "current_client_scripts/accounts/customer_receivable.js",
+      "source_names": [
+        "NKT Receivable Collection Shortcut V1.5",
+        "NKT C5.5 Encoder Receivable Internal Visibility"
+      ],
+      "source_count": 2,
+      "source_script_sha256": [
+        "668a858f0766a90cabfad9458c9cbc6d7bc7727acd52921f6a372a7c166057eb",
+        "dbd7b2642e4a11e0f27d6d6a92dd5979bb706b967ad5d63ff727e27e1fc53632"
+      ],
+      "canonical_sha256": "1a426e457715734ac5bda4a65e2225269c831263e81d172b5e1823813fd6478a"
+    },
+    {
+      "name": "NKT CURRENT — NKT Customer Statement — Form",
+      "dt": "NKT Customer Statement",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "source_file": "current_client_scripts/accounts/customer_statement.js",
+      "source_names": [
+        "NKT Customer Statement V1.7",
+        "NKT Statement Delivery Audit V1.8"
+      ],
+      "source_count": 2,
+      "source_script_sha256": [
+        "d138d29c63f78816f7222b9e94e9a37e91d67757095b8858fffd88e1b39145ee",
+        "007bb4707392d2d60f684c85e3f3cfe8114c5ddac9c8468e3a150a92ed546723"
+      ],
+      "canonical_sha256": "9bc79e823d227d24e673a37af614d035d174c258069ed9071c2c103018f6eb1e"
+    },
+    {
+      "name": "NKT CURRENT — NKT EOD Reconciliation — Form",
+      "dt": "NKT EOD Reconciliation",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "source_file": "current_client_scripts/cashier/eod_reconciliation.js",
+      "source_names": [
+        "NKT EOD Reconciliation Controls V2.0C.6.3"
+      ],
+      "source_count": 1,
+      "source_script_sha256": [
+        "287cf2b55569af0142adf0968d8756ebcd88034cbade670a3ca24c74c908dbe7"
+      ],
+      "canonical_sha256": "a0bff663f50d9a0a4d1fcd6c05cacbe2d22c713d355c89435c3c49f9340d25ed"
+    },
+    {
+      "name": "NKT CURRENT — NKT Encoder Account Allocation — Form",
+      "dt": "NKT Encoder Account Allocation",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "source_file": "current_client_scripts/accounts/encoder_account_allocation.js",
+      "source_names": [
+        "NKT Encoder Account Allocation V1.5",
+        "NKT C15C8C Security Guard - NKT Encoder Account Allocation"
+      ],
+      "source_count": 2,
+      "source_script_sha256": [
+        "11b0fef8187c9b9ae01cb53cc083569dc49239decffb2371b6d434308d475901",
+        "5f683aa77399ec22f9dabd0de41732c27c4ae0eec783f6e675c9b1cc204108a4"
+      ],
+      "canonical_sha256": "9c6bd761fb3eaf73a292833ce3fc3614f2f0c129f2a62ed2c321c848724a29e1"
+    },
+    {
+      "name": "NKT CURRENT — NKT Encoder Fast Screen — Form",
+      "dt": "NKT Encoder Fast Screen",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "source_file": "current_client_scripts/fast_screen/encoder.js",
+      "source_names": [
+        "NKT Encoder Fast Screen V2.0C.3",
+        "NKT Encoder Warehouse Change Link V2.0C.4.2.1",
+        "NKT R8A Encoder Frontline Presentation + F6 Item History",
+        "NKT R4 UI6 Encoder F8 Transaction History",
+        "NKT R4 UI6 Reserved F1 F7 - NKT Encoder Fast Screen",
+        "NKT R4 UI7B Encoder Payment on Account Bridge"
+      ],
+      "source_count": 6,
+      "source_script_sha256": [
+        "f749761002e54e38ea260f7464b235adfba4d100524feaa409b47daa3de2bee2",
+        "7aa2182019a09ece3ef5ecb39ef1d2ca429004b7151b22e9c0a66769f49489bd",
+        "24525b3ce30c3687d6f3be8212bc0a98324f8b948a3ca816936c27cd3c2ef593",
+        "efeaf9539b9f85874ce964e440ec3fa952e14bb778f53a03a0f0a1b288f7e70a",
+        "df12d925109b9bd018e11b34046f7897b73bf8274aedf135211903a64a4c25be",
+        "6547530bc99bc759ae4d44142abc3543a43c0d8f9ccfe07026d48ca7c8d47829"
+      ],
+      "canonical_sha256": "2928eb86d545aedc81d56c5879864e5540aca5f2bf787ca8272b8acb79c939c5"
+    },
+    {
+      "name": "NKT CURRENT — NKT Encoder Return Exchange — Form",
+      "dt": "NKT Encoder Return Exchange",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "source_file": "current_client_scripts/returns/encoder_return_exchange.js",
+      "source_names": [
+        "NKT Encoder Return Exchange V2.0C.7.12A-C.1"
+      ],
+      "source_count": 1,
+      "source_script_sha256": [
+        "cd7a1ae4aa5cf6e7654443dc83e8ec012f7171007dcbcf9242c5639d8730a37f"
+      ],
+      "canonical_sha256": "4c52e40f88cc63a889f05a9175f2765dea55206f646b087fd569869c8fe62c3b"
+    },
+    {
+      "name": "NKT CURRENT — NKT Encoder Z-Out — Form",
+      "dt": "NKT Encoder Z-Out",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "source_file": "current_client_scripts/cashier/encoder_z_out.js",
+      "source_names": [
+        "NKT Encoder Z-Out Controls V2.0C.6.2"
+      ],
+      "source_count": 1,
+      "source_script_sha256": [
+        "3813cb5ae4595aa5cbb53c40f91e60e0155b2e45db37c079f79d1d5f41f5756a"
+      ],
+      "canonical_sha256": "7e656dc86c9da0547c719ed8dda1cd96196ff76c354fb7fd8d46c889fafbcb02"
+    },
+    {
+      "name": "NKT CURRENT — NKT Physical Inventory Adjustment — Form",
+      "dt": "NKT Physical Inventory Adjustment",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "source_file": "current_client_scripts/inventory/physical_inventory_adjustment.js",
+      "source_names": [
+        "NKT C8 Physical Inventory Adjustment V2.0C.8C.1",
+        "NKT C15C8C Security Guard - NKT Physical Inventory Adjustment"
+      ],
+      "source_count": 2,
+      "source_script_sha256": [
+        "f6df31b898b258e534f5375332e1482410bc9b0ff7ad4349ccdc22c800ba9696",
+        "d2f633b6c6bee1ffd6f0bc7eff3e2e9802a375c2102d1318cf30e13b74d38462"
+      ],
+      "canonical_sha256": "8ec1842793cfd095849c33f79adf284525c3397fa7a5f226640e03131bf179dd"
+    },
+    {
+      "name": "NKT CURRENT — NKT Return Exchange Declaration — Form",
+      "dt": "NKT Return Exchange Declaration",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "source_file": "current_client_scripts/returns/return_exchange_declaration.js",
+      "source_names": [
+        "NKT C7.13C Return Exchange Reversal Launch"
+      ],
+      "source_count": 1,
+      "source_script_sha256": [
+        "092f36557c146c3c3aa486ae0286f18e1eeefdd315603514762a58724d300916"
+      ],
+      "canonical_sha256": "f45d6b3f90480283d8c52d893ac45d9734a26094fa8fa170fc0d945179ce5c60"
+    },
+    {
+      "name": "NKT CURRENT — NKT Return Exchange Reversal — Form",
+      "dt": "NKT Return Exchange Reversal",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "source_file": "current_client_scripts/returns/return_exchange_reversal.js",
+      "source_names": [
+        "NKT C7.13C Return Exchange Reversal Form"
+      ],
+      "source_count": 1,
+      "source_script_sha256": [
+        "3e3a958d967a2609a3bae70a504eb966e5b822d6ec2e6530d07c1ca009a1d3c5"
+      ],
+      "canonical_sha256": "eaf228aa0ec2caa258145c1009087afc94e49faaa8bd169a5f9df51868fb0947"
+    },
+    {
+      "name": "NKT CURRENT — NKT Warehouse Change Fast Screen — Form",
+      "dt": "NKT Warehouse Change Fast Screen",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "source_file": "current_client_scripts/inventory/warehouse_change_fast.js",
+      "source_names": [
+        "NKT Warehouse Change Fast Screen V2.0C.4.2.2",
+        "NKT R4 UI6 Reserved F1 F7 - NKT Warehouse Change Fast Screen"
+      ],
+      "source_count": 2,
+      "source_script_sha256": [
+        "03cc2619b8ebc8b5667748fa91bc2329215e113c0a1b50391bf52aeaef3575cd",
+        "c037dc9b4a6aa1da732fdc0e14777131dddb268db795e25c15cf832cc68a4d0a"
+      ],
+      "canonical_sha256": "1e75ff72fa33fec563a9b330fb632251932954a1a789fe383740a7c3f1e939be"
+    },
+    {
+      "name": "NKT CURRENT — NKT Warehouse Release Fast Screen — Form",
+      "dt": "NKT Warehouse Release Fast Screen",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "source_file": "current_client_scripts/inventory/warehouse_release_fast.js",
+      "source_names": [
+        "NKT Warehouse Release Fast Screen V2.0C.4.2.2",
+        "NKT R4 UI6 Reserved F1 F7 - NKT Warehouse Release Fast Screen"
+      ],
+      "source_count": 2,
+      "source_script_sha256": [
+        "90bdb4a635fa9603d64482b9866ea81b98debe421f758aa2fd1c6b30b8c831dd",
+        "088bcfe4f57a92bd200517f0be875bea73743b51e9c893e1071c0c23a0b55aaa"
+      ],
+      "canonical_sha256": "0db4e054318650a7bd1fb6652a248b46623c74878e06497c127064ad65aae0d0"
+    }
+  ],
+  "superseded_names": [
+    "NKT Account Credit Control V1.4",
+    "NKT Account Payment Receipt Button V1.7",
+    "NKT C15C8C Security Guard - NKT Cashier Shift",
+    "NKT C15C8C Security Guard - NKT Customer Advance Application",
+    "NKT C15C8C Security Guard - NKT Customer Order",
+    "NKT C15C8C Security Guard - NKT Encoder Account Allocation",
+    "NKT C15C8C Security Guard - NKT Physical Inventory Adjustment",
+    "NKT C5.2 Customer Advance Order UI",
+    "NKT C5.4 Advance Application Correction",
+    "NKT C5.4 Advance Correction Order Tools",
+    "NKT C5.5 Customer Exposure Visibility",
+    "NKT C5.5 Encoder Order Internal Visibility",
+    "NKT C5.5 Encoder Receivable Internal Visibility",
+    "NKT C7.13C Return Exchange Reversal Form",
+    "NKT C7.13C Return Exchange Reversal Launch",
+    "NKT C8 Physical Inventory Adjustment V2.0C.8C.1",
+    "NKT Cash Drawer Adjustment V1.9",
+    "NKT Cashier Account Collection V1.5",
+    "NKT Cashier Fast Screen V2.0B",
+    "NKT Cashier Fast Screen V2.0B.3.1",
+    "NKT Cashier Fast Screen V2.0C.1",
+    "NKT Cashier Fast Screen V2.0C.2",
+    "NKT Cashier Fast Screen V2.0C.2.1",
+    "NKT Cashier Fast Screen V2.0C.2.2",
+    "NKT Cashier Fast Screen V2.0C.2.3",
+    "NKT Cashier Fast Screen V2.0C.2.3.1",
+    "NKT Cashier Fast Screen V2.0C.2.3.2",
+    "NKT Cashier Fast Screen V2.0C.3",
+    "NKT Cashier Return Exchange V2.0C.7.1",
+    "NKT Cashier Return Exchange V2.0C.7.10.1",
+    "NKT Cashier Return Exchange V2.0C.7.10.2",
+    "NKT Cashier Return Exchange V2.0C.7.10.5",
+    "NKT Cashier Return Exchange V2.0C.7.11B.1",
+    "NKT Cashier Return Exchange V2.0C.7.11C.1",
+    "NKT Cashier Return Exchange V2.0C.7.12A-C.1",
+    "NKT Cashier Return Exchange V2.0C.7.4.1",
+    "NKT Cashier Return Exchange V2.0C.7.4.2",
+    "NKT Cashier Return Exchange V2.0C.7.4.3",
+    "NKT Cashier Return Exchange V2.0C.7.4.4",
+    "NKT Cashier Return Exchange V2.0C.7.4.6",
+    "NKT Cashier Return Exchange V2.0C.7.4.9",
+    "NKT Cashier Return Exchange V2.0C.7.6.1",
+    "NKT Cashier Return Exchange V2.0C.7.6.5",
+    "NKT Cashier Shift Controls V1.9",
+    "NKT Customer 360 Navigation C12D",
+    "NKT Customer Account Controls V1.8",
+    "NKT Customer Account History V1.7",
+    "NKT Customer Order Manual Match Resolution V1.3",
+    "NKT Customer Order Warehouse Change Link V2.0C.4.2.1.3",
+    "NKT Customer Statement V1.7",
+    "NKT EOD Reconciliation Controls V2.0C.6.3",
+    "NKT Encoder Account Allocation V1.5",
+    "NKT Encoder Fast Screen V2.0B",
+    "NKT Encoder Fast Screen V2.0B.3.1",
+    "NKT Encoder Fast Screen V2.0C.1",
+    "NKT Encoder Fast Screen V2.0C.2",
+    "NKT Encoder Fast Screen V2.0C.2.1",
+    "NKT Encoder Fast Screen V2.0C.2.2",
+    "NKT Encoder Fast Screen V2.0C.2.3",
+    "NKT Encoder Fast Screen V2.0C.2.3.1",
+    "NKT Encoder Fast Screen V2.0C.2.3.2",
+    "NKT Encoder Fast Screen V2.0C.3",
+    "NKT Encoder Fast Screen V2.0C.5.5 Role Safe Receivable",
+    "NKT Encoder Return Exchange V2.0C.7.1",
+    "NKT Encoder Return Exchange V2.0C.7.10.1",
+    "NKT Encoder Return Exchange V2.0C.7.10.2",
+    "NKT Encoder Return Exchange V2.0C.7.10.5",
+    "NKT Encoder Return Exchange V2.0C.7.11B.1",
+    "NKT Encoder Return Exchange V2.0C.7.11C.1",
+    "NKT Encoder Return Exchange V2.0C.7.12A-C.1",
+    "NKT Encoder Return Exchange V2.0C.7.4.1",
+    "NKT Encoder Return Exchange V2.0C.7.4.2",
+    "NKT Encoder Return Exchange V2.0C.7.4.3",
+    "NKT Encoder Return Exchange V2.0C.7.4.4",
+    "NKT Encoder Return Exchange V2.0C.7.4.6",
+    "NKT Encoder Return Exchange V2.0C.7.4.9",
+    "NKT Encoder Return Exchange V2.0C.7.6.1",
+    "NKT Encoder Return Exchange V2.0C.7.6.5",
+    "NKT Encoder Warehouse Change Link V2.0C.4.2.1",
+    "NKT Encoder Z-Out Controls V2.0C.6.2",
+    "NKT Payment Correction V1.8",
+    "NKT Post-C15F Cashier Shift Frontline Presentation FR2",
+    "NKT R4 UI6 Cashier F8 Transaction History",
+    "NKT R4 UI6 Encoder F8 Transaction History",
+    "NKT R4 UI6 Reserved F1 F7 - NKT Cashier Fast Screen",
+    "NKT R4 UI6 Reserved F1 F7 - NKT Encoder Fast Screen",
+    "NKT R4 UI6 Reserved F1 F7 - NKT Warehouse Change Fast Screen",
+    "NKT R4 UI6 Reserved F1 F7 - NKT Warehouse Release Fast Screen",
+    "NKT R4 UI7B Cashier Payment on Account Bridge",
+    "NKT R4 UI7B Encoder Payment on Account Bridge",
+    "NKT R8A Cashier Frontline Presentation Guard",
+    "NKT R8A Encoder Frontline Presentation + F6 Item History",
+    "NKT Receivable Collection Shortcut V1.5",
+    "NKT Saleable Item Warning V1.8 - NKT Cashier Sale Item",
+    "NKT Saleable Item Warning V1.8 - NKT Customer Order Item",
+    "NKT Statement Delivery Audit V1.8",
+    "NKT Warehouse Change Fast Screen V2.0C.4.2.1",
+    "NKT Warehouse Change Fast Screen V2.0C.4.2.2",
+    "NKT Warehouse Release Fast Screen V2.0C.4.1.1",
+    "NKT Warehouse Release Fast Screen V2.0C.4.1.2",
+    "NKT Warehouse Release Fast Screen V2.0C.4.1.3",
+    "NKT Warehouse Release Fast Screen V2.0C.4.1.4",
+    "NKT Warehouse Release Fast Screen V2.0C.4.1.4.1",
+    "NKT Warehouse Release Fast Screen V2.0C.4.1.4.2",
+    "NKT Warehouse Release Fast Screen V2.0C.4.1.4.3",
+    "NKT Warehouse Release Fast Screen V2.0C.4.2.1",
+    "NKT Warehouse Release Fast Screen V2.0C.4.2.2"
+  ],
+  "baseline_records": [
+    {
+      "name": "NKT Account Credit Control V1.4",
+      "dt": "NKT Customer Order",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-06 13:19:31.176002",
+      "modified": "2026-08-06 15:45:17.743988",
+      "script_sha256": "cee258d3c2f048a30d92c9efd6f615d5c5312191dca019e08301f36281391029",
+      "script_size": 3597
+    },
+    {
+      "name": "NKT Account Payment Receipt Button V1.7",
+      "dt": "NKT Cashier Account Collection",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-06 16:16:07.190023",
+      "modified": "2026-08-06 16:16:07.190023",
+      "script_sha256": "5937dc520affc49945bf511ddcaa247e4cbae5484a5c245b918da60518aab224",
+      "script_size": 564
+    },
+    {
+      "name": "NKT C15C8C Security Guard - NKT Cashier Shift",
+      "dt": "NKT Cashier Shift",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-14 23:28:51.745847",
+      "modified": "2026-08-14 23:28:51.745847",
+      "script_sha256": "af516e401ce036af0b066d4b2d479dc598fc0062b076ed9c98085246027b4006",
+      "script_size": 2917
+    },
+    {
+      "name": "NKT C15C8C Security Guard - NKT Customer Advance Application",
+      "dt": "NKT Customer Advance Application",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-14 23:28:51.785451",
+      "modified": "2026-08-14 23:28:51.785451",
+      "script_sha256": "2f882d381256e3ddd66afa2414e221120b7007cac3168669d4cd8bd566baae5c",
+      "script_size": 2947
+    },
+    {
+      "name": "NKT C15C8C Security Guard - NKT Customer Order",
+      "dt": "NKT Customer Order",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-14 23:28:51.829879",
+      "modified": "2026-08-14 23:28:51.829879",
+      "script_sha256": "fedb7ad1cdf283f9a82cb230dd215de599e5787a0bfa9f4883100e07748a9e1f",
+      "script_size": 2920
+    },
+    {
+      "name": "NKT C15C8C Security Guard - NKT Encoder Account Allocation",
+      "dt": "NKT Encoder Account Allocation",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-14 23:28:51.872636",
+      "modified": "2026-08-14 23:28:51.872636",
+      "script_sha256": "5f683aa77399ec22f9dabd0de41732c27c4ae0eec783f6e675c9b1cc204108a4",
+      "script_size": 2943
+    },
+    {
+      "name": "NKT C15C8C Security Guard - NKT Physical Inventory Adjustment",
+      "dt": "NKT Physical Inventory Adjustment",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-14 23:28:51.917830",
+      "modified": "2026-08-14 23:28:51.917830",
+      "script_sha256": "d2f633b6c6bee1ffd6f0bc7eff3e2e9802a375c2102d1318cf30e13b74d38462",
+      "script_size": 2949
+    },
+    {
+      "name": "NKT C5.2 Customer Advance Order UI",
+      "dt": "NKT Customer Order",
+      "view": "Form",
+      "enabled": 0,
+      "module": "NKT Store Operations",
+      "creation": "2026-08-11 12:32:04.813472",
+      "modified": "2026-08-11 15:10:02.745436",
+      "script_sha256": "7da0a98245d1ae1cfd475049a4f6e17a4a4c5677b8e1c76ee137bd5bd1e931cc",
+      "script_size": 5026
+    },
+    {
+      "name": "NKT C5.4 Advance Application Correction",
+      "dt": "NKT Customer Advance Application",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-11 13:22:51.358045",
+      "modified": "2026-08-11 13:22:51.358045",
+      "script_sha256": "e29fb834b9db22e00a97cdf4cdf5c0a4b1c4f0190b3e46adeac0f41d6cda0c81",
+      "script_size": 4183
+    },
+    {
+      "name": "NKT C5.4 Advance Correction Order Tools",
+      "dt": "NKT Customer Order",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-11 13:22:51.376177",
+      "modified": "2026-08-11 13:22:51.376177",
+      "script_sha256": "c4a6f072a0cbc90205ab3f424ca1da260c854eb3380da059beddcdecf8e0c3ea",
+      "script_size": 3068
+    },
+    {
+      "name": "NKT C5.5 Customer Exposure Visibility",
+      "dt": "Customer",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-11 13:49:06.299789",
+      "modified": "2026-08-11 13:49:06.299789",
+      "script_sha256": "0bf8fbf322f1017bb234dd1e4e7030af6e3f7ba65379e4b3a543b3f23c129052",
+      "script_size": 3033
+    },
+    {
+      "name": "NKT C5.5 Encoder Order Internal Visibility",
+      "dt": "NKT Customer Order",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-11 13:49:06.309110",
+      "modified": "2026-08-11 13:49:06.309110",
+      "script_sha256": "7a4552123684bfe83c1f7679d6f2ed93d473063bade8151c7d6248f6b993a573",
+      "script_size": 1725
+    },
+    {
+      "name": "NKT C5.5 Encoder Receivable Internal Visibility",
+      "dt": "NKT Customer Receivable",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-11 13:49:06.317632",
+      "modified": "2026-08-11 13:49:06.317632",
+      "script_sha256": "dbd7b2642e4a11e0f27d6d6a92dd5979bb706b967ad5d63ff727e27e1fc53632",
+      "script_size": 882
+    },
+    {
+      "name": "NKT C7.13C Return Exchange Reversal Form",
+      "dt": "NKT Return Exchange Reversal",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-13 00:38:00.710954",
+      "modified": "2026-08-13 00:38:00.710954",
+      "script_sha256": "3e3a958d967a2609a3bae70a504eb966e5b822d6ec2e6530d07c1ca009a1d3c5",
+      "script_size": 4458
+    },
+    {
+      "name": "NKT C7.13C Return Exchange Reversal Launch",
+      "dt": "NKT Return Exchange Declaration",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-13 00:37:58.720652",
+      "modified": "2026-08-13 00:37:58.720652",
+      "script_sha256": "092f36557c146c3c3aa486ae0286f18e1eeefdd315603514762a58724d300916",
+      "script_size": 3597
+    },
+    {
+      "name": "NKT C8 Physical Inventory Adjustment V2.0C.8C.1",
+      "dt": "NKT Physical Inventory Adjustment",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-13 01:31:49.129809",
+      "modified": "2026-08-13 01:31:49.129809",
+      "script_sha256": "f6df31b898b258e534f5375332e1482410bc9b0ff7ad4349ccdc22c800ba9696",
+      "script_size": 6484
+    },
+    {
+      "name": "NKT Cash Drawer Adjustment V1.9",
+      "dt": "NKT Cash Drawer Adjustment",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-06 18:05:58.953162",
+      "modified": "2026-08-06 20:17:34.022682",
+      "script_sha256": "89c9d3de135005f936a6660d0467db9969e7f2457cdc015534fbd3084a9e54c7",
+      "script_size": 9878
+    },
+    {
+      "name": "NKT Cashier Account Collection V1.5",
+      "dt": "NKT Cashier Account Collection",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-06 14:04:46.131889",
+      "modified": "2026-08-14 09:50:10.424753",
+      "script_sha256": "d1668e776feaf6e7b8e34a37c460405085c08ec373b5ebc8520da4cd57badfb2",
+      "script_size": 3996
+    },
+    {
+      "name": "NKT Cashier Fast Screen V2.0B",
+      "dt": "NKT Cashier Fast Screen",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-06 21:44:53.997387",
+      "modified": "2026-08-06 23:37:17.283891",
+      "script_sha256": "233c7b816e2d288a565518e9c32333ccb395a4ed3d8ffb1c63e542aed8354c0c",
+      "script_size": 47643
+    },
+    {
+      "name": "NKT Cashier Fast Screen V2.0B.3.1",
+      "dt": "NKT Cashier Fast Screen",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-06 23:44:42.196390",
+      "modified": "2026-08-06 23:44:42.196390",
+      "script_sha256": "51847cb61bba923aba397ec3977fc572560ffe147f07849d76f3d6e249fff968",
+      "script_size": 47647
+    },
+    {
+      "name": "NKT Cashier Fast Screen V2.0C.1",
+      "dt": "NKT Cashier Fast Screen",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-07 00:02:51.405836",
+      "modified": "2026-08-07 00:08:42.661672",
+      "script_sha256": "d0c33376a7c933ca778e8e799d463bea0eab75414af3229fa2ba032c097d7ee4",
+      "script_size": 52540
+    },
+    {
+      "name": "NKT Cashier Fast Screen V2.0C.2",
+      "dt": "NKT Cashier Fast Screen",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-07 00:23:22.096943",
+      "modified": "2026-08-07 00:23:22.096943",
+      "script_sha256": "ae385f88ac48438263c5eab93b22b9eb9fa167ab2f6ab5e5ae1b6c13aef53100",
+      "script_size": 52722
+    },
+    {
+      "name": "NKT Cashier Fast Screen V2.0C.2.1",
+      "dt": "NKT Cashier Fast Screen",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-07 00:38:04.279540",
+      "modified": "2026-08-07 00:38:04.279540",
+      "script_sha256": "90e38f4280e1a262e03e3c5578a30646044c1962be631df5da8ab91dd14fa2ac",
+      "script_size": 54722
+    },
+    {
+      "name": "NKT Cashier Fast Screen V2.0C.2.2",
+      "dt": "NKT Cashier Fast Screen",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-07 00:52:07.058921",
+      "modified": "2026-08-07 00:52:07.058921",
+      "script_sha256": "7e94b7b26603d8e5ff2d7a74c97965dbf484bbce476c92c40b34712d13715758",
+      "script_size": 55135
+    },
+    {
+      "name": "NKT Cashier Fast Screen V2.0C.2.3",
+      "dt": "NKT Cashier Fast Screen",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-08 23:16:43.269853",
+      "modified": "2026-08-08 23:16:43.269853",
+      "script_sha256": "8fafa643580547c4ab43193c976ddcf4a52cc1dccf64f357b47d11e5e1983fca",
+      "script_size": 55134
+    },
+    {
+      "name": "NKT Cashier Fast Screen V2.0C.2.3.1",
+      "dt": "NKT Cashier Fast Screen",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-09 21:59:24.277537",
+      "modified": "2026-08-09 21:59:24.277537",
+      "script_sha256": "207fd69695c8c19737ed692d73306efb6af17ffc7ba96b4e79b6d81ad3c3f549",
+      "script_size": 55150
+    },
+    {
+      "name": "NKT Cashier Fast Screen V2.0C.2.3.2",
+      "dt": "NKT Cashier Fast Screen",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-09 22:22:01.003283",
+      "modified": "2026-08-09 22:22:01.003283",
+      "script_sha256": "55fa8d4eeb3f6f7dcea6e80f498fec11d86cf6eb964be7a2ed7e9241d1f2b214",
+      "script_size": 61343
+    },
+    {
+      "name": "NKT Cashier Fast Screen V2.0C.3",
+      "dt": "NKT Cashier Fast Screen",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-10 11:32:50.749910",
+      "modified": "2026-08-27 09:05:56.182435",
+      "script_sha256": "a26a0ec7105e0c24d0f3107871a7fc2bd199e3e2cebf2f99a376010eee507836",
+      "script_size": 125922
+    },
+    {
+      "name": "NKT Cashier Return Exchange V2.0C.7.1",
+      "dt": "NKT Cashier Return Exchange",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-11 18:17:22.146140",
+      "modified": "2026-08-11 21:44:10.292535",
+      "script_sha256": "a1533fe1a78acf648508425b1ba486aa92a5a7dcd20fa3753bd8a4aaf5f981ef",
+      "script_size": 22596
+    },
+    {
+      "name": "NKT Cashier Return Exchange V2.0C.7.10.1",
+      "dt": "NKT Cashier Return Exchange",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-12 14:47:46.212470",
+      "modified": "2026-08-12 14:47:46.212470",
+      "script_sha256": "531b612a60763845e604f26a3575a9de9c8f7dd937a564709e2e1cf5e0e28db3",
+      "script_size": 66877
+    },
+    {
+      "name": "NKT Cashier Return Exchange V2.0C.7.10.2",
+      "dt": "NKT Cashier Return Exchange",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-12 14:55:36.171903",
+      "modified": "2026-08-12 14:55:36.171903",
+      "script_sha256": "531b612a60763845e604f26a3575a9de9c8f7dd937a564709e2e1cf5e0e28db3",
+      "script_size": 66877
+    },
+    {
+      "name": "NKT Cashier Return Exchange V2.0C.7.10.5",
+      "dt": "NKT Cashier Return Exchange",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-12 15:33:07.628219",
+      "modified": "2026-08-12 15:33:07.628219",
+      "script_sha256": "dbdc0e91a771c40437fedf300a6bf155f6169e50e03ee83a9ed990a701811546",
+      "script_size": 69728
+    },
+    {
+      "name": "NKT Cashier Return Exchange V2.0C.7.11B.1",
+      "dt": "NKT Cashier Return Exchange",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-12 17:01:26.385720",
+      "modified": "2026-08-12 17:01:26.385720",
+      "script_sha256": "8714ccaa3521a02911a4cb4957d91194121c198b8bb9dd5a665ff062b99558ae",
+      "script_size": 74403
+    },
+    {
+      "name": "NKT Cashier Return Exchange V2.0C.7.11C.1",
+      "dt": "NKT Cashier Return Exchange",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-12 19:45:47.259051",
+      "modified": "2026-08-12 19:45:47.259051",
+      "script_sha256": "88e330c8df2ceeeaa5f2ba7220f61b6528b18283d1c7a58c43025d5752a6ab37",
+      "script_size": 74721
+    },
+    {
+      "name": "NKT Cashier Return Exchange V2.0C.7.12A-C.1",
+      "dt": "NKT Cashier Return Exchange",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-12 21:07:06.367686",
+      "modified": "2026-08-27 02:19:52.331198",
+      "script_sha256": "5acf1f29984b4fdf4d51026574f230155e849930d54375c0c458cb4b0c49fb40",
+      "script_size": 80581
+    },
+    {
+      "name": "NKT Cashier Return Exchange V2.0C.7.4.1",
+      "dt": "NKT Cashier Return Exchange",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-11 22:30:50.527781",
+      "modified": "2026-08-11 22:30:50.527781",
+      "script_sha256": "5d1aa8561578deee9a2ec754a6646d4f45a4592fd4a96c35b33b95d12e4d144a",
+      "script_size": 36971
+    },
+    {
+      "name": "NKT Cashier Return Exchange V2.0C.7.4.2",
+      "dt": "NKT Cashier Return Exchange",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-11 22:43:12.137530",
+      "modified": "2026-08-11 22:43:12.137530",
+      "script_sha256": "e13262e49bfca60bf365e225ba11ccae035f3070495bb8fcdc7b3a2f3a9a4775",
+      "script_size": 40427
+    },
+    {
+      "name": "NKT Cashier Return Exchange V2.0C.7.4.3",
+      "dt": "NKT Cashier Return Exchange",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-11 23:10:11.682413",
+      "modified": "2026-08-11 23:10:11.682413",
+      "script_sha256": "50f645fa013bfd6d2f125bb94c671a06dff1bb4daf6398de3992d415b6d53f4e",
+      "script_size": 55228
+    },
+    {
+      "name": "NKT Cashier Return Exchange V2.0C.7.4.4",
+      "dt": "NKT Cashier Return Exchange",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-11 23:33:47.920839",
+      "modified": "2026-08-11 23:33:47.920839",
+      "script_sha256": "038ce580b0c9fb848db9efb41b0e3e12312323fe299986a2791e8e430ef519ba",
+      "script_size": 58957
+    },
+    {
+      "name": "NKT Cashier Return Exchange V2.0C.7.4.6",
+      "dt": "NKT Cashier Return Exchange",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-12 00:02:08.061165",
+      "modified": "2026-08-12 00:02:08.061165",
+      "script_sha256": "5b943e1951584abd8d24bf657c15c6608873c9891f2af038d1f366956da2d2bc",
+      "script_size": 59983
+    },
+    {
+      "name": "NKT Cashier Return Exchange V2.0C.7.4.9",
+      "dt": "NKT Cashier Return Exchange",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-12 01:09:32.341460",
+      "modified": "2026-08-12 01:09:32.341460",
+      "script_sha256": "51d596a334b13cb823c1f99fe2c7495143ce611944f9e829653301dc27b822d4",
+      "script_size": 62479
+    },
+    {
+      "name": "NKT Cashier Return Exchange V2.0C.7.6.1",
+      "dt": "NKT Cashier Return Exchange",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-12 12:55:58.278248",
+      "modified": "2026-08-12 12:55:58.278248",
+      "script_sha256": "87ddeea9b3a94d0b729bc1f074cd9f3fd6ea98e9afe4d550d3a246e90ba9d43e",
+      "script_size": 63430
+    },
+    {
+      "name": "NKT Cashier Return Exchange V2.0C.7.6.5",
+      "dt": "NKT Cashier Return Exchange",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-12 13:24:16.002490",
+      "modified": "2026-08-12 13:24:16.002490",
+      "script_sha256": "052f1bedb1979fab1e84f856bb6573f6f29292d998faba1f51a53a918e55efec",
+      "script_size": 63935
+    },
+    {
+      "name": "NKT Cashier Shift Controls V1.9",
+      "dt": "NKT Cashier Shift",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-06 18:05:58.757016",
+      "modified": "2026-08-06 19:52:34.400814",
+      "script_sha256": "39d003c37240a76fdd9ca776c295c749bbd294f7ac0eab72032b70a2b05b4ed3",
+      "script_size": 8903
+    },
+    {
+      "name": "NKT Customer 360 Navigation C12D",
+      "dt": "Customer",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-14 10:33:17.451330",
+      "modified": "2026-08-14 10:33:17.451330",
+      "script_sha256": "14e17ab8e7a491b26b1fcc5be6a4a35b9870ea3e5ea4b0eeb93a116bca324ebe",
+      "script_size": 549
+    },
+    {
+      "name": "NKT Customer Account Controls V1.8",
+      "dt": "Customer",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-06 16:52:13.698038",
+      "modified": "2026-08-06 16:52:13.698038",
+      "script_sha256": "797f4b8ff9bb74ad829b4f38f86aabd6c9eadf20018bafdbaae99148c2dece65",
+      "script_size": 2663
+    },
+    {
+      "name": "NKT Customer Account History V1.7",
+      "dt": "Customer",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-06 16:16:07.179168",
+      "modified": "2026-08-06 16:16:07.179168",
+      "script_sha256": "71c6c511943d579185995a80bdb293a04b2f8e7f5ed6d2ddb0927fb1462e01ef",
+      "script_size": 691
+    },
+    {
+      "name": "NKT Customer Order Manual Match Resolution V1.3",
+      "dt": "NKT Customer Order",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-06 13:02:50.715517",
+      "modified": "2026-08-06 13:02:50.715517",
+      "script_sha256": "0f4444c0247830ec07be7af03c95d0ba316c47a7d43c6bbc902769da600abe6b",
+      "script_size": 6787
+    },
+    {
+      "name": "NKT Customer Order Warehouse Change Link V2.0C.4.2.1.3",
+      "dt": "NKT Customer Order",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-10 17:51:48.452457",
+      "modified": "2026-08-10 18:05:44.018790",
+      "script_sha256": "0318721c1de1d11d4d680e72fe45656989f8d900aa21ccff79ba6a655f0bbc73",
+      "script_size": 651
+    },
+    {
+      "name": "NKT Customer Statement V1.7",
+      "dt": "NKT Customer Statement",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-06 16:16:07.157632",
+      "modified": "2026-08-06 16:16:07.157632",
+      "script_sha256": "d138d29c63f78816f7222b9e94e9a37e91d67757095b8858fffd88e1b39145ee",
+      "script_size": 3381
+    },
+    {
+      "name": "NKT EOD Reconciliation Controls V2.0C.6.3",
+      "dt": "NKT EOD Reconciliation",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-11 17:30:51.844109",
+      "modified": "2026-08-11 17:30:51.844109",
+      "script_sha256": "287cf2b55569af0142adf0968d8756ebcd88034cbade670a3ca24c74c908dbe7",
+      "script_size": 2241
+    },
+    {
+      "name": "NKT Encoder Account Allocation V1.5",
+      "dt": "NKT Encoder Account Allocation",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-06 14:04:46.146778",
+      "modified": "2026-08-14 09:50:10.747405",
+      "script_sha256": "11b0fef8187c9b9ae01cb53cc083569dc49239decffb2371b6d434308d475901",
+      "script_size": 7039
+    },
+    {
+      "name": "NKT Encoder Fast Screen V2.0B",
+      "dt": "NKT Encoder Fast Screen",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-06 21:44:54.022730",
+      "modified": "2026-08-06 23:37:17.315313",
+      "script_sha256": "61f57f9617ab602d4b8878cbd055444ce6b4c03d76f1c76744882210f81624fd",
+      "script_size": 47653
+    },
+    {
+      "name": "NKT Encoder Fast Screen V2.0B.3.1",
+      "dt": "NKT Encoder Fast Screen",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-06 23:44:42.218485",
+      "modified": "2026-08-06 23:44:42.218485",
+      "script_sha256": "5e25452fbbb99b8dc0843b95efb97e6321a53c9ee88d137542fe762d78a22ff7",
+      "script_size": 47657
+    },
+    {
+      "name": "NKT Encoder Fast Screen V2.0C.1",
+      "dt": "NKT Encoder Fast Screen",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-07 00:02:51.439436",
+      "modified": "2026-08-07 00:08:42.861736",
+      "script_sha256": "a16d3a2083ed490dcfe21c3964f54fabb43f525c4cc6566c8b53599fa303a241",
+      "script_size": 52550
+    },
+    {
+      "name": "NKT Encoder Fast Screen V2.0C.2",
+      "dt": "NKT Encoder Fast Screen",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-07 00:23:24.080454",
+      "modified": "2026-08-07 00:23:24.080454",
+      "script_sha256": "d9251147232e4f12f2dfbf46c3ce333cb4d45601ee7660ee8a75e8f38a0ef6a3",
+      "script_size": 52732
+    },
+    {
+      "name": "NKT Encoder Fast Screen V2.0C.2.1",
+      "dt": "NKT Encoder Fast Screen",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-07 00:38:06.336063",
+      "modified": "2026-08-07 00:38:06.336063",
+      "script_sha256": "8fca883df9e0fe2a09c462ec8a5a480aa2d8dea63e0a2d673de3a275d9e04ee4",
+      "script_size": 54732
+    },
+    {
+      "name": "NKT Encoder Fast Screen V2.0C.2.2",
+      "dt": "NKT Encoder Fast Screen",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-07 00:52:09.202347",
+      "modified": "2026-08-07 00:52:09.202347",
+      "script_sha256": "a2d04c3f53634bdd32160f8cfe7d2c6e8648b8190625dda63205971f72af3be3",
+      "script_size": 55145
+    },
+    {
+      "name": "NKT Encoder Fast Screen V2.0C.2.3",
+      "dt": "NKT Encoder Fast Screen",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-08 23:16:45.587727",
+      "modified": "2026-08-08 23:16:45.587727",
+      "script_sha256": "74c13115d1608f449b090901e1b21bea886cdf908bc32bcd399747496109b8e0",
+      "script_size": 55145
+    },
+    {
+      "name": "NKT Encoder Fast Screen V2.0C.2.3.1",
+      "dt": "NKT Encoder Fast Screen",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-09 21:59:28.541186",
+      "modified": "2026-08-09 21:59:28.541186",
+      "script_sha256": "062b133ff3cc5f4558360ea3e802adf89c610c7d3c448283abb078f9746c2b77",
+      "script_size": 55161
+    },
+    {
+      "name": "NKT Encoder Fast Screen V2.0C.2.3.2",
+      "dt": "NKT Encoder Fast Screen",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-09 22:22:02.962922",
+      "modified": "2026-08-09 22:22:02.962922",
+      "script_sha256": "67af4b71ead4c16bf1c5fb94fc03217c771f7d9c8ab4f234da14c353db3f9b8c",
+      "script_size": 61354
+    },
+    {
+      "name": "NKT Encoder Fast Screen V2.0C.3",
+      "dt": "NKT Encoder Fast Screen",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-10 11:32:52.752889",
+      "modified": "2026-08-27 09:05:56.219440",
+      "script_sha256": "f749761002e54e38ea260f7464b235adfba4d100524feaa409b47daa3de2bee2",
+      "script_size": 120114
+    },
+    {
+      "name": "NKT Encoder Fast Screen V2.0C.5.5 Role Safe Receivable",
+      "dt": "NKT Encoder Fast Screen",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-11 13:49:04.237178",
+      "modified": "2026-08-14 21:41:25.215860",
+      "script_sha256": "40322378218be648e87f05095d53273e0dc64fcd6f5f46ad5688ff7c8bde5e6a",
+      "script_size": 66935
+    },
+    {
+      "name": "NKT Encoder Return Exchange V2.0C.7.1",
+      "dt": "NKT Encoder Return Exchange",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-11 18:17:22.161055",
+      "modified": "2026-08-11 21:44:10.308776",
+      "script_sha256": "b151f5806bea796247e4270243a9ea3f0758c566e4462147979220a35ea24d8e",
+      "script_size": 22596
+    },
+    {
+      "name": "NKT Encoder Return Exchange V2.0C.7.10.1",
+      "dt": "NKT Encoder Return Exchange",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-12 14:47:46.228317",
+      "modified": "2026-08-12 14:47:46.228317",
+      "script_sha256": "a46a2217470b37666f572f461d70f12763ca20348d1412f9a3372066488d4e6d",
+      "script_size": 66877
+    },
+    {
+      "name": "NKT Encoder Return Exchange V2.0C.7.10.2",
+      "dt": "NKT Encoder Return Exchange",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-12 14:55:36.186786",
+      "modified": "2026-08-12 14:55:36.186786",
+      "script_sha256": "a46a2217470b37666f572f461d70f12763ca20348d1412f9a3372066488d4e6d",
+      "script_size": 66877
+    },
+    {
+      "name": "NKT Encoder Return Exchange V2.0C.7.10.5",
+      "dt": "NKT Encoder Return Exchange",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-12 15:33:07.644148",
+      "modified": "2026-08-12 15:33:07.644148",
+      "script_sha256": "b5abc297a57023595bdae1c88520679c81074c68a90b051fad19f6a2bed7f708",
+      "script_size": 69728
+    },
+    {
+      "name": "NKT Encoder Return Exchange V2.0C.7.11B.1",
+      "dt": "NKT Encoder Return Exchange",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-12 17:01:26.409546",
+      "modified": "2026-08-12 17:01:26.409546",
+      "script_sha256": "ec28ebdfbb52bcc8e5d81729fa83d8144a9e52a02182be34e252dd37b96cc390",
+      "script_size": 74403
+    },
+    {
+      "name": "NKT Encoder Return Exchange V2.0C.7.11C.1",
+      "dt": "NKT Encoder Return Exchange",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-12 19:45:47.274117",
+      "modified": "2026-08-12 19:45:47.274117",
+      "script_sha256": "93b5d4c6afd52dfef97dbc4759f06b6f11e9b3f6743fdb63753dd1cd21c57b07",
+      "script_size": 74721
+    },
+    {
+      "name": "NKT Encoder Return Exchange V2.0C.7.12A-C.1",
+      "dt": "NKT Encoder Return Exchange",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-12 21:07:06.381566",
+      "modified": "2026-08-27 02:19:52.413575",
+      "script_sha256": "cd7a1ae4aa5cf6e7654443dc83e8ec012f7171007dcbcf9242c5639d8730a37f",
+      "script_size": 80581
+    },
+    {
+      "name": "NKT Encoder Return Exchange V2.0C.7.4.1",
+      "dt": "NKT Encoder Return Exchange",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-11 22:30:50.542763",
+      "modified": "2026-08-11 22:30:50.542763",
+      "script_sha256": "c5311e73212f5ec43a254d7b96eee5b4899eb7c9b1ab6d8e22427a0be5fa245e",
+      "script_size": 36971
+    },
+    {
+      "name": "NKT Encoder Return Exchange V2.0C.7.4.2",
+      "dt": "NKT Encoder Return Exchange",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-11 22:43:12.151733",
+      "modified": "2026-08-11 22:43:12.151733",
+      "script_sha256": "2ad05dff9c9d0c59e968b91df87a2ba4bb6379fe2004327e38f29360f7918bf3",
+      "script_size": 40427
+    },
+    {
+      "name": "NKT Encoder Return Exchange V2.0C.7.4.3",
+      "dt": "NKT Encoder Return Exchange",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-11 23:10:11.696592",
+      "modified": "2026-08-11 23:10:11.696592",
+      "script_sha256": "f9aa6a5c7bab24640cb2618a69524936586dc8016e3f0246d8061ba46e1f375e",
+      "script_size": 55228
+    },
+    {
+      "name": "NKT Encoder Return Exchange V2.0C.7.4.4",
+      "dt": "NKT Encoder Return Exchange",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-11 23:33:47.936618",
+      "modified": "2026-08-11 23:33:47.936618",
+      "script_sha256": "a141b107e80ce4cf76aa7dddaa320586cbfbb28f82446545662d33c6a1b57450",
+      "script_size": 58957
+    },
+    {
+      "name": "NKT Encoder Return Exchange V2.0C.7.4.6",
+      "dt": "NKT Encoder Return Exchange",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-12 00:02:08.079566",
+      "modified": "2026-08-12 00:02:08.079566",
+      "script_sha256": "d95327ea5a12bc360d9a01a3b32dda895378a368f2858dffe708b5acb9a0de2c",
+      "script_size": 59983
+    },
+    {
+      "name": "NKT Encoder Return Exchange V2.0C.7.4.9",
+      "dt": "NKT Encoder Return Exchange",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-12 01:09:32.358948",
+      "modified": "2026-08-12 01:09:32.358948",
+      "script_sha256": "2a2008185729140313fea4da8265b21a4751354dfab86d4de70a4f528c6d5592",
+      "script_size": 62479
+    },
+    {
+      "name": "NKT Encoder Return Exchange V2.0C.7.6.1",
+      "dt": "NKT Encoder Return Exchange",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-12 12:55:58.300151",
+      "modified": "2026-08-12 12:55:58.300151",
+      "script_sha256": "5bbd17c310974e1368ef4c07e52ca1403d3756eea87f6163104f2bd03bf5e31f",
+      "script_size": 63430
+    },
+    {
+      "name": "NKT Encoder Return Exchange V2.0C.7.6.5",
+      "dt": "NKT Encoder Return Exchange",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-12 13:24:16.018073",
+      "modified": "2026-08-12 13:24:16.018073",
+      "script_sha256": "fbd5c30751522dac3fc2985a4fcfc9b06d968c97c4f902a513204349290aa615",
+      "script_size": 63935
+    },
+    {
+      "name": "NKT Encoder Warehouse Change Link V2.0C.4.2.1",
+      "dt": "NKT Encoder Fast Screen",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-10 17:11:43.169632",
+      "modified": "2026-08-10 18:05:44.000107",
+      "script_sha256": "7aa2182019a09ece3ef5ecb39ef1d2ca429004b7151b22e9c0a66769f49489bd",
+      "script_size": 318
+    },
+    {
+      "name": "NKT Encoder Z-Out Controls V2.0C.6.2",
+      "dt": "NKT Encoder Z-Out",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-11 16:40:09.019153",
+      "modified": "2026-08-11 17:11:04.263813",
+      "script_sha256": "3813cb5ae4595aa5cbb53c40f91e60e0155b2e45db37c079f79d1d5f41f5756a",
+      "script_size": 2279
+    },
+    {
+      "name": "NKT Payment Correction V1.8",
+      "dt": "NKT Account Payment Correction",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-06 16:52:13.722584",
+      "modified": "2026-08-06 16:52:13.722584",
+      "script_sha256": "ac25e0a9d50dd20b46788b77c9bdd10104256f21b3489220b6033ba1b38f88bf",
+      "script_size": 1880
+    },
+    {
+      "name": "NKT Post-C15F Cashier Shift Frontline Presentation FR2",
+      "dt": "NKT Cashier Shift",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-17 21:24:44.967996",
+      "modified": "2026-08-17 21:24:44.967996",
+      "script_sha256": "b93bd3f35efc05516f40ed7fcdec9160f4d9392b87ed50672be48d93a2c9d158",
+      "script_size": 4862
+    },
+    {
+      "name": "NKT R4 UI6 Cashier F8 Transaction History",
+      "dt": "NKT Cashier Fast Screen",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-26 19:43:24.955787",
+      "modified": "2026-08-27 17:21:45.177323",
+      "script_sha256": "efeaf9539b9f85874ce964e440ec3fa952e14bb778f53a03a0f0a1b288f7e70a",
+      "script_size": 87220
+    },
+    {
+      "name": "NKT R4 UI6 Encoder F8 Transaction History",
+      "dt": "NKT Encoder Fast Screen",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-26 19:43:25.156138",
+      "modified": "2026-08-27 17:21:45.196373",
+      "script_sha256": "efeaf9539b9f85874ce964e440ec3fa952e14bb778f53a03a0f0a1b288f7e70a",
+      "script_size": 87220
+    },
+    {
+      "name": "NKT R4 UI6 Reserved F1 F7 - NKT Cashier Fast Screen",
+      "dt": "NKT Cashier Fast Screen",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-26 19:43:25.168002",
+      "modified": "2026-08-26 19:43:25.168002",
+      "script_sha256": "8a6138b6cbe64d6ea8e5a46854ded65fafa3f352de40a38a65234133be40aa9d",
+      "script_size": 1159
+    },
+    {
+      "name": "NKT R4 UI6 Reserved F1 F7 - NKT Encoder Fast Screen",
+      "dt": "NKT Encoder Fast Screen",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-26 19:43:25.177666",
+      "modified": "2026-08-26 19:43:25.177666",
+      "script_sha256": "df12d925109b9bd018e11b34046f7897b73bf8274aedf135211903a64a4c25be",
+      "script_size": 1159
+    },
+    {
+      "name": "NKT R4 UI6 Reserved F1 F7 - NKT Warehouse Change Fast Screen",
+      "dt": "NKT Warehouse Change Fast Screen",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-26 19:43:25.187197",
+      "modified": "2026-08-26 19:43:25.187197",
+      "script_sha256": "c037dc9b4a6aa1da732fdc0e14777131dddb268db795e25c15cf832cc68a4d0a",
+      "script_size": 1168
+    },
+    {
+      "name": "NKT R4 UI6 Reserved F1 F7 - NKT Warehouse Release Fast Screen",
+      "dt": "NKT Warehouse Release Fast Screen",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-26 19:43:25.197029",
+      "modified": "2026-08-26 19:43:25.197029",
+      "script_sha256": "088bcfe4f57a92bd200517f0be875bea73743b51e9c893e1071c0c23a0b55aaa",
+      "script_size": 1169
+    },
+    {
+      "name": "NKT R4 UI7B Cashier Payment on Account Bridge",
+      "dt": "NKT Cashier Fast Screen",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-27 10:53:31.993125",
+      "modified": "2026-08-27 17:21:44.645701",
+      "script_sha256": "6547530bc99bc759ae4d44142abc3543a43c0d8f9ccfe07026d48ca7c8d47829",
+      "script_size": 44597
+    },
+    {
+      "name": "NKT R4 UI7B Encoder Payment on Account Bridge",
+      "dt": "NKT Encoder Fast Screen",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-27 10:53:32.012006",
+      "modified": "2026-08-27 17:21:45.162398",
+      "script_sha256": "6547530bc99bc759ae4d44142abc3543a43c0d8f9ccfe07026d48ca7c8d47829",
+      "script_size": 44597
+    },
+    {
+      "name": "NKT R8A Cashier Frontline Presentation Guard",
+      "dt": "NKT Cashier Fast Screen",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-17 18:44:29.030851",
+      "modified": "2026-08-17 18:44:29.030851",
+      "script_sha256": "990b2fa70d68df1b7432e3b4c9da0857e4ccd04ba692711a08ec0a5541558592",
+      "script_size": 2017
+    },
+    {
+      "name": "NKT R8A Encoder Frontline Presentation + F6 Item History",
+      "dt": "NKT Encoder Fast Screen",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-17 18:44:32.301328",
+      "modified": "2026-08-26 19:43:22.961569",
+      "script_sha256": "24525b3ce30c3687d6f3be8212bc0a98324f8b948a3ca816936c27cd3c2ef593",
+      "script_size": 39131
+    },
+    {
+      "name": "NKT Receivable Collection Shortcut V1.5",
+      "dt": "NKT Customer Receivable",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-06 14:04:46.165271",
+      "modified": "2026-08-14 09:50:10.758937",
+      "script_sha256": "668a858f0766a90cabfad9458c9cbc6d7bc7727acd52921f6a372a7c166057eb",
+      "script_size": 684
+    },
+    {
+      "name": "NKT Saleable Item Warning V1.8 - NKT Cashier Sale Item",
+      "dt": "NKT Cashier Sale Item",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-06 16:52:13.755048",
+      "modified": "2026-08-06 16:52:13.755048",
+      "script_sha256": "70969e5b5978fe54f6b4a5c49a8180fd2d9cc4a044c5531495d18591ffc63200",
+      "script_size": 738
+    },
+    {
+      "name": "NKT Saleable Item Warning V1.8 - NKT Customer Order Item",
+      "dt": "NKT Customer Order Item",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-06 16:52:13.791307",
+      "modified": "2026-08-06 16:52:13.791307",
+      "script_sha256": "2c2cc8d1b029ac8f1d7e22897605a410a6d5d761171acb44e803b7e9f868d98e",
+      "script_size": 740
+    },
+    {
+      "name": "NKT Statement Delivery Audit V1.8",
+      "dt": "NKT Customer Statement",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-06 16:52:13.715644",
+      "modified": "2026-08-06 16:52:13.715644",
+      "script_sha256": "007bb4707392d2d60f684c85e3f3cfe8114c5ddac9c8468e3a150a92ed546723",
+      "script_size": 1966
+    },
+    {
+      "name": "NKT Warehouse Change Fast Screen V2.0C.4.2.1",
+      "dt": "NKT Warehouse Change Fast Screen",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-10 17:11:43.156224",
+      "modified": "2026-08-10 17:51:46.619635",
+      "script_sha256": "3ab96e7c2eb2813fa940c0c39e90feb8c13325b3036b68d893de7f3dfb332e32",
+      "script_size": 13417
+    },
+    {
+      "name": "NKT Warehouse Change Fast Screen V2.0C.4.2.2",
+      "dt": "NKT Warehouse Change Fast Screen",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-10 18:05:43.961175",
+      "modified": "2026-08-14 23:28:51.972588",
+      "script_sha256": "03cc2619b8ebc8b5667748fa91bc2329215e113c0a1b50391bf52aeaef3575cd",
+      "script_size": 18637
+    },
+    {
+      "name": "NKT Warehouse Release Fast Screen V2.0C.4.1.1",
+      "dt": "NKT Warehouse Release Fast Screen",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-10 11:57:03.912784",
+      "modified": "2026-08-10 11:57:03.912784",
+      "script_sha256": "a7c76ef6a4ed437f6b29d0931bea99e599605808a2a1603170618a091f47c228",
+      "script_size": 16805
+    },
+    {
+      "name": "NKT Warehouse Release Fast Screen V2.0C.4.1.2",
+      "dt": "NKT Warehouse Release Fast Screen",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-10 12:16:17.793354",
+      "modified": "2026-08-10 12:16:17.793354",
+      "script_sha256": "0a07e7bfea4f358edefde8533ae393abd8e629e8f4b971aba45741b2fb460cd2",
+      "script_size": 16808
+    },
+    {
+      "name": "NKT Warehouse Release Fast Screen V2.0C.4.1.3",
+      "dt": "NKT Warehouse Release Fast Screen",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-10 12:23:38.000579",
+      "modified": "2026-08-10 12:23:38.000579",
+      "script_sha256": "290358034c25d1f23e25ad62d31799f087d39933f51dfcd435a55fd6d0a7edf7",
+      "script_size": 16813
+    },
+    {
+      "name": "NKT Warehouse Release Fast Screen V2.0C.4.1.4",
+      "dt": "NKT Warehouse Release Fast Screen",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-10 12:31:04.110373",
+      "modified": "2026-08-10 12:31:04.110373",
+      "script_sha256": "5926a30d8ff49bcfc0ccc9f2362fe1d7326688ebd28440930fdb15a1429e5e02",
+      "script_size": 16876
+    },
+    {
+      "name": "NKT Warehouse Release Fast Screen V2.0C.4.1.4.1",
+      "dt": "NKT Warehouse Release Fast Screen",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-10 12:35:34.510933",
+      "modified": "2026-08-10 12:35:34.510933",
+      "script_sha256": "f3e68feb9840addde34f252a34d4242d42f96b297ff46b4552167a4623a9b13c",
+      "script_size": 16875
+    },
+    {
+      "name": "NKT Warehouse Release Fast Screen V2.0C.4.1.4.2",
+      "dt": "NKT Warehouse Release Fast Screen",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-10 12:42:16.466007",
+      "modified": "2026-08-10 12:42:16.466007",
+      "script_sha256": "731e0309b26c561d152ffd5d926890651caa1f954d569f18ad0b833f8bf4df29",
+      "script_size": 16886
+    },
+    {
+      "name": "NKT Warehouse Release Fast Screen V2.0C.4.1.4.3",
+      "dt": "NKT Warehouse Release Fast Screen",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-10 12:55:21.415058",
+      "modified": "2026-08-10 12:55:21.415058",
+      "script_sha256": "d0e5cc55b15b0e19fd577085b529671984e5b34f590a82520149ed7230619772",
+      "script_size": 16880
+    },
+    {
+      "name": "NKT Warehouse Release Fast Screen V2.0C.4.2.1",
+      "dt": "NKT Warehouse Release Fast Screen",
+      "view": "Form",
+      "enabled": 0,
+      "module": null,
+      "creation": "2026-08-10 17:11:43.139430",
+      "modified": "2026-08-10 17:34:06.389446",
+      "script_sha256": "6316598302c26b425a00dc3b6438b94a1fb5e8e12b9ee06477206c6ce03bd665",
+      "script_size": 21002
+    },
+    {
+      "name": "NKT Warehouse Release Fast Screen V2.0C.4.2.2",
+      "dt": "NKT Warehouse Release Fast Screen",
+      "view": "Form",
+      "enabled": 1,
+      "module": null,
+      "creation": "2026-08-10 18:05:43.981920",
+      "modified": "2026-08-14 23:28:52.024312",
+      "script_sha256": "90bdb4a635fa9603d64482b9866ea81b98debe421f758aa2fd1c6b30b8c831dd",
+      "script_size": 27313
+    }
+  ]
+}

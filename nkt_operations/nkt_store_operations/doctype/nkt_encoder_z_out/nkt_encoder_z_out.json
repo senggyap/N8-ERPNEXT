@@ -1,0 +1,409 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "NKT-ZOUT-.#####",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "amended_from",
+  "scope_section",
+  "company",
+  "business_date",
+  "encoder",
+  "scope_column",
+  "start_time",
+  "end_time",
+  "options_section",
+  "include_reconciliation_exceptions",
+  "include_inventory_appendix",
+  "status",
+  "summary_section",
+  "gross_sales",
+  "gross_returns",
+  "net_sales",
+  "account_sales",
+  "account_collections",
+  "summary_column",
+  "unapplied_advance_created",
+  "advance_applied_no_cash",
+  "advance_reversed_no_cash",
+  "order_count",
+  "collection_count",
+  "return_count",
+  "tender_section",
+  "cash_total",
+  "check_total",
+  "gcash_total",
+  "maya_total",
+  "tender_column",
+  "bank_transfer_total",
+  "credit_card_total",
+  "card_surcharge_total",
+  "online_total",
+  "exception_count",
+  "inventory_item_count",
+  "audit_section",
+  "finalized_by",
+  "finalized_on",
+  "snapshot_hash",
+  "snapshot_json",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "NKT Encoder Z-Out",
+   "print_hide": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "scope_section",
+   "fieldtype": "Section Break",
+   "label": "Encoder Z-Out Scope"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "business_date",
+   "fieldtype": "Date",
+   "label": "Business Date",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "encoder",
+   "fieldtype": "Link",
+   "label": "Encoder",
+   "options": "User",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "scope_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "00:00:00",
+   "fieldname": "start_time",
+   "fieldtype": "Time",
+   "label": "Start Time",
+   "reqd": 1
+  },
+  {
+   "default": "23:59:59",
+   "fieldname": "end_time",
+   "fieldtype": "Time",
+   "label": "End Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "options_section",
+   "fieldtype": "Section Break",
+   "label": "Print Options"
+  },
+  {
+   "default": "1",
+   "fieldname": "include_reconciliation_exceptions",
+   "fieldtype": "Check",
+   "label": "Include Reconciliation / Control Exceptions",
+   "description": "Shows the Encoder's own unresolved orders and actionable control exceptions. Technical fingerprints and candidate diagnostics are never printed."
+  },
+  {
+   "default": "1",
+   "fieldname": "include_inventory_appendix",
+   "fieldtype": "Check",
+   "label": "Include Inventory Appendix",
+   "description": "Includes only Items whose Item master has Include in Z-Out Inventory enabled."
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Z-Out Status",
+   "options": "Draft\nFinalized\nCancelled",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "summary_section",
+   "fieldtype": "Section Break",
+   "label": "Independent Encoder Summary"
+  },
+  {
+   "default": "0",
+   "fieldname": "gross_sales",
+   "fieldtype": "Currency",
+   "label": "Gross Sales",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "gross_returns",
+   "fieldtype": "Currency",
+   "label": "Gross Returns",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "net_sales",
+   "fieldtype": "Currency",
+   "label": "Net Sales",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "account_sales",
+   "fieldtype": "Currency",
+   "label": "Charged to Account",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "account_collections",
+   "fieldtype": "Currency",
+   "label": "Account Collections",
+   "read_only": 1
+  },
+  {
+   "fieldname": "summary_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "unapplied_advance_created",
+   "fieldtype": "Currency",
+   "label": "Customer Advance Created",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "advance_applied_no_cash",
+   "fieldtype": "Currency",
+   "label": "Advance Applied (No Cash Effect)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "advance_reversed_no_cash",
+   "fieldtype": "Currency",
+   "label": "Advance Reversed (No Cash Effect)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "order_count",
+   "fieldtype": "Int",
+   "label": "Order Count",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "collection_count",
+   "fieldtype": "Int",
+   "label": "Account Collection Count",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "return_count",
+   "fieldtype": "Int",
+   "label": "Return Count",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tender_section",
+   "fieldtype": "Section Break",
+   "label": "Encoder Tender Summary"
+  },
+  {
+   "default": "0",
+   "fieldname": "cash_total",
+   "fieldtype": "Currency",
+   "label": "Cash",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "check_total",
+   "fieldtype": "Currency",
+   "label": "Physical Check",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "gcash_total",
+   "fieldtype": "Currency",
+   "label": "GCash",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "maya_total",
+   "fieldtype": "Currency",
+   "label": "Maya",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tender_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "bank_transfer_total",
+   "fieldtype": "Currency",
+   "label": "Bank Transfer",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "credit_card_total",
+   "fieldtype": "Currency",
+   "label": "Card",
+   "read_only": 1
+  },
+  {
+   "fieldname": "card_surcharge_total",
+   "label": "Card Surcharge (Included in Card Tender)",
+   "fieldtype": "Currency",
+   "read_only": 1,
+   "precision": "2"
+  },
+  {
+   "default": "0",
+   "fieldname": "online_total",
+   "fieldtype": "Currency",
+   "label": "Online / Other Online",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "exception_count",
+   "fieldtype": "Int",
+   "label": "Exception Count",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "inventory_item_count",
+   "fieldtype": "Int",
+   "label": "Inventory Lines",
+   "read_only": 1
+  },
+  {
+   "fieldname": "audit_section",
+   "fieldtype": "Section Break",
+   "label": "Finalized Snapshot Audit"
+  },
+  {
+   "fieldname": "finalized_by",
+   "fieldtype": "Link",
+   "label": "Finalized By",
+   "options": "User",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "finalized_on",
+   "fieldtype": "Datetime",
+   "label": "Finalized On",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "snapshot_hash",
+   "fieldtype": "Data",
+   "label": "Snapshot Hash",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "snapshot_json",
+   "fieldtype": "Long Text",
+   "label": "Frozen Z-Out Snapshot",
+   "read_only": 1,
+   "hidden": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Encoder Remarks"
+  }
+ ],
+ "grid_page_length": 50,
+ "is_submittable": 1,
+ "links": [],
+ "module": "NKT Store Operations",
+ "name": "NKT Encoder Z-Out",
+ "naming_rule": "Expression",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1,
+   "report": 1,
+   "export": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "NKT OWNER",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1,
+   "report": 1,
+   "export": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "NKT ADMINISTRATOR",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1,
+   "report": 1,
+   "export": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "NKT Encoder",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "submit": 1,
+   "report": 1,
+   "print": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

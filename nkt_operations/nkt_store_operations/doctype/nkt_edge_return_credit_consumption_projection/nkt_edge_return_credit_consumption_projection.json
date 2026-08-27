@@ -1,0 +1,127 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:projection_key",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "identity_section",
+  "projection_key",
+  "event_uuid",
+  "customer",
+  "cashier_shift",
+  "reserved_amount",
+  "state_section",
+  "projection_state",
+  "primary_ack_uuid",
+  "primary_application",
+  "finalized_at"
+ ],
+ "fields": [
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Edge Return Credit Consumption Projection"
+  },
+  {
+   "fieldname": "projection_key",
+   "fieldtype": "Data",
+   "label": "Projection Key",
+   "reqd": 1,
+   "unique": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "event_uuid",
+   "fieldtype": "Data",
+   "label": "Tender Event UUID",
+   "reqd": 1,
+   "unique": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "cashier_shift",
+   "fieldtype": "Link",
+   "label": "Cashier Shift",
+   "options": "NKT Cashier Shift",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "reserved_amount",
+   "fieldtype": "Currency",
+   "label": "Reserved Return Credit",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "state_section",
+   "fieldtype": "Section Break",
+   "label": "Projection State"
+  },
+  {
+   "fieldname": "projection_state",
+   "fieldtype": "Select",
+   "label": "Projection State",
+   "options": "Pending Edge\nAwaiting Primary\nPrimary Preserved\nPrimary Materialized\nFinalized\nConflict",
+   "default": "Pending Edge",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "primary_ack_uuid",
+   "fieldtype": "Data",
+   "label": "Primary ACK UUID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "primary_application",
+   "fieldtype": "Link",
+   "label": "Primary Return Credit Application",
+   "options": "NKT Customer Advance Application",
+   "read_only": 1
+  },
+  {
+   "fieldname": "finalized_at",
+   "fieldtype": "Datetime",
+   "label": "Finalized At",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "module": "NKT Store Operations",
+ "name": "NKT Edge Return Credit Consumption Projection",
+ "permissions": [
+  {
+   "role": "NKT OWNER",
+   "read": 1,
+   "report": 1
+  },
+  {
+   "role": "NKT ADMINISTRATOR",
+   "read": 1,
+   "report": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "report": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

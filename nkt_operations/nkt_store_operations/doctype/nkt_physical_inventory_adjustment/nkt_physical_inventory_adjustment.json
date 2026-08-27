@@ -1,0 +1,339 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "NKT-PIA-.#####",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "identity_section",
+    "company",
+    "warehouse",
+    "business_date",
+    "count_datetime",
+    "snapshot_datetime",
+    "identity_column",
+    "counted_by",
+    "adjustment_status",
+    "review_status",
+    "custom_nkt_adjustment_request_id",
+    "count_section",
+    "count_reason",
+    "physical_count_reference",
+    "count_sheet_attachment",
+    "operator_notes",
+    "physical_count_confirmed",
+    "items_section",
+    "items",
+    "summary_section",
+    "variance_line_count",
+    "blockers",
+    "technical_section",
+    "stock_reconciliation",
+    "posted_by",
+    "posted_on",
+    "accountability_section",
+    "accountability_classification",
+    "accountability_notes",
+    "reviewed_by",
+    "reviewed_on",
+    "review_notes",
+    "review_lock"
+  ],
+  "fields": [
+    {
+      "fieldname": "identity_section",
+      "fieldtype": "Section Break",
+      "label": "Physical Inventory Adjustment"
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "warehouse",
+      "fieldtype": "Link",
+      "label": "Warehouse",
+      "options": "Warehouse",
+      "reqd": 1
+    },
+    {
+      "fieldname": "business_date",
+      "fieldtype": "Date",
+      "label": "Business Date",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "count_datetime",
+      "fieldtype": "Datetime",
+      "label": "Physical Count Time",
+      "reqd": 1
+    },
+    {
+      "fieldname": "snapshot_datetime",
+      "fieldtype": "Datetime",
+      "label": "System Quantity Snapshot Time",
+      "read_only": 1
+    },
+    {
+      "fieldname": "identity_column",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "counted_by",
+      "fieldtype": "Link",
+      "label": "Counted / Entered By",
+      "options": "User",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "adjustment_status",
+      "fieldtype": "Select",
+      "label": "Adjustment Status",
+      "options": "Draft\nBlocked\nNo Variance\nReady to Post\nPosted\nFailed",
+      "default": "Draft",
+      "read_only": 1
+    },
+    {
+      "fieldname": "review_status",
+      "fieldtype": "Select",
+      "label": "Admin Review Status",
+      "options": "Not Posted\nPending Admin Review\nUnder Review\nReconciled\nDiscrepancy Flagged",
+      "default": "Not Posted",
+      "read_only": 1,
+      "allow_on_submit": 1
+    },
+    {
+      "fieldname": "custom_nkt_adjustment_request_id",
+      "fieldtype": "Data",
+      "label": "Adjustment Request ID",
+      "read_only": 1,
+      "unique": 1,
+      "no_copy": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "count_section",
+      "fieldtype": "Section Break",
+      "label": "Physical Count"
+    },
+    {
+      "fieldname": "count_reason",
+      "fieldtype": "Select",
+      "label": "Count Reason",
+      "options": "\nCycle Count\nSpot Count\nWarehouse Recount\nStore Recount\nDamage / Handling Check\nOther"
+    },
+    {
+      "fieldname": "physical_count_reference",
+      "fieldtype": "Data",
+      "label": "Count Sheet / Paper Reference"
+    },
+    {
+      "fieldname": "count_sheet_attachment",
+      "fieldtype": "Attach",
+      "label": "Count Sheet Attachment"
+    },
+    {
+      "fieldname": "operator_notes",
+      "fieldtype": "Small Text",
+      "label": "Operator Notes"
+    },
+    {
+      "fieldname": "physical_count_confirmed",
+      "fieldtype": "Check",
+      "label": "Physical Count Reflects Actual Stock",
+      "default": 0
+    },
+    {
+      "fieldname": "items_section",
+      "fieldtype": "Section Break",
+      "label": "Counted Items"
+    },
+    {
+      "fieldname": "items",
+      "fieldtype": "Table",
+      "label": "Items",
+      "options": "NKT Physical Inventory Adjustment Item"
+    },
+    {
+      "fieldname": "summary_section",
+      "fieldtype": "Section Break",
+      "label": "System Comparison"
+    },
+    {
+      "fieldname": "variance_line_count",
+      "fieldtype": "Int",
+      "label": "Lines With Variance",
+      "read_only": 1
+    },
+    {
+      "fieldname": "blockers",
+      "fieldtype": "Long Text",
+      "label": "Posting Blockers",
+      "read_only": 1
+    },
+    {
+      "fieldname": "technical_section",
+      "fieldtype": "Section Break",
+      "label": "ERP Posting Audit",
+      "permlevel": 1
+    },
+    {
+      "fieldname": "stock_reconciliation",
+      "fieldtype": "Link",
+      "label": "Underlying Stock Reconciliation",
+      "options": "Stock Reconciliation",
+      "read_only": 1,
+      "permlevel": 1
+    },
+    {
+      "fieldname": "accountability_section",
+      "fieldtype": "Section Break",
+      "label": "Admin Accountability Review",
+      "permlevel": 1
+    },
+    {
+      "fieldname": "accountability_classification",
+      "fieldtype": "Select",
+      "label": "Accountability Classification",
+      "options": "Unreviewed\nCounting Error\nUnrecorded Release\nUnrecorded Receipt\nDamage / Spoilage\nHandling Loss\nSuspected Loss / Theft\nSystem / Data Error\nTiming Difference\nOther",
+      "default": "Unreviewed",
+      "read_only": 1,
+      "permlevel": 1,
+      "allow_on_submit": 1
+    },
+    {
+      "fieldname": "accountability_notes",
+      "fieldtype": "Small Text",
+      "label": "Accountability Notes",
+      "read_only": 1,
+      "permlevel": 1,
+      "allow_on_submit": 1
+    },
+    {
+      "fieldname": "reviewed_by",
+      "fieldtype": "Link",
+      "label": "Reviewed By",
+      "options": "User",
+      "read_only": 1,
+      "permlevel": 1,
+      "allow_on_submit": 1
+    },
+    {
+      "fieldname": "reviewed_on",
+      "fieldtype": "Datetime",
+      "label": "Reviewed On",
+      "read_only": 1,
+      "permlevel": 1,
+      "allow_on_submit": 1
+    },
+    {
+      "fieldname": "review_notes",
+      "fieldtype": "Long Text",
+      "label": "Review Notes",
+      "read_only": 1,
+      "permlevel": 1,
+      "allow_on_submit": 1
+    },
+    {
+      "fieldname": "review_lock",
+      "fieldtype": "Check",
+      "label": "Review Locked",
+      "default": 0,
+      "read_only": 1,
+      "permlevel": 1,
+      "allow_on_submit": 1
+    },
+    {
+      "fieldname": "posted_by",
+      "fieldtype": "Link",
+      "label": "Posted By",
+      "options": "User",
+      "read_only": 1,
+      "permlevel": 1
+    },
+    {
+      "fieldname": "posted_on",
+      "fieldtype": "Datetime",
+      "label": "Posted On",
+      "read_only": 1,
+      "permlevel": 1
+    }
+  ],
+  "is_submittable": 1,
+  "module": "NKT Store Operations",
+  "name": "NKT Physical Inventory Adjustment",
+  "naming_rule": "Expression",
+  "permissions": [
+    {
+      "role": "NKT Encoder",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "submit": 1,
+      "cancel": 0,
+      "delete": 0,
+      "report": 1,
+      "print": 1
+    },
+    {
+      "role": "NKT Warehouse",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "submit": 1,
+      "cancel": 0,
+      "delete": 0,
+      "report": 1,
+      "print": 1
+    },
+    {
+      "role": "NKT ADMINISTRATOR",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "submit": 1,
+      "cancel": 0,
+      "delete": 1,
+      "report": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "NKT OWNER",
+      "permlevel": 0,
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "submit": 1,
+      "cancel": 0,
+      "delete": 1,
+      "report": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "NKT ADMINISTRATOR",
+      "permlevel": 1,
+      "read": 1,
+      "write": 1
+    },
+    {
+      "role": "NKT OWNER",
+      "permlevel": 1,
+      "read": 1,
+      "write": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1
+}

@@ -1,0 +1,389 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:event_uuid",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "identity_section",
+  "event_uuid",
+  "event_family",
+  "event_action",
+  "column_break_identity",
+  "origin_device",
+  "origin_user",
+  "operational_context",
+  "business_section",
+  "business_date",
+  "settled_at",
+  "client_created_at",
+  "column_break_business",
+  "company",
+  "customer",
+  "cashier_shift",
+  "settlement_location",
+  "default_warehouse",
+  "money_section",
+  "merchandise_total",
+  "payment_settlement_total",
+  "column_break_money",
+  "card_surcharge_total",
+  "actual_collected_total",
+  "integrity_section",
+  "envelope_sha256",
+  "payload_sha256",
+  "payload_section",
+  "canonical_envelope_json",
+  "canonical_payload_json",
+  "check_section",
+  "check_identities",
+  "state_section",
+  "preservation_state",
+  "downstream_state",
+  "cashier_sale",
+  "matched_customer_order",
+  "customer_receivable",
+  "account_effect_materialized_at",
+  "column_break_state",
+  "context_validation_state",
+  "context_validation_note",
+  "primary_preserved_at"
+ ],
+ "fields": [
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Primary Cashier Tender Intent"
+  },
+  {
+   "fieldname": "event_uuid",
+   "fieldtype": "Data",
+   "label": "Event UUID",
+   "reqd": 1,
+   "unique": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "event_family",
+   "fieldtype": "Data",
+   "label": "Event Family",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "event_action",
+   "fieldtype": "Data",
+   "label": "Event Action",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_identity",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "origin_device",
+   "fieldtype": "Data",
+   "label": "Origin Device",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "origin_user",
+   "fieldtype": "Data",
+   "label": "Origin User",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "operational_context",
+   "fieldtype": "Data",
+   "label": "Operational Context",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "business_section",
+   "fieldtype": "Section Break",
+   "label": "Observed Business Truth"
+  },
+  {
+   "fieldname": "business_date",
+   "fieldtype": "Date",
+   "label": "Business Date",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "settled_at",
+   "fieldtype": "Datetime",
+   "label": "Business / Settled Time",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "client_created_at",
+   "fieldtype": "Datetime",
+   "label": "Client Created At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_business",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Data",
+   "label": "Company",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Data",
+   "label": "Customer",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "cashier_shift",
+   "fieldtype": "Data",
+   "label": "Cashier Shift",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "settlement_location",
+   "fieldtype": "Data",
+   "label": "Settlement Location",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "default_warehouse",
+   "fieldtype": "Data",
+   "label": "Default Warehouse",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "money_section",
+   "fieldtype": "Section Break",
+   "label": "Immutable Tender Totals"
+  },
+  {
+   "fieldname": "merchandise_total",
+   "fieldtype": "Currency",
+   "label": "Merchandise Total",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "payment_settlement_total",
+   "fieldtype": "Currency",
+   "label": "Payment Settlement Total",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_money",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "card_surcharge_total",
+   "fieldtype": "Currency",
+   "label": "Card Surcharge Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "actual_collected_total",
+   "fieldtype": "Currency",
+   "label": "Actual Collected Total",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "integrity_section",
+   "fieldtype": "Section Break",
+   "label": "Integrity"
+  },
+  {
+   "fieldname": "envelope_sha256",
+   "fieldtype": "Data",
+   "label": "Envelope SHA-256",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "payload_sha256",
+   "fieldtype": "Data",
+   "label": "Payload SHA-256",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "payload_section",
+   "fieldtype": "Section Break",
+   "label": "Canonical Preserved Transport"
+  },
+  {
+   "fieldname": "canonical_envelope_json",
+   "fieldtype": "Code",
+   "label": "Canonical Envelope JSON",
+   "options": "JSON",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "canonical_payload_json",
+   "fieldtype": "Code",
+   "label": "Canonical Payload JSON",
+   "options": "JSON",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "check_section",
+   "fieldtype": "Section Break",
+   "label": "Physical Check Identities"
+  },
+  {
+   "fieldname": "check_identities",
+   "fieldtype": "Table",
+   "label": "Check Identities",
+   "options": "NKT Primary Tender Check Identity",
+   "read_only": 1
+  },
+  {
+   "fieldname": "state_section",
+   "fieldtype": "Section Break",
+   "label": "Primary Preservation State"
+  },
+  {
+   "fieldname": "preservation_state",
+   "fieldtype": "Select",
+   "label": "Preservation State",
+   "options": "Preserved",
+   "default": "Preserved",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "downstream_state",
+   "fieldtype": "Select",
+   "label": "Downstream State",
+   "options": "Awaiting Controlled Cashier Sale Materialization\nPayment Receipt Materialized - Awaiting Cashier Movement\nPayment Receipt Not Required - Awaiting Later Settlement Family\nCashier Movement Materialized - Awaiting Receivable\nCashier Movement Not Required - Awaiting Receivable\nReceivable Materialized - Awaiting Warehouse/Stock\nReceivable Not Required - Awaiting Warehouse/Stock",
+   "default": "Awaiting Controlled Cashier Sale Materialization",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "payment_receipt",
+   "fieldtype": "Link",
+   "label": "Materialized Payment Receipt",
+   "options": "NKT Payment Receipt",
+   "read_only": 1
+  },
+  {
+   "fieldname": "payment_receipt_materialized_at",
+   "fieldtype": "Datetime",
+   "label": "Payment Receipt Materialized At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cashier_movement_materialized_at",
+   "fieldtype": "Datetime",
+   "label": "Cashier Movement Materialized At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cashier_movement_count",
+   "fieldtype": "Int",
+   "label": "Cashier Movement Count",
+   "default": "0",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cashier_sale",
+   "fieldtype": "Link",
+   "label": "Materialized Cashier Sale",
+   "options": "NKT Cashier Sale",
+   "read_only": 1
+  },
+  {
+   "fieldname": "matched_customer_order",
+   "fieldtype": "Link",
+   "label": "Matched Customer Order",
+   "options": "NKT Customer Order",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer_receivable",
+   "fieldtype": "Link",
+   "label": "Customer Receivable",
+   "options": "NKT Customer Receivable",
+   "read_only": 1
+  },
+  {
+   "fieldname": "account_effect_materialized_at",
+   "fieldtype": "Datetime",
+   "label": "Account Effect Materialized At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_state",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "context_validation_state",
+   "fieldtype": "Select",
+   "label": "Context Validation",
+   "options": "Matched Current Masters\nMaster Drift / Missing",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "context_validation_note",
+   "fieldtype": "Small Text",
+   "label": "Context Validation Note",
+   "read_only": 1
+  },
+  {
+   "fieldname": "primary_preserved_at",
+   "fieldtype": "Datetime",
+   "label": "Primary Preserved At",
+   "reqd": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "module": "NKT Store Operations",
+ "name": "NKT Primary Cashier Tender Intent",
+ "permissions": [
+  {
+   "role": "NKT OWNER",
+   "read": 1,
+   "report": 1
+  },
+  {
+   "role": "NKT ADMINISTRATOR",
+   "read": 1,
+   "report": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "report": 1
+  }
+ ],
+ "sort_field": "primary_preserved_at",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

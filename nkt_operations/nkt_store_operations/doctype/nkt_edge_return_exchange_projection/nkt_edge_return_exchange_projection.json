@@ -1,0 +1,326 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:projection_key",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "identity_section",
+  "projection_key",
+  "event_uuid",
+  "side",
+  "submit_request_id",
+  "business_section",
+  "company",
+  "customer",
+  "old_cashier_sale",
+  "old_customer_order",
+  "source_generation",
+  "business_date",
+  "physical_entry_at",
+  "cashier_shift",
+  "transaction_type",
+  "financial_section",
+  "return_credit",
+  "new_order_value",
+  "customer_pays",
+  "refund_money",
+  "requested_account_adjustment",
+  "projected_account_adjustment",
+  "requested_customer_credit",
+  "projected_customer_credit",
+  "settlement_destination",
+  "settlement_method",
+  "settlement_reference",
+  "projected_cash_drawer_delta",
+  "replacement_new_sale_projected",
+  "replacement_new_order_projected",
+  "state_section",
+  "projection_state",
+  "primary_ack_uuid",
+  "materialization_ack_sha256",
+  "materialization_ack_uuid",
+  "primary_declaration",
+  "primary_materialized_at",
+  "finalized_at"
+ ],
+ "fields": [
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Edge Return / Exchange Projection"
+  },
+  {
+   "fieldname": "projection_key",
+   "fieldtype": "Data",
+   "label": "Projection Key",
+   "reqd": 1,
+   "unique": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "event_uuid",
+   "fieldtype": "Data",
+   "label": "Event UUID",
+   "reqd": 1,
+   "unique": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "side",
+   "fieldtype": "Select",
+   "label": "Side",
+   "options": "Cashier\nEncoder",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "submit_request_id",
+   "fieldtype": "Data",
+   "label": "Submit Request ID",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "business_section",
+   "fieldtype": "Section Break",
+   "label": "Original Return / Exchange"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "old_cashier_sale",
+   "fieldtype": "Link",
+   "label": "OLD Cashier Sale",
+   "options": "NKT Cashier Sale",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "old_customer_order",
+   "fieldtype": "Link",
+   "label": "OLD Customer Order",
+   "options": "NKT Customer Order",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "source_generation",
+   "fieldtype": "Int",
+   "label": "Exchange Generation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "business_date",
+   "fieldtype": "Date",
+   "label": "Physical Business Date",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "physical_entry_at",
+   "fieldtype": "Datetime",
+   "label": "Physical Entry At",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "cashier_shift",
+   "fieldtype": "Link",
+   "label": "Original Cashier Shift",
+   "options": "NKT Cashier Shift",
+   "read_only": 1
+  },
+  {
+   "fieldname": "transaction_type",
+   "fieldtype": "Select",
+   "label": "Transaction Type",
+   "options": "Return\nExchange",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "financial_section",
+   "fieldtype": "Section Break",
+   "label": "Local Operational Financial Projection"
+  },
+  {
+   "fieldname": "return_credit",
+   "fieldtype": "Currency",
+   "label": "Return Credit Basis",
+   "read_only": 1
+  },
+  {
+   "fieldname": "new_order_value",
+   "fieldtype": "Currency",
+   "label": "NEW ORDER Value",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer_pays",
+   "fieldtype": "Currency",
+   "label": "Customer Pays",
+   "read_only": 1
+  },
+  {
+   "fieldname": "refund_money",
+   "fieldtype": "Currency",
+   "label": "Refund Money (Not Yet Locally Posted)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "requested_account_adjustment",
+   "fieldtype": "Currency",
+   "label": "Requested Account Adjustment",
+   "read_only": 1
+  },
+  {
+   "fieldname": "projected_account_adjustment",
+   "fieldtype": "Currency",
+   "label": "Locally Projected Account Adjustment",
+   "read_only": 1
+  },
+  {
+   "fieldname": "requested_customer_credit",
+   "fieldtype": "Currency",
+   "label": "Requested Customer Credit",
+   "read_only": 1
+  },
+  {
+   "fieldname": "projected_customer_credit",
+   "fieldtype": "Currency",
+   "label": "Locally Available Customer Credit",
+   "read_only": 1
+  },
+  {
+   "fieldname": "settlement_destination",
+   "fieldtype": "Data",
+   "label": "Settlement Destination",
+   "read_only": 1
+  },
+  {
+   "fieldname": "state_section",
+   "fieldtype": "Section Break",
+   "label": "Projection State"
+  },
+  {
+   "fieldname": "projection_state",
+   "fieldtype": "Select",
+   "label": "Projection State",
+   "options": "Pending Edge\nAwaiting Primary\nPrimary Preserved\nPrimary Materialized\nFinalized\nConflict",
+   "default": "Pending Edge",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "primary_ack_uuid",
+   "fieldtype": "Data",
+   "label": "Primary ACK UUID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialization_ack_uuid",
+   "fieldtype": "Data",
+   "label": "Materialization ACK UUID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "primary_declaration",
+   "fieldtype": "Link",
+   "label": "Primary Return / Exchange Declaration",
+   "options": "NKT Return Exchange Declaration",
+   "read_only": 1
+  },
+  {
+   "fieldname": "primary_materialized_at",
+   "fieldtype": "Datetime",
+   "label": "Primary Materialized At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "finalized_at",
+   "fieldtype": "Datetime",
+   "label": "Projection Finalized At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "settlement_method",
+   "fieldtype": "Data",
+   "label": "Settlement Method",
+   "read_only": 1
+  },
+  {
+   "fieldname": "settlement_reference",
+   "fieldtype": "Data",
+   "label": "Settlement Reference",
+   "read_only": 1
+  },
+  {
+   "fieldname": "projected_cash_drawer_delta",
+   "fieldtype": "Currency",
+   "label": "Projected Cash Drawer Delta",
+   "read_only": 1
+  },
+  {
+   "fieldname": "replacement_new_sale_projected",
+   "fieldtype": "Check",
+   "label": "Replacement NEW Sale Projected",
+   "read_only": 1
+  },
+  {
+   "fieldname": "replacement_new_order_projected",
+   "fieldtype": "Check",
+   "label": "Replacement NEW Order Projected",
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialization_ack_sha256",
+   "fieldtype": "Data",
+   "label": "Materialization ACK SHA-256",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "module": "NKT Store Operations",
+ "name": "NKT Edge Return Exchange Projection",
+ "permissions": [
+  {
+   "role": "NKT OWNER",
+   "read": 1,
+   "report": 1
+  },
+  {
+   "role": "NKT ADMINISTRATOR",
+   "read": 1,
+   "report": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "report": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

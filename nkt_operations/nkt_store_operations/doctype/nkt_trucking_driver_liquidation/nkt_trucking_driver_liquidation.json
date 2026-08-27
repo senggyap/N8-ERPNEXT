@@ -1,0 +1,277 @@
+{
+  "doctype": "DocType",
+  "name": "NKT Trucking Driver Liquidation",
+  "module": "NKT Store Operations",
+  "custom": 0,
+  "autoname": "naming_series:",
+  "naming_rule": "By \"Naming Series\" field",
+  "engine": "InnoDB",
+  "track_changes": 1,
+  "allow_rename": 0,
+  "field_order": [
+    "naming_series",
+    "header_section",
+    "liquidation_date",
+    "cash_advance",
+    "driver_name",
+    "column_break_header",
+    "status",
+    "company",
+    "trip_section",
+    "source_trip",
+    "vehicle",
+    "plate_no",
+    "advance_amount",
+    "lines_section",
+    "lines",
+    "totals_section",
+    "expense_total",
+    "unused_cash_expected",
+    "reimbursement_due",
+    "settlement_section",
+    "cash_return_received",
+    "reimbursement_paid",
+    "settlement_reference",
+    "linked_trucking_expense",
+    "column_break_settlement",
+    "verified_by_user",
+    "verified_at",
+    "settled_by_user",
+    "settled_at",
+    "notes",
+    "supporting_attachment"
+  ],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "options": "TRK-LIQ-.YYYY.-.#####",
+      "default": "TRK-LIQ-.YYYY.-.#####",
+      "hidden": 1
+    },
+    {
+      "fieldname": "header_section",
+      "fieldtype": "Section Break",
+      "label": "Driver Cash Liquidation"
+    },
+    {
+      "fieldname": "liquidation_date",
+      "fieldtype": "Date",
+      "label": "Liquidation Date",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "cash_advance",
+      "fieldtype": "Link",
+      "label": "Cash Advance",
+      "options": "NKT Trucking Driver Cash Advance",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "driver_name",
+      "fieldtype": "Data",
+      "label": "Driver",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "column_break_header",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Draft\nVerified\nSettled\nCancelled",
+      "default": "Draft",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "ERP Company (when configured)",
+      "options": "Company"
+    },
+    {
+      "fieldname": "trip_section",
+      "fieldtype": "Section Break",
+      "label": "Advance Context"
+    },
+    {
+      "fieldname": "source_trip",
+      "fieldtype": "Link",
+      "label": "Advance Source Trip",
+      "options": "NKT Trucking Trip",
+      "read_only": 1
+    },
+    {
+      "fieldname": "vehicle",
+      "fieldtype": "Link",
+      "label": "Advance Truck / Vehicle",
+      "options": "NKT Vehicle",
+      "read_only": 1
+    },
+    {
+      "fieldname": "plate_no",
+      "fieldtype": "Data",
+      "label": "Plate No.",
+      "read_only": 1,
+      "fetch_from": "vehicle.plate_number"
+    },
+    {
+      "fieldname": "advance_amount",
+      "fieldtype": "Currency",
+      "label": "Advance Amount",
+      "read_only": 1
+    },
+    {
+      "fieldname": "lines_section",
+      "fieldtype": "Section Break",
+      "label": "Receipts / Expense Allocation"
+    },
+    {
+      "fieldname": "lines",
+      "fieldtype": "Table",
+      "label": "Liquidation Lines",
+      "options": "NKT Trucking Driver Liquidation Line",
+      "reqd": 1
+    },
+    {
+      "fieldname": "totals_section",
+      "fieldtype": "Section Break",
+      "label": "Liquidation Totals"
+    },
+    {
+      "fieldname": "expense_total",
+      "fieldtype": "Currency",
+      "label": "Verified Expense Total",
+      "read_only": 1
+    },
+    {
+      "fieldname": "unused_cash_expected",
+      "fieldtype": "Currency",
+      "label": "Unused Cash Expected Back",
+      "read_only": 1
+    },
+    {
+      "fieldname": "reimbursement_due",
+      "fieldtype": "Currency",
+      "label": "Additional Reimbursement Due",
+      "read_only": 1,
+      "description": "If verified expenses exceed the original advance, this is the excess amount due back to the driver. It is not an incentive."
+    },
+    {
+      "fieldname": "settlement_section",
+      "fieldtype": "Section Break",
+      "label": "Settlement"
+    },
+    {
+      "fieldname": "cash_return_received",
+      "fieldtype": "Currency",
+      "label": "Cash Return Received",
+      "default": "0"
+    },
+    {
+      "fieldname": "reimbursement_paid",
+      "fieldtype": "Currency",
+      "label": "Additional Reimbursement Paid",
+      "default": "0"
+    },
+    {
+      "fieldname": "settlement_reference",
+      "fieldtype": "Data",
+      "label": "Settlement / Receipt Reference"
+    },
+    {
+      "fieldname": "linked_trucking_expense",
+      "fieldtype": "Link",
+      "label": "Future / Manual Trucking Expense Link",
+      "options": "NKT Trucking Expense",
+      "read_only": 0,
+      "description": "Optional lineage only. C14E does not auto-create an expense voucher or GL entry. A later controlled bridge may post verified liquidation costs into the operational profitability ledger."
+    },
+    {
+      "fieldname": "column_break_settlement",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "verified_by_user",
+      "fieldtype": "Link",
+      "label": "Verified By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "verified_at",
+      "fieldtype": "Datetime",
+      "label": "Verified At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "settled_by_user",
+      "fieldtype": "Link",
+      "label": "Settled By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "settled_at",
+      "fieldtype": "Datetime",
+      "label": "Settled At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Liquidation / Settlement Notes"
+    },
+    {
+      "fieldname": "supporting_attachment",
+      "fieldtype": "Attach",
+      "label": "Supporting Document / Summary"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "NKT Trucking Operations",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "print": 1,
+      "report": 1,
+      "export": 0
+    },
+    {
+      "role": "NKT OWNER",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "print": 1,
+      "report": 1,
+      "export": 1
+    },
+    {
+      "role": "NKT ADMINISTRATOR",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "print": 1,
+      "report": 1,
+      "export": 1
+    }
+  ],
+  "links": [],
+  "actions": [],
+  "states": [],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "owner": "Administrator",
+  "modified_by": "Administrator"
+}

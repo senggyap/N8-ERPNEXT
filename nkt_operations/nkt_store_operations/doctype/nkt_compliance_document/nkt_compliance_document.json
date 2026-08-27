@@ -1,0 +1,257 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "format:NKT-COMP-{#####}",
+ "creation": "2026-08-14 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "document_section",
+  "document_title",
+  "document_category",
+  "document_subtype",
+  "document_number",
+  "record_state",
+  "compliance_status",
+  "party_section",
+  "issuing_agency",
+  "responsible_user",
+  "location_section",
+  "company",
+  "branch",
+  "warehouse",
+  "location_details",
+  "dates_section",
+  "issue_date",
+  "expiry_date",
+  "renewal_due_date",
+  "reminder_days_before",
+  "status_as_of",
+  "days_to_due",
+  "evidence_section",
+  "document_file",
+  "notes",
+  "change_section",
+  "change_note",
+  "history_section",
+  "renewal_history"
+ ],
+ "fields": [
+  {
+   "fieldname": "document_section",
+   "fieldtype": "Section Break",
+   "label": "Document"
+  },
+  {
+   "fieldname": "document_title",
+   "fieldtype": "Data",
+   "label": "Document Title",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "document_category",
+   "fieldtype": "Select",
+   "label": "Category",
+   "options": "Permit\nLicense\nContract\nInsurance\nVehicle Registration\nLease\nCertification\nSOP\nInspection\nOther",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "document_subtype",
+   "fieldtype": "Data",
+   "label": "Subtype / Detail"
+  },
+  {
+   "fieldname": "document_number",
+   "fieldtype": "Data",
+   "label": "Document / Reference Number",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "record_state",
+   "fieldtype": "Select",
+   "label": "Record State",
+   "options": "Active\nSuperseded\nCancelled",
+   "default": "Active",
+   "reqd": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "compliance_status",
+   "fieldtype": "Select",
+   "label": "Compliance Status",
+   "options": "Active\nExpiring Soon\nExpired\nNo Expiry\nSuperseded\nCancelled",
+   "read_only": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "party_section",
+   "fieldtype": "Section Break",
+   "label": "Responsibility / Authority"
+  },
+  {
+   "fieldname": "issuing_agency",
+   "fieldtype": "Data",
+   "label": "Agency / Issuing Authority"
+  },
+  {
+   "fieldname": "responsible_user",
+   "fieldtype": "Link",
+   "label": "Responsible Person",
+   "options": "User"
+  },
+  {
+   "fieldname": "location_section",
+   "fieldtype": "Section Break",
+   "label": "Company / Location"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Branch"
+  },
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Warehouse / Site",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "location_details",
+   "fieldtype": "Data",
+   "label": "Other Location / Site Details"
+  },
+  {
+   "fieldname": "dates_section",
+   "fieldtype": "Section Break",
+   "label": "Validity / Renewal"
+  },
+  {
+   "fieldname": "issue_date",
+   "fieldtype": "Date",
+   "label": "Issue Date"
+  },
+  {
+   "fieldname": "expiry_date",
+   "fieldtype": "Date",
+   "label": "Expiry Date",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "renewal_due_date",
+   "fieldtype": "Date",
+   "label": "Renewal Due Date"
+  },
+  {
+   "fieldname": "reminder_days_before",
+   "fieldtype": "Int",
+   "label": "Reminder Days Before Due",
+   "default": "30"
+  },
+  {
+   "fieldname": "status_as_of",
+   "fieldtype": "Date",
+   "label": "Status Evaluated As Of",
+   "read_only": 1
+  },
+  {
+   "fieldname": "days_to_due",
+   "fieldtype": "Int",
+   "label": "Days to Due",
+   "read_only": 1
+  },
+  {
+   "fieldname": "evidence_section",
+   "fieldtype": "Section Break",
+   "label": "Evidence / Notes"
+  },
+  {
+   "fieldname": "document_file",
+   "fieldtype": "Attach",
+   "label": "Document File / Evidence"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "change_section",
+   "fieldtype": "Section Break",
+   "label": "Controlled Renewal / Change"
+  },
+  {
+   "fieldname": "change_note",
+   "fieldtype": "Small Text",
+   "label": "Renewal / Change Note",
+   "description": "Required when changing the document number, issue/expiry/renewal dates, file evidence, or Record State after the first save. The note is copied into Renewal / Change History."
+  },
+  {
+   "fieldname": "history_section",
+   "fieldtype": "Section Break",
+   "label": "Renewal / Change History"
+  },
+  {
+   "fieldname": "renewal_history",
+   "fieldtype": "Table",
+   "label": "Renewal / Change History",
+   "options": "NKT Compliance Renewal History",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "is_submittable": 0,
+ "links": [],
+ "modified": "2026-08-14 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "NKT Store Operations",
+ "name": "NKT Compliance Document",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "NKT OWNER",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "print": 1,
+   "email": 1,
+   "report": 1,
+   "export": 1,
+   "share": 0
+  },
+  {
+   "role": "NKT ADMINISTRATOR",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "print": 1,
+   "email": 1,
+   "report": 1,
+   "export": 1,
+   "share": 0
+  }
+ ],
+ "search_fields": "document_title,document_number,document_category,issuing_agency",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "document_title",
+ "track_changes": 1
+}

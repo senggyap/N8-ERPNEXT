@@ -1,0 +1,276 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-08-13 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "identity_section",
+  "company",
+  "transfer_date",
+  "internal_transfer_no",
+  "internal_dr_no",
+  "status",
+  "warehouse_section",
+  "source_warehouse",
+  "destination_warehouse",
+  "transport_section",
+  "vehicle_or_unit_no",
+  "plate_no",
+  "driver_name",
+  "items_section",
+  "items",
+  "audit_section",
+  "requested_by",
+  "requested_at",
+  "released_by",
+  "released_at",
+  "arrived_by",
+  "arrived_at",
+  "stock_links_section",
+  "outgoing_stock_entry",
+  "incoming_stock_entry",
+  "notes_section",
+  "notes",
+  "discrepancy_summary"
+ ],
+ "fields": [
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Transfer Identity"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "transfer_date",
+   "fieldtype": "Date",
+   "label": "Transfer / Business Date",
+   "reqd": 1,
+   "default": "Today",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "internal_transfer_no",
+   "fieldtype": "Data",
+   "label": "Internal Transfer No.",
+   "read_only": 1,
+   "no_copy": 1,
+   "unique": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "internal_dr_no",
+   "fieldtype": "Data",
+   "label": "Internal DR No. / Transfer DR",
+   "in_list_view": 1,
+   "description": "Optional physical/internal DR reference. If entered, it must be unique within the Company."
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nIn Transit\nPartially Arrived\nCompleted\nDiscrepancy\nCancelled",
+   "default": "Draft",
+   "read_only": 1,
+   "no_copy": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "warehouse_section",
+   "fieldtype": "Section Break",
+   "label": "Warehouse Movement"
+  },
+  {
+   "fieldname": "source_warehouse",
+   "fieldtype": "Link",
+   "label": "Source Warehouse",
+   "options": "Warehouse",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "destination_warehouse",
+   "fieldtype": "Link",
+   "label": "Destination Warehouse",
+   "options": "Warehouse",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "transport_section",
+   "fieldtype": "Section Break",
+   "label": "Optional Physical Transport Reference",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "vehicle_or_unit_no",
+   "fieldtype": "Data",
+   "label": "Vehicle / Unit No."
+  },
+  {
+   "fieldname": "plate_no",
+   "fieldtype": "Data",
+   "label": "Plate No."
+  },
+  {
+   "fieldname": "driver_name",
+   "fieldtype": "Data",
+   "label": "Driver Name"
+  },
+  {
+   "fieldname": "items_section",
+   "fieldtype": "Section Break",
+   "label": "Items"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "NKT Warehouse Transfer Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "audit_section",
+   "fieldtype": "Section Break",
+   "label": "Operational Audit",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "requested_by",
+   "fieldtype": "Link",
+   "label": "Requested / Encoded By",
+   "options": "User",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "requested_at",
+   "fieldtype": "Datetime",
+   "label": "Requested / Encoded At",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "released_by",
+   "fieldtype": "Link",
+   "label": "Released By",
+   "options": "User",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "released_at",
+   "fieldtype": "Datetime",
+   "label": "Released At",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "arrived_by",
+   "fieldtype": "Link",
+   "label": "Arrived By",
+   "options": "User",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "arrived_at",
+   "fieldtype": "Datetime",
+   "label": "Arrived At",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "stock_links_section",
+   "fieldtype": "Section Break",
+   "label": "ERPNext Stock Engine Links",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "outgoing_stock_entry",
+   "fieldtype": "Link",
+   "label": "Outgoing Stock Entry",
+   "options": "Stock Entry",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "incoming_stock_entry",
+   "fieldtype": "Link",
+   "label": "Incoming Stock Entry",
+   "options": "Stock Entry",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Operational Notes"
+  },
+  {
+   "fieldname": "discrepancy_summary",
+   "fieldtype": "Small Text",
+   "label": "Discrepancy Summary",
+   "read_only": 1,
+   "no_copy": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 0,
+ "is_submittable": 0,
+ "links": [],
+ "modified": "2026-08-13 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "NKT Store Operations",
+ "name": "NKT Warehouse Transfer",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "NKT Encoder",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "report": 1,
+   "print": 1
+  },
+  {
+   "role": "NKT Warehouse",
+   "read": 1,
+   "report": 1,
+   "print": 1
+  },
+  {
+   "role": "NKT ADMINISTRATOR",
+   "read": 1,
+   "report": 1,
+   "export": 1,
+   "print": 1
+  },
+  {
+   "role": "NKT OWNER",
+   "read": 1,
+   "report": 1,
+   "export": 1,
+   "print": 1
+  }
+ ],
+ "quick_entry": 0,
+ "search_fields": "internal_dr_no,source_warehouse,destination_warehouse",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "internal_transfer_no",
+ "track_changes": 1
+}

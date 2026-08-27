@@ -1,0 +1,191 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "NKT-OIL-CLOSE-.#####",
+  "creation": "2026-08-17 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "identity_section",
+    "company",
+    "combined_bulk_warehouse",
+    "palm_olein_item",
+    "checklist_section",
+    "all_tanker_scale_receipts_entered",
+    "all_daily_repack_reports_entered",
+    "spillage_recovery_complete",
+    "physical_combined_tanks_empty",
+    "no_unencoded_paperwork",
+    "owner_admin_final_confirmation",
+    "result_section",
+    "tank_empty_datetime",
+    "closed_by",
+    "book_qty_before_close",
+    "variance_type",
+    "variance_qty_kg",
+    "stock_reconciliation",
+    "status",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "identity_section",
+      "fieldtype": "Section Break",
+      "label": "Combined Palm Olein Tank Empty Close"
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "combined_bulk_warehouse",
+      "fieldtype": "Link",
+      "label": "Combined Bulk Warehouse",
+      "options": "Warehouse",
+      "read_only": 1
+    },
+    {
+      "fieldname": "palm_olein_item",
+      "fieldtype": "Link",
+      "label": "Palm Olein Bulk Item",
+      "options": "Item",
+      "read_only": 1
+    },
+    {
+      "fieldname": "checklist_section",
+      "fieldtype": "Section Break",
+      "label": "Required Owner/Admin Close Checklist"
+    },
+    {
+      "fieldname": "all_tanker_scale_receipts_entered",
+      "fieldtype": "Check",
+      "label": "All tanker scale receipts for this bulk cycle are entered",
+      "reqd": 1
+    },
+    {
+      "fieldname": "all_daily_repack_reports_entered",
+      "fieldtype": "Check",
+      "label": "All Daily Oil Repack reports are entered",
+      "reqd": 1
+    },
+    {
+      "fieldname": "spillage_recovery_complete",
+      "fieldtype": "Check",
+      "label": "Reported spillage / recovery paperwork is complete",
+      "reqd": 1
+    },
+    {
+      "fieldname": "physical_combined_tanks_empty",
+      "fieldtype": "Check",
+      "label": "Combined physical tanks are actually empty",
+      "reqd": 1
+    },
+    {
+      "fieldname": "no_unencoded_paperwork",
+      "fieldtype": "Check",
+      "label": "No known unencoded Cooking Oil paperwork remains",
+      "reqd": 1
+    },
+    {
+      "fieldname": "owner_admin_final_confirmation",
+      "fieldtype": "Check",
+      "label": "Owner/Admin confirms final Tank Empty close",
+      "reqd": 1
+    },
+    {
+      "fieldname": "result_section",
+      "fieldtype": "Section Break",
+      "label": "System-Calculated Close Result"
+    },
+    {
+      "fieldname": "tank_empty_datetime",
+      "fieldtype": "Datetime",
+      "label": "Tank Empty Confirmed At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "closed_by",
+      "fieldtype": "Link",
+      "label": "Closed By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "book_qty_before_close",
+      "fieldtype": "Float",
+      "label": "Book Palm Olein Before Close (Kg)",
+      "read_only": 1
+    },
+    {
+      "fieldname": "variance_type",
+      "fieldtype": "Select",
+      "label": "System Variance Type",
+      "options": "Balanced\nShortage\nSurplus",
+      "read_only": 1
+    },
+    {
+      "fieldname": "variance_qty_kg",
+      "fieldtype": "Float",
+      "label": "System Variance (Kg)",
+      "read_only": 1
+    },
+    {
+      "fieldname": "stock_reconciliation",
+      "fieldtype": "Link",
+      "label": "Stock Reconciliation",
+      "options": "Stock Reconciliation",
+      "read_only": 1
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Draft\nClosed",
+      "default": "Draft",
+      "read_only": 1
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "index_web_pages_for_search": 0,
+  "is_submittable": 1,
+  "links": [],
+  "modified": "2026-08-17 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "NKT Store Operations",
+  "name": "NKT Oil Tank Close",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "role": "NKT OWNER",
+      "read": 1,
+      "report": 1,
+      "create": 1,
+      "write": 1,
+      "submit": 1,
+      "cancel": 0,
+      "delete": 0
+    },
+    {
+      "role": "NKT ADMINISTRATOR",
+      "read": 1,
+      "report": 1,
+      "create": 1,
+      "write": 1,
+      "submit": 1,
+      "cancel": 0,
+      "delete": 0
+    }
+  ],
+  "sort_field": "creation",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 1
+}

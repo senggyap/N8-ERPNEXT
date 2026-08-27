@@ -1,0 +1,380 @@
+{
+  "doctype": "DocType",
+  "name": "NKT Trucking Incident",
+  "module": "NKT Store Operations",
+  "custom": 0,
+  "autoname": "naming_series:",
+  "naming_rule": "By \"Naming Series\" field",
+  "engine": "InnoDB",
+  "track_changes": 1,
+  "allow_rename": 0,
+  "field_order": [
+    "naming_series",
+    "header_section",
+    "incident_datetime",
+    "status",
+    "incident_type",
+    "severity",
+    "column_break_header",
+    "source_trip",
+    "vehicle",
+    "plate_no",
+    "fleet_ownership_snapshot",
+    "crew_section",
+    "driver_name_snapshot",
+    "helper_name_snapshot",
+    "location",
+    "column_break_crew",
+    "destination_snapshot",
+    "dr_no_snapshot",
+    "eir_no_snapshot",
+    "details_section",
+    "description",
+    "immediate_action",
+    "resolution_notes",
+    "column_break_details",
+    "cost_responsibility",
+    "estimated_cost",
+    "actual_cost",
+    "profit_treatment",
+    "evidence_section",
+    "photo_attachment",
+    "supporting_attachment",
+    "police_or_external_reference",
+    "third_party_name",
+    "claim_section",
+    "claim_status",
+    "claim_reference",
+    "linked_trucking_expense",
+    "accounting_posting_status",
+    "audit_section",
+    "reported_by_user",
+    "reported_at",
+    "resolved_by_user",
+    "resolved_at",
+    "closed_by_user",
+    "closed_at"
+  ],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "options": "INC-.YYYY.-.#####",
+      "default": "INC-.YYYY.-.#####",
+      "hidden": 1
+    },
+    {
+      "fieldname": "header_section",
+      "fieldtype": "Section Break",
+      "label": "Trucking Incident / Breakdown / Damage"
+    },
+    {
+      "fieldname": "incident_datetime",
+      "fieldtype": "Datetime",
+      "label": "Incident Date / Time",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Open\nUnder Review\nResolved\nClosed",
+      "default": "Open",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "incident_type",
+      "fieldtype": "Select",
+      "label": "Incident Type",
+      "options": "Breakdown\nAccident\nVehicle Damage\nCargo / Container Issue\nTire\nMechanical\nTraffic / Delay\nOther",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "severity",
+      "fieldtype": "Select",
+      "label": "Severity",
+      "options": "Minor\nModerate\nMajor",
+      "default": "Minor",
+      "reqd": 1
+    },
+    {
+      "fieldname": "column_break_header",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "source_trip",
+      "fieldtype": "Link",
+      "label": "Related Trip",
+      "options": "NKT Trucking Trip",
+      "in_list_view": 1,
+      "description": "Optional but recommended for trip-related incidents. Closed trips may still receive a later incident record; the trip itself is not rewritten."
+    },
+    {
+      "fieldname": "vehicle",
+      "fieldtype": "Link",
+      "label": "Truck / Vehicle",
+      "options": "NKT Vehicle",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "plate_no",
+      "fieldtype": "Data",
+      "label": "Plate No.",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "fleet_ownership_snapshot",
+      "fieldtype": "Select",
+      "label": "Fleet Ownership Snapshot",
+      "options": "Unclassified\nENT-Owned\nExternal Carrier",
+      "read_only": 1
+    },
+    {
+      "fieldname": "crew_section",
+      "fieldtype": "Section Break",
+      "label": "Crew / Location Snapshot"
+    },
+    {
+      "fieldname": "driver_name_snapshot",
+      "fieldtype": "Data",
+      "label": "Actual Driver Snapshot",
+      "read_only": 1,
+      "description": "Copied from Related Trip when present. Driver remains a trip-level fact."
+    },
+    {
+      "fieldname": "helper_name_snapshot",
+      "fieldtype": "Data",
+      "label": "Helper Snapshot",
+      "read_only": 1
+    },
+    {
+      "fieldname": "location",
+      "fieldtype": "Data",
+      "label": "Incident Location"
+    },
+    {
+      "fieldname": "column_break_crew",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "destination_snapshot",
+      "fieldtype": "Data",
+      "label": "Destination Snapshot",
+      "read_only": 1
+    },
+    {
+      "fieldname": "dr_no_snapshot",
+      "fieldtype": "Data",
+      "label": "DR No. Snapshot",
+      "read_only": 1
+    },
+    {
+      "fieldname": "eir_no_snapshot",
+      "fieldtype": "Data",
+      "label": "EIR No. Snapshot",
+      "read_only": 1
+    },
+    {
+      "fieldname": "details_section",
+      "fieldtype": "Section Break",
+      "label": "Incident Details / Resolution"
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Incident Description",
+      "reqd": 1
+    },
+    {
+      "fieldname": "immediate_action",
+      "fieldtype": "Small Text",
+      "label": "Immediate Action Taken"
+    },
+    {
+      "fieldname": "resolution_notes",
+      "fieldtype": "Small Text",
+      "label": "Resolution / Final Notes"
+    },
+    {
+      "fieldname": "column_break_details",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "cost_responsibility",
+      "fieldtype": "Select",
+      "label": "Cost Responsibility",
+      "options": "To Review\nENT\nExternal Carrier\nThird Party\nCustomer\nInsurance",
+      "default": "To Review",
+      "reqd": 1,
+      "description": "Operational responsibility only; it does not create a receivable/payable or accounting entry."
+    },
+    {
+      "fieldname": "estimated_cost",
+      "fieldtype": "Currency",
+      "label": "Estimated Cost",
+      "default": "0"
+    },
+    {
+      "fieldname": "actual_cost",
+      "fieldtype": "Currency",
+      "label": "Actual Cost",
+      "default": "0"
+    },
+    {
+      "fieldname": "profit_treatment",
+      "fieldtype": "Select",
+      "label": "Profit Treatment",
+      "options": "Vehicle Operating Cost\nDirect Trip Cost\nCapital / Excluded from Operating Profit\nNot an ENT Cost / To Review",
+      "default": "Not an ENT Cost / To Review",
+      "reqd": 1
+    },
+    {
+      "fieldname": "evidence_section",
+      "fieldtype": "Section Break",
+      "label": "Evidence / External Reference"
+    },
+    {
+      "fieldname": "photo_attachment",
+      "fieldtype": "Attach",
+      "label": "Photo / Evidence"
+    },
+    {
+      "fieldname": "supporting_attachment",
+      "fieldtype": "Attach",
+      "label": "Supporting Document"
+    },
+    {
+      "fieldname": "police_or_external_reference",
+      "fieldtype": "Data",
+      "label": "Police / External Report Reference"
+    },
+    {
+      "fieldname": "third_party_name",
+      "fieldtype": "Data",
+      "label": "Third Party / Other Party"
+    },
+    {
+      "fieldname": "claim_section",
+      "fieldtype": "Section Break",
+      "label": "Claim / Cost Lineage"
+    },
+    {
+      "fieldname": "claim_status",
+      "fieldtype": "Select",
+      "label": "Claim Status",
+      "options": "Not Applicable\nTo Review\nFiled\nSettled",
+      "default": "Not Applicable",
+      "reqd": 1
+    },
+    {
+      "fieldname": "claim_reference",
+      "fieldtype": "Data",
+      "label": "Claim Reference"
+    },
+    {
+      "fieldname": "linked_trucking_expense",
+      "fieldtype": "Link",
+      "label": "Linked Trucking Expense (Optional)",
+      "options": "NKT Trucking Expense",
+      "description": "Optional controlled lineage only. C14F never auto-creates an expense voucher."
+    },
+    {
+      "fieldname": "accounting_posting_status",
+      "fieldtype": "Data",
+      "label": "Accounting Posting",
+      "default": "Operational Only — No GL Posting",
+      "read_only": 1
+    },
+    {
+      "fieldname": "audit_section",
+      "fieldtype": "Section Break",
+      "label": "Audit"
+    },
+    {
+      "fieldname": "reported_by_user",
+      "fieldtype": "Link",
+      "label": "Reported By User",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "reported_at",
+      "fieldtype": "Datetime",
+      "label": "Reported At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "resolved_by_user",
+      "fieldtype": "Link",
+      "label": "Resolved By User",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "resolved_at",
+      "fieldtype": "Datetime",
+      "label": "Resolved At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "closed_by_user",
+      "fieldtype": "Link",
+      "label": "Closed By User",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "closed_at",
+      "fieldtype": "Datetime",
+      "label": "Closed At",
+      "read_only": 1
+    }
+  ],
+  "permissions": [
+    {
+      "role": "NKT Trucking Operations",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "print": 1,
+      "report": 1,
+      "export": 0
+    },
+    {
+      "role": "NKT OWNER",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "print": 1,
+      "report": 1,
+      "export": 1
+    },
+    {
+      "role": "NKT ADMINISTRATOR",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "print": 1,
+      "report": 1,
+      "export": 1
+    }
+  ],
+  "links": [],
+  "actions": [],
+  "states": [],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "owner": "Administrator",
+  "creation": "2026-08-14 15:10:00.000000",
+  "modified": "2026-08-14 15:10:00.000000",
+  "modified_by": "Administrator"
+}

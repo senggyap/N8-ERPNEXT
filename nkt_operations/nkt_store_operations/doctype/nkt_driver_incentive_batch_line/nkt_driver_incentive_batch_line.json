@@ -1,0 +1,93 @@
+{
+  "doctype": "DocType",
+  "name": "NKT Driver Incentive Batch Line",
+  "module": "NKT Store Operations",
+  "istable": 1,
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "source_trip",
+    "trip_date",
+    "driver_name",
+    "vehicle",
+    "plate_no",
+    "dr_no",
+    "eir_no",
+    "paperwork_verified_at",
+    "incentive_amount",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "source_trip",
+      "fieldtype": "Link",
+      "label": "Trucking Trip",
+      "options": "NKT Trucking Trip",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "trip_date",
+      "fieldtype": "Date",
+      "label": "Trip Date",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "driver_name",
+      "fieldtype": "Data",
+      "label": "Driver",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "vehicle",
+      "fieldtype": "Link",
+      "label": "ENT Truck",
+      "options": "NKT Vehicle",
+      "read_only": 1
+    },
+    {
+      "fieldname": "plate_no",
+      "fieldtype": "Data",
+      "label": "Plate No.",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "dr_no",
+      "fieldtype": "Data",
+      "label": "DR No.",
+      "read_only": 1
+    },
+    {
+      "fieldname": "eir_no",
+      "fieldtype": "Data",
+      "label": "EIR No.",
+      "read_only": 1
+    },
+    {
+      "fieldname": "paperwork_verified_at",
+      "fieldtype": "Datetime",
+      "label": "Papers Verified At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "incentive_amount",
+      "fieldtype": "Currency",
+      "label": "Incentive Amount",
+      "in_list_view": 1,
+      "description": "Editable approved amount. C14D intentionally does not guess a rate/formula."
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Data",
+      "label": "Notes"
+    }
+  ],
+  "permissions": [],
+  "owner": "Administrator",
+  "creation": "2026-08-14 14:10:00.000000",
+  "modified": "2026-08-14 14:10:00.000000",
+  "modified_by": "Administrator"
+}

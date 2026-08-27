@@ -1,0 +1,416 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "NKT-ORD-.#####",
+ "creation": "2026-08-04 12:05:57.469847",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "order_details_section",
+  "amended_from",
+  "company",
+  "order_date",
+  "customer",
+  "customer_name",
+  "encoder",
+  "source_order_slip",
+  "status",
+  "default_warehouse",
+  "account_sale",
+  "items_section",
+  "items",
+  "encoder_payment_section",
+  "declared_payments",
+  "declared_payment_totals_section",
+  "declared_payment_total",
+  "declared_cash",
+  "declared_non_cash",
+  "declared_card_surcharge_total",
+  "declared_total_collected",
+  "declared_account",
+  "totals_and_control_section",
+  "total_quantity",
+  "grand_total",
+  "requires_admin_confirmation",
+  "admin_confirmation_status",
+  "notes",
+  "cashier_reconciliation_section",
+  "cashier_reconciliation_status",
+  "matched_cashier_sale",
+  "cashier_reconciliation_warning",
+  "cashier_reconciled_on",
+  "nkt_basket_fingerprint",
+  "nkt_payment_fingerprint",
+  "nkt_warehouse_fingerprint",
+  "payment_section",
+  "payment_arrangement",
+  "payment_status",
+  "amount_paid",
+  "amount_due",
+  "admin_confirmed_by",
+  "admin_confirmed_on",
+  "admin_confirmation_remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "NKT Customer Order",
+   "print_hide": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "order_details_section",
+   "fieldtype": "Section Break",
+   "label": "Order Details"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "order_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Order Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "encoder",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Encoder",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "description": "Retained only for compatibility. Matching uses the normalized item/payment basket and warnings.",
+   "fieldname": "source_order_slip",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Source Order Slip No.",
+   "read_only": 1
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Draft\nPending Admin Confirmation\nAwaiting Payment\nPartially Paid\nPending Credit Control\nReady for Release\nReleased\nCancelled",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "default_warehouse",
+   "fieldtype": "Link",
+   "label": "Default Warehouse",
+   "options": "Warehouse",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "account_sale",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Account Sale"
+  },
+  {
+   "fieldname": "items_section",
+   "fieldtype": "Section Break",
+   "label": "Items"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "NKT Customer Order Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "encoder_payment_section",
+   "fieldtype": "Section Break",
+   "label": "Payment Method Encoded by Encoder"
+  },
+  {
+   "fieldname": "declared_payments",
+   "fieldtype": "Table",
+   "label": "Declared Payments",
+   "options": "NKT Declared Payment",
+   "reqd": 1
+  },
+  {
+   "fieldname": "declared_payment_totals_section",
+   "fieldtype": "Section Break",
+   "label": "Declared Payment Totals"
+  },
+  {
+   "fieldname": "declared_payment_total",
+   "fieldtype": "Currency",
+   "label": "Declared Payment Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "declared_cash",
+   "fieldtype": "Currency",
+   "label": "Declared Cash",
+   "read_only": 1
+  },
+  {
+   "fieldname": "declared_non_cash",
+   "fieldtype": "Currency",
+   "label": "Declared Non-Cash",
+   "read_only": 1
+  },
+  {
+   "fieldname": "declared_card_surcharge_total",
+   "label": "Declared Card Surcharge (2%)",
+   "fieldtype": "Currency",
+   "read_only": 1,
+   "precision": "2"
+  },
+  {
+   "fieldname": "declared_total_collected",
+   "label": "Declared Customer Pays",
+   "fieldtype": "Currency",
+   "read_only": 1,
+   "precision": "2"
+  },
+  {
+   "fieldname": "declared_account",
+   "fieldtype": "Currency",
+   "label": "Declared Account",
+   "read_only": 1
+  },
+  {
+   "fieldname": "totals_and_control_section",
+   "fieldtype": "Section Break",
+   "label": "Totals and Control"
+  },
+  {
+   "fieldname": "total_quantity",
+   "fieldtype": "Float",
+   "label": "Total Quantity",
+   "read_only": 1
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "label": "Grand Total",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "requires_admin_confirmation",
+   "fieldtype": "Check",
+   "label": "Requires Admin Confirmation",
+   "read_only": 1
+  },
+  {
+   "default": "Not Required",
+   "fieldname": "admin_confirmation_status",
+   "fieldtype": "Select",
+   "label": "Admin Confirmation Status",
+   "options": "Not Required\nPending\nConfirmed\nRejected",
+   "read_only": 1
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "cashier_reconciliation_section",
+   "fieldtype": "Section Break",
+   "label": "Cashier Reconciliation"
+  },
+  {
+   "default": "Unmatched",
+   "fieldname": "cashier_reconciliation_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Cashier Reconciliation Status",
+   "options": "Unmatched\nMatched\nMatched with Customer Warning\nMatched with Warehouse Warning\nMatched with Customer and Warehouse Warning\nAmbiguous",
+   "read_only": 1
+  },
+  {
+   "fieldname": "matched_cashier_sale",
+   "fieldtype": "Link",
+   "label": "Matched Cashier Sale",
+   "options": "NKT Cashier Sale",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cashier_reconciliation_warning",
+   "fieldtype": "Small Text",
+   "label": "Reconciliation Warning",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cashier_reconciled_on",
+   "fieldtype": "Datetime",
+   "label": "Reconciled On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "nkt_basket_fingerprint",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Basket Fingerprint",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "nkt_payment_fingerprint",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Payment Fingerprint",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "nkt_warehouse_fingerprint",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Warehouse Fingerprint",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "payment_section",
+   "fieldtype": "Section Break",
+   "label": "Payment"
+  },
+  {
+   "fieldname": "payment_arrangement",
+   "fieldtype": "Select",
+   "label": "Payment Arrangement",
+   "options": "Cash\nCheck\nGCash\nMaya\nCard\nBank Transfer\nOther Online\nOn-Account\nSplit Payment\nReturn Credit",
+   "read_only": 1
+  },
+  {
+   "default": "Unpaid",
+   "fieldname": "payment_status",
+   "fieldtype": "Select",
+   "label": "Payment Status",
+   "options": "Unpaid\nPending Verification\nPartially Paid\nPaid\nCharged to Account",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "amount_paid",
+   "fieldtype": "Currency",
+   "label": "Amount Paid",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "amount_due",
+   "fieldtype": "Currency",
+   "label": "Amount Due",
+   "read_only": 1
+  },
+  {
+   "fieldname": "admin_confirmed_by",
+   "fieldtype": "Link",
+   "label": "Admin Confirmed By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "admin_confirmed_on",
+   "fieldtype": "Datetime",
+   "label": "Admin Confirmed On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "admin_confirmation_remarks",
+   "fieldtype": "Small Text",
+   "label": "Admin Confimration Remarks",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-08-12 00:01:51.456359",
+ "modified_by": "Administrator",
+ "module": "NKT Store Operations",
+ "name": "NKT Customer Order",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "print": 1,
+   "read": 1,
+   "role": "NKT Encoder",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "NKT ADMINISTRATOR",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "print": 1,
+   "read": 1,
+   "role": "NKT Cashier"
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

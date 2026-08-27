@@ -1,0 +1,58 @@
+{
+  "actions": [],
+  "creation": "2026-08-13 00:00:00.000000",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "trucker_soa",
+    "soa_statement_date",
+    "soa_net_payable",
+    "allocated_amount",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "trucker_soa",
+      "fieldtype": "Link",
+      "label": "Trucker SOA",
+      "options": "NKT Trucker SOA",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "soa_statement_date",
+      "fieldtype": "Date",
+      "label": "SOA Date",
+      "read_only": 1
+    },
+    {
+      "fieldname": "soa_net_payable",
+      "fieldtype": "Currency",
+      "label": "SOA Net Payable",
+      "read_only": 1
+    },
+    {
+      "fieldname": "allocated_amount",
+      "fieldtype": "Currency",
+      "label": "Allocated Amount",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Data",
+      "label": "Allocation Notes"
+    }
+  ],
+  "istable": 1,
+  "modified": "2026-08-13 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "NKT Store Operations",
+  "name": "NKT Trucker Payment Allocation",
+  "owner": "Administrator",
+  "permissions": [],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": []
+}

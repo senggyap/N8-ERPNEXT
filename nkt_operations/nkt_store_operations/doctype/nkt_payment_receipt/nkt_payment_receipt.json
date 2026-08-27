@@ -1,0 +1,455 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "NKT-PAY-.#####",
+ "creation": "2026-08-04 14:30:40.090814",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "amended_from",
+  "receipt_details_section",
+  "company",
+  "receipt_datetime",
+  "payment_purpose",
+  "customer",
+  "customer_name",
+  "customer_order",
+  "source_cashier_sale",
+  "allocation_status",
+  "official_customer",
+  "official_customer_name",
+  "received_by",
+  "encoded_by",
+  "receipt_status",
+  "cashier_shift_section",
+  "cashier_shift",
+  "settlement_location",
+  "cashier_movement_note",
+  "payment_breakdown_section",
+  "payments",
+  "payment_totals_section",
+  "total_payment",
+  "total_cash",
+  "total_account_charge",
+  "verification_required",
+  "remarks",
+  "total_non_cash",
+  "card_surcharge_total",
+  "total_collected",
+  "order_total",
+  "previously_applied",
+  "amount_due_before_receipt",
+  "remaining_balance",
+  "overpayment_control_section",
+  "overpayment_amount",
+  "customer_advance_amount",
+  "overpayment_override_required",
+  "overpayment_override_approved",
+  "overpayment_override_approved_amount",
+  "overpayment_override_approved_by",
+  "overpayment_override_approved_on",
+  "overpayment_override_reason"
+ ],
+ "fields": [
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "NKT Payment Receipt",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "receipt_details_section",
+   "fieldtype": "Section Break",
+   "label": "Receipt Details"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "default": "Now",
+   "fieldname": "receipt_datetime",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Receipt Date and Time",
+   "reqd": 1
+  },
+  {
+   "default": "Order Payment",
+   "fieldname": "payment_purpose",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Payment Purpose",
+   "options": "Cashier Sale Payment\nOrder Payment\nAccount Collection",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "Fetch From: customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer_order",
+   "fieldtype": "Link",
+   "label": "Customer Order",
+   "options": "NKT Customer Order"
+  },
+  {
+   "fieldname": "source_cashier_sale",
+   "label": "Source Cashier Sale",
+   "fieldtype": "Link",
+   "options": "NKT Cashier Sale",
+   "read_only": 1,
+   "hidden": 1,
+   "no_copy": 1,
+   "description": "The independent cashier entry that created this payment receipt."
+  },
+  {
+   "fieldname": "source_primary_tender_intent",
+   "fieldtype": "Link",
+   "label": "Source Primary Cashier Tender",
+   "options": "NKT Primary Cashier Tender Intent",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "source_tender_payload_sha256",
+   "fieldtype": "Data",
+   "label": "Source Tender Payload SHA-256",
+   "read_only": 1,
+   "hidden": 1
+  },
+  {
+   "fieldname": "downstream_effects_state",
+   "fieldtype": "Select",
+   "label": "Downstream Effects State",
+   "options": "Deferred - C15C.10C/10D",
+   "read_only": 1,
+   "hidden": 1
+  },
+  {
+   "fieldname": "allocation_status",
+   "fieldtype": "Select",
+   "label": "Allocation Status",
+   "options": "Unallocated - Awaiting Encoder\nAllocated to Encoder Order\nDirect Order Payment\nAccount Collection",
+   "default": "Unallocated - Awaiting Encoder",
+   "read_only": 1
+  },
+  {
+   "fieldname": "official_customer",
+   "fieldtype": "Link",
+   "label": "Official Encoder Customer",
+   "options": "Customer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "official_customer_name",
+   "fieldtype": "Data",
+   "label": "Official Encoder Customer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "received_by",
+   "fieldtype": "Link",
+   "label": "Received By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "encoded_by",
+   "fieldtype": "Link",
+   "label": "Encoded By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "default": "Draft",
+   "fieldname": "receipt_status",
+   "fieldtype": "Select",
+   "label": "Receipt Status",
+   "options": "Draft\nPending Verification\nCompleted\nRejected",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "cashier_shift_section",
+   "fieldtype": "Section Break",
+   "label": "System-Assigned Cashier Shift",
+   "hidden": 1
+  },
+  {
+   "fieldname": "cashier_shift",
+   "fieldtype": "Link",
+   "label": "Cashier Shift",
+   "options": "NKT Cashier Shift",
+   "hidden": 1,
+   "read_only": 1,
+   "description": "Automatically assigned from the receiving user’s one open cashier shift."
+  },
+  {
+   "fieldname": "settlement_location",
+   "fieldtype": "Link",
+   "label": "Settlement Location",
+   "options": "Warehouse",
+   "read_only": 1,
+   "hidden": 1
+  },
+  {
+   "fieldname": "cashier_movement_note",
+   "fieldtype": "HTML",
+   "label": "Cashier Movement Note",
+   "options": "<div class=\"alert alert-info\">Submitted payment rows are automatically recorded as cashier-shift movements for EOD cash and payment-method tally.</div>",
+   "hidden": 1
+  },
+  {
+   "fieldname": "payment_breakdown_section",
+   "fieldtype": "Section Break",
+   "label": "Payment Breakdown"
+  },
+  {
+   "fieldname": "payments",
+   "fieldtype": "Table",
+   "label": "Payments",
+   "options": "NKT Payment Detail",
+   "reqd": 1
+  },
+  {
+   "fieldname": "payment_totals_section",
+   "fieldtype": "Section Break",
+   "label": "Payment Totals"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_payment",
+   "fieldtype": "Currency",
+   "label": "Total Payment",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_cash",
+   "fieldtype": "Currency",
+   "label": "Total Cash",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_account_charge",
+   "fieldtype": "Currency",
+   "label": "Total Account Charge",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "verification_required",
+   "fieldtype": "Check",
+   "label": "Verification Required",
+   "read_only": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_non_cash",
+   "fieldtype": "Currency",
+   "label": "Total Non-Cash",
+   "read_only": 1
+  },
+  {
+   "fieldname": "card_surcharge_total",
+   "label": "Card Surcharge (2%)",
+   "fieldtype": "Currency",
+   "read_only": 1,
+   "precision": "2"
+  },
+  {
+   "fieldname": "total_collected",
+   "label": "Actual Collected",
+   "fieldtype": "Currency",
+   "read_only": 1,
+   "precision": "2"
+  },
+  {
+   "default": "0",
+   "fieldname": "order_total",
+   "fieldtype": "Currency",
+   "label": "Order Total",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "previously_applied",
+   "fieldtype": "Currency",
+   "label": "Previously Applied",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "amount_due_before_receipt",
+   "fieldtype": "Currency",
+   "label": "Amount Due Before Receipt",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "remaining_balance",
+   "fieldtype": "Currency",
+   "label": "Remaining Balance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "overpayment_control_section",
+   "fieldtype": "Section Break",
+   "label": "Overpayment Control"
+  },
+  {
+   "default": "0",
+   "fieldname": "overpayment_amount",
+   "fieldtype": "Currency",
+   "label": "Overpayment Amount",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "customer_advance_amount",
+   "fieldtype": "Currency",
+   "label": "Customer Advance Amount",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "overpayment_override_required",
+   "fieldtype": "Check",
+   "label": "Override Required",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "overpayment_override_approved",
+   "fieldtype": "Check",
+   "label": "Override Approved",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "overpayment_override_approved_amount",
+   "fieldtype": "Currency",
+   "label": "Approved Overpayment Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "overpayment_override_approved_by",
+   "fieldtype": "Link",
+   "label": "Override Approved By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "overpayment_override_approved_on",
+   "fieldtype": "Datetime",
+   "label": "Override Approved On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "overpayment_override_reason",
+   "fieldtype": "Small Text",
+   "label": "Override Reason",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-08-04 16:49:40.151576",
+ "modified_by": "Administrator",
+ "module": "NKT Store Operations",
+ "name": "NKT Payment Receipt",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "print": 1,
+   "read": 1,
+   "role": "NKT Cashier",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "print": 1,
+   "read": 1,
+   "role": "NKT Encoder",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "NKT ADMINISTRATOR",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "NKT OWNER",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

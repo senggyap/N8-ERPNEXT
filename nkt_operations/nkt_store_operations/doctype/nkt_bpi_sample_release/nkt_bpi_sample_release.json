@@ -1,0 +1,350 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "format:NKT-BPI-{#####}",
+  "creation": "2026-08-13 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "identity_section",
+    "company",
+    "sample_date",
+    "supplier",
+    "source_supplier_receiving",
+    "purchase_order",
+    "column_break_identity",
+    "item_code",
+    "warehouse",
+    "reference_no",
+    "physical_section",
+    "physical_sample_qty",
+    "sample_uom",
+    "sample_reason",
+    "management_section",
+    "supplier_chargeable_qty",
+    "nkt_absorbed_qty",
+    "charge_status",
+    "management_notes",
+    "control_section",
+    "status",
+    "underlying_stock_entry",
+    "stock_posting_status",
+    "stock_posted_by",
+    "stock_posted_at",
+    "released_by",
+    "released_at"
+  ],
+  "fields": [
+    {
+      "fieldname": "identity_section",
+      "fieldtype": "Section Break",
+      "label": "BPI Sample Release"
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "sample_date",
+      "fieldtype": "Date",
+      "label": "Date",
+      "default": "Today",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "supplier",
+      "fieldtype": "Link",
+      "label": "Supplier",
+      "options": "Supplier",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "source_supplier_receiving",
+      "fieldtype": "Link",
+      "label": "Supplier Arrival",
+      "options": "NKT Supplier Receiving",
+      "description": "Optional link to the supplier arrival that supplied this stock."
+    },
+    {
+      "fieldname": "purchase_order",
+      "fieldtype": "Link",
+      "label": "Purchase Order",
+      "options": "Purchase Order",
+      "read_only": 1
+    },
+    {
+      "fieldname": "column_break_identity",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "item_code",
+      "fieldtype": "Link",
+      "label": "Item",
+      "options": "Item",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "warehouse",
+      "fieldtype": "Link",
+      "label": "Store / Warehouse Releasing Sample",
+      "options": "Warehouse",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "reference_no",
+      "fieldtype": "Data",
+      "label": "BPI / Sample Reference"
+    },
+    {
+      "fieldname": "physical_section",
+      "fieldtype": "Section Break",
+      "label": "Physical Release"
+    },
+    {
+      "fieldname": "physical_sample_qty",
+      "fieldtype": "Float",
+      "label": "Physical Sample Qty Released",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "sample_uom",
+      "fieldtype": "Link",
+      "label": "UOM",
+      "options": "UOM",
+      "read_only": 1
+    },
+    {
+      "fieldname": "sample_reason",
+      "fieldtype": "Select",
+      "label": "Sample Reason",
+      "options": "BPI Sample\nRegulatory Sample\nLaboratory Sample\nOther",
+      "default": "BPI Sample",
+      "reqd": 1
+    },
+    {
+      "fieldname": "management_section",
+      "fieldtype": "Section Break",
+      "label": "Supplier Charge Decision",
+      "collapsible": 1,
+      "description": "Management/Purchasing decision. Physical sample quantity and supplier-chargeable quantity are intentionally separate."
+    },
+    {
+      "fieldname": "supplier_chargeable_qty",
+      "fieldtype": "Float",
+      "label": "Qty Chargeable to Supplier",
+      "default": "0",
+      "permlevel": 1,
+      "allow_on_submit": 1
+    },
+    {
+      "fieldname": "nkt_absorbed_qty",
+      "fieldtype": "Float",
+      "label": "Qty Absorbed by NKT",
+      "read_only": 1,
+      "permlevel": 1,
+      "allow_on_submit": 1
+    },
+    {
+      "fieldname": "charge_status",
+      "fieldtype": "Select",
+      "label": "Charge Status",
+      "options": "Pending Management Decision\nPartially Chargeable\nFully Chargeable\nNot Chargeable",
+      "default": "Pending Management Decision",
+      "read_only": 1,
+      "permlevel": 1,
+      "allow_on_submit": 1
+    },
+    {
+      "fieldname": "management_notes",
+      "fieldtype": "Small Text",
+      "label": "Management Notes",
+      "permlevel": 1,
+      "allow_on_submit": 1
+    },
+    {
+      "fieldname": "control_section",
+      "fieldtype": "Section Break",
+      "label": "Control",
+      "collapsible": 1
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Draft\nPhysical Release Recorded\nCharge Decision Recorded\nPosted",
+      "default": "Draft",
+      "read_only": 1,
+      "in_list_view": 1,
+      "allow_on_submit": 1
+    },
+    {
+      "fieldname": "underlying_stock_entry",
+      "fieldtype": "Link",
+      "label": "Underlying Stock Issue",
+      "options": "Stock Entry",
+      "read_only": 1,
+      "description": "Server-owned Material Issue that deducts the full physical sample quantity."
+    },
+    {
+      "fieldname": "stock_posting_status",
+      "fieldtype": "Select",
+      "label": "Stock Posting",
+      "options": "Not Posted\nPosted",
+      "default": "Not Posted",
+      "read_only": 1
+    },
+    {
+      "fieldname": "stock_posted_by",
+      "fieldtype": "Link",
+      "label": "Stock Posted By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "stock_posted_at",
+      "fieldtype": "Datetime",
+      "label": "Stock Posted At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "released_by",
+      "fieldtype": "Link",
+      "label": "Released By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "released_at",
+      "fieldtype": "Datetime",
+      "label": "Released At",
+      "read_only": 1
+    }
+  ],
+  "index_web_pages_for_search": 0,
+  "is_submittable": 1,
+  "links": [],
+  "modified": "2026-08-13 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "NKT Store Operations",
+  "name": "NKT BPI Sample Release",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "role": "NKT Purchasing",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "report": 1,
+      "export": 1,
+      "print": 1,
+      "submit": 1,
+      "cancel": 0,
+      "amend": 0
+    },
+    {
+      "role": "NKT Encoder",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "report": 1,
+      "export": 0,
+      "print": 1,
+      "permlevel": 0,
+      "submit": 1,
+      "cancel": 0,
+      "amend": 0
+    },
+    {
+      "role": "NKT Warehouse",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "report": 1,
+      "export": 0,
+      "print": 1,
+      "permlevel": 0,
+      "submit": 1,
+      "cancel": 0,
+      "amend": 0
+    },
+    {
+      "role": "NKT ADMINISTRATOR",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "report": 1,
+      "export": 1,
+      "print": 1,
+      "email": 1,
+      "share": 1,
+      "submit": 1,
+      "cancel": 0,
+      "amend": 0
+    },
+    {
+      "role": "NKT OWNER",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "report": 1,
+      "export": 1,
+      "print": 1,
+      "email": 1,
+      "share": 1,
+      "submit": 1,
+      "cancel": 0,
+      "amend": 0
+    },
+    {
+      "role": "NKT Purchasing",
+      "read": 1,
+      "write": 1,
+      "create": 0,
+      "delete": 0,
+      "report": 1,
+      "export": 0,
+      "print": 0,
+      "permlevel": 1
+    },
+    {
+      "role": "NKT ADMINISTRATOR",
+      "read": 1,
+      "write": 1,
+      "create": 0,
+      "delete": 0,
+      "report": 1,
+      "export": 0,
+      "print": 0,
+      "permlevel": 1
+    },
+    {
+      "role": "NKT OWNER",
+      "read": 1,
+      "write": 1,
+      "create": 0,
+      "delete": 0,
+      "report": 1,
+      "export": 0,
+      "print": 0,
+      "permlevel": 1
+    }
+  ],
+  "row_format": "Dynamic",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 1
+}

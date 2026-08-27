@@ -1,0 +1,136 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "field:user",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "identity_section",
+    "user",
+    "status",
+    "policy_version",
+    "restriction_section",
+    "restricted_at",
+    "restricted_by",
+    "restriction_reason",
+    "restore_section",
+    "restored_at",
+    "restored_by",
+    "restore_notes",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "identity_section",
+      "fieldtype": "Section Break",
+      "label": "User Security State"
+    },
+    {
+      "fieldname": "user",
+      "fieldtype": "Link",
+      "label": "User",
+      "options": "User",
+      "reqd": 1,
+      "unique": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Active\nRestricted",
+      "default": "Active",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "policy_version",
+      "fieldtype": "Int",
+      "label": "Policy Version",
+      "default": "1",
+      "read_only": 1
+    },
+    {
+      "fieldname": "restriction_section",
+      "fieldtype": "Section Break",
+      "label": "Restriction Audit"
+    },
+    {
+      "fieldname": "restricted_at",
+      "fieldtype": "Datetime",
+      "label": "Restricted At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "restricted_by",
+      "fieldtype": "Link",
+      "label": "Restricted By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "restriction_reason",
+      "fieldtype": "Small Text",
+      "label": "Restriction Reason"
+    },
+    {
+      "fieldname": "restore_section",
+      "fieldtype": "Section Break",
+      "label": "Restore Audit"
+    },
+    {
+      "fieldname": "restored_at",
+      "fieldtype": "Datetime",
+      "label": "Restored At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "restored_by",
+      "fieldtype": "Link",
+      "label": "Restored By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "restore_notes",
+      "fieldtype": "Small Text",
+      "label": "Restore Notes"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Administrative Notes"
+    }
+  ],
+  "index_web_pages_for_search": 0,
+  "links": [],
+  "module": "NKT Store Operations",
+  "name": "NKT User Security State",
+  "permissions": [
+    {
+      "role": "NKT OWNER",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "report": 1
+    },
+    {
+      "role": "NKT ADMINISTRATOR",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "report": 1
+    },
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "report": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 1
+}

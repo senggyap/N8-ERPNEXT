@@ -1,0 +1,146 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:event_uuid",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "identity_section",
+  "event_uuid",
+  "event_family",
+  "primary_ack_uuid",
+  "envelope_sha256",
+  "payload_sha256",
+  "materialization_section",
+  "canonical_doctype",
+  "canonical_name",
+  "materialization_state",
+  "audit_section",
+  "primary_received_at",
+  "primary_committed_at",
+  "result_code"
+ ],
+ "fields": [
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Primary Safe-Sync Receipt"
+  },
+  {
+   "fieldname": "event_uuid",
+   "fieldtype": "Data",
+   "label": "Event UUID",
+   "reqd": 1,
+   "unique": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "event_family",
+   "fieldtype": "Data",
+   "label": "Event Family",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "primary_ack_uuid",
+   "fieldtype": "Data",
+   "label": "Primary ACK UUID",
+   "reqd": 1,
+   "unique": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "envelope_sha256",
+   "fieldtype": "Data",
+   "label": "Envelope SHA-256",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "payload_sha256",
+   "fieldtype": "Data",
+   "label": "Payload SHA-256",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "audit_section",
+   "fieldtype": "Section Break",
+   "label": "Primary Receipt Audit"
+  },
+  {
+   "fieldname": "primary_received_at",
+   "fieldtype": "Datetime",
+   "label": "Primary Received At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "primary_committed_at",
+   "fieldtype": "Datetime",
+   "label": "Primary Committed At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "result_code",
+   "fieldtype": "Select",
+   "label": "Result Code",
+   "options": "Committed",
+   "default": "Committed",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialization_section",
+   "fieldtype": "Section Break",
+   "label": "Primary Materialization"
+  },
+  {
+   "fieldname": "canonical_doctype",
+   "fieldtype": "Data",
+   "label": "Canonical DocType",
+   "read_only": 1
+  },
+  {
+   "fieldname": "canonical_name",
+   "fieldtype": "Data",
+   "label": "Canonical Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialization_state",
+   "fieldtype": "Select",
+   "label": "Materialization State",
+   "options": "Technical Receipt Only\nCanonical Draft Materialized\nTender Intent Preserved\nEncoder Settlement Intent Preserved\nWarehouse Release Intent Preserved\nCash Drawer Adjustment Intent Preserved\nWarehouse Transfer Dispatch Intent Preserved\nWarehouse Transfer Arrival Intent Preserved\nSupplier Receiving Intent Preserved\nReturn Exchange Intent Preserved\nPhysical Inventory Count Intent Preserved\nCashier Shift Open Intent Preserved\nCashier Shift Close Intent Preserved\nEncoder Z-Out Finalization Intent Preserved\nTrucking Trip Lifecycle Intent Preserved",
+   "default": "Technical Receipt Only",
+   "reqd": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "module": "NKT Store Operations",
+ "name": "NKT Sync Primary Receipt",
+ "permissions": [
+  {
+   "role": "NKT OWNER",
+   "read": 1,
+   "report": 1
+  },
+  {
+   "role": "NKT ADMINISTRATOR",
+   "read": 1,
+   "report": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "report": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

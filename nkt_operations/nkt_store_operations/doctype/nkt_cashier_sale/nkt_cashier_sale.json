@@ -1,0 +1,390 @@
+{
+ "doctype": "DocType",
+ "name": "NKT Cashier Sale",
+ "module": "NKT Store Operations",
+ "autoname": "NKT-CASH-.#####",
+ "is_submittable": 1,
+ "track_changes": 1,
+ "engine": "InnoDB",
+ "title_field": "customer_name",
+ "search_fields": "customer,customer_name,source_order_slip,matched_customer_order",
+ "sort_field": "sale_datetime",
+ "sort_order": "DESC",
+ "field_order": [
+  "amended_from",
+  "sale_details_section",
+  "company",
+  "sale_datetime",
+  "business_date",
+  "cashier",
+  "source_order_slip",
+  "customer",
+  "customer_name",
+  "status",
+  "system_shift_section",
+  "cashier_shift",
+  "settlement_location",
+  "default_warehouse",
+  "items_section",
+  "items",
+  "totals_section",
+  "total_quantity",
+  "grand_total",
+  "payments_section",
+  "payments",
+  "payment_totals_section",
+  "total_payment",
+  "total_cash",
+  "total_non_cash",
+  "card_surcharge_total",
+  "total_collected",
+  "total_account_charge",
+  "reconciliation_section",
+  "reconciliation_status",
+  "matched_customer_order",
+  "linked_payment_receipt",
+  "reconciliation_warning",
+  "reconciled_on",
+  "nkt_basket_fingerprint",
+  "nkt_payment_fingerprint",
+  "nkt_warehouse_fingerprint",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "amended_from",
+   "label": "Amended From",
+   "fieldtype": "Link",
+   "options": "NKT Cashier Sale",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "sale_details_section",
+   "label": "Cashier Sale Details",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "company",
+   "label": "Company",
+   "fieldtype": "Link",
+   "options": "Company",
+   "reqd": 1,
+   "in_list_view": 1,
+   "read_only": 1,
+   "hidden": 1
+  },
+  {
+   "fieldname": "sale_datetime",
+   "label": "Sale Date and Time",
+   "fieldtype": "Datetime",
+   "reqd": 1,
+   "in_list_view": 1,
+   "read_only": 1,
+   "hidden": 1
+  },
+  {
+   "fieldname": "business_date",
+   "label": "Business Date",
+   "fieldtype": "Date",
+   "reqd": 1,
+   "in_list_view": 1,
+   "read_only": 1,
+   "hidden": 1
+  },
+  {
+   "fieldname": "cashier",
+   "label": "Cashier",
+   "fieldtype": "Link",
+   "options": "User",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1,
+   "hidden": 1
+  },
+  {
+   "fieldname": "source_order_slip",
+   "label": "Source Order Slip No.",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "description": "Retained only for compatibility. NKT matching does not require a handwritten serial number.",
+   "hidden": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer",
+   "label": "Customer",
+   "fieldtype": "Link",
+   "options": "Customer",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "customer_name",
+   "label": "Customer Name",
+   "fieldtype": "Data",
+   "read_only": 1,
+   "hidden": 1
+  },
+  {
+   "fieldname": "status",
+   "label": "Status",
+   "fieldtype": "Select",
+   "options": "Draft\nSubmitted - Unmatched\nMatched\nMatched with Customer Warning\nMatched with Warehouse Warning\nMatched with Customer and Warehouse Warning\nAmbiguous\nCancelled",
+   "default": "Draft",
+   "read_only": 1,
+   "reqd": 1,
+   "in_list_view": 1,
+   "hidden": 1
+  },
+  {
+   "fieldname": "system_shift_section",
+   "label": "System-Assigned Shift",
+   "fieldtype": "Section Break",
+   "hidden": 1
+  },
+  {
+   "fieldname": "cashier_shift",
+   "label": "Cashier Shift",
+   "fieldtype": "Link",
+   "options": "NKT Cashier Shift",
+   "read_only": 1,
+   "hidden": 1
+  },
+  {
+   "fieldname": "settlement_location",
+   "label": "Settlement Location",
+   "fieldtype": "Link",
+   "options": "Warehouse",
+   "read_only": 1,
+   "hidden": 1
+  },
+  {
+   "fieldname": "default_warehouse",
+   "label": "Default Source Warehouse",
+   "fieldtype": "Link",
+   "options": "Warehouse",
+   "read_only": 1,
+   "hidden": 1
+  },
+  {
+   "fieldname": "items_section",
+   "label": "Items Encoded by Cashier",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "items",
+   "label": "Items",
+   "fieldtype": "Table",
+   "options": "NKT Cashier Sale Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "totals_section",
+   "label": "Totals",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_quantity",
+   "label": "Total Quantity",
+   "fieldtype": "Float",
+   "read_only": 1
+  },
+  {
+   "fieldname": "grand_total",
+   "label": "Grand Total",
+   "fieldtype": "Currency",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "payments_section",
+   "label": "Payment Received by Cashier",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "payments",
+   "label": "Payments",
+   "fieldtype": "Table",
+   "options": "NKT Payment Detail",
+   "reqd": 1
+  },
+  {
+   "fieldname": "payment_totals_section",
+   "label": "Payment Totals",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_payment",
+   "label": "Total Payment",
+   "fieldtype": "Currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_cash",
+   "label": "Cash",
+   "fieldtype": "Currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_non_cash",
+   "label": "Non-Cash",
+   "fieldtype": "Currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "card_surcharge_total",
+   "label": "Card Surcharge (2%)",
+   "fieldtype": "Currency",
+   "read_only": 1,
+   "precision": "2"
+  },
+  {
+   "fieldname": "total_collected",
+   "label": "Actual Collected",
+   "fieldtype": "Currency",
+   "read_only": 1,
+   "precision": "2"
+  },
+  {
+   "fieldname": "total_account_charge",
+   "label": "Account",
+   "fieldtype": "Currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reconciliation_section",
+   "label": "Encoder-Cashier Reconciliation",
+   "fieldtype": "Section Break",
+   "collapsible": 1,
+   "depends_on": "eval:doc.docstatus==1"
+  },
+  {
+   "fieldname": "reconciliation_status",
+   "label": "Reconciliation Status",
+   "fieldtype": "Select",
+   "options": "Unmatched\nMatched\nMatched with Customer Warning\nMatched with Warehouse Warning\nMatched with Customer and Warehouse Warning\nAmbiguous\nCancelled",
+   "default": "Unmatched",
+   "read_only": 1,
+   "in_list_view": 1,
+   "depends_on": "eval:doc.docstatus==1"
+  },
+  {
+   "fieldname": "matched_customer_order",
+   "label": "Matched Encoder Customer Order",
+   "fieldtype": "Link",
+   "options": "NKT Customer Order",
+   "read_only": 1,
+   "depends_on": "eval:doc.docstatus==1"
+  },
+  {
+   "fieldname": "linked_payment_receipt",
+   "label": "Cash-Basis Payment Receipt",
+   "fieldtype": "Link",
+   "options": "NKT Payment Receipt",
+   "read_only": 1,
+   "depends_on": "eval:doc.docstatus==1",
+   "description": "Created immediately from the cashier entry for actual money/payment received. Linked to the encoder order later."
+  },
+  {
+   "fieldname": "reconciliation_warning",
+   "label": "Reconciliation Warning",
+   "fieldtype": "Small Text",
+   "read_only": 1,
+   "depends_on": "eval:doc.docstatus==1"
+  },
+  {
+   "fieldname": "reconciled_on",
+   "label": "Reconciled On",
+   "fieldtype": "Datetime",
+   "read_only": 1,
+   "depends_on": "eval:doc.docstatus==1"
+  },
+  {
+   "fieldname": "nkt_basket_fingerprint",
+   "label": "Basket Fingerprint",
+   "fieldtype": "Data",
+   "read_only": 1,
+   "hidden": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "nkt_payment_fingerprint",
+   "label": "Payment Fingerprint",
+   "fieldtype": "Data",
+   "read_only": 1,
+   "hidden": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "nkt_warehouse_fingerprint",
+   "label": "Warehouse Fingerprint",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "notes",
+   "label": "Notes",
+   "fieldtype": "Small Text"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 1,
+   "cancel": 1,
+   "print": 1,
+   "email": 1,
+   "export": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "NKT Cashier",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "submit": 1,
+   "print": 1
+  },
+  {
+   "role": "NKT Encoder",
+   "read": 1,
+   "print": 1
+  },
+  {
+   "role": "NKT ADMINISTRATOR",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 1,
+   "cancel": 1,
+   "print": 1,
+   "email": 1,
+   "export": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "NKT OWNER",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 1,
+   "cancel": 1,
+   "print": 1,
+   "email": 1,
+   "export": 1,
+   "report": 1,
+   "share": 1
+  }
+ ]
+}

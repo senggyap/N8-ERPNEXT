@@ -1,0 +1,93 @@
+{
+  "doctype": "DocType",
+  "name": "NKT Trucking Expense Line",
+  "module": "NKT Store Operations",
+  "custom": 0,
+  "istable": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "expense_category",
+    "profit_treatment",
+    "vehicle",
+    "plate_no",
+    "source_trip",
+    "driver_name",
+    "amount",
+    "reference_no",
+    "memo",
+    "receipt_attachment"
+  ],
+  "fields": [
+    {
+      "fieldname": "expense_category",
+      "fieldtype": "Select",
+      "label": "Expense Category",
+      "reqd": 1,
+      "in_list_view": 1,
+      "options": "Fuel\nDriver Incentive (ENT Truck Only)\nHelper Incentive\nToll / Parking\nTrip Incidental\nMaintenance / Repair\nPayroll / Salary\nOffice / Admin\nCapital / Acquisition\nOther"
+    },
+    {
+      "fieldname": "profit_treatment",
+      "fieldtype": "Select",
+      "label": "Profit Treatment",
+      "reqd": 1,
+      "in_list_view": 1,
+      "options": "Direct Trip Cost\nVehicle Operating Cost\nOverhead\nCapital / Excluded from Operating Profit",
+      "description": "Controls profitability reporting. Capital/acquisition is excluded from operating profit; it must not make current hauling operations look unprofitable merely because a truck was purchased."
+    },
+    {
+      "fieldname": "vehicle",
+      "fieldtype": "Link",
+      "label": "Truck / Vehicle",
+      "options": "NKT Vehicle",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "plate_no",
+      "fieldtype": "Data",
+      "label": "Plate No.",
+      "read_only": 1,
+      "fetch_from": "vehicle.plate_number",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "source_trip",
+      "fieldtype": "Link",
+      "label": "Source Trip",
+      "options": "NKT Trucking Trip",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "driver_name",
+      "fieldtype": "Data",
+      "label": "Driver",
+      "in_list_view": 1,
+      "description": "Required for Driver Incentive. Actual driver is copied from the linked trip when blank."
+    },
+    {
+      "fieldname": "amount",
+      "fieldtype": "Currency",
+      "label": "Amount",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "reference_no",
+      "fieldtype": "Data",
+      "label": "Reference No."
+    },
+    {
+      "fieldname": "memo",
+      "fieldtype": "Small Text",
+      "label": "Memo / Details"
+    },
+    {
+      "fieldname": "receipt_attachment",
+      "fieldtype": "Attach",
+      "label": "Receipt / Supporting File"
+    }
+  ],
+  "permissions": [],
+  "owner": "Administrator",
+  "modified_by": "Administrator"
+}

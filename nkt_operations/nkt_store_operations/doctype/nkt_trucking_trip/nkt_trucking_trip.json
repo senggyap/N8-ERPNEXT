@@ -1,0 +1,517 @@
+{
+ "doctype": "DocType",
+ "name": "NKT Trucking Trip",
+ "module": "NKT Store Operations",
+ "custom": 0,
+ "autoname": "naming_series:",
+ "naming_rule": "By \"Naming Series\" field",
+ "engine": "InnoDB",
+ "track_changes": 1,
+ "allow_rename": 0,
+ "field_order": [
+  "naming_series",
+  "header_section",
+  "trip_date",
+  "job_type",
+  "customer",
+  "related_business",
+  "column_break_header",
+  "status",
+  "company",
+  "source_c9_trucking_job",
+  "movement_section",
+  "origin",
+  "destination",
+  "dr_no",
+  "container_no",
+  "eir_no",
+  "column_break_movement",
+  "reference_no",
+  "remarks",
+  "vehicle_section",
+  "vehicle",
+  "plate_no",
+  "van_no",
+  "fleet_ownership_snapshot",
+  "carrier_account_snapshot",
+  "driver_incentive_applicable",
+  "driver_incentive_eligible",
+  "incentive_tracking_status",
+  "incentive_batch",
+  "incentive_paid",
+  "incentive_paid_amount",
+  "incentive_paid_at",
+  "carrier_payable_status",
+  "trailer",
+  "column_break_vehicle",
+  "driver_name",
+  "driver_contact",
+  "helper_name",
+  "timing_section",
+  "requested_at",
+  "scheduled_departure",
+  "dispatched_at",
+  "in_transit_at",
+  "column_break_timing",
+  "delivered_at",
+  "closed_at",
+  "backload_section",
+  "has_backload",
+  "backload_description",
+  "backload_reference",
+  "backload_rule_note",
+  "paperwork_section",
+  "container_return_required",
+  "container_returned",
+  "container_returned_at",
+  "eir_required",
+  "column_break_paperwork",
+  "paperwork_complete",
+  "paperwork_verified_by",
+  "paperwork_verified_at",
+  "paperwork_notes",
+  "pod_section",
+  "pod_attachment",
+  "pod_notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "TRIP-.YYYY.-.#####",
+   "default": "TRIP-.YYYY.-.#####",
+   "hidden": 1
+  },
+  {
+   "fieldname": "header_section",
+   "fieldtype": "Section Break",
+   "label": "Trip / Dispatch"
+  },
+  {
+   "fieldname": "trip_date",
+   "fieldtype": "Date",
+   "label": "Trip Date",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "job_type",
+   "fieldtype": "Select",
+   "label": "Job Type",
+   "options": "External Customer\nInternal / Related Business\nSupplier Arrival Link\nOther",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "related_business",
+   "fieldtype": "Data",
+   "label": "Internal / Related Business"
+  },
+  {
+   "fieldname": "column_break_header",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nRequested\nScheduled\nDispatched\nIn Transit\nDelivered\nClosed\nCancelled",
+   "default": "Draft",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "ERP Company (when configured)",
+   "options": "Company",
+   "description": "Do not force NKT (Dev) for ENT. Select the correct legal ERP Company when configured."
+  },
+  {
+   "fieldname": "source_c9_trucking_job",
+   "fieldtype": "Link",
+   "label": "Related C9 Physical-Haul Job",
+   "options": "NKT Trucking Job",
+   "description": "Optional lineage only. C9 Trucking Job remains the accepted Supplier Arrival physical-haul record."
+  },
+  {
+   "fieldname": "movement_section",
+   "fieldtype": "Section Break",
+   "label": "Route / References"
+  },
+  {
+   "fieldname": "origin",
+   "fieldtype": "Data",
+   "label": "Origin",
+   "reqd": 1
+  },
+  {
+   "fieldname": "destination",
+   "fieldtype": "Data",
+   "label": "Destination",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "dr_no",
+   "fieldtype": "Data",
+   "label": "DR No.",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "container_no",
+   "fieldtype": "Data",
+   "label": "Container No.",
+   "description": "Physical container identifier. Required when Container Return or EIR control applies."
+  },
+  {
+   "fieldname": "eir_no",
+   "fieldtype": "Data",
+   "label": "EIR No."
+  },
+  {
+   "fieldname": "column_break_movement",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reference_no",
+   "fieldtype": "Data",
+   "label": "Other Reference"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Operational Remarks"
+  },
+  {
+   "fieldname": "vehicle_section",
+   "fieldtype": "Section Break",
+   "label": "Vehicle / Crew"
+  },
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "label": "Truck / Vehicle",
+   "options": "NKT Vehicle"
+  },
+  {
+   "fieldname": "plate_no",
+   "fieldtype": "Data",
+   "label": "Plate No.",
+   "read_only": 1,
+   "fetch_from": "vehicle.plate_number"
+  },
+  {
+   "fieldname": "van_no",
+   "fieldtype": "Data",
+   "label": "Van / Truck No.",
+   "read_only": 1,
+   "fetch_from": "vehicle.internal_vehicle_no"
+  },
+  {
+   "fieldname": "fleet_ownership_snapshot",
+   "fieldtype": "Select",
+   "label": "Fleet Ownership (Trip Snapshot)",
+   "options": "Unclassified\nENT-Owned\nExternal Carrier",
+   "read_only": 1,
+   "in_list_view": 1,
+   "description": "Copied from the vehicle's explicit Fleet Ownership classification. This snapshot prevents incentive eligibility from being guessed from plate/operator/supplier data."
+  },
+  {
+   "fieldname": "carrier_account_snapshot",
+   "label": "Carrier / Trucker Account Snapshot",
+   "fieldtype": "Link",
+   "options": "Supplier",
+   "read_only": 1,
+   "description": "For External Carrier trips, copied from the selected NKT Vehicle Related Supplier and locked as trip history after dispatch."
+  },
+  {
+   "fieldname": "driver_incentive_applicable",
+   "label": "ENT Driver Incentive Applies",
+   "fieldtype": "Check",
+   "default": "0",
+   "read_only": 1,
+   "description": "Yes only when the trip uses an explicitly ENT-Owned vehicle. This does not yet mean the incentive is ready to pay."
+  },
+  {
+   "fieldname": "driver_incentive_eligible",
+   "fieldtype": "Check",
+   "label": "ENT Driver Incentive Eligible",
+   "read_only": 1,
+   "default": "0",
+   "description": "YES only when this trip uses a vehicle explicitly classified ENT-Owned. External Carrier trips never auto-qualify for ENT driver incentives."
+  },
+  {
+   "fieldname": "incentive_tracking_status",
+   "label": "Driver Incentive Tracking",
+   "fieldtype": "Select",
+   "options": "Not Applicable\nWaiting for Delivery\nWaiting for Papers\nReady for Weekly Payout\nIncluded in Prepared Batch\nPaid",
+   "default": "Not Applicable",
+   "read_only": 1,
+   "in_list_view": 1,
+   "description": "Notebook-replacement status. ENT-owned trips become Ready only after delivery and complete required papers/EIR. Prepared/Paid weekly batches prevent duplicate payout."
+  },
+  {
+   "fieldname": "incentive_batch",
+   "fieldtype": "Link",
+   "label": "Weekly Incentive Batch",
+   "options": "NKT Driver Incentive Batch",
+   "read_only": 1,
+   "description": "Set when this ENT-owned trip is locked into a Prepared weekly incentive batch."
+  },
+  {
+   "fieldname": "incentive_paid",
+   "fieldtype": "Check",
+   "label": "Driver Incentive Paid",
+   "default": "0",
+   "read_only": 1
+  },
+  {
+   "fieldname": "incentive_paid_amount",
+   "fieldtype": "Currency",
+   "label": "Driver Incentive Paid Amount",
+   "read_only": 1,
+   "description": "Actual weekly incentive amount recorded as paid. No formula/rate is guessed by C14D."
+  },
+  {
+   "fieldname": "incentive_paid_at",
+   "fieldtype": "Datetime",
+   "label": "Driver Incentive Paid At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "carrier_payable_status",
+   "fieldtype": "Select",
+   "label": "External Carrier Payable Tracking",
+   "options": "Not Applicable\nWaiting for Delivery\nReady for Trucker SOA",
+   "default": "Not Applicable",
+   "read_only": 1,
+   "in_list_view": 1,
+   "description": "External Carrier trips never receive ENT driver incentive. Once delivered they enter the carrier payable queue for the separate C9 Trucker SOA/Payment ledger."
+  },
+  {
+   "fieldname": "trailer",
+   "fieldtype": "Link",
+   "label": "Trailer / Chassis",
+   "options": "NKT Vehicle"
+  },
+  {
+   "fieldname": "column_break_vehicle",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "driver_name",
+   "fieldtype": "Data",
+   "label": "Driver Name",
+   "reqd": 1,
+   "in_list_view": 1,
+   "description": "Required actual driver for this trip. Driver is a trip-level fact (not merely the vehicle's usual driver) because relief/substitute drivers occur and ENT-owned-truck incentives must follow the actual trip driver."
+  },
+  {
+   "fieldname": "driver_contact",
+   "fieldtype": "Data",
+   "label": "Driver Contact No."
+  },
+  {
+   "fieldname": "helper_name",
+   "fieldtype": "Data",
+   "label": "Helper"
+  },
+  {
+   "fieldname": "timing_section",
+   "fieldtype": "Section Break",
+   "label": "Dispatch / Delivery Timing"
+  },
+  {
+   "fieldname": "requested_at",
+   "fieldtype": "Datetime",
+   "label": "Requested At"
+  },
+  {
+   "fieldname": "scheduled_departure",
+   "fieldtype": "Datetime",
+   "label": "Scheduled Departure"
+  },
+  {
+   "fieldname": "dispatched_at",
+   "fieldtype": "Datetime",
+   "label": "Dispatched At"
+  },
+  {
+   "fieldname": "in_transit_at",
+   "fieldtype": "Datetime",
+   "label": "Picked Up / In Transit At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_timing",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "delivered_at",
+   "fieldtype": "Datetime",
+   "label": "Delivered At"
+  },
+  {
+   "fieldname": "closed_at",
+   "fieldtype": "Datetime",
+   "label": "Closed At"
+  },
+  {
+   "fieldname": "backload_section",
+   "fieldtype": "Section Break",
+   "label": "Backload — Operational Capture Only"
+  },
+  {
+   "fieldname": "has_backload",
+   "fieldtype": "Check",
+   "label": "Has Backload",
+   "default": "0"
+  },
+  {
+   "fieldname": "backload_description",
+   "fieldtype": "Small Text",
+   "label": "Backload Details",
+   "depends_on": "eval:doc.has_backload"
+  },
+  {
+   "fieldname": "backload_reference",
+   "fieldtype": "Data",
+   "label": "Backload Reference",
+   "depends_on": "eval:doc.has_backload"
+  },
+  {
+   "fieldname": "backload_rule_note",
+   "fieldtype": "Small Text",
+   "label": "Backload Charge Note",
+   "read_only": 1,
+   "default": "No automatic backload percentage is applied. Backload economics remain editable/explicit until the business rule is confirmed."
+  },
+  {
+   "fieldname": "paperwork_section",
+   "label": "Trip Papers / Container Return Control",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "container_return_required",
+   "label": "Container Return Required",
+   "fieldtype": "Check",
+   "default": "0",
+   "description": "Enable when the job requires returning the container before the trip paperwork can be completed."
+  },
+  {
+   "fieldname": "container_returned",
+   "label": "Container Returned",
+   "fieldtype": "Check",
+   "default": "0"
+  },
+  {
+   "fieldname": "container_returned_at",
+   "fieldtype": "Datetime",
+   "label": "Container Returned At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "eir_required",
+   "label": "EIR Required",
+   "fieldtype": "Check",
+   "default": "0",
+   "description": "When enabled, EIR No. must be present before Paperwork Complete can be confirmed."
+  },
+  {
+   "fieldname": "column_break_paperwork",
+   "label": null,
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "paperwork_complete",
+   "label": "All Required Papers Complete",
+   "fieldtype": "Check",
+   "default": "0",
+   "in_list_view": 1,
+   "description": "Manual operational verification that the complete required paper set has been returned/checked. ENT driver incentive cannot become payable before this is complete."
+  },
+  {
+   "fieldname": "paperwork_verified_by",
+   "label": "Papers Verified By",
+   "fieldtype": "Link",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "paperwork_verified_at",
+   "label": "Papers Verified At",
+   "fieldtype": "Datetime",
+   "read_only": 1
+  },
+  {
+   "fieldname": "paperwork_notes",
+   "label": "Paperwork Notes",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "pod_section",
+   "fieldtype": "Section Break",
+   "label": "Proof of Delivery"
+  },
+  {
+   "fieldname": "pod_attachment",
+   "fieldtype": "Attach",
+   "label": "POD / Delivery Evidence"
+  },
+  {
+   "fieldname": "pod_notes",
+   "fieldtype": "Small Text",
+   "label": "POD Notes"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "NKT Trucking Operations",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "print": 1,
+   "report": 1,
+   "export": 0
+  },
+  {
+   "role": "NKT OWNER",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "print": 1,
+   "report": 1,
+   "export": 1
+  },
+  {
+   "role": "NKT ADMINISTRATOR",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "print": 1,
+   "report": 1,
+   "export": 1
+  }
+ ],
+ "links": [],
+ "actions": [],
+ "states": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "owner": "Administrator",
+ "creation": "2026-08-14 12:46:00.000000",
+ "modified": "2026-08-14 14:10:00.000000",
+ "modified_by": "Administrator"
+}

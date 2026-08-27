@@ -1,0 +1,220 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:event_uuid",
+ "creation": "2026-08-16 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "event_uuid",
+  "event_family",
+  "event_action",
+  "edge_trip_uuid",
+  "origin_device",
+  "origin_user",
+  "trip_date",
+  "action",
+  "previous_status",
+  "new_status",
+  "event_datetime",
+  "container_no",
+  "vehicle",
+  "primary_vehicle_ownership",
+  "source_c9_trucking_job",
+  "envelope_sha256",
+  "payload_sha256",
+  "canonical_envelope_json",
+  "canonical_payload_json",
+  "preservation_state",
+  "materialization_state",
+  "canonical_doctype",
+  "canonical_name",
+  "primary_ack_uuid",
+  "primary_preserved_at"
+ ],
+ "fields": [
+  {
+   "fieldname": "event_uuid",
+   "fieldtype": "Data",
+   "label": "Event UUID",
+   "reqd": 1,
+   "unique": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "event_family",
+   "fieldtype": "Data",
+   "label": "Event Family",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "event_action",
+   "fieldtype": "Data",
+   "label": "Event Action",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "edge_trip_uuid",
+   "fieldtype": "Data",
+   "label": "Edge Trip UUID",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "origin_device",
+   "fieldtype": "Data",
+   "label": "Origin Device",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "origin_user",
+   "fieldtype": "Data",
+   "label": "Origin User",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "trip_date",
+   "fieldtype": "Date",
+   "label": "Trip Date",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "action",
+   "fieldtype": "Data",
+   "label": "Action",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "previous_status",
+   "fieldtype": "Data",
+   "label": "Previous Status",
+   "read_only": 1
+  },
+  {
+   "fieldname": "new_status",
+   "fieldtype": "Data",
+   "label": "New Status",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "event_datetime",
+   "fieldtype": "Datetime",
+   "label": "Physical Event Time",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "container_no",
+   "fieldtype": "Data",
+   "label": "Container No.",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Data",
+   "label": "Vehicle",
+   "read_only": 1
+  },
+  {
+   "fieldname": "primary_vehicle_ownership",
+   "fieldtype": "Data",
+   "label": "Primary Vehicle Ownership",
+   "read_only": 1
+  },
+  {
+   "fieldname": "source_c9_trucking_job",
+   "fieldtype": "Data",
+   "label": "Source C9 Trucking Job",
+   "read_only": 1
+  },
+  {
+   "fieldname": "envelope_sha256",
+   "fieldtype": "Data",
+   "label": "Envelope SHA-256",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "payload_sha256",
+   "fieldtype": "Data",
+   "label": "Payload SHA-256",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "canonical_envelope_json",
+   "fieldtype": "Long Text",
+   "label": "Canonical Envelope JSON",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "canonical_payload_json",
+   "fieldtype": "Long Text",
+   "label": "Canonical Payload JSON",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "preservation_state",
+   "fieldtype": "Select",
+   "label": "Preservation State",
+   "options": "Preserved",
+   "default": "Preserved",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialization_state",
+   "fieldtype": "Select",
+   "label": "Materialization State",
+   "options": "Pending Canonical Materialization\nCanonical Materialized\nManual Review Required",
+   "default": "Pending Canonical Materialization",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "canonical_doctype",
+   "fieldtype": "Data",
+   "label": "Canonical DocType",
+   "read_only": 1
+  },
+  {
+   "fieldname": "canonical_name",
+   "fieldtype": "Data",
+   "label": "Canonical Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "primary_ack_uuid",
+   "fieldtype": "Data",
+   "label": "Primary ACK UUID",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "primary_preserved_at",
+   "fieldtype": "Datetime",
+   "label": "Primary Preserved At",
+   "reqd": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "is_submittable": 0,
+ "links": [],
+ "modified": "2026-08-16 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "NKT Store Operations",
+ "name": "NKT Primary Trucking Trip Intent",
+ "owner": "Administrator",
+ "permissions": [],
+ "track_changes": 0
+}

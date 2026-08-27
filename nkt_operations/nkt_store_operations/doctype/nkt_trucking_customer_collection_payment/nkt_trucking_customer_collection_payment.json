@@ -1,0 +1,88 @@
+{
+  "doctype": "DocType",
+  "name": "NKT Trucking Customer Collection Payment",
+  "module": "NKT Store Operations",
+  "custom": 0,
+  "istable": 1,
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "payment_method",
+    "base_amount",
+    "surcharge_amount",
+    "total_received",
+    "reference_number",
+    "reference_datetime",
+    "bank_or_provider",
+    "check_number",
+    "check_date",
+    "remarks"
+  ],
+  "fields": [
+    {
+      "fieldname": "payment_method",
+      "fieldtype": "Select",
+      "label": "Payment Method",
+      "options": "Cash\nCheck\nGCash\nMaya\nBank Transfer\nCard\nOnline",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "base_amount",
+      "fieldtype": "Currency",
+      "label": "Amount Applied",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "surcharge_amount",
+      "fieldtype": "Currency",
+      "label": "Card Surcharge",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "total_received",
+      "fieldtype": "Currency",
+      "label": "Total Received",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "reference_number",
+      "fieldtype": "Data",
+      "label": "Reference Number",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "reference_datetime",
+      "fieldtype": "Datetime",
+      "label": "Reference Date / Time"
+    },
+    {
+      "fieldname": "bank_or_provider",
+      "fieldtype": "Data",
+      "label": "Bank / Provider"
+    },
+    {
+      "fieldname": "check_number",
+      "fieldtype": "Data",
+      "label": "Check Number"
+    },
+    {
+      "fieldname": "check_date",
+      "fieldtype": "Date",
+      "label": "Check Date"
+    },
+    {
+      "fieldname": "remarks",
+      "fieldtype": "Small Text",
+      "label": "Remarks"
+    }
+  ],
+  "permissions": [],
+  "owner": "Administrator",
+  "creation": "2026-08-14 15:46:00.000000",
+  "modified": "2026-08-14 15:46:00.000000",
+  "modified_by": "Administrator"
+}

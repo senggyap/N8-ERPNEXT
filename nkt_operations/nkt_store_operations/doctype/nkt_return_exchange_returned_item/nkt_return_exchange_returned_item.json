@@ -1,0 +1,118 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "source_row",
+  "item",
+  "item_name",
+  "quantity",
+  "available_quantity",
+  "uom",
+  "original_rate",
+  "credit_amount",
+  "classification",
+  "fraction_kg",
+  "damaged_item",
+  "fraction_item",
+  "original_source_warehouse"
+ ],
+ "fields": [
+  {
+   "fieldname": "source_row",
+   "fieldtype": "Data",
+   "label": "Internal Source Row",
+   "read_only": 1,
+   "hidden": 1
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "label": "Item",
+   "options": "Item",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "label": "Return Qty",
+   "reqd": 1,
+   "non_negative": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "available_quantity",
+   "fieldtype": "Float",
+   "label": "Available Qty",
+   "read_only": 1,
+   "non_negative": 1
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "UOM",
+   "read_only": 1
+  },
+  {
+   "fieldname": "original_rate",
+   "fieldtype": "Currency",
+   "label": "Original Rate",
+   "read_only": 1
+  },
+  {
+   "fieldname": "credit_amount",
+   "fieldtype": "Currency",
+   "label": "Return Credit",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "classification",
+   "fieldtype": "Select",
+   "label": "Inventory Classification",
+   "options": "\nSaleable\nDamaged\nFraction\nRejected",
+   "description": "Encoder-side inventory classification. Cashier matching does not depend on this."
+  },
+  {
+   "fieldname": "fraction_kg",
+   "fieldtype": "Float",
+   "label": "Fraction Weight (kg)",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "damaged_item",
+   "fieldtype": "Link",
+   "label": "Designated Damaged Item",
+   "options": "Item",
+   "read_only": 1
+  },
+  {
+   "fieldname": "fraction_item",
+   "fieldtype": "Link",
+   "label": "Designated Fraction Item",
+   "options": "Item",
+   "read_only": 1
+  },
+  {
+   "fieldname": "original_source_warehouse",
+   "fieldtype": "Link",
+   "label": "Original Source Warehouse",
+   "options": "Warehouse",
+   "read_only": 1
+  }
+ ],
+ "istable": 1,
+ "module": "NKT Store Operations",
+ "name": "NKT Return Exchange Returned Item",
+ "permissions": []
+}

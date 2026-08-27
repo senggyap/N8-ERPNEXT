@@ -1,0 +1,149 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:edge_zout_uuid",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "identity_section",
+  "edge_zout_uuid",
+  "event_uuid",
+  "company",
+  "encoder",
+  "business_date",
+  "start_datetime",
+  "effective_end_datetime",
+  "finalized_on",
+  "snapshot_section",
+  "snapshot_json",
+  "snapshot_sha256",
+  "sync_state"
+ ],
+ "fields": [
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Official Offline Encoder Z-Out"
+  },
+  {
+   "fieldname": "edge_zout_uuid",
+   "fieldtype": "Data",
+   "label": "Edge Z-Out UUID",
+   "reqd": 1,
+   "unique": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "event_uuid",
+   "fieldtype": "Data",
+   "label": "Finalization Event UUID",
+   "reqd": 1,
+   "unique": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "encoder",
+   "fieldtype": "Link",
+   "label": "Encoder",
+   "options": "User",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "business_date",
+   "fieldtype": "Date",
+   "label": "Business Date",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "start_datetime",
+   "fieldtype": "Datetime",
+   "label": "Start Date / Time",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "effective_end_datetime",
+   "fieldtype": "Datetime",
+   "label": "Effective End Date / Time",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "finalized_on",
+   "fieldtype": "Datetime",
+   "label": "Official Finalized On",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "snapshot_section",
+   "fieldtype": "Section Break",
+   "label": "Immutable Official Snapshot"
+  },
+  {
+   "fieldname": "snapshot_json",
+   "fieldtype": "Code",
+   "label": "Official Frozen Z-Out Snapshot JSON",
+   "options": "JSON",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "snapshot_sha256",
+   "fieldtype": "Data",
+   "label": "Official Snapshot SHA-256",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "sync_state",
+   "fieldtype": "Select",
+   "label": "Sync State",
+   "options": "Pending Edge\nPrimary Preserved",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "module": "NKT Store Operations",
+ "name": "NKT Edge Encoder Z-Out Projection",
+ "permissions": [
+  {
+   "role": "NKT Encoder",
+   "read": 1
+  },
+  {
+   "role": "NKT OWNER",
+   "read": 1,
+   "report": 1
+  },
+  {
+   "role": "NKT ADMINISTRATOR",
+   "read": 1,
+   "report": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "report": 1
+  }
+ ],
+ "sort_field": "finalized_on",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

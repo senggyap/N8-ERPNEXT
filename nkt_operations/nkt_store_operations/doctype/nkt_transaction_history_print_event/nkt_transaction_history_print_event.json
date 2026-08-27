@@ -1,0 +1,144 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "hash",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "event_datetime",
+  "event_status",
+  "history_mode",
+  "requested_by",
+  "scope_user",
+  "filters_json",
+  "row_count",
+  "detail_mode",
+  "paper_size",
+  "density",
+  "device_id",
+  "report_sha256",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "event_datetime",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Event Date and Time",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "event_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Event Status",
+   "options": "Print Prepared",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "history_mode",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "History Mode",
+   "options": "Cashier\nEncoder\nCustomer",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "requested_by",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Requested By",
+   "options": "User",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "scope_user",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Transaction User Scope",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "filters_json",
+   "fieldtype": "Code",
+   "label": "Filters",
+   "options": "JSON",
+   "read_only": 1
+  },
+  {
+   "fieldname": "row_count",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Row Count",
+   "read_only": 1
+  },
+  {
+   "fieldname": "detail_mode",
+   "fieldtype": "Select",
+   "label": "Print Detail Mode",
+   "options": "Summary Only\nInclude Item and Payment Details",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "paper_size",
+   "fieldtype": "Data",
+   "label": "Paper Size",
+   "read_only": 1
+  },
+  {
+   "fieldname": "density",
+   "fieldtype": "Data",
+   "label": "Density",
+   "read_only": 1
+  },
+  {
+   "fieldname": "device_id",
+   "fieldtype": "Data",
+   "label": "Device ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "report_sha256",
+   "fieldtype": "Data",
+   "label": "Report SHA-256",
+   "read_only": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "is_submittable": 0,
+ "modified": "2026-08-26 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "NKT Store Operations",
+ "name": "NKT Transaction History Print Event",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "export": 1,
+   "read": 1,
+   "report": 1,
+   "role": "NKT OWNER"
+  },
+  {
+   "export": 1,
+   "read": 1,
+   "report": 1,
+   "role": "NKT ADMINISTRATOR"
+  }
+ ],
+ "sort_field": "event_datetime",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0
+}

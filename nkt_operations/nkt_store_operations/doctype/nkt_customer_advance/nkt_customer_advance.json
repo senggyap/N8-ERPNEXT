@@ -1,0 +1,233 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "NKT-ADV-.#####",
+ "creation": "2026-08-04 17:00:26.136532",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_zxg3",
+  "amended_from",
+  "company",
+  "posting_datetime",
+  "customer",
+  "customer_name",
+  "source_payment_receipt",
+  "source_customer_order",
+  "advance_amounts_section",
+  "original_advance_amount",
+  "applied_amount",
+  "available_advance_amount",
+  "advance_status",
+  "approval_details_section",
+  "approved_by",
+  "approved_on",
+  "approval_reason",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_zxg3",
+   "fieldtype": "Section Break",
+   "label": "Advance Details"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "NKT Customer Advance",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "posting_datetime",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Posting Date and Time",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "source_payment_receipt",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Original Payment Receipt (if applicable)",
+   "options": "NKT Payment Receipt",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "source_customer_order",
+   "fieldtype": "Link",
+   "label": "Source Customer Order",
+   "options": "NKT Customer Order",
+   "read_only": 1
+  },
+  {
+   "fieldname": "advance_amounts_section",
+   "fieldtype": "Section Break",
+   "label": "Advance Amounts"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "original_advance_amount",
+   "fieldtype": "Currency",
+   "label": "Original Advance Amount",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "applied_amount",
+   "fieldtype": "Currency",
+   "label": "Applied Amount",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "available_advance_amount",
+   "fieldtype": "Currency",
+   "label": "Available Advance Amount",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Available",
+   "fieldname": "advance_status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Available\nPartially Used\nFully Used\nCancelled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "approval_details_section",
+   "fieldtype": "Section Break",
+   "label": "Approval Details"
+  },
+  {
+   "fieldname": "approved_by",
+   "fieldtype": "Link",
+   "label": "Approved By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "approved_on",
+   "fieldtype": "Datetime",
+   "label": "Approved On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "approval_reason",
+   "fieldtype": "Small Text",
+   "label": "Approval Reason",
+   "read_only": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-08-12 13:48:35.114271",
+ "modified_by": "Administrator",
+ "module": "NKT Store Operations",
+ "name": "NKT Customer Advance",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "NKT ADMINISTRATOR",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "role": "NKT Encoder",
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "role": "NKT Cashier",
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "NKT OWNER",
+   "share": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,104 @@
+{
+  "actions": [],
+  "creation": "2026-08-13 00:00:00.000000",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "item_code",
+    "item_name",
+    "purchase_order_item",
+    "uom",
+    "expected_qty",
+    "hauled_qty",
+    "accepted_qty",
+    "damaged_qty",
+    "other_rejected_qty",
+    "shortlanded_qty",
+    "condition_summary"
+  ],
+  "fields": [
+    {
+      "fieldname": "item_code",
+      "fieldtype": "Link",
+      "label": "Item",
+      "options": "Item",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "item_name",
+      "fieldtype": "Data",
+      "label": "Item Name",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "purchase_order_item",
+      "fieldtype": "Data",
+      "label": "PO Item Row",
+      "read_only": 1
+    },
+    {
+      "fieldname": "uom",
+      "fieldtype": "Link",
+      "label": "UOM",
+      "options": "UOM",
+      "read_only": 1
+    },
+    {
+      "fieldname": "expected_qty",
+      "fieldtype": "Float",
+      "label": "Expected Qty",
+      "read_only": 1
+    },
+    {
+      "fieldname": "hauled_qty",
+      "fieldtype": "Float",
+      "label": "Hauled / Delivered Qty",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "accepted_qty",
+      "fieldtype": "Float",
+      "label": "Accepted Qty",
+      "read_only": 1
+    },
+    {
+      "fieldname": "damaged_qty",
+      "fieldtype": "Float",
+      "label": "Damaged Qty",
+      "read_only": 1
+    },
+    {
+      "fieldname": "other_rejected_qty",
+      "fieldtype": "Float",
+      "label": "Other Rejected Qty",
+      "read_only": 1
+    },
+    {
+      "fieldname": "shortlanded_qty",
+      "fieldtype": "Float",
+      "label": "Shortlanded Qty",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "condition_summary",
+      "fieldtype": "Data",
+      "label": "Physical Condition / Reason",
+      "read_only": 1
+    }
+  ],
+  "istable": 1,
+  "modified": "2026-08-13 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "NKT Store Operations",
+  "name": "NKT Trucking Job Item",
+  "owner": "Administrator",
+  "permissions": [],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": []
+}

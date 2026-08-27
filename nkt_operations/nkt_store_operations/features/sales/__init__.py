@@ -1,0 +1,1 @@
+"""NKT current sales backend."""

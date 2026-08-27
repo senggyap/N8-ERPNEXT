@@ -1,0 +1,325 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "format:NKT-SPAY-{#####}",
+  "creation": "2026-08-13 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "payment_section",
+    "company",
+    "supplier",
+    "payment_date",
+    "payment_method",
+    "column_break_payment",
+    "payment_amount",
+    "payment_status",
+    "reference_section",
+    "bank_name",
+    "bank_reference",
+    "bank_reference_datetime",
+    "check_section",
+    "issuing_bank",
+    "check_no",
+    "check_date",
+    "check_status",
+    "check_replacement_for",
+    "replacement_check",
+    "control_section",
+    "purpose",
+    "prepared_by",
+    "prepared_at",
+    "approved_by",
+    "approved_at",
+    "signed_by",
+    "signed_at",
+    "released_to",
+    "released_at",
+    "acknowledgment_reference",
+    "allocation_section",
+    "allocations",
+    "totals_section",
+    "allocated_amount",
+    "unallocated_amount",
+    "audit_section",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "payment_section",
+      "fieldtype": "Section Break",
+      "label": "Supplier Payment \u2014 Fast Screen"
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "supplier",
+      "fieldtype": "Link",
+      "label": "Supplier / Payee",
+      "options": "Supplier",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "payment_date",
+      "fieldtype": "Date",
+      "label": "Payment / Preparation Date",
+      "default": "Today",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "payment_method",
+      "fieldtype": "Select",
+      "label": "Payment Method",
+      "options": "Management-Issued Check\nBank Transfer\nCash (Management)\nOther",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "column_break_payment",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "payment_amount",
+      "fieldtype": "Currency",
+      "label": "Payment Amount",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "payment_status",
+      "fieldtype": "Select",
+      "label": "Payment Status",
+      "options": "Draft\nPrepared\nReleased\nCancelled",
+      "default": "Draft",
+      "read_only": 1,
+      "in_list_view": 1,
+      "description": "System lifecycle status. Use the action buttons; do not edit directly."
+    },
+    {
+      "fieldname": "reference_section",
+      "fieldtype": "Section Break",
+      "label": "Bank / Transfer Reference",
+      "collapsible": 1
+    },
+    {
+      "fieldname": "bank_name",
+      "fieldtype": "Data",
+      "label": "Bank / Source Account Label"
+    },
+    {
+      "fieldname": "bank_reference",
+      "fieldtype": "Data",
+      "label": "Bank Transfer / Payment Reference"
+    },
+    {
+      "fieldname": "bank_reference_datetime",
+      "fieldtype": "Datetime",
+      "label": "Reference Date & Time"
+    },
+    {
+      "fieldname": "check_section",
+      "fieldtype": "Section Break",
+      "label": "Management-Issued Check",
+      "collapsible": 1
+    },
+    {
+      "fieldname": "issuing_bank",
+      "fieldtype": "Data",
+      "label": "Issuing Bank"
+    },
+    {
+      "fieldname": "check_no",
+      "fieldtype": "Data",
+      "label": "Check No."
+    },
+    {
+      "fieldname": "check_date",
+      "fieldtype": "Date",
+      "label": "Check Date"
+    },
+    {
+      "fieldname": "check_status",
+      "fieldtype": "Select",
+      "label": "Check Status",
+      "options": "Not Applicable\nPrepared\nSigned\nReleased\nDeposited\nCleared\nCancelled\nReplaced\nStale",
+      "default": "Not Applicable",
+      "in_list_view": 1,
+      "read_only": 1,
+      "description": "System check lifecycle status. Use the action buttons."
+    },
+    {
+      "fieldname": "check_replacement_for",
+      "fieldtype": "Link",
+      "label": "Replacement For",
+      "options": "NKT Supplier Payment"
+    },
+    {
+      "fieldname": "replacement_check",
+      "fieldtype": "Link",
+      "label": "Replacement Check",
+      "options": "NKT Supplier Payment",
+      "read_only": 1
+    },
+    {
+      "fieldname": "control_section",
+      "fieldtype": "Section Break",
+      "label": "Release / Check Control",
+      "collapsible": 1
+    },
+    {
+      "fieldname": "purpose",
+      "fieldtype": "Small Text",
+      "label": "Purpose / Particulars",
+      "reqd": 1
+    },
+    {
+      "fieldname": "prepared_by",
+      "fieldtype": "Link",
+      "label": "Prepared By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "prepared_at",
+      "fieldtype": "Datetime",
+      "label": "Prepared At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "approved_by",
+      "fieldtype": "Link",
+      "label": "Approved By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "approved_at",
+      "fieldtype": "Datetime",
+      "label": "Approved At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "signed_by",
+      "fieldtype": "Link",
+      "label": "Signed By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "signed_at",
+      "fieldtype": "Datetime",
+      "label": "Signed At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "released_to",
+      "fieldtype": "Data",
+      "label": "Released To / Received By"
+    },
+    {
+      "fieldname": "released_at",
+      "fieldtype": "Datetime",
+      "label": "Released At"
+    },
+    {
+      "fieldname": "acknowledgment_reference",
+      "fieldtype": "Data",
+      "label": "Acknowledgment / Receipt Reference"
+    },
+    {
+      "fieldname": "allocation_section",
+      "fieldtype": "Section Break",
+      "label": "Pay These Supplier SOAs"
+    },
+    {
+      "fieldname": "allocations",
+      "fieldtype": "Table",
+      "label": "SOA Allocations",
+      "options": "NKT Supplier Payment Allocation"
+    },
+    {
+      "fieldname": "totals_section",
+      "fieldtype": "Section Break",
+      "label": "Allocation Totals"
+    },
+    {
+      "fieldname": "allocated_amount",
+      "fieldtype": "Currency",
+      "label": "Allocated Amount",
+      "read_only": 1
+    },
+    {
+      "fieldname": "unallocated_amount",
+      "fieldtype": "Currency",
+      "label": "Unallocated Amount",
+      "read_only": 1
+    },
+    {
+      "fieldname": "audit_section",
+      "fieldtype": "Section Break",
+      "label": "Notes / Audit",
+      "collapsible": 1
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "index_web_pages_for_search": 0,
+  "is_submittable": 0,
+  "links": [],
+  "modified": "2026-08-13 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "NKT Store Operations",
+  "name": "NKT Supplier Payment",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "role": "NKT Purchasing",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "report": 1,
+      "export": 1,
+      "print": 1
+    },
+    {
+      "role": "NKT ADMINISTRATOR",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "report": 1,
+      "export": 1,
+      "print": 1,
+      "email": 1,
+      "share": 1
+    },
+    {
+      "role": "NKT OWNER",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "report": 1,
+      "export": 1,
+      "print": 1,
+      "email": 1,
+      "share": 1
+    }
+  ],
+  "row_format": "Dynamic",
+  "sort_field": "payment_date",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 1
+}

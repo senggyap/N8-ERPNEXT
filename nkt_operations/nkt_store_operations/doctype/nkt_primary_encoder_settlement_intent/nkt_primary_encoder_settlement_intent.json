@@ -1,0 +1,343 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:event_uuid",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "identity_section",
+  "event_uuid",
+  "event_family",
+  "event_action",
+  "column_break_identity",
+  "origin_device",
+  "origin_user",
+  "operational_context",
+  "business_section",
+  "business_date",
+  "settled_at",
+  "client_created_at",
+  "column_break_business",
+  "order_event_uuid",
+  "customer_order",
+  "company",
+  "customer",
+  "amount_section",
+  "merchandise_total",
+  "declared_payment_total",
+  "column_break_amount",
+  "declared_account",
+  "declared_card_surcharge_total",
+  "declared_total_collected",
+  "integrity_section",
+  "envelope_sha256",
+  "payload_sha256",
+  "payload_section",
+  "canonical_envelope_json",
+  "canonical_payload_json",
+  "state_section",
+  "preservation_state",
+  "downstream_state",
+  "matched_cashier_tender_event",
+  "cashier_sale",
+  "customer_receivable",
+  "account_effect_materialized_at",
+  "primary_preserved_at"
+ ],
+ "fields": [
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Primary Encoder Settlement Intent"
+  },
+  {
+   "fieldname": "event_uuid",
+   "fieldtype": "Data",
+   "label": "Event UUID",
+   "reqd": 1,
+   "unique": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "event_family",
+   "fieldtype": "Data",
+   "label": "Event Family",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "event_action",
+   "fieldtype": "Data",
+   "label": "Event Action",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_identity",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "origin_device",
+   "fieldtype": "Data",
+   "label": "Origin Device",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "origin_user",
+   "fieldtype": "Data",
+   "label": "Origin Encoder",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "operational_context",
+   "fieldtype": "Data",
+   "label": "Operational Context",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "business_section",
+   "fieldtype": "Section Break",
+   "label": "Observed Business Truth"
+  },
+  {
+   "fieldname": "business_date",
+   "fieldtype": "Date",
+   "label": "Business Date",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "settled_at",
+   "fieldtype": "Datetime",
+   "label": "Business / Settled Time",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "client_created_at",
+   "fieldtype": "Datetime",
+   "label": "Client Created At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_business",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "order_event_uuid",
+   "fieldtype": "Data",
+   "label": "Customer Order Event UUID",
+   "reqd": 1,
+   "unique": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "customer_order",
+   "fieldtype": "Link",
+   "label": "Canonical Customer Order Draft",
+   "options": "NKT Customer Order",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "amount_section",
+   "fieldtype": "Section Break",
+   "label": "Independent Encoder Declaration"
+  },
+  {
+   "fieldname": "merchandise_total",
+   "fieldtype": "Currency",
+   "label": "Merchandise Total",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "declared_payment_total",
+   "fieldtype": "Currency",
+   "label": "Declared Payment Principal Total",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_amount",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "declared_account",
+   "fieldtype": "Currency",
+   "label": "Declared Account Principal",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "declared_card_surcharge_total",
+   "fieldtype": "Currency",
+   "label": "Declared Card Surcharge Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "declared_total_collected",
+   "fieldtype": "Currency",
+   "label": "Declared Collected Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "integrity_section",
+   "fieldtype": "Section Break",
+   "label": "Integrity"
+  },
+  {
+   "fieldname": "envelope_sha256",
+   "fieldtype": "Data",
+   "label": "Envelope SHA-256",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "payload_sha256",
+   "fieldtype": "Data",
+   "label": "Payload SHA-256",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "payload_section",
+   "fieldtype": "Section Break",
+   "label": "Canonical Preserved Transport"
+  },
+  {
+   "fieldname": "canonical_envelope_json",
+   "fieldtype": "Code",
+   "label": "Canonical Envelope JSON",
+   "options": "JSON",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "canonical_payload_json",
+   "fieldtype": "Code",
+   "label": "Canonical Payload JSON",
+   "options": "JSON",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "state_section",
+   "fieldtype": "Section Break",
+   "label": "Primary Preservation State"
+  },
+  {
+   "fieldname": "preservation_state",
+   "fieldtype": "Select",
+   "label": "Preservation State",
+   "options": "Preserved",
+   "default": "Preserved",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "downstream_state",
+   "fieldtype": "Select",
+   "label": "Downstream State",
+   "options": "Awaiting Cashier Countercheck\nMatched - Awaiting Receivable Materialization\nReceivable Materialized\nReceivable Not Required",
+   "default": "Awaiting Cashier Countercheck",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "matched_cashier_tender_event",
+   "fieldtype": "Link",
+   "label": "Matched Cashier Tender",
+   "options": "NKT Primary Cashier Tender Intent",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cashier_sale",
+   "fieldtype": "Link",
+   "label": "Materialized Cashier Sale",
+   "options": "NKT Cashier Sale",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer_receivable",
+   "fieldtype": "Link",
+   "label": "Customer Receivable",
+   "options": "NKT Customer Receivable",
+   "read_only": 1
+  },
+  {
+   "fieldname": "account_effect_materialized_at",
+   "fieldtype": "Datetime",
+   "label": "Account Effect Materialized At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "primary_preserved_at",
+   "fieldtype": "Datetime",
+   "label": "Primary Preserved At",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "is_submittable": 0,
+ "links": [],
+ "module": "NKT Store Operations",
+ "name": "NKT Primary Encoder Settlement Intent",
+ "naming_rule": "By fieldname",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "report": 1,
+   "export": 1
+  },
+  {
+   "role": "NKT OWNER",
+   "read": 1,
+   "report": 1,
+   "export": 1
+  },
+  {
+   "role": "NKT ADMINISTRATOR",
+   "read": 1,
+   "report": 1,
+   "export": 1
+  },
+  {
+   "role": "NKT Credit Controller",
+   "read": 1,
+   "report": 1,
+   "export": 1
+  }
+ ],
+ "quick_entry": 0,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

@@ -1,0 +1,196 @@
+{
+  "actions": [],
+  "creation": "2026-08-13 00:00:00.000000",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "line_no",
+    "line_kind",
+    "relates_to_line_no",
+    "source_section",
+    "source_doctype",
+    "source_document",
+    "identity_section",
+    "date_received",
+    "bl_no",
+    "dr_no",
+    "plate_number",
+    "van_no",
+    "item_code",
+    "commercial_item_description",
+    "quantity_section",
+    "no_of_bags",
+    "physical_sample_qty",
+    "supplier_chargeable_qty",
+    "amount_section",
+    "unit_price",
+    "gross_amount",
+    "deduction_amount",
+    "addition_amount",
+    "net_effect",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "line_no",
+      "fieldtype": "Int",
+      "label": "No.",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "line_kind",
+      "fieldtype": "Select",
+      "label": "Line Type",
+      "reqd": 1,
+      "options": "Delivery Payable\nDamage Deduction\nShortage Deduction\nBPI Sample Deduction\nOther Deduction\nOther Addition",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "relates_to_line_no",
+      "fieldtype": "Int",
+      "label": "Related Delivery Line No.",
+      "description": "For a deduction shown directly beneath an affected van/DR line."
+    },
+    {
+      "fieldname": "source_section",
+      "fieldtype": "Section Break",
+      "label": "Source Lineage",
+      "collapsible": 1
+    },
+    {
+      "fieldname": "source_doctype",
+      "fieldtype": "Select",
+      "label": "Source Type",
+      "options": "\nNKT Supplier Receiving\nNKT Supplier Delivery Exception\nNKT BPI Sample Release\nPurchase Order\nManual Adjustment"
+    },
+    {
+      "fieldname": "source_document",
+      "fieldtype": "Dynamic Link",
+      "label": "Source Document",
+      "options": "source_doctype"
+    },
+    {
+      "fieldname": "identity_section",
+      "fieldtype": "Section Break",
+      "label": "SOA Identity"
+    },
+    {
+      "fieldname": "date_received",
+      "fieldtype": "Date",
+      "label": "Date Received",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "bl_no",
+      "fieldtype": "Data",
+      "label": "BL No."
+    },
+    {
+      "fieldname": "dr_no",
+      "fieldtype": "Data",
+      "label": "DR No.",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "plate_number",
+      "fieldtype": "Data",
+      "label": "Plate No.",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "van_no",
+      "fieldtype": "Data",
+      "label": "Van No.",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "item_code",
+      "fieldtype": "Link",
+      "label": "Internal Item",
+      "options": "Item"
+    },
+    {
+      "fieldname": "commercial_item_description",
+      "fieldtype": "Data",
+      "label": "SOA Item Name / Commercial Description",
+      "in_list_view": 1,
+      "description": "Restricted supplier-facing description. May be fuller than the internal Item name."
+    },
+    {
+      "fieldname": "quantity_section",
+      "fieldtype": "Section Break",
+      "label": "Quantity Detail"
+    },
+    {
+      "fieldname": "no_of_bags",
+      "fieldtype": "Float",
+      "label": "No. of Bags",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "physical_sample_qty",
+      "fieldtype": "Float",
+      "label": "Physical BPI / Sample Qty Released",
+      "description": "Traceability only. May exceed the quantity actually charged to the supplier."
+    },
+    {
+      "fieldname": "supplier_chargeable_qty",
+      "fieldtype": "Float",
+      "label": "Qty Chargeable to Supplier",
+      "description": "For BPI sample lines this can be less than Physical Sample Qty."
+    },
+    {
+      "fieldname": "amount_section",
+      "fieldtype": "Section Break",
+      "label": "Restricted Amount Detail"
+    },
+    {
+      "fieldname": "unit_price",
+      "fieldtype": "Currency",
+      "label": "Unit Price",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "gross_amount",
+      "fieldtype": "Currency",
+      "label": "Gross Amount",
+      "read_only": 1
+    },
+    {
+      "fieldname": "deduction_amount",
+      "fieldtype": "Currency",
+      "label": "Deduction",
+      "read_only": 1
+    },
+    {
+      "fieldname": "addition_amount",
+      "fieldtype": "Currency",
+      "label": "Addition",
+      "read_only": 1
+    },
+    {
+      "fieldname": "net_effect",
+      "fieldtype": "Currency",
+      "label": "Net Effect",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "istable": 1,
+  "modified": "2026-08-13 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "NKT Store Operations",
+  "name": "NKT Supplier SOA Line",
+  "owner": "Administrator",
+  "permissions": [],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": []
+}

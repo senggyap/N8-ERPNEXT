@@ -1,0 +1,355 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "NKT-EOD-.#####",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "amended_from",
+  "scope_section",
+  "company",
+  "business_date",
+  "status",
+  "scope_column",
+  "reviewed_by",
+  "reviewed_on",
+  "readiness_section",
+  "cashier_shift_count",
+  "reviewed_shift_count",
+  "open_shift_count",
+  "zout_count",
+  "expected_zout_count",
+  "readiness_column",
+  "cash_over_short_total",
+  "exception_count",
+  "summary_section",
+  "cashier_sales_total",
+  "zout_sales_total",
+  "sales_difference",
+  "summary_column",
+  "cashier_tender_total",
+  "zout_tender_total",
+  "tender_difference",
+  "account_section",
+  "cashier_account_sales",
+  "zout_account_sales",
+  "account_sales_difference",
+  "account_column",
+  "cashier_account_collections",
+  "zout_account_collections",
+  "collection_difference",
+  "review_section",
+  "discrepancy_reason",
+  "notes",
+  "audit_section",
+  "snapshot_hash",
+  "snapshot_json"
+ ],
+ "fields": [
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "options": "NKT EOD Reconciliation",
+   "no_copy": 1,
+   "print_hide": 1
+  },
+  {
+   "fieldname": "scope_section",
+   "fieldtype": "Section Break",
+   "label": "End-of-Day Reconciliation"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "business_date",
+   "fieldtype": "Date",
+   "label": "Business Date",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nReviewed - Balanced\nReviewed - With Variance / Exceptions\nCancelled",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "scope_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reviewed_by",
+   "fieldtype": "Link",
+   "label": "Reviewed By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reviewed_on",
+   "fieldtype": "Datetime",
+   "label": "Reviewed On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "readiness_section",
+   "fieldtype": "Section Break",
+   "label": "Close Readiness"
+  },
+  {
+   "default": "0",
+   "fieldname": "cashier_shift_count",
+   "fieldtype": "Int",
+   "label": "Cashier Shifts",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "reviewed_shift_count",
+   "fieldtype": "Int",
+   "label": "Reviewed / Closed Shifts",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "open_shift_count",
+   "fieldtype": "Int",
+   "label": "Open / Unreviewed Shifts",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "zout_count",
+   "fieldtype": "Int",
+   "label": "Finalized Z-Outs",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "expected_zout_count",
+   "fieldtype": "Int",
+   "label": "Encoders With Activity",
+   "read_only": 1
+  },
+  {
+   "fieldname": "readiness_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "cash_over_short_total",
+   "fieldtype": "Currency",
+   "label": "Cash Over / (Short)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "exception_count",
+   "fieldtype": "Int",
+   "label": "Exceptions",
+   "read_only": 1
+  },
+  {
+   "fieldname": "summary_section",
+   "fieldtype": "Section Break",
+   "label": "Sales & Tender Comparison"
+  },
+  {
+   "default": "0",
+   "fieldname": "cashier_sales_total",
+   "fieldtype": "Currency",
+   "label": "Cashier Sales",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "zout_sales_total",
+   "fieldtype": "Currency",
+   "label": "Z-Out Sales",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "sales_difference",
+   "fieldtype": "Currency",
+   "label": "Sales Difference",
+   "read_only": 1
+  },
+  {
+   "fieldname": "summary_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "cashier_tender_total",
+   "fieldtype": "Currency",
+   "label": "Cashier Customer Tender",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "zout_tender_total",
+   "fieldtype": "Currency",
+   "label": "Z-Out Customer Tender",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "tender_difference",
+   "fieldtype": "Currency",
+   "label": "Tender Difference",
+   "read_only": 1
+  },
+  {
+   "fieldname": "account_section",
+   "fieldtype": "Section Break",
+   "label": "Account Comparison"
+  },
+  {
+   "default": "0",
+   "fieldname": "cashier_account_sales",
+   "fieldtype": "Currency",
+   "label": "Cashier Account Sales",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "zout_account_sales",
+   "fieldtype": "Currency",
+   "label": "Z-Out Account Sales",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "account_sales_difference",
+   "fieldtype": "Currency",
+   "label": "Account Sales Difference",
+   "read_only": 1
+  },
+  {
+   "fieldname": "account_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "cashier_account_collections",
+   "fieldtype": "Currency",
+   "label": "Cashier Account Collections",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "zout_account_collections",
+   "fieldtype": "Currency",
+   "label": "Z-Out Account Collections",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "collection_difference",
+   "fieldtype": "Currency",
+   "label": "Collection Difference",
+   "read_only": 1
+  },
+  {
+   "fieldname": "review_section",
+   "fieldtype": "Section Break",
+   "label": "Management Review"
+  },
+  {
+   "fieldname": "discrepancy_reason",
+   "fieldtype": "Small Text",
+   "label": "Variance / Exception Explanation",
+   "description": "Required when reviewing a day with a variance, cash over/short, or unresolved operational exception."
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "audit_section",
+   "fieldtype": "Section Break",
+   "label": "Frozen Reconciliation Snapshot"
+  },
+  {
+   "fieldname": "snapshot_hash",
+   "fieldtype": "Data",
+   "label": "Snapshot Hash",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "snapshot_json",
+   "fieldtype": "Long Text",
+   "label": "Snapshot JSON",
+   "read_only": 1,
+   "hidden": 1,
+   "no_copy": 1
+  }
+ ],
+ "is_submittable": 1,
+ "module": "NKT Store Operations",
+ "name": "NKT EOD Reconciliation",
+ "naming_rule": "Expression",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1,
+   "report": 1,
+   "export": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "NKT OWNER",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1,
+   "report": 1,
+   "export": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "NKT ADMINISTRATOR",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1,
+   "report": 1,
+   "export": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

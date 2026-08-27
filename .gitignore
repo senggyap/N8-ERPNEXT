@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Environments
+.env
+.env.*
+.venv/
+venv/
+
+# Frappe / ERPNext site-private data
+sites/
+private/
+backups/
+logs/
+site_config.json
+common_site_config.json
+
+# Databases / dumps
+*.sql
+*.sql.gz
+*.sql.bz2
+*.dump
+
+# Archives / generated result packages
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Node
+node_modules/
+
+# Temporary
+*.tmp
+*.temp
+*.swp
+*.swo

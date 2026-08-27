@@ -1,0 +1,188 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:event_uuid",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "identity_section",
+  "event_uuid",
+  "cashier_shift",
+  "company",
+  "settlement_location",
+  "cashier",
+  "adjustment_type",
+  "direction",
+  "amount",
+  "signed_cash_effect",
+  "business_date",
+  "state_section",
+  "projection_state",
+  "primary_ack_uuid",
+  "finalized_at"
+ ],
+ "fields": [
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Edge Cash Drawer Adjustment Projection"
+  },
+  {
+   "fieldname": "event_uuid",
+   "fieldtype": "Data",
+   "label": "Event UUID",
+   "reqd": 1,
+   "unique": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "cashier_shift",
+   "fieldtype": "Link",
+   "label": "Cashier Shift",
+   "options": "NKT Cashier Shift",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "settlement_location",
+   "fieldtype": "Link",
+   "label": "Settlement Location",
+   "options": "Warehouse",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "cashier",
+   "fieldtype": "Link",
+   "label": "Cashier",
+   "options": "User",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "adjustment_type",
+   "fieldtype": "Data",
+   "label": "Adjustment Type",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "direction",
+   "fieldtype": "Select",
+   "label": "Direction",
+   "options": "In\nOut",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "signed_cash_effect",
+   "fieldtype": "Currency",
+   "label": "Signed Cash Effect",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "business_date",
+   "fieldtype": "Date",
+   "label": "Business Date",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "state_section",
+   "fieldtype": "Section Break",
+   "label": "Projection State"
+  },
+  {
+   "fieldname": "projection_state",
+   "fieldtype": "Select",
+   "label": "Projection State",
+   "options": "Pending Edge\nAwaiting Primary\nPrimary Preserved\nPrimary Cash Materialized\nFinalized",
+   "default": "Pending Edge",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "primary_ack_uuid",
+   "fieldtype": "Data",
+   "label": "Primary ACK UUID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialization_ack_uuid",
+   "fieldtype": "Data",
+   "label": "Materialization ACK UUID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialized_adjustment",
+   "fieldtype": "Link",
+   "label": "Materialized Cash Drawer Adjustment",
+   "options": "NKT Cash Drawer Adjustment",
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialized_movement",
+   "fieldtype": "Link",
+   "label": "Materialized Cashier Movement",
+   "options": "NKT Cashier Movement",
+   "read_only": 1
+  },
+  {
+   "fieldname": "primary_materialized_at",
+   "fieldtype": "Datetime",
+   "label": "Primary Materialized At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "finalized_at",
+   "fieldtype": "Datetime",
+   "label": "Finalized At",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "module": "NKT Store Operations",
+ "name": "NKT Edge Cash Drawer Adjustment Projection",
+ "permissions": [
+  {
+   "role": "NKT OWNER",
+   "read": 1,
+   "report": 1
+  },
+  {
+   "role": "NKT ADMINISTRATOR",
+   "read": 1,
+   "report": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "report": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

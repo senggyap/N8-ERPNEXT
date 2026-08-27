@@ -1,0 +1,171 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "NKT-SADV-.YYYY.-.#####",
+  "creation": "2026-08-17 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "header_section",
+    "supplier_payment",
+    "company",
+    "supplier",
+    "application_date",
+    "balance_section",
+    "original_payment_amount",
+    "original_unallocated_advance",
+    "previously_applied_advance",
+    "available_advance_before",
+    "allocations",
+    "total_applied",
+    "remaining_advance_after",
+    "audit_section",
+    "applied_by",
+    "applied_at",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "header_section",
+      "fieldtype": "Section Break",
+      "label": "Supplier Advance Application"
+    },
+    {
+      "fieldname": "supplier_payment",
+      "fieldtype": "Link",
+      "label": "Released Supplier Advance Payment",
+      "options": "NKT Supplier Payment",
+      "reqd": 1
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "supplier",
+      "fieldtype": "Link",
+      "label": "Supplier",
+      "options": "Supplier",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "application_date",
+      "fieldtype": "Date",
+      "label": "Application Date",
+      "default": "Today",
+      "reqd": 1
+    },
+    {
+      "fieldname": "balance_section",
+      "fieldtype": "Section Break",
+      "label": "Advance Balance / Chosen Statements"
+    },
+    {
+      "fieldname": "original_payment_amount",
+      "fieldtype": "Currency",
+      "label": "Original Payment Amount",
+      "read_only": 1
+    },
+    {
+      "fieldname": "original_unallocated_advance",
+      "fieldtype": "Currency",
+      "label": "Original Unapplied Advance",
+      "read_only": 1
+    },
+    {
+      "fieldname": "previously_applied_advance",
+      "fieldtype": "Currency",
+      "label": "Previously Applied Advance",
+      "read_only": 1
+    },
+    {
+      "fieldname": "available_advance_before",
+      "fieldtype": "Currency",
+      "label": "Available Advance Before This Application",
+      "read_only": 1
+    },
+    {
+      "fieldname": "allocations",
+      "fieldtype": "Table",
+      "label": "Apply Advance to These Supplier SOAs",
+      "options": "NKT Supplier Advance Application Allocation",
+      "reqd": 1
+    },
+    {
+      "fieldname": "total_applied",
+      "fieldtype": "Currency",
+      "label": "Advance Applied Now",
+      "read_only": 1
+    },
+    {
+      "fieldname": "remaining_advance_after",
+      "fieldtype": "Currency",
+      "label": "Remaining Unapplied Advance",
+      "read_only": 1
+    },
+    {
+      "fieldname": "audit_section",
+      "fieldtype": "Section Break",
+      "label": "Audit"
+    },
+    {
+      "fieldname": "applied_by",
+      "fieldtype": "Link",
+      "label": "Applied By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "applied_at",
+      "fieldtype": "Datetime",
+      "label": "Applied At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "index_web_pages_for_search": 0,
+  "is_submittable": 1,
+  "links": [],
+  "modified": "2026-08-17 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "NKT Store Operations",
+  "name": "NKT Supplier Advance Application",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "role": "NKT OWNER",
+      "read": 1,
+      "report": 1,
+      "create": 1,
+      "write": 1,
+      "submit": 1,
+      "cancel": 1,
+      "delete": 0,
+      "print": 1
+    },
+    {
+      "role": "NKT ADMINISTRATOR",
+      "read": 1,
+      "report": 1,
+      "create": 1,
+      "write": 1,
+      "submit": 1,
+      "cancel": 1,
+      "delete": 0,
+      "print": 1
+    }
+  ],
+  "sort_field": "creation",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 1
+}

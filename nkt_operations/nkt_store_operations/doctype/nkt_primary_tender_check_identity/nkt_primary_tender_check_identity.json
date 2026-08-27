@@ -1,0 +1,54 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "doctype": "DocType",
+  "editable_grid": 0,
+  "engine": "InnoDB",
+  "field_order": [
+    "identity_key",
+    "customer",
+    "bank_or_provider",
+    "check_number"
+  ],
+  "fields": [
+    {
+      "fieldname": "identity_key",
+      "fieldtype": "Data",
+      "label": "Identity SHA-256",
+      "reqd": 1,
+      "unique": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "customer",
+      "fieldtype": "Data",
+      "label": "Customer",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "bank_or_provider",
+      "fieldtype": "Data",
+      "label": "Issuing Bank",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "check_number",
+      "fieldtype": "Data",
+      "label": "Check Number",
+      "reqd": 1,
+      "read_only": 1
+    }
+  ],
+  "index_web_pages_for_search": 0,
+  "istable": 1,
+  "links": [],
+  "module": "NKT Store Operations",
+  "name": "NKT Primary Tender Check Identity",
+  "permissions": [],
+  "sort_field": "idx",
+  "sort_order": "ASC",
+  "states": [],
+  "track_changes": 0
+}

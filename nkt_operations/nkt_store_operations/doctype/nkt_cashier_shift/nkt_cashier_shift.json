@@ -1,0 +1,445 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "NKT-SHIFT-.#####",
+ "creation": "2026-08-05 17:30:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "shift_details_section",
+  "company",
+  "settlement_location",
+  "cash_register",
+  "cashier",
+  "shift_start",
+  "shift_end",
+  "status",
+  "opening_section",
+  "opening_cash",
+  "movement_totals_section",
+  "total_cash_in",
+  "total_cash_out",
+  "total_non_cash_in",
+  "total_non_cash_out",
+  "expected_cash",
+  "count_section",
+  "blind_count_confirmed",
+  "actual_cash_count",
+  "over_short",
+  "count_notes",
+  "count_locked_by",
+  "count_locked_on",
+  "denomination_section",
+  "bill_1000_qty",
+  "bill_500_qty",
+  "bill_200_qty",
+  "bill_100_qty",
+  "bill_50_qty",
+  "bill_20_qty",
+  "coin_20_qty",
+  "coin_10_qty",
+  "coin_5_qty",
+  "coin_1_qty",
+  "coin_025_qty",
+  "turnover_section",
+  "turnover_status",
+  "turnover_amount",
+  "turnover_confirmed_by",
+  "turnover_confirmed_on",
+  "approval_section",
+  "approval_reason",
+  "approved_by",
+  "approved_on",
+  "closed_by",
+  "closed_on"
+ ],
+ "fields": [
+  {
+   "fieldname": "shift_details_section",
+   "fieldtype": "Section Break",
+   "label": "Cashier Shift"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "settlement_location",
+   "fieldtype": "Link",
+   "label": "Cashier / Settlement Location",
+   "options": "Warehouse",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "cash_register",
+   "fieldtype": "Link",
+   "label": "Legacy Cash Register / Drawer",
+   "options": "NKT Cash Register",
+   "reqd": 0,
+   "in_list_view": 0,
+   "hidden": 1,
+   "read_only": 1,
+   "description": "Retained only for old records. New shifts are controlled by the logged-in operator account."
+  },
+  {
+   "fieldname": "cashier",
+   "fieldtype": "Link",
+   "label": "Shift Operator",
+   "options": "User",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "shift_start",
+   "fieldtype": "Datetime",
+   "label": "Shift Opened On",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "shift_end",
+   "fieldtype": "Datetime",
+   "label": "Shift Turned Over On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Not Opened\nOpen\nTurned Over - Awaiting Review\nReviewed / Closed\nCounted - Awaiting Approval\nClosed\nCancelled",
+   "default": "Not Opened",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "opening_section",
+   "fieldtype": "Section Break",
+   "label": "Opening Cash"
+  },
+  {
+   "fieldname": "opening_cash",
+   "fieldtype": "Currency",
+   "label": "Opening Cash / Fresh Float",
+   "default": "0",
+   "non_negative": 1,
+   "reqd": 1,
+   "description": "Cash newly issued to the operator for this shift. Cash from the previous shift must already have been turned over."
+  },
+  {
+   "fieldname": "movement_totals_section",
+   "fieldtype": "Section Break",
+   "label": "System Movement Totals"
+  },
+  {
+   "fieldname": "total_cash_in",
+   "fieldtype": "Currency",
+   "label": "Total Cash In",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_cash_out",
+   "fieldtype": "Currency",
+   "label": "Total Cash Out",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_non_cash_in",
+   "fieldtype": "Currency",
+   "label": "Total Non-Cash In",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_non_cash_out",
+   "fieldtype": "Currency",
+   "label": "Total Non-Cash Out",
+   "read_only": 1
+  },
+  {
+   "fieldname": "expected_cash",
+   "fieldtype": "Currency",
+   "label": "Expected Cash",
+   "read_only": 1
+  },
+  {
+   "fieldname": "count_section",
+   "fieldtype": "Section Break",
+   "label": "Cash Count and Difference"
+  },
+  {
+   "fieldname": "blind_count_confirmed",
+   "fieldtype": "Check",
+   "label": "Denomination Count / Turnover Recorded",
+   "default": "0",
+   "read_only": 1
+  },
+  {
+   "fieldname": "actual_cash_count",
+   "fieldtype": "Currency",
+   "label": "Actual Cash from Denominations",
+   "default": "0",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "over_short",
+   "fieldtype": "Currency",
+   "label": "Over / (Short)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "count_notes",
+   "fieldtype": "Small Text",
+   "label": "Cash Difference Explanation / Closing Notes",
+   "description": "Required whenever Actual Cash differs from Expected Cash."
+  },
+  {
+   "fieldname": "count_locked_by",
+   "fieldtype": "Data",
+   "label": "Count Recorded By",
+   "read_only": 1
+  },
+  {
+   "fieldname": "count_locked_on",
+   "fieldtype": "Datetime",
+   "label": "Count Recorded On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "denomination_section",
+   "fieldtype": "Section Break",
+   "label": "Denomination Quantities",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "bill_1000_qty",
+   "fieldtype": "Int",
+   "label": "₱1,000 Bills",
+   "read_only": 1,
+   "non_negative": 1
+  },
+  {
+   "fieldname": "bill_500_qty",
+   "fieldtype": "Int",
+   "label": "₱500 Bills",
+   "read_only": 1,
+   "non_negative": 1
+  },
+  {
+   "fieldname": "bill_200_qty",
+   "fieldtype": "Int",
+   "label": "₱200 Bills",
+   "read_only": 1,
+   "non_negative": 1
+  },
+  {
+   "fieldname": "bill_100_qty",
+   "fieldtype": "Int",
+   "label": "₱100 Bills",
+   "read_only": 1,
+   "non_negative": 1
+  },
+  {
+   "fieldname": "bill_50_qty",
+   "fieldtype": "Int",
+   "label": "₱50 Bills",
+   "read_only": 1,
+   "non_negative": 1
+  },
+  {
+   "fieldname": "bill_20_qty",
+   "fieldtype": "Int",
+   "label": "₱20 Bills",
+   "read_only": 1,
+   "non_negative": 1
+  },
+  {
+   "fieldname": "coin_20_qty",
+   "fieldtype": "Int",
+   "label": "₱20 Coins",
+   "read_only": 1,
+   "non_negative": 1
+  },
+  {
+   "fieldname": "coin_10_qty",
+   "fieldtype": "Int",
+   "label": "₱10 Coins",
+   "read_only": 1,
+   "non_negative": 1
+  },
+  {
+   "fieldname": "coin_5_qty",
+   "fieldtype": "Int",
+   "label": "₱5 Coins",
+   "read_only": 1,
+   "non_negative": 1
+  },
+  {
+   "fieldname": "coin_1_qty",
+   "fieldtype": "Int",
+   "label": "₱1 Coins",
+   "read_only": 1,
+   "non_negative": 1
+  },
+  {
+   "fieldname": "coin_025_qty",
+   "fieldtype": "Int",
+   "label": "₱0.25 Coins",
+   "read_only": 1,
+   "non_negative": 1
+  },
+  {
+   "fieldname": "turnover_section",
+   "fieldtype": "Section Break",
+   "label": "Cash Turnover"
+  },
+  {
+   "fieldname": "turnover_status",
+   "fieldtype": "Select",
+   "label": "Turnover Status",
+   "options": "Not Turned Over\nTurned Over - Awaiting Review\nReviewed / OK\nAwaiting Confirmation\nTurned Over",
+   "default": "Not Turned Over",
+   "read_only": 1
+  },
+  {
+   "fieldname": "turnover_amount",
+   "fieldtype": "Currency",
+   "label": "Cash Turned Over",
+   "read_only": 1,
+   "non_negative": 1
+  },
+  {
+   "fieldname": "turnover_confirmed_by",
+   "fieldtype": "Data",
+   "label": "Reviewed By",
+   "read_only": 1
+  },
+  {
+   "fieldname": "turnover_confirmed_on",
+   "fieldtype": "Datetime",
+   "label": "Reviewed On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "approval_section",
+   "fieldtype": "Section Break",
+   "label": "Administrator Review"
+  },
+  {
+   "fieldname": "approval_reason",
+   "fieldtype": "Small Text",
+   "label": "Administrator Review Note",
+   "read_only": 1
+  },
+  {
+   "fieldname": "approved_by",
+   "fieldtype": "Data",
+   "label": "Reviewed By",
+   "read_only": 1
+  },
+  {
+   "fieldname": "approved_on",
+   "fieldtype": "Datetime",
+   "label": "Reviewed On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "closed_by",
+   "fieldtype": "Data",
+   "label": "Closed By",
+   "read_only": 1
+  },
+  {
+   "fieldname": "closed_on",
+   "fieldtype": "Datetime",
+   "label": "Closed On",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-08-05 18:30:00.000000",
+ "modified_by": "Administrator",
+ "module": "NKT Store Operations",
+ "name": "NKT Cashier Shift",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1,
+   "print": 1,
+   "email": 1,
+   "export": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "NKT OWNER",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1,
+   "print": 1,
+   "email": 1,
+   "export": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "NKT ADMINISTRATOR",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1,
+   "print": 1,
+   "email": 1,
+   "export": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "NKT Cashier",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "print": 1,
+   "share": 1
+  },
+  {
+   "role": "NKT Encoder",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "print": 1,
+   "share": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "cashier,settlement_location,status",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "cashier",
+ "track_changes": 1,
+ "default_print_format": "NKT Cashier Shift Report"
+}

@@ -1,0 +1,584 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "format:NKT-RET-{#####}",
+ "creation": "2026-08-05 05:20:53.408269",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "amended_from",
+  "return_details_section",
+  "company",
+  "return_datetime",
+  "customer",
+  "customer_name",
+  "return_source_section",
+  "warehouse_release",
+  "customer_order",
+  "original_delivery_note",
+  "return_receiving_section",
+  "return_warehouse",
+  "received_by",
+  "return_status",
+  "warehouse_receipt_section",
+  "warehouse_receipt_status",
+  "warehouse_receipt_confirmed_by",
+  "warehouse_receipt_confirmed_on",
+  "warehouse_receipt_remarks",
+  "warehouse_receipt_signature",
+  "return_items_section",
+  "items",
+  "return_summary_section",
+  "total_return_quantity",
+  "total_accepted_sacks",
+  "total_saleable_sacks",
+  "total_repairable_sacks",
+  "total_opened_sacks",
+  "total_rejected_sacks",
+  "total_fraction_kg",
+  "stock_posting_section",
+  "return_delivery_note",
+  "settlement_section",
+  "settlement_type",
+  "settlement_amount",
+  "settlement_control_section",
+  "gross_return_value",
+  "labor_charge",
+  "packaging_deduction",
+  "handling_deduction",
+  "other_deduction",
+  "other_deduction_reason",
+  "total_deductions",
+  "calculated_return_credit",
+  "replacement_section",
+  "replacement_items",
+  "replacement_value",
+  "difference_payment_method",
+  "customer_pays",
+  "refund_due",
+  "customer_credit_due",
+  "cashier_settlement_section",
+  "settlement_location",
+  "settlement_cashier",
+  "cashier_shift",
+  "cashier_movement",
+  "settlement_reference",
+  "settlement_reason",
+  "settlement_posting_note",
+  "return_reason",
+  "remarks",
+  "approval_section",
+  "approval_status",
+  "approved_by",
+  "approved_on",
+  "approval_reason",
+  "approval_signature"
+ ],
+ "fields": [
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "options": "NKT Customer Return",
+   "no_copy": 1,
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "return_details_section",
+   "fieldtype": "Section Break",
+   "label": "Return Details"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "return_datetime",
+   "fieldtype": "Datetime",
+   "label": "Return Date and Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "return_source_section",
+   "fieldtype": "Section Break",
+   "label": "Original Release"
+  },
+  {
+   "fieldname": "warehouse_release",
+   "fieldtype": "Link",
+   "label": "Warehouse Release",
+   "options": "NKT Warehouse Release",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer_order",
+   "fieldtype": "Link",
+   "label": "Customer Order",
+   "options": "NKT Customer Order",
+   "read_only": 1
+  },
+  {
+   "fieldname": "original_delivery_note",
+   "fieldtype": "Link",
+   "label": "Original Delivery Note",
+   "options": "Delivery Note",
+   "read_only": 1
+  },
+  {
+   "fieldname": "return_receiving_section",
+   "fieldtype": "Section Break",
+   "label": "Return Receiving"
+  },
+  {
+   "fieldname": "return_warehouse",
+   "fieldtype": "Link",
+   "label": "Return Receiving Warehouse",
+   "options": "Warehouse",
+   "reqd": 1
+  },
+  {
+   "fieldname": "received_by",
+   "fieldtype": "Link",
+   "label": "Received By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "return_status",
+   "fieldtype": "Select",
+   "label": "Return Status",
+   "options": "Draft\nPending Approval\nApproved\nReceived\nPartially Accepted\nNot Accepted\nCancelled",
+   "default": "Draft",
+   "read_only": 1
+  },
+  {
+   "fieldname": "warehouse_receipt_section",
+   "fieldtype": "Section Break",
+   "label": "Physical Warehouse Receipt Confirmation"
+  },
+  {
+   "fieldname": "warehouse_receipt_status",
+   "fieldtype": "Select",
+   "label": "Warehouse Receipt Status",
+   "options": "Pending Receipt\nReceived\nOverridden",
+   "default": "Pending Receipt",
+   "read_only": 1
+  },
+  {
+   "fieldname": "warehouse_receipt_confirmed_by",
+   "fieldtype": "Data",
+   "label": "Receipt Confirmed By",
+   "read_only": 1
+  },
+  {
+   "fieldname": "warehouse_receipt_confirmed_on",
+   "fieldtype": "Datetime",
+   "label": "Receipt Confirmed On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "warehouse_receipt_remarks",
+   "fieldtype": "Small Text",
+   "label": "Receipt Confirmation Remarks",
+   "read_only": 1
+  },
+  {
+   "fieldname": "warehouse_receipt_signature",
+   "fieldtype": "Data",
+   "label": "Warehouse Receipt Signature",
+   "hidden": 1,
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "return_items_section",
+   "fieldtype": "Section Break",
+   "label": "Returned Items"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "NKT Customer Return Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "return_summary_section",
+   "fieldtype": "Section Break",
+   "label": "Return Summary"
+  },
+  {
+   "fieldname": "total_return_quantity",
+   "fieldtype": "Float",
+   "label": "Total Physical Sacks Presented",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_accepted_sacks",
+   "fieldtype": "Float",
+   "label": "Total Accepted Sacks",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_saleable_sacks",
+   "fieldtype": "Float",
+   "label": "Total Saleable Sacks",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_repairable_sacks",
+   "fieldtype": "Float",
+   "label": "Total Repairable / Rebag Sacks",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_opened_sacks",
+   "fieldtype": "Float",
+   "label": "Total Opened Sacks",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_rejected_sacks",
+   "fieldtype": "Float",
+   "label": "Total Rejected Sacks",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_fraction_kg",
+   "fieldtype": "Float",
+   "label": "Total Accepted Fraction Weight (kg)",
+   "read_only": 1,
+   "precision": "3"
+  },
+  {
+   "fieldname": "stock_posting_section",
+   "fieldtype": "Section Break",
+   "label": "Stock Posting"
+  },
+  {
+   "fieldname": "return_delivery_note",
+   "fieldtype": "Link",
+   "label": "Return Delivery Note",
+   "options": "Delivery Note",
+   "read_only": 1
+  },
+  {
+   "fieldname": "settlement_section",
+   "fieldtype": "Section Break",
+   "label": "Manual Customer Settlement"
+  },
+  {
+   "fieldname": "settlement_type",
+   "fieldtype": "Select",
+   "label": "Settlement Type",
+   "options": "No Credit\nCash Refund\nCustomer Credit\nAccount Adjustment\nSame-Item Exchange\nDifferent-Item Exchange",
+   "default": "No Credit",
+   "reqd": 1
+  },
+  {
+   "fieldname": "settlement_amount",
+   "fieldtype": "Currency",
+   "label": "Approved Return Credit",
+   "default": "0",
+   "non_negative": 1,
+   "description": "Automatically calculated from the exact original selling rate, accepted full sacks, accepted fraction kilograms, and approved deductions.",
+   "read_only": 1
+  },
+  {
+   "fieldname": "settlement_control_section",
+   "fieldtype": "Section Break",
+   "label": "Automatic Return Valuation and Deductions"
+  },
+  {
+   "fieldname": "gross_return_value",
+   "fieldtype": "Currency",
+   "label": "Gross Return Value at Original Sale Rate",
+   "read_only": 1
+  },
+  {
+   "fieldname": "labor_charge",
+   "fieldtype": "Currency",
+   "label": "Labor Charge",
+   "default": "0",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "packaging_deduction",
+   "fieldtype": "Currency",
+   "label": "Packaging / Damage Deduction",
+   "default": "0",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "handling_deduction",
+   "fieldtype": "Currency",
+   "label": "Handling / Delivery Deduction",
+   "default": "0",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "other_deduction",
+   "fieldtype": "Currency",
+   "label": "Other Deduction",
+   "default": "0",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "other_deduction_reason",
+   "fieldtype": "Small Text",
+   "label": "Other Deduction Reason"
+  },
+  {
+   "fieldname": "total_deductions",
+   "fieldtype": "Currency",
+   "label": "Total Deductions",
+   "read_only": 1
+  },
+  {
+   "fieldname": "calculated_return_credit",
+   "fieldtype": "Currency",
+   "label": "Calculated Return Credit",
+   "read_only": 1
+  },
+  {
+   "fieldname": "replacement_section",
+   "fieldtype": "Section Break",
+   "label": "Exchange / Replacement"
+  },
+  {
+   "fieldname": "replacement_items",
+   "fieldtype": "Table",
+   "label": "Replacement Items",
+   "options": "NKT Customer Return Replacement Item"
+  },
+  {
+   "fieldname": "replacement_value",
+   "fieldtype": "Currency",
+   "label": "Replacement Value",
+   "read_only": 1
+  },
+  {
+   "fieldname": "difference_payment_method",
+   "fieldtype": "Select",
+   "label": "Exchange Difference Method",
+   "options": "Cash\nCustomer Credit\nAccount Adjustment\nGCash\nMaya\nBank Transfer\nCheck\nOther Online"
+  },
+  {
+   "fieldname": "customer_pays",
+   "fieldtype": "Currency",
+   "label": "Customer Pays",
+   "read_only": 1
+  },
+  {
+   "fieldname": "refund_due",
+   "fieldtype": "Currency",
+   "label": "Refund Due",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer_credit_due",
+   "fieldtype": "Currency",
+   "label": "Customer Credit / Account Adjustment Due",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cashier_settlement_section",
+   "fieldtype": "Section Break",
+   "label": "Cashier / EOD Settlement"
+  },
+  {
+   "fieldname": "settlement_location",
+   "fieldtype": "Link",
+   "label": "Cashier / Settlement Location",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "settlement_cashier",
+   "fieldtype": "Link",
+   "label": "Settlement Cashier",
+   "options": "User"
+  },
+  {
+   "fieldname": "cashier_shift",
+   "fieldtype": "Link",
+   "label": "Cashier Shift",
+   "options": "NKT Cashier Shift"
+  },
+  {
+   "fieldname": "cashier_movement",
+   "fieldtype": "Link",
+   "label": "Cashier Movement",
+   "options": "NKT Cashier Movement",
+   "read_only": 1
+  },
+  {
+   "fieldname": "settlement_reference",
+   "fieldtype": "Data",
+   "label": "Settlement / Replacement Reference",
+   "description": "Optional receipt, order, credit, exchange, or account-adjustment reference."
+  },
+  {
+   "fieldname": "settlement_reason",
+   "fieldtype": "Small Text",
+   "label": "Settlement Reason",
+   "reqd": 1
+  },
+  {
+   "fieldname": "settlement_posting_note",
+   "fieldtype": "HTML",
+   "label": "Settlement Posting Note",
+   "options": "<div class=\"alert alert-info\">Cash refunds and cash exchange differences post to the selected Cashier Shift for EOD tally. Replacement item lines are recorded and valued here; the replacement stock release remains a separately linked operational document during this foundation phase.</div>"
+  },
+  {
+   "fieldname": "return_reason",
+   "fieldtype": "Small Text",
+   "label": "Return Reason / Customer Complaint",
+   "reqd": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "approval_section",
+   "fieldtype": "Section Break",
+   "label": "Owner / Administrator Approval"
+  },
+  {
+   "fieldname": "approval_status",
+   "fieldtype": "Select",
+   "label": "Approval Status",
+   "options": "Pending Approval\nApproved",
+   "default": "Pending Approval",
+   "read_only": 1
+  },
+  {
+   "fieldname": "approved_by",
+   "fieldtype": "Data",
+   "label": "Approved By",
+   "read_only": 1
+  },
+  {
+   "fieldname": "approved_on",
+   "fieldtype": "Datetime",
+   "label": "Approved On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "approval_reason",
+   "fieldtype": "Small Text",
+   "label": "Approval Reason",
+   "read_only": 1
+  },
+  {
+   "fieldname": "approval_signature",
+   "fieldtype": "Data",
+   "label": "Approval Signature",
+   "hidden": 1,
+   "read_only": 1,
+   "no_copy": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-08-05 16:13:00.000000",
+ "modified_by": "Administrator",
+ "module": "NKT Store Operations",
+ "name": "NKT Customer Return",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "print": 1,
+   "read": 1,
+   "role": "NKT Warehouse",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "NKT ADMINISTRATOR",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "print": 1,
+   "read": 1,
+   "role": "NKT Encoder",
+   "share": 1
+  },
+  {
+   "print": 1,
+   "read": 1,
+   "role": "NKT Cashier",
+   "share": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "NKT OWNER",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "customer,warehouse_release,customer_order",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "customer_name",
+ "track_changes": 1
+}

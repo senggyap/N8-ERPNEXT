@@ -1,0 +1,332 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:event_uuid",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "identity_section",
+  "event_uuid",
+  "event_family",
+  "event_action",
+  "submit_request_id",
+  "origin_device",
+  "origin_user",
+  "operational_context",
+  "physical_section",
+  "company",
+  "warehouse",
+  "business_date",
+  "settled_at",
+  "count_datetime",
+  "client_created_at",
+  "counted_by",
+  "entry_role",
+  "count_reason",
+  "physical_count_reference",
+  "operator_notes",
+  "item_count",
+  "integrity_section",
+  "envelope_sha256",
+  "payload_sha256",
+  "canonical_envelope_json",
+  "canonical_payload_json",
+  "state_section",
+  "preservation_state",
+  "downstream_state",
+  "materialization_decision",
+  "materialized_adjustment",
+  "materialized_stock_reconciliation",
+  "materialized_on",
+  "materialization_notes",
+  "primary_ack_uuid",
+  "primary_preserved_at"
+ ],
+ "fields": [
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Primary Physical Inventory Count Intent"
+  },
+  {
+   "fieldname": "event_uuid",
+   "fieldtype": "Data",
+   "label": "Event UUID",
+   "reqd": 1,
+   "unique": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "event_family",
+   "fieldtype": "Data",
+   "label": "Event Family",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "event_action",
+   "fieldtype": "Data",
+   "label": "Event Action",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "submit_request_id",
+   "fieldtype": "Data",
+   "label": "Submit Request ID",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "origin_device",
+   "fieldtype": "Link",
+   "label": "Origin Device",
+   "options": "NKT Device Registry",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "origin_user",
+   "fieldtype": "Link",
+   "label": "Origin User",
+   "options": "User",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "operational_context",
+   "fieldtype": "Data",
+   "label": "Operational Context",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "physical_section",
+   "fieldtype": "Section Break",
+   "label": "Immutable Physical Observation"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Warehouse",
+   "options": "Warehouse",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "business_date",
+   "fieldtype": "Date",
+   "label": "Physical Count Business Date",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "settled_at",
+   "fieldtype": "Datetime",
+   "label": "Event Settled At",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "count_datetime",
+   "fieldtype": "Datetime",
+   "label": "Physical Count Time",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "client_created_at",
+   "fieldtype": "Datetime",
+   "label": "Client Created At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "counted_by",
+   "fieldtype": "Link",
+   "label": "Counted / Entered By",
+   "options": "User",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "entry_role",
+   "fieldtype": "Data",
+   "label": "Entry Role",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "count_reason",
+   "fieldtype": "Data",
+   "label": "Count Reason",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "physical_count_reference",
+   "fieldtype": "Data",
+   "label": "Physical Count Reference",
+   "read_only": 1
+  },
+  {
+   "fieldname": "operator_notes",
+   "fieldtype": "Small Text",
+   "label": "Operator Notes",
+   "read_only": 1
+  },
+  {
+   "fieldname": "item_count",
+   "fieldtype": "Int",
+   "label": "Counted Item Lines",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "integrity_section",
+   "fieldtype": "Section Break",
+   "label": "Immutable Integrity Evidence"
+  },
+  {
+   "fieldname": "envelope_sha256",
+   "fieldtype": "Data",
+   "label": "Envelope SHA-256",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "payload_sha256",
+   "fieldtype": "Data",
+   "label": "Payload SHA-256",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "canonical_envelope_json",
+   "fieldtype": "Code",
+   "label": "Canonical Envelope JSON",
+   "options": "JSON",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "canonical_payload_json",
+   "fieldtype": "Code",
+   "label": "Canonical Physical Count Payload JSON",
+   "options": "JSON",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "state_section",
+   "fieldtype": "Section Break",
+   "label": "Primary Preservation State"
+  },
+  {
+   "fieldname": "preservation_state",
+   "fieldtype": "Select",
+   "label": "Preservation State",
+   "options": "Preserved",
+   "default": "Preserved",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "downstream_state",
+   "fieldtype": "Select",
+   "label": "Downstream State",
+   "options": "Awaiting Physical Inventory Reconciliation\nMaterialized\nConflict",
+   "default": "Awaiting Physical Inventory Reconciliation",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "materialization_decision",
+   "fieldtype": "Select",
+   "label": "Materialization Decision",
+   "options": "Pending\nPosted\nNo Variance\nFresh Recount Required\nManual Primary Review Required",
+   "default": "Pending",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "materialized_adjustment",
+   "fieldtype": "Link",
+   "label": "Materialized Physical Inventory Adjustment",
+   "options": "NKT Physical Inventory Adjustment",
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialized_stock_reconciliation",
+   "fieldtype": "Link",
+   "label": "Materialized Stock Reconciliation",
+   "options": "Stock Reconciliation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialized_on",
+   "fieldtype": "Datetime",
+   "label": "Materialized On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialization_notes",
+   "fieldtype": "Long Text",
+   "label": "Materialization Notes",
+   "read_only": 1
+  },
+  {
+   "fieldname": "primary_ack_uuid",
+   "fieldtype": "Data",
+   "label": "Primary ACK UUID",
+   "reqd": 1,
+   "unique": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "primary_preserved_at",
+   "fieldtype": "Datetime",
+   "label": "Primary Preserved At",
+   "reqd": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "module": "NKT Store Operations",
+ "name": "NKT Primary Physical Inventory Count Intent",
+ "permissions": [
+  {
+   "role": "NKT OWNER",
+   "read": 1,
+   "report": 1
+  },
+  {
+   "role": "NKT ADMINISTRATOR",
+   "read": 1,
+   "report": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "report": 1
+  }
+ ],
+ "sort_field": "primary_preserved_at",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

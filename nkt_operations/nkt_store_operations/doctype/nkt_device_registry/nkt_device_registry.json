@@ -1,0 +1,222 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:device_id",
+ "creation": "2026-08-14 19:25:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "identity_section",
+  "device_id",
+  "device_label",
+  "device_class",
+  "column_break_identity",
+  "operational_context",
+  "assigned_user",
+  "status",
+  "policy_section",
+  "policy_version",
+  "registered_at",
+  "registered_by",
+  "last_seen_at",
+  "restriction_section",
+  "restricted_at",
+  "restricted_by",
+  "restriction_reason",
+  "revocation_section",
+  "revoked_at",
+  "revoked_by",
+  "revocation_reason",
+  "technical_section",
+  "credential_fingerprint",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Device Identity"
+  },
+  {
+   "fieldname": "device_id",
+   "fieldtype": "Data",
+   "label": "Device ID",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "device_label",
+   "fieldtype": "Data",
+   "label": "Device Label",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "device_class",
+   "fieldtype": "Select",
+   "label": "Device Class",
+   "reqd": 1,
+   "options": "Frontline Laptop\nStore Edge\nOwner Laptop\nOwner Tablet\nOwner Phone\nAdmin Workstation\nOther",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "column_break_identity",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "operational_context",
+   "fieldtype": "Select",
+   "label": "Operational Context",
+   "reqd": 1,
+   "options": "NKT Retail\nENT Trucking\nOwner/Admin\nInfrastructure\nOther",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "assigned_user",
+   "fieldtype": "Link",
+   "label": "Assigned User",
+   "options": "User",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Device Status",
+   "reqd": 1,
+   "options": "Active\nRestricted\nRevoked\nLost/Stolen\nRetired",
+   "default": "Active",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "policy_section",
+   "fieldtype": "Section Break",
+   "label": "Policy / Registration Audit"
+  },
+  {
+   "fieldname": "policy_version",
+   "fieldtype": "Int",
+   "label": "Policy Version",
+   "read_only": 1,
+   "default": "1"
+  },
+  {
+   "fieldname": "registered_at",
+   "fieldtype": "Datetime",
+   "label": "Registered At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "registered_by",
+   "fieldtype": "Link",
+   "label": "Registered By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_seen_at",
+   "fieldtype": "Datetime",
+   "label": "Last Seen At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "restriction_section",
+   "fieldtype": "Section Break",
+   "label": "Restriction Audit"
+  },
+  {
+   "fieldname": "restricted_at",
+   "fieldtype": "Datetime",
+   "label": "Restricted At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "restricted_by",
+   "fieldtype": "Link",
+   "label": "Restricted By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "restriction_reason",
+   "fieldtype": "Small Text",
+   "label": "Restriction Reason"
+  },
+  {
+   "fieldname": "revocation_section",
+   "fieldtype": "Section Break",
+   "label": "Revocation / Loss Audit"
+  },
+  {
+   "fieldname": "revoked_at",
+   "fieldtype": "Datetime",
+   "label": "Revoked At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "revoked_by",
+   "fieldtype": "Link",
+   "label": "Revoked By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "revocation_reason",
+   "fieldtype": "Small Text",
+   "label": "Revocation / Loss Reason"
+  },
+  {
+   "fieldname": "technical_section",
+   "fieldtype": "Section Break",
+   "label": "Technical Identity (No Secret Material)",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "credential_fingerprint",
+   "fieldtype": "Data",
+   "label": "Credential / Public Identity Fingerprint",
+   "read_only": 1,
+   "hidden": 1
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Administrative Notes"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2026-08-14 19:25:00.000000",
+ "modified_by": "Administrator",
+ "module": "NKT Store Operations",
+ "name": "NKT Device Registry",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "NKT OWNER",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "report": 1
+  },
+  {
+   "role": "NKT ADMINISTRATOR",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "report": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "report": 1,
+   "delete": 0
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

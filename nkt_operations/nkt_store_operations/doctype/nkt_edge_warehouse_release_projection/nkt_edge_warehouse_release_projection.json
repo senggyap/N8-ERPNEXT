@@ -1,0 +1,212 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:projection_key",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "identity_section",
+  "projection_key",
+  "event_uuid",
+  "line_no",
+  "release_section",
+  "warehouse_release",
+  "warehouse_release_item",
+  "customer_order",
+  "item_code",
+  "warehouse",
+  "released_qty",
+  "release_reference",
+  "business_date",
+  "state_section",
+  "projection_state",
+  "primary_ack_uuid",
+  "materialization_ack_uuid",
+  "materialization_ack_sha256",
+  "primary_stock_entry",
+  "primary_post_actual_qty",
+  "primary_materialized_at",
+  "finalized_at"
+ ],
+ "fields": [
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Edge Physical Release Projection"
+  },
+  {
+   "fieldname": "projection_key",
+   "fieldtype": "Data",
+   "label": "Projection Key",
+   "reqd": 1,
+   "unique": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "event_uuid",
+   "fieldtype": "Data",
+   "label": "Event UUID",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "line_no",
+   "fieldtype": "Int",
+   "label": "Line No.",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "release_section",
+   "fieldtype": "Section Break",
+   "label": "Physical Release"
+  },
+  {
+   "fieldname": "warehouse_release",
+   "fieldtype": "Link",
+   "label": "Warehouse Release",
+   "options": "NKT Warehouse Release",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "warehouse_release_item",
+   "fieldtype": "Data",
+   "label": "Warehouse Release Item",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer_order",
+   "fieldtype": "Link",
+   "label": "Customer Order",
+   "options": "NKT Customer Order",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "label": "Item",
+   "options": "Item",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Warehouse",
+   "options": "Warehouse",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "released_qty",
+   "fieldtype": "Float",
+   "label": "Released Qty",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "release_reference",
+   "fieldtype": "Data",
+   "label": "Release Authorization Reference",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "business_date",
+   "fieldtype": "Date",
+   "label": "Business Date",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "state_section",
+   "fieldtype": "Section Break",
+   "label": "Projection State"
+  },
+  {
+   "fieldname": "projection_state",
+   "fieldtype": "Select",
+   "label": "Projection State",
+   "options": "Pending Edge\nAwaiting Primary\nPrimary Preserved\nPrimary Stock Materialized\nFinalized",
+   "default": "Pending Edge",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "primary_ack_uuid",
+   "fieldtype": "Data",
+   "label": "Primary ACK UUID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialization_ack_uuid",
+   "fieldtype": "Data",
+   "label": "Materialization ACK UUID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialization_ack_sha256",
+   "fieldtype": "Data",
+   "label": "Materialization ACK SHA-256",
+   "read_only": 1
+  },
+  {
+   "fieldname": "primary_stock_entry",
+   "fieldtype": "Link",
+   "label": "Primary Stock Entry",
+   "options": "Stock Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "primary_post_actual_qty",
+   "fieldtype": "Float",
+   "label": "Primary Post Actual Qty",
+   "read_only": 1
+  },
+  {
+   "fieldname": "primary_materialized_at",
+   "fieldtype": "Datetime",
+   "label": "Primary Materialized At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "finalized_at",
+   "fieldtype": "Datetime",
+   "label": "Edge Projection Finalized At",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "module": "NKT Store Operations",
+ "name": "NKT Edge Warehouse Release Projection",
+ "permissions": [
+  {
+   "role": "NKT OWNER",
+   "read": 1,
+   "report": 1
+  },
+  {
+   "role": "NKT ADMINISTRATOR",
+   "read": 1,
+   "report": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "report": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

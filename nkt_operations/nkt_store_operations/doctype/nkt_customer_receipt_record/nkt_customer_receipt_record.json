@@ -1,0 +1,192 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "field:customer_order",
+  "creation": "2026-08-17 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "snapshot_section",
+    "customer_order",
+    "company",
+    "customer",
+    "customer_name",
+    "order_date",
+    "previous_account_balance",
+    "account_charge",
+    "account_balance_after_order",
+    "snapshot_at",
+    "reference_section",
+    "plate_reference",
+    "dr_reference",
+    "reference_source_release",
+    "references_updated_by",
+    "references_updated_at",
+    "reference_update_reason"
+  ],
+  "fields": [
+    {
+      "fieldname": "snapshot_section",
+      "fieldtype": "Section Break",
+      "label": "Customer Receipt Snapshot"
+    },
+    {
+      "fieldname": "customer_order",
+      "fieldtype": "Link",
+      "label": "Customer Order",
+      "options": "NKT Customer Order",
+      "reqd": 1,
+      "read_only": 1,
+      "unique": 1
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "customer",
+      "fieldtype": "Link",
+      "label": "Customer",
+      "options": "Customer",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "customer_name",
+      "fieldtype": "Data",
+      "label": "Customer Name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "order_date",
+      "fieldtype": "Date",
+      "label": "Order / Receipt Date",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "previous_account_balance",
+      "fieldtype": "Currency",
+      "label": "Previous Account Balance",
+      "read_only": 1
+    },
+    {
+      "fieldname": "account_charge",
+      "fieldtype": "Currency",
+      "label": "Account Charge on This Sale",
+      "read_only": 1
+    },
+    {
+      "fieldname": "account_balance_after_order",
+      "fieldtype": "Currency",
+      "label": "Total Account Balance After Sale",
+      "read_only": 1
+    },
+    {
+      "fieldname": "snapshot_at",
+      "fieldtype": "Datetime",
+      "label": "Balance Snapshot At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "reference_section",
+      "fieldtype": "Section Break",
+      "label": "Later-Known Delivery References"
+    },
+    {
+      "fieldname": "plate_reference",
+      "fieldtype": "Data",
+      "label": "Plate / Vehicle Reference",
+      "read_only": 1
+    },
+    {
+      "fieldname": "dr_reference",
+      "fieldtype": "Data",
+      "label": "DR / Delivery Reference",
+      "read_only": 1
+    },
+    {
+      "fieldname": "reference_source_release",
+      "fieldtype": "Link",
+      "label": "Source Warehouse Release",
+      "options": "NKT Warehouse Release",
+      "read_only": 1
+    },
+    {
+      "fieldname": "references_updated_by",
+      "fieldtype": "Link",
+      "label": "References Updated By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "references_updated_at",
+      "fieldtype": "Datetime",
+      "label": "References Updated At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "reference_update_reason",
+      "fieldtype": "Small Text",
+      "label": "Reference Update Reason / Source",
+      "read_only": 1
+    }
+  ],
+  "index_web_pages_for_search": 0,
+  "links": [],
+  "modified": "2026-08-17 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "NKT Store Operations",
+  "name": "NKT Customer Receipt Record",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "role": "NKT OWNER",
+      "read": 1,
+      "report": 1,
+      "create": 0,
+      "write": 0,
+      "delete": 0
+    },
+    {
+      "role": "NKT ADMINISTRATOR",
+      "read": 1,
+      "report": 1,
+      "create": 0,
+      "write": 0,
+      "delete": 0
+    },
+    {
+      "role": "NKT Encoder",
+      "read": 1,
+      "report": 0,
+      "create": 0,
+      "write": 0,
+      "delete": 0
+    },
+    {
+      "role": "NKT Cashier",
+      "read": 1,
+      "report": 0,
+      "create": 0,
+      "write": 0,
+      "delete": 0
+    },
+    {
+      "role": "NKT Warehouse",
+      "read": 1,
+      "report": 0,
+      "create": 0,
+      "write": 0,
+      "delete": 0
+    }
+  ],
+  "sort_field": "creation",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 1
+}

@@ -1,0 +1,175 @@
+{
+  "actions": [],
+  "creation": "2026-08-13 00:00:00.000000",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "line_no",
+    "line_kind",
+    "relates_to_line_no",
+    "source_section",
+    "trucking_job",
+    "source_trucker_adjustment",
+    "identity_section",
+    "job_date",
+    "dr_no",
+    "plate_number",
+    "internal_vehicle_no",
+    "item_code",
+    "item_name",
+    "quantity_section",
+    "no_of_bags",
+    "amount_section",
+    "rate",
+    "gross_amount",
+    "deduction_amount",
+    "addition_amount",
+    "net_effect",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "line_no",
+      "fieldtype": "Int",
+      "label": "No.",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "line_kind",
+      "fieldtype": "Select",
+      "label": "Line Type",
+      "reqd": 1,
+      "options": "Haul Payable\nWet Cargo Deduction\nDamage Deduction\nShortlanded Deduction\nOther Deduction\nOther Addition",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "relates_to_line_no",
+      "fieldtype": "Int",
+      "label": "Related Haul Line No."
+    },
+    {
+      "fieldname": "source_section",
+      "fieldtype": "Section Break",
+      "label": "Source Lineage",
+      "collapsible": 1
+    },
+    {
+      "fieldname": "trucking_job",
+      "fieldtype": "Link",
+      "label": "Trucking Job",
+      "options": "NKT Trucking Job"
+    },
+    {
+      "fieldname": "source_trucker_adjustment",
+      "fieldtype": "Link",
+      "label": "Trucker Adjustment",
+      "options": "NKT Trucker Adjustment"
+    },
+    {
+      "fieldname": "identity_section",
+      "fieldtype": "Section Break",
+      "label": "Trucking Identity"
+    },
+    {
+      "fieldname": "job_date",
+      "fieldtype": "Date",
+      "label": "Date",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "dr_no",
+      "fieldtype": "Data",
+      "label": "DR No.",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "plate_number",
+      "fieldtype": "Data",
+      "label": "Plate No.",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "internal_vehicle_no",
+      "fieldtype": "Data",
+      "label": "Van / Truck No.",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "item_code",
+      "fieldtype": "Link",
+      "label": "Item",
+      "options": "Item"
+    },
+    {
+      "fieldname": "item_name",
+      "fieldtype": "Data",
+      "label": "Item Name",
+      "in_list_view": 1,
+      "description": "Normal operational Item Name; no supplier-commercial description is used here."
+    },
+    {
+      "fieldname": "quantity_section",
+      "fieldtype": "Section Break",
+      "label": "Quantity"
+    },
+    {
+      "fieldname": "no_of_bags",
+      "fieldtype": "Float",
+      "label": "No. of Bags",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "amount_section",
+      "fieldtype": "Section Break",
+      "label": "Restricted Trucker Amount"
+    },
+    {
+      "fieldname": "rate",
+      "fieldtype": "Currency",
+      "label": "Rate",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "gross_amount",
+      "fieldtype": "Currency",
+      "label": "Gross Amount",
+      "read_only": 1
+    },
+    {
+      "fieldname": "deduction_amount",
+      "fieldtype": "Currency",
+      "label": "Deduction",
+      "read_only": 1
+    },
+    {
+      "fieldname": "addition_amount",
+      "fieldtype": "Currency",
+      "label": "Addition",
+      "read_only": 1
+    },
+    {
+      "fieldname": "net_effect",
+      "fieldtype": "Currency",
+      "label": "Net Effect",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "istable": 1,
+  "modified": "2026-08-13 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "NKT Store Operations",
+  "name": "NKT Trucker SOA Line",
+  "owner": "Administrator",
+  "permissions": [],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": []
+}

@@ -1,0 +1,89 @@
+{
+ "app": "nkt_operations",
+ "charts": [],
+ "content": "[{\"id\":\"nkt-compliance-header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h3\\\"><b>NKT Compliance Control</b></span>\",\"col\":12}},{\"id\":\"nkt-compliance-command-card\",\"type\":\"card\",\"data\":{\"card_name\":\"Compliance Command Center\",\"col\":6}},{\"id\":\"nkt-compliance-documents-card\",\"type\":\"card\",\"data\":{\"card_name\":\"Controlled Documents\",\"col\":6}},{\"id\":\"nkt-compliance-spacer\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"nkt-compliance-owner-card\",\"type\":\"card\",\"data\":{\"card_name\":\"Owner Oversight\",\"col\":12}}]",
+ "custom_blocks": [],
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 1,
+ "icon": "",
+ "indicator_color": "orange",
+ "is_hidden": 0,
+ "label": "NKT Compliance Control",
+ "name": "NKT Compliance Control",
+ "links": [
+  {
+   "type": "Card Break",
+   "label": "Compliance Command Center",
+   "hidden": 0,
+   "link_count": 1,
+   "onboard": 0,
+   "description": "Live expiry and renewal attention view using each document's own reminder window."
+  },
+  {
+   "type": "Link",
+   "label": "Open Compliance Control Center",
+   "link_type": "Report",
+   "link_to": "NKT Compliance Control Center",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 1,
+   "dependencies": "",
+   "report_ref_doctype": "NKT Compliance Document"
+  },
+  {
+   "type": "Card Break",
+   "label": "Controlled Documents",
+   "hidden": 0,
+   "link_count": 1,
+   "onboard": 0,
+   "description": "Permits, licenses, contracts, insurance, registrations, leases, certifications, SOPs and inspections."
+  },
+  {
+   "type": "Link",
+   "label": "Compliance Documents",
+   "link_type": "DocType",
+   "link_to": "NKT Compliance Document",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 0,
+   "dependencies": ""
+  },
+  {
+   "type": "Card Break",
+   "label": "Owner Oversight",
+   "hidden": 0,
+   "link_count": 1,
+   "onboard": 0,
+   "description": "Return to the broader Owner/Admin operational control center."
+  },
+  {
+   "type": "Link",
+   "label": "Owner Control Center",
+   "link_type": "Report",
+   "link_to": "NKT Owner Control Center",
+   "hidden": 0,
+   "onboard": 0,
+   "is_query_report": 1,
+   "dependencies": "",
+   "report_ref_doctype": "NKT EOD Reconciliation"
+  }
+ ],
+ "module": "NKT Store Operations",
+ "number_cards": [],
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "NKT ADMINISTRATOR"
+  },
+  {
+   "role": "NKT OWNER"
+  }
+ ],
+ "sequence_id": 0.6,
+ "shortcuts": [],
+ "title": "NKT Compliance Control",
+ "type": "Workspace"
+}

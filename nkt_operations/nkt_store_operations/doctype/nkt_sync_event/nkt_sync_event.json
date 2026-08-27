@@ -1,0 +1,263 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "field:event_uuid",
+  "creation": "2026-08-14 19:25:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "identity_section",
+    "event_uuid",
+    "event_family",
+    "event_action",
+    "column_break_identity",
+    "operational_context",
+    "origin_device",
+    "origin_user",
+    "business_time_section",
+    "business_date",
+    "settled_at",
+    "client_created_at",
+    "column_break_time",
+    "server_received_at",
+    "edge_accepted_at",
+    "primary_committed_at",
+    "integrity_section",
+    "payload_sha256",
+    "legacy_request_id",
+    "column_break_integrity",
+    "canonical_doctype",
+    "canonical_name",
+    "primary_ack_uuid",
+    "sync_section",
+    "sync_state",
+    "retry_count",
+    "last_retry_at",
+    "exception_section",
+    "conflict_reason",
+    "last_error"
+  ],
+  "fields": [
+    {
+      "fieldname": "identity_section",
+      "fieldtype": "Section Break",
+      "label": "Immutable Event Identity"
+    },
+    {
+      "fieldname": "event_uuid",
+      "fieldtype": "Data",
+      "label": "Event UUID",
+      "reqd": 1,
+      "unique": 1,
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "event_family",
+      "fieldtype": "Data",
+      "label": "Event Family",
+      "reqd": 1,
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "event_action",
+      "fieldtype": "Data",
+      "label": "Event Action",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "column_break_identity",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "operational_context",
+      "fieldtype": "Select",
+      "label": "Operational Context",
+      "reqd": 1,
+      "read_only": 1,
+      "options": "NKT Retail\nENT Trucking\nOwner/Admin\nInfrastructure\nOther"
+    },
+    {
+      "fieldname": "origin_device",
+      "fieldtype": "Link",
+      "label": "Origin Device",
+      "options": "NKT Device Registry",
+      "reqd": 1,
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "origin_user",
+      "fieldtype": "Link",
+      "label": "Origin User",
+      "options": "User",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "business_time_section",
+      "fieldtype": "Section Break",
+      "label": "Business Time vs Technical Sync Time"
+    },
+    {
+      "fieldname": "business_date",
+      "fieldtype": "Date",
+      "label": "Business Date",
+      "reqd": 1,
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "settled_at",
+      "fieldtype": "Datetime",
+      "label": "Business / Settled Time",
+      "reqd": 1,
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "client_created_at",
+      "fieldtype": "Datetime",
+      "label": "Client Created At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "column_break_time",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "server_received_at",
+      "fieldtype": "Datetime",
+      "label": "Server Received At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "edge_accepted_at",
+      "fieldtype": "Datetime",
+      "label": "Edge Durably Accepted At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "primary_committed_at",
+      "fieldtype": "Datetime",
+      "label": "Primary Committed At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "integrity_section",
+      "fieldtype": "Section Break",
+      "label": "Idempotency / Integrity Contract"
+    },
+    {
+      "fieldname": "payload_sha256",
+      "fieldtype": "Data",
+      "label": "Canonical Payload SHA-256",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "legacy_request_id",
+      "fieldtype": "Data",
+      "label": "Legacy / Fast Request ID",
+      "read_only": 1
+    },
+    {
+      "fieldname": "column_break_integrity",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "canonical_doctype",
+      "fieldtype": "Data",
+      "label": "Canonical Business DocType",
+      "read_only": 1
+    },
+    {
+      "fieldname": "canonical_name",
+      "fieldtype": "Data",
+      "label": "Canonical Business Record",
+      "read_only": 1
+    },
+    {
+      "fieldname": "sync_section",
+      "fieldtype": "Section Break",
+      "label": "Technical Sync State"
+    },
+    {
+      "fieldname": "sync_state",
+      "fieldtype": "Select",
+      "label": "Sync State",
+      "reqd": 1,
+      "read_only": 1,
+      "options": "Received\nAccepted at Edge\nAwaiting Primary\nCommitted at Primary\nConflict\nFailed",
+      "default": "Received",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "retry_count",
+      "fieldtype": "Int",
+      "label": "Retry Count",
+      "read_only": 1,
+      "default": "0"
+    },
+    {
+      "fieldname": "last_retry_at",
+      "fieldtype": "Datetime",
+      "label": "Last Retry At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "exception_section",
+      "fieldtype": "Section Break",
+      "label": "Exception / Reconciliation Detail",
+      "collapsible": 1
+    },
+    {
+      "fieldname": "conflict_reason",
+      "fieldtype": "Small Text",
+      "label": "Conflict Reason",
+      "read_only": 1
+    },
+    {
+      "fieldname": "last_error",
+      "fieldtype": "Small Text",
+      "label": "Last Technical Error",
+      "read_only": 1
+    },
+    {
+      "fieldname": "primary_ack_uuid",
+      "fieldtype": "Data",
+      "label": "Primary ACK UUID",
+      "read_only": 1
+    }
+  ],
+  "index_web_pages_for_search": 0,
+  "links": [],
+  "modified": "2026-08-14 19:25:00.000000",
+  "modified_by": "Administrator",
+  "module": "NKT Store Operations",
+  "name": "NKT Sync Event",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "role": "NKT OWNER",
+      "read": 1,
+      "report": 1
+    },
+    {
+      "role": "NKT ADMINISTRATOR",
+      "read": 1,
+      "report": 1
+    },
+    {
+      "role": "System Manager",
+      "read": 1,
+      "report": 1
+    }
+  ],
+  "sort_field": "settled_at",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 1
+}

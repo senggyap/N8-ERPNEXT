@@ -1,0 +1,121 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "creation": "2026-08-13 00:00:00.000000",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "item_code",
+    "item_name",
+    "purchase_order_item",
+    "issue_type",
+    "issue_qty",
+    "rejected_warehouse",
+    "condition_reason",
+    "responsibility",
+    "supplier_claimable_qty",
+    "resolution_type",
+    "claimed_amount",
+    "agreed_deduction_amount"
+  ],
+  "fields": [
+    {
+      "fieldname": "item_code",
+      "fieldtype": "Link",
+      "label": "Item",
+      "options": "Item",
+      "reqd": 1,
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "item_name",
+      "fieldtype": "Data",
+      "label": "Item Name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "purchase_order_item",
+      "fieldtype": "Data",
+      "label": "Purchase Order Item",
+      "read_only": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "issue_type",
+      "fieldtype": "Select",
+      "label": "Issue Type",
+      "options": "Damaged\nWet\nBroken Packaging\nOther Rejected\nShortage",
+      "reqd": 1,
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "issue_qty",
+      "fieldtype": "Float",
+      "label": "Issue Qty",
+      "reqd": 1,
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "rejected_warehouse",
+      "fieldtype": "Link",
+      "label": "Rejected / Damage Warehouse",
+      "options": "Warehouse",
+      "read_only": 1
+    },
+    {
+      "fieldname": "condition_reason",
+      "fieldtype": "Small Text",
+      "label": "Physical Condition / Reason",
+      "read_only": 1
+    },
+    {
+      "fieldname": "responsibility",
+      "fieldtype": "Select",
+      "label": "Responsibility",
+      "options": "Pending Investigation\nSupplier\nTrucker\nNKT / Internal\nShared\nOther",
+      "default": "Pending Investigation",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "supplier_claimable_qty",
+      "fieldtype": "Float",
+      "label": "Supplier Claimable Qty",
+      "description": "Management determination; may be zero when responsibility is Trucker or NKT/Internal."
+    },
+    {
+      "fieldname": "resolution_type",
+      "fieldtype": "Select",
+      "label": "Resolution",
+      "options": "\nDeduction\nReplacement\nCredit Memo\nNo Charge\nRejected Claim\nOther"
+    },
+    {
+      "fieldname": "claimed_amount",
+      "fieldtype": "Currency",
+      "label": "Claimed Amount"
+    },
+    {
+      "fieldname": "agreed_deduction_amount",
+      "fieldtype": "Currency",
+      "label": "Agreed Deduction Amount"
+    }
+  ],
+  "index_web_pages_for_search": 0,
+  "istable": 1,
+  "links": [],
+  "modified": "2026-08-13 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "NKT Store Operations",
+  "name": "NKT Supplier Delivery Exception Item",
+  "owner": "Administrator",
+  "permissions": [],
+  "row_format": "Dynamic",
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 1
+}

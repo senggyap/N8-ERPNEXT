@@ -1,0 +1,141 @@
+{
+ "doctype": "DocType",
+ "name": "NKT Return Account Adjustment",
+ "module": "NKT Store Operations",
+ "autoname": "NKT-RET-ADJ-.#####",
+ "engine": "InnoDB",
+ "track_changes": 1,
+ "allow_rename": 0,
+ "field_order": [
+  "company",
+  "posting_datetime",
+  "customer",
+  "customer_name",
+  "return_exchange_declaration",
+  "customer_order",
+  "receivable",
+  "amount",
+  "outstanding_before",
+  "outstanding_after",
+  "created_by",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "posting_datetime",
+   "fieldtype": "Datetime",
+   "label": "Posting Date/Time",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "return_exchange_declaration",
+   "fieldtype": "Link",
+   "label": "Return / Exchange",
+   "options": "NKT Return Exchange Declaration",
+   "reqd": 1,
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "customer_order",
+   "fieldtype": "Link",
+   "label": "OLD Customer Order",
+   "options": "NKT Customer Order",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "receivable",
+   "fieldtype": "Link",
+   "label": "Customer Receivable",
+   "options": "NKT Customer Receivable",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Adjustment Amount",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "outstanding_before",
+   "fieldtype": "Currency",
+   "label": "Outstanding Before",
+   "read_only": 1
+  },
+  {
+   "fieldname": "outstanding_after",
+   "fieldtype": "Currency",
+   "label": "Outstanding After",
+   "read_only": 1
+  },
+  {
+   "fieldname": "created_by",
+   "fieldtype": "Link",
+   "label": "Created By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks",
+   "read_only": 1
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "report": 1,
+   "export": 1,
+   "print": 1
+  },
+  {
+   "role": "NKT OWNER",
+   "read": 1,
+   "report": 1,
+   "export": 1,
+   "print": 1
+  },
+  {
+   "role": "NKT ADMINISTRATOR",
+   "read": 1,
+   "report": 1,
+   "export": 1,
+   "print": 1
+  },
+  {
+   "role": "NKT Encoder",
+   "read": 1,
+   "report": 1,
+   "print": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC"
+}

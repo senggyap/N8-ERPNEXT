@@ -1,0 +1,215 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "format:NKT-TADJ-{#####}",
+ "creation": "2026-08-13 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "header_section",
+  "company",
+  "trucking_job",
+  "carrier_account",
+  "source_supplier_receiving",
+  "column_break_header",
+  "source_supplier_exception",
+  "review_status",
+  "deduction_status",
+  "identity_section",
+  "job_date",
+  "dr_no",
+  "plate_number",
+  "internal_vehicle_no",
+  "vehicle_operator",
+  "items_section",
+  "items",
+  "totals_section",
+  "gross_claim_amount",
+  "agreed_trucker_deduction_amount",
+  "notes_section",
+  "resolution_notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "header_section",
+   "fieldtype": "Section Break",
+   "label": "Trucker Adjustment / Deduction"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "trucking_job",
+   "fieldtype": "Link",
+   "label": "Trucking Job",
+   "options": "NKT Trucking Job",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "carrier_account",
+   "fieldtype": "Link",
+   "label": "Carrier / Trucker Account",
+   "options": "Supplier",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "source_supplier_receiving",
+   "fieldtype": "Link",
+   "label": "Supplier Arrival",
+   "options": "NKT Supplier Receiving",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_header",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "source_supplier_exception",
+   "fieldtype": "Link",
+   "label": "Physical Supplier Delivery Exception",
+   "options": "NKT Supplier Delivery Exception",
+   "read_only": 1,
+   "description": "Physical truth source only. Supplier and trucker financial ledgers remain separate."
+  },
+  {
+   "fieldname": "review_status",
+   "fieldtype": "Select",
+   "label": "Review Status",
+   "options": "Pending Review\nUnder Investigation\nResolved",
+   "default": "Pending Review",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "deduction_status",
+   "fieldtype": "Select",
+   "label": "Trucker Deduction Status",
+   "options": "Not Yet Determined\nNo Trucker Deduction\nDeduction Pending\nAgreed Deduction\nRecovery Pending\nResolved",
+   "default": "Not Yet Determined",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Physical Delivery Identity"
+  },
+  {
+   "fieldname": "job_date",
+   "fieldtype": "Date",
+   "label": "Job Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "dr_no",
+   "fieldtype": "Data",
+   "label": "DR No.",
+   "read_only": 1
+  },
+  {
+   "fieldname": "plate_number",
+   "fieldtype": "Data",
+   "label": "Plate No.",
+   "read_only": 1
+  },
+  {
+   "fieldname": "internal_vehicle_no",
+   "fieldtype": "Data",
+   "label": "Van / Truck No.",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle_operator",
+   "fieldtype": "Data",
+   "label": "Vehicle Operator",
+   "read_only": 1
+  },
+  {
+   "fieldname": "items_section",
+   "fieldtype": "Section Break",
+   "label": "Trucker Responsibility / Deductions"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Adjustment Items",
+   "options": "NKT Trucker Adjustment Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "totals_section",
+   "fieldtype": "Section Break",
+   "label": "Restricted Totals"
+  },
+  {
+   "fieldname": "gross_claim_amount",
+   "fieldtype": "Currency",
+   "label": "Gross Trucker Claim",
+   "read_only": 1
+  },
+  {
+   "fieldname": "agreed_trucker_deduction_amount",
+   "fieldtype": "Currency",
+   "label": "Agreed Trucker Deduction",
+   "read_only": 1
+  },
+  {
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Resolution Notes",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "resolution_notes",
+   "fieldtype": "Small Text",
+   "label": "Resolution Notes"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "is_submittable": 0,
+ "links": [],
+ "modified": "2026-08-13 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "NKT Store Operations",
+ "name": "NKT Trucker Adjustment",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "NKT ADMINISTRATOR",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "NKT OWNER",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

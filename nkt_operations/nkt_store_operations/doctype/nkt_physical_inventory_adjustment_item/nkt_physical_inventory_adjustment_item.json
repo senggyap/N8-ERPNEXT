@@ -1,0 +1,139 @@
+{
+  "actions": [],
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "item_code",
+    "item_name",
+    "stock_uom",
+    "system_qty_snapshot",
+    "physical_qty",
+    "physical_qty_confirmed",
+    "variance_qty",
+    "variance_direction",
+    "posted_qty",
+    "valuation_rate_snapshot",
+    "valuation_rate_source",
+    "has_serial_no",
+    "has_batch_no",
+    "requires_whole_number",
+    "row_blocker",
+    "row_notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "item_code",
+      "fieldtype": "Link",
+      "label": "Item",
+      "options": "Item",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "item_name",
+      "fieldtype": "Data",
+      "label": "Item Name",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "stock_uom",
+      "fieldtype": "Link",
+      "label": "Stock UOM",
+      "options": "UOM",
+      "read_only": 1
+    },
+    {
+      "fieldname": "system_qty_snapshot",
+      "fieldtype": "Float",
+      "label": "System Qty Before Posting",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "physical_qty",
+      "fieldtype": "Float",
+      "label": "Physical Qty",
+      "reqd": 0,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "variance_qty",
+      "fieldtype": "Float",
+      "label": "Variance",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "variance_direction",
+      "fieldtype": "Select",
+      "label": "Variance Direction",
+      "options": "No Variance\nOverage\nShortage",
+      "read_only": 1
+    },
+    {
+      "fieldname": "valuation_rate_snapshot",
+      "fieldtype": "Currency",
+      "label": "Current Valuation Rate",
+      "read_only": 1
+    },
+    {
+      "fieldname": "has_serial_no",
+      "fieldtype": "Check",
+      "label": "Serialized Item",
+      "read_only": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "has_batch_no",
+      "fieldtype": "Check",
+      "label": "Batch Item",
+      "read_only": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "requires_whole_number",
+      "fieldtype": "Check",
+      "label": "Whole Number UOM",
+      "read_only": 1,
+      "hidden": 1
+    },
+    {
+      "fieldname": "row_blocker",
+      "fieldtype": "Small Text",
+      "label": "Posting Blocker",
+      "read_only": 1
+    },
+    {
+      "fieldname": "row_notes",
+      "fieldtype": "Small Text",
+      "label": "Count Notes"
+    },
+    {
+      "fieldname": "physical_qty_confirmed",
+      "fieldtype": "Check",
+      "label": "Physical Quantity Counted",
+      "default": 0,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "valuation_rate_source",
+      "fieldtype": "Data",
+      "label": "Valuation Rate Source",
+      "read_only": 1
+    },
+    {
+      "fieldname": "posted_qty",
+      "fieldtype": "Float",
+      "label": "ERP Qty After Posting",
+      "read_only": 1
+    }
+  ],
+  "istable": 1,
+  "module": "NKT Store Operations",
+  "name": "NKT Physical Inventory Adjustment Item",
+  "permissions": [],
+  "sort_field": "idx",
+  "sort_order": "ASC"
+}

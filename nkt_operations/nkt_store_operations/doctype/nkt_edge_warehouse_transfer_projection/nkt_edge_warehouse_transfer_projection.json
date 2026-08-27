@@ -1,0 +1,277 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "field:projection_key",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "identity_section",
+    "projection_key",
+    "event_uuid",
+    "line_no",
+    "projection_action",
+    "transfer_section",
+    "warehouse_transfer",
+    "warehouse_transfer_item",
+    "item_code",
+    "uom",
+    "warehouse_section",
+    "source_warehouse",
+    "destination_warehouse",
+    "transit_warehouse",
+    "qty_section",
+    "dispatched_qty",
+    "arrived_qty",
+    "cumulative_arrived_before",
+    "remaining_before",
+    "business_date",
+    "state_section",
+    "projection_state",
+    "primary_ack_uuid",
+    "primary_stock_entry",
+    "materialization_ack_uuid",
+    "materialization_ack_sha256",
+    "primary_post_source_actual_qty",
+    "primary_post_transit_actual_qty",
+    "primary_post_destination_actual_qty",
+    "primary_materialized_at",
+    "finalized_at"
+  ],
+  "fields": [
+    {
+      "fieldname": "identity_section",
+      "fieldtype": "Section Break",
+      "label": "Store-Edge Internal Transfer Projection"
+    },
+    {
+      "fieldname": "projection_key",
+      "fieldtype": "Data",
+      "label": "Projection Key",
+      "reqd": 1,
+      "unique": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "event_uuid",
+      "fieldtype": "Data",
+      "label": "Event UUID",
+      "reqd": 1,
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "line_no",
+      "fieldtype": "Int",
+      "label": "Line",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "projection_action",
+      "fieldtype": "Select",
+      "label": "Projection Action",
+      "options": "Source Dispatch\nDestination Arrival",
+      "reqd": 1,
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "transfer_section",
+      "fieldtype": "Section Break",
+      "label": "Transfer Line"
+    },
+    {
+      "fieldname": "warehouse_transfer",
+      "fieldtype": "Link",
+      "label": "Internal Warehouse Transfer",
+      "options": "NKT Warehouse Transfer",
+      "reqd": 1,
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "warehouse_transfer_item",
+      "fieldtype": "Data",
+      "label": "Warehouse Transfer Item",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "item_code",
+      "fieldtype": "Link",
+      "label": "Item",
+      "options": "Item",
+      "reqd": 1,
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "uom",
+      "fieldtype": "Link",
+      "label": "UOM",
+      "options": "UOM",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "warehouse_section",
+      "fieldtype": "Section Break",
+      "label": "Physical Warehouse Lineage"
+    },
+    {
+      "fieldname": "source_warehouse",
+      "fieldtype": "Link",
+      "label": "Source Warehouse",
+      "options": "Warehouse",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "destination_warehouse",
+      "fieldtype": "Link",
+      "label": "Destination Warehouse",
+      "options": "Warehouse",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "transit_warehouse",
+      "fieldtype": "Link",
+      "label": "Goods In Transit Warehouse",
+      "options": "Warehouse",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "qty_section",
+      "fieldtype": "Section Break",
+      "label": "Projected Physical Quantity"
+    },
+    {
+      "fieldname": "dispatched_qty",
+      "fieldtype": "Float",
+      "label": "Dispatched Qty",
+      "read_only": 1
+    },
+    {
+      "fieldname": "arrived_qty",
+      "fieldtype": "Float",
+      "label": "Arrived Qty",
+      "read_only": 1
+    },
+    {
+      "fieldname": "business_date",
+      "fieldtype": "Date",
+      "label": "Business Date",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "state_section",
+      "fieldtype": "Section Break",
+      "label": "Safe-Sync State"
+    },
+    {
+      "fieldname": "projection_state",
+      "fieldtype": "Select",
+      "label": "Projection State",
+      "options": "Pending Edge\nAwaiting Primary\nPrimary Preserved\nPrimary Dispatch Materialized\nPrimary Arrival Preserved\nPrimary Arrival Materialized\nFinalized",
+      "default": "Pending Edge",
+      "reqd": 1,
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "primary_ack_uuid",
+      "fieldtype": "Data",
+      "label": "Primary ACK UUID",
+      "read_only": 1
+    },
+    {
+      "fieldname": "primary_stock_entry",
+      "fieldtype": "Link",
+      "label": "Primary Stock Entry",
+      "options": "Stock Entry",
+      "read_only": 1
+    },
+    {
+      "fieldname": "materialization_ack_uuid",
+      "fieldtype": "Data",
+      "label": "Materialization ACK UUID",
+      "read_only": 1
+    },
+    {
+      "fieldname": "materialization_ack_sha256",
+      "fieldtype": "Data",
+      "label": "Materialization ACK SHA-256",
+      "read_only": 1
+    },
+    {
+      "fieldname": "primary_post_source_actual_qty",
+      "fieldtype": "Float",
+      "label": "Primary Post Source Actual Qty",
+      "read_only": 1
+    },
+    {
+      "fieldname": "primary_post_transit_actual_qty",
+      "fieldtype": "Float",
+      "label": "Primary Post Transit Actual Qty",
+      "read_only": 1
+    },
+    {
+      "fieldname": "primary_materialized_at",
+      "fieldtype": "Datetime",
+      "label": "Primary Materialized At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "finalized_at",
+      "fieldtype": "Datetime",
+      "label": "Projection Finalized At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "cumulative_arrived_before",
+      "fieldtype": "Float",
+      "label": "Cumulative Arrived Before",
+      "read_only": 1
+    },
+    {
+      "fieldname": "remaining_before",
+      "fieldtype": "Float",
+      "label": "Remaining In Transit Before",
+      "read_only": 1
+    },
+    {
+      "fieldname": "primary_post_destination_actual_qty",
+      "fieldtype": "Float",
+      "label": "Primary Post Destination Actual Qty",
+      "read_only": 1
+    }
+  ],
+  "index_web_pages_for_search": 0,
+  "links": [],
+  "module": "NKT Store Operations",
+  "name": "NKT Edge Warehouse Transfer Projection",
+  "permissions": [
+    {
+      "role": "NKT OWNER",
+      "read": 1,
+      "report": 1
+    },
+    {
+      "role": "NKT ADMINISTRATOR",
+      "read": 1,
+      "report": 1
+    },
+    {
+      "role": "System Manager",
+      "read": 1,
+      "report": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 1
+}

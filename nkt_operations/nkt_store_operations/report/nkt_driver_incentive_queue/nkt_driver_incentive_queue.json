@@ -1,0 +1,20 @@
+{
+  "doctype": "Report",
+  "name": "NKT Driver Incentive Queue",
+  "module": "NKT Store Operations",
+  "ref_doctype": "NKT Trucking Trip",
+  "report_type": "Script Report",
+  "is_standard": "Yes",
+  "disabled": 0,
+  "roles": [
+    {
+      "role": "NKT Trucking Operations"
+    },
+    {
+      "role": "NKT OWNER"
+    },
+    {
+      "role": "NKT ADMINISTRATOR"
+    }
+  ]
+}

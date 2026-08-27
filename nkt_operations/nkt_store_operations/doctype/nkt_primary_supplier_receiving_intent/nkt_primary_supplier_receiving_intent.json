@@ -1,0 +1,431 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:event_uuid",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "identity_section",
+  "event_uuid",
+  "event_family",
+  "event_action",
+  "origin_device",
+  "origin_user",
+  "operational_context",
+  "business_section",
+  "business_date",
+  "settled_at",
+  "client_created_at",
+  "receiving_section",
+  "purchase_order",
+  "company",
+  "supplier",
+  "receiving_date",
+  "receiving_warehouse",
+  "bill_of_lading_no",
+  "supplier_dr_no",
+  "supplier_delivery_reference",
+  "delivery_vehicle",
+  "internal_vehicle_no",
+  "plate_number",
+  "driver_name",
+  "receiving_notes",
+  "quantity_section",
+  "total_expected_qty",
+  "total_delivered_qty",
+  "total_accepted_qty",
+  "total_damaged_qty",
+  "total_other_rejected_qty",
+  "total_rejected_qty",
+  "total_shortage_qty",
+  "items",
+  "integrity_section",
+  "envelope_sha256",
+  "payload_sha256",
+  "canonical_envelope_json",
+  "canonical_payload_json",
+  "state_section",
+  "preservation_state",
+  "downstream_state",
+  "primary_preserved_at",
+  "materialization_section",
+  "materialized_supplier_receiving",
+  "materialized_purchase_receipt",
+  "materialized_supplier_exception",
+  "materialized_at",
+  "materialization_ack_uuid",
+  "materialization_ack_sha256",
+  "materialization_ack_json"
+ ],
+ "fields": [
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Primary Preserved Supplier Receiving Intent"
+  },
+  {
+   "fieldname": "event_uuid",
+   "fieldtype": "Data",
+   "label": "Event UUID",
+   "reqd": 1,
+   "unique": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "event_family",
+   "fieldtype": "Data",
+   "label": "Event Family",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "event_action",
+   "fieldtype": "Data",
+   "label": "Event Action",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "origin_device",
+   "fieldtype": "Link",
+   "label": "Origin Device",
+   "options": "NKT Device Registry",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "origin_user",
+   "fieldtype": "Link",
+   "label": "Origin User",
+   "options": "User",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "operational_context",
+   "fieldtype": "Data",
+   "label": "Operational Context",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "business_section",
+   "fieldtype": "Section Break",
+   "label": "Immutable Physical Receiving Time"
+  },
+  {
+   "fieldname": "business_date",
+   "fieldtype": "Date",
+   "label": "Business Date",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "settled_at",
+   "fieldtype": "Datetime",
+   "label": "Physical Received At",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "client_created_at",
+   "fieldtype": "Datetime",
+   "label": "Client Created At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "receiving_section",
+   "fieldtype": "Section Break",
+   "label": "Supplier / PO / Vehicle Identity"
+  },
+  {
+   "fieldname": "purchase_order",
+   "fieldtype": "Link",
+   "label": "Purchase Order",
+   "options": "Purchase Order",
+   "reqd": 0,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "receiving_date",
+   "fieldtype": "Date",
+   "label": "Physical Receiving Date",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "receiving_warehouse",
+   "fieldtype": "Link",
+   "label": "Accepted / Receiving Warehouse",
+   "options": "Warehouse",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "bill_of_lading_no",
+   "fieldtype": "Data",
+   "label": "BL No.",
+   "read_only": 1
+  },
+  {
+   "fieldname": "supplier_dr_no",
+   "fieldtype": "Data",
+   "label": "Supplier DR No.",
+   "read_only": 1
+  },
+  {
+   "fieldname": "supplier_delivery_reference",
+   "fieldtype": "Data",
+   "label": "Other Supplier Delivery Reference",
+   "read_only": 1
+  },
+  {
+   "fieldname": "delivery_vehicle",
+   "fieldtype": "Link",
+   "label": "NKT Vehicle",
+   "options": "NKT Vehicle",
+   "read_only": 1
+  },
+  {
+   "fieldname": "internal_vehicle_no",
+   "fieldtype": "Data",
+   "label": "Internal Van / Truck No.",
+   "read_only": 1
+  },
+  {
+   "fieldname": "plate_number",
+   "fieldtype": "Data",
+   "label": "Plate Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "driver_name",
+   "fieldtype": "Data",
+   "label": "Driver",
+   "read_only": 1
+  },
+  {
+   "fieldname": "receiving_notes",
+   "fieldtype": "Small Text",
+   "label": "Receiving Notes",
+   "read_only": 1
+  },
+  {
+   "fieldname": "quantity_section",
+   "fieldtype": "Section Break",
+   "label": "Immutable Physical Quantities"
+  },
+  {
+   "fieldname": "total_expected_qty",
+   "fieldtype": "Float",
+   "label": "Total Expected Qty",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_delivered_qty",
+   "fieldtype": "Float",
+   "label": "Total Physically Received",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_accepted_qty",
+   "fieldtype": "Float",
+   "label": "Total Accepted",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_damaged_qty",
+   "fieldtype": "Float",
+   "label": "Total Damaged",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_other_rejected_qty",
+   "fieldtype": "Float",
+   "label": "Total Other Rejected",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_rejected_qty",
+   "fieldtype": "Float",
+   "label": "Total Problem / Rejected",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_shortage_qty",
+   "fieldtype": "Float",
+   "label": "Total Shortage",
+   "read_only": 1
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Preserved Receiving Rows",
+   "options": "NKT Primary Supplier Receiving Intent Item",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "integrity_section",
+   "fieldtype": "Section Break",
+   "label": "Immutable Transport Binding"
+  },
+  {
+   "fieldname": "envelope_sha256",
+   "fieldtype": "Data",
+   "label": "Envelope SHA-256",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "payload_sha256",
+   "fieldtype": "Data",
+   "label": "Payload SHA-256",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "canonical_envelope_json",
+   "fieldtype": "Code",
+   "label": "Canonical Envelope JSON",
+   "options": "JSON",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "canonical_payload_json",
+   "fieldtype": "Code",
+   "label": "Canonical Payload JSON",
+   "options": "JSON",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "state_section",
+   "fieldtype": "Section Break",
+   "label": "Primary Preservation State"
+  },
+  {
+   "fieldname": "preservation_state",
+   "fieldtype": "Select",
+   "label": "Preservation State",
+   "options": "Preserved",
+   "default": "Preserved",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "downstream_state",
+   "fieldtype": "Select",
+   "label": "Downstream State",
+   "options": "Awaiting Supplier Receiving Materialization\nSupplier Receiving Materialized",
+   "default": "Awaiting Supplier Receiving Materialization",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "primary_preserved_at",
+   "fieldtype": "Datetime",
+   "label": "Primary Preserved At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialization_section",
+   "fieldtype": "Section Break",
+   "label": "Canonical Supplier Receiving Materialization"
+  },
+  {
+   "fieldname": "materialized_supplier_receiving",
+   "fieldtype": "Link",
+   "label": "Materialized Supplier Arrival",
+   "options": "NKT Supplier Receiving",
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialized_purchase_receipt",
+   "fieldtype": "Link",
+   "label": "Materialized Purchase Receipt",
+   "options": "Purchase Receipt",
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialized_supplier_exception",
+   "fieldtype": "Link",
+   "label": "Restricted Supplier Delivery Exception",
+   "options": "NKT Supplier Delivery Exception",
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialized_at",
+   "fieldtype": "Datetime",
+   "label": "Materialized At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialization_ack_uuid",
+   "fieldtype": "Data",
+   "label": "Materialization ACK UUID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialization_ack_sha256",
+   "fieldtype": "Data",
+   "label": "Materialization ACK SHA-256",
+   "read_only": 1
+  },
+  {
+   "fieldname": "materialization_ack_json",
+   "fieldtype": "Code",
+   "label": "Canonical Materialization ACK JSON",
+   "options": "JSON",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "module": "NKT Store Operations",
+ "name": "NKT Primary Supplier Receiving Intent",
+ "permissions": [
+  {
+   "role": "NKT OWNER",
+   "read": 1,
+   "report": 1
+  },
+  {
+   "role": "NKT ADMINISTRATOR",
+   "read": 1,
+   "report": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "report": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
